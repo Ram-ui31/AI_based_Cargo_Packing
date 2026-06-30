@@ -9,7 +9,7 @@ End-to-end pipeline for the Unit Load Device (ULD) cargo-packing problem: assign
 ├── good-data-generator/    — synthetic ULD/package dataset generator
 ├── h1_h2_cargo/            — greedy heuristic baseline (H1/H2 scorers, binary-search split, extreme-point packer)
 ├── good-il-over-greedy/    — imitation-learning Transformer clusterer, trained on greedy-heuristic labels
-├── rl_fineuning_over_il/   — RL fine-tuning of the IL checkpoint
+├── rl_fineuning/   — RL fine-tuning of the IL checkpoint
 └── LICENSE
 ```
 
@@ -18,7 +18,7 @@ End-to-end pipeline for the Unit Load Device (ULD) cargo-packing problem: assign
 1. **`good-data-generator/`** — generate synthetic `{ulds, packages, metadata}.csv` instances.
 2. **`h1_h2_cargo/`** — solve instances with the greedy heuristic pipeline; produces baseline assignments and acts as the label source for IL.
 3. **`good-il-over-greedy/`** — train a TransformerClusterer to imitate the greedy heuristic's assignments.
-4. **`rl_fineuning_over_il/`** — fine-tune the IL checkpoint with RL (policy gradient over packing cost) to improve past the heuristic.
+4. **`rl_fineuning/`** — fine-tune the IL checkpoint with RL (policy gradient over packing cost) to improve past the heuristic.
 
 ---
 
