@@ -44,7 +44,7 @@ Each instance independently samples ULD dimensions/weight limits, then generates
 
 ## `h1_h2_cargo/`
 
-Greedy heuristic baseline and reference packing engine, used both as a standalone solver and as the label source for the IL model.
+Greedy heuristic baseline and reference packing engine, used both as a standalone solver.
 
 ```
 h1_h2_cargo/
