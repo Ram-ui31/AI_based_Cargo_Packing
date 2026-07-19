@@ -44,19 +44,10 @@ local search loop.
 
 ## Eclipse's measured contribution
 
-![Candidate generation impact](graphs/04_candidate_generation_impact.png)
-
 Measured directly by ablation: remove Eclipse from the 5-way ensemble and
 re-run the identical pipeline on the real benchmark instance. **Cost gets
 339 points worse.** That's Eclipse's real, isolated contribution — not an
 assumption, a controlled before/after measurement.
-
-For the complete picture — all ~40 real-validated approaches tried across
-the whole project, including where the Eclipse pipeline (28,452) sits
-relative to every classical formula, GA/ILP attempt, GNN ranker, RL
-fine-tune, and the MILP-exact-solver ceiling check, sorted worst to best:
-
-![Full comparison, every approach](graphs/09_full_comparison_all_approaches.png)
 
 ## How Eclipse generalizes — 3-model comparison across all 5 K values
 

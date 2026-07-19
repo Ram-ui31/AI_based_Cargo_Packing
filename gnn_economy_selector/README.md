@@ -5,15 +5,14 @@ an exhaustive set of ~15 classical approaches (value-density exponent tuning,
 weight-based and joint weight/volume density, ULD-ordering strategies, a
 multi-knapsack ILP, new packing heuristics, two genetic-algorithm variants,
 and a full sweep of Priority-ULD allocations) all failed to beat 30,475
-(cost) on the real 400-package/6-ULD instance (`~/Downloads/input.csv`),
-against a competing team's benchmark of **29,203**.
+(cost) on a real 400-package/6-ULD instance (`~/Downloads/input.csv`).
 
-**Status as of the latest session: best real cost is 29,564** (gap: 361),
-found by a local search directly over the real packer's output rather than
-by any learned model alone. This README documents the full arc, including
-two dead ends that were informative enough to keep: RL/GRPO's structural
-ceiling, and why a "smarter" model-guided search variant needed two real
-fixes before it stopped being actively counterproductive.
+This README documents the full research arc that led to the final
+`cherry`/`eclipse`/`halley` pipelines (see the repository root README for
+current, grand-averaged results), including two dead ends that were
+informative enough to keep: RL/GRPO's structural ceiling, and why a
+"smarter" model-guided search variant needed two real fixes before it
+stopped being actively counterproductive.
 
 ## The whole story, in order
 
@@ -38,17 +37,14 @@ flowchart TD
 
 ## Results across every method tried
 
-![Method progression](../ga_cargo_packing/results/plots/01_method_progression.png)
-
 | Method | Real cost | Notes |
 |---|---|---|
 | Classical formula (`value_density^1.5`) | 30,475 | Best of ~15 hand-tuned formulas/ILP/GA variants |
 | RL / GRPO (single-instance) | 30,672 | Gradient-based local search around one starting point |
 | Multi-instance GRPO (generalized) | 30,608 | Same ceiling, but generalizes across instances |
 | **Beam search (order-based, real-packer-evaluated)** | **29,656** | The session's actual breakthrough |
-| **Guided beam search (SwapProposer v2, ranking loss)** | **29,564** | Current best |
+| **Guided beam search (SwapProposer v2, ranking loss)** | **29,564** | Best result from this research phase |
 | Knapsack search (direct assignment) | 29,564 | Matches order-based best; didn't exceed it |
-| Competitor benchmark | 29,203 | Still 361 points away |
 
 ## Why RL/GRPO only moved the needle by a few hundred points
 
@@ -58,13 +54,11 @@ but a gradient-based policy is a **smooth optimizer**, and this cost surface
 is empirically **jagged**: small, monotonic changes to a ranking formula's
 exponent swing real cost by 200-800 points non-monotonically. Confirmed
 repeatedly across the whole session (classical formula sweep, RL/GRPO
-training curves, and the beam search's own convergence data below all show
-the same discontinuous character). Gradient descent is the wrong tool for a
+training curves, and the beam search's own convergence data all show the
+same discontinuous character). Gradient descent is the wrong tool for a
 cost landscape shaped like that; direct local search with the real packer
 as the only evaluator is not fighting a smoothness mismatch, which is why it
 broke through where RL/GRPO couldn't.
-
-![Search convergence](../ga_cargo_packing/results/plots/02_search_convergence.png)
 
 ## The SwapProposer: a genuine before/after, not just a bigger model
 
@@ -73,8 +67,6 @@ made the guided search *worse* than random search in practice. The second
 version fixed the actual problem and the metric dropped to a much less
 impressive-looking ~0.85 — but that's the run whose guided search actually
 matched the order-based best.
-
-![SwapProposer training](../ga_cargo_packing/results/plots/03_swap_proposer_training.png)
 
 **What went wrong in v1**: it regressed the raw real-cost delta of a swap
 with a Huber loss. But ~82% of logged swaps make things worse, ~13% are
@@ -140,12 +132,10 @@ capacity only, via `scipy.optimize.milp`/HiGHS) — a valid upper bound on any
 order/assignment search, since true 3D geometric packing can only be harder
 than this relaxation, never easier.
 
-![MILP ceiling](../ga_cargo_packing/results/plots/04_milp_ceiling.png)
-
-The relaxation's theoretical floor is ~25,387 — well below our 29,564 and
-even the competitor's 29,203. But taking the MILP's own optimal item
-*selection* and real-3D-packing it scores **31,540** — worse than our
-result — because 177 of its "selected" packages don't actually fit together
+The relaxation's theoretical floor is ~25,387 — well below our 29,564. But
+taking the MILP's own optimal item *selection* and real-3D-packing it
+scores **31,540** — worse than our result — because 177 of its "selected"
+packages don't actually fit together
 once real box shapes are considered. **The bottleneck isn't which packages
 to select** (the real-packer-guided searches above were already solving that
 about as well as it can be solved); **it's 3D packing efficiency itself.**
@@ -169,8 +159,6 @@ A secondary question — given the fixed best 3-ULD Priority combo, does *how*
 the 103 Priority packages are distributed among those 3 ULDs matter? Five
 allocation strategies tested; the current default (first-fit by descending
 volume) beats all four alternatives.
-
-![Priority allocation sweep](../ga_cargo_packing/results/plots/05_priority_allocation_sweep.png)
 
 ## Architecture
 
@@ -209,11 +197,11 @@ throughout. Does not modify `~/Desktop/ga_cargo_packing/`.
 
 ## What's left
 
-- The remaining 361-point gap to the competitor benchmark is, per the MILP
-  analysis above, primarily a **3D packing algorithm** problem now, not a
-  package-selection problem. The next real lever is improving or retraining
-  `rl_packer`'s placement policy itself, or a genuinely better geometric
-  bin-packing heuristic — out of scope for local-search-over-selection work.
+- Per the MILP analysis above, the remaining gap is primarily a **3D
+  packing algorithm** problem now, not a package-selection problem. The
+  next real lever is improving or retraining `rl_packer`'s placement
+  policy itself, or a genuinely better geometric bin-packing heuristic —
+  out of scope for local-search-over-selection work.
 - `SwapProposer` was trained on only 377 rankable pairs (42 parent groups)
   — more beam-search mileage would give it more (and more diverse) data;
   worth revisiting once the packer-efficiency lever above is addressed,
