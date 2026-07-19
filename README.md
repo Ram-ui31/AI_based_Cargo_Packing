@@ -1,4 +1,4 @@
-# Cargoism — Optimal Cargo Management for Flights
+# Argo — Optimal Cargo Management for Flights
 
 An end-to-end system for the air cargo ULD (Unit Load Device) loading
 problem: assign Priority and Economy packages to a fixed set of ULDs and
