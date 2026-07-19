@@ -1,0 +1,17 @@
+{"round": 0, "beam_costs": [28452.0, 29200.0, 29280.0], "n_candidates": 7}
+{"round": 1, "beam_costs": [28452.0, 29092.0, 29158.0], "n_candidates": 21}
+{"round": 2, "beam_costs": [28452.0, 29004.0, 29092.0], "n_candidates": 21}
+{"round": 3, "beam_costs": [28452.0, 29004.0, 29092.0], "n_candidates": 21}
+{"round": 4, "beam_costs": [28452.0, 29004.0, 29092.0], "n_candidates": 21}
+{"round": 5, "beam_costs": [28452.0, 29004.0, 29092.0], "n_candidates": 21}
+{"round": 6, "beam_costs": [28452.0, 29004.0, 29092.0], "n_candidates": 21}
+{"round": 7, "beam_costs": [28452.0, 29004.0, 29092.0], "n_candidates": 21}
+{"round": 8, "beam_costs": [28452.0, 28875.0, 29004.0], "n_candidates": 21}
+{"round": 9, "beam_costs": [28452.0, 28875.0, 29004.0], "n_candidates": 21}
+{"round": 10, "beam_costs": [28452.0, 28875.0, 28989.0], "n_candidates": 21}
+{"round": 11, "beam_costs": [28452.0, 28870.0, 28875.0], "n_candidates": 21}
+{"round": 12, "beam_costs": [28452.0, 28870.0, 28875.0], "n_candidates": 21}
+{"round": 13, "beam_costs": [28452.0, 28870.0, 28875.0], "n_candidates": 21}
+{"round": 14, "beam_costs": [28452.0, 28870.0, 28875.0], "n_candidates": 21}
+{"round": 15, "beam_costs": [28452.0, 28870.0, 28875.0], "n_candidates": 21}
+{"round": 16, "beam_costs": [28452.0, 28870.0, 28875.0], "n_candidates": 21}

@@ -1,139 +1,181 @@
-# ULD Cargo Packing
+# Cargoism — Optimal Cargo Management for Flights
 
-End-to-end pipeline for the Unit Load Device (ULD) cargo-packing problem: assign packages to ULDs to minimize delay cost and priority spread, subject to weight/volume capacity. The repo covers four stages — synthetic data generation, a hand-tuned greedy heuristic baseline, an imitation-learning (IL) Transformer trained on that baseline, and RL fine-tuning of the IL model.
+An end-to-end system for the air cargo ULD (Unit Load Device) loading
+problem: assign Priority and Economy packages to a fixed set of ULDs and
+pack them in 3D, minimizing a delay-cost-and-priority-spread objective
+subject to hard weight, volume, and non-overlap constraints, with every
+Priority package guaranteed to ship.
 
-## Structure
+**Best result: total cost 28,409** on the real 400-package benchmark
+instance (103 Priority + 297 Economy, 6 ULDs, K = 5,000) — against a
+29,203 competitor/reference benchmark on the same instance. Zero Priority
+packages dropped, in every configuration tested.
+
+## Where to start
+
+| I want to... | Go to |
+|---|---|
+| See the final, best-performing system | [`cherry/`](cherry/) |
+| Understand the three model variants that were compared head-to-head | [`cherry/`](cherry/), [`eclipse/`](eclipse/), [`halley/`](halley/) |
+| See the research/development environment that produced them | [`ga_cargo_packing/`](ga_cargo_packing/), [`gnn_economy_selector/`](gnn_economy_selector/) |
+| See how the project evaluated against a published academic baseline | `online-3d-bpp-benchmark/` *(sibling folder alongside this repo, not itself part of it)* |
+| See the earlier project iterations that led here | [Project history](#project-history) below |
+
+## The three final models
+
+Three trained-model variants were built and evaluated on identical terms
+— same real benchmark instance, and separately, the same 20 held-out
+synthetic instances (4 each across K ∈ {100, 500, 1000, 3000, 5000}):
+
+| Model | Role | Real-instance cost | Grand-average cost (20-instance sweep) |
+|---|---|---|---|
+| **Eclipse** | RL-trained 3D placement policy, competing in a best-of-5 ensemble against heuristic strategies for every container | 28,452 | 10,631 |
+| **Halley** | GRPO-trained economy-package ordering model, generalized across many synthetic instances | 30,608 (standalone) | 10,540 |
+| **Cherry** | Set-attention transformer that screens evict-and-recompact moves as a final refinement pass on top of Eclipse's result | **28,409** | **9,499** |
+
+Cherry is named for its headline component, `CentrifugeEvictProposer` —
+the most rigorously validated model in the project: held out on unseen
+synthetic instances, then validated cross-distribution on the real
+benchmark's structurally different, sparse-signal regime, where
+model-guided search reached the identical result as exhaustive
+brute-force search at roughly 1/15th the number of expensive geometric
+checks.
+
+Each of the three folders is a complete, standalone, GitHub-style
+deliverable: full pipeline source, trained checkpoints, results,
+comparison graphs, and architecture flowcharts, with an honest account of
+what was tried, what worked, and what didn't (including negative results
+for reinforcement learning on the package-ordering side and for an
+AI-guided local-search variant that never demonstrated an improvement).
+
+## Repository structure
 
 ```
-.
-├── good-data-generator/    — synthetic ULD/package dataset generator
-├── h1_h2_cargo/            — greedy heuristic baseline (H1/H2 scorers, binary-search split, extreme-point packer)
-├── good-il-over-greedy/    — imitation-learning Transformer clusterer, trained on greedy-heuristic labels
-├── rl_fineuning/   — RL fine-tuning of the IL checkpoint
+cargoism/git/                    ← repository root
+├── cherry/                — FINAL: best-performing pipeline (28,409)
+├── eclipse/                — RL placement-policy pipeline (28,452)
+├── halley/                 — GRPO economy-ordering pipeline (30,608 standalone)
+├── ga_cargo_packing/       — research environment: assignment, local
+│                              search, packer ensemble, EMS geometry
+├── gnn_economy_selector/   — research environment: economy-ranking
+│                              and move-screening model training
+├── rl_packer/              — shared 3D placement-policy source (geometry,
+│                              environment, actor-critic network)
+├── common/                  — shared evaluation/comparison utilities
+│                              across earlier pipeline iterations
+├── good-data-generator/    — synthetic ULD/package instance generator
+├── h1_h2_cargo/             — hand-tuned greedy heuristic baseline
+├── good-il-over-greedy(c)/ — imitation-learning Transformer trained
+│                              on the greedy baseline's labels
+├── model_b(c)/              — learned assignment-policy environment
+├── rl_fineuning_over_il/   — early RL fine-tune of the IL checkpoint
+├── rl_over_il_h1h2/         — RL fine-tune combined with the H1/H2
+│                              heuristic packer
 └── LICENSE
 ```
 
-### Pipeline order
+Trained placement-policy checkpoints referenced by `rl_packer` and by
+every packer ensemble live one level up, at `cargoism/uld_heightmap_rl/`
+— outside this repository, since checkpoint binaries are versioned
+separately from source.
 
-1. **`good-data-generator/`** — generate synthetic `{ulds, packages, metadata}.csv` instances.
-2. **`h1_h2_cargo/`** — solve instances with the greedy heuristic pipeline; produces baseline assignments and acts as the label source for IL.
-3. **`good-il-over-greedy/`** — train a TransformerClusterer to imitate the greedy heuristic's assignments.
-4. **`rl_fineuning/`** — fine-tune the IL checkpoint with RL (policy gradient over packing cost) to improve past the heuristic.
+## The path to the final result
 
----
+1. **Data generation** (`good-data-generator/`) produces synthetic ULD/
+   package instances with controllable fill ratios and Priority/Economy
+   mix, used throughout for training and generalization testing.
+2. **Heuristic baseline** (`h1_h2_cargo/`) — a hand-tuned greedy pipeline
+   (ULD partitioning, binary-search economy split, extreme-point packing)
+   used both as a standalone solver and as the initial label source for
+   imitation learning.
+3. **Imitation learning → RL fine-tuning** (`good-il-over-greedy(c)/`,
+   `rl_fineuning_over_il/`, `model_b(c)/`, `rl_over_il_h1h2/`) — a
+   sequence of iterations training a Transformer to imitate, then improve
+   past, the heuristic baseline, progressively adding K-awareness,
+   3D-placement integration, and a dedicated RL placement policy
+   (`rl_packer/`).
+4. **Production research environment** (`ga_cargo_packing/`,
+   `gnn_economy_selector/`) — where the final architecture took shape: a
+   trained Priority Clusterer, a 5-way best-of-N packer ensemble
+   (including the trained RL placement policy), a local search over
+   Economy package assignment with real geometric evaluation at every
+   step, and — the single largest lever found — a full geometric
+   candidate-generation rewrite (Empty Maximal Space decomposition)
+   fixing a structural bottleneck shared by every earlier packing
+   strategy. `ga_cargo_packing/versions/` documents the complete training
+   lineage of the Priority Clusterer, including abandoned branches, with
+   an explanation of why each was superseded.
+5. **Three final, independently packaged deliverables** — Cherry, Eclipse,
+   and Halley — each isolating one trained model's real, measured
+   contribution against a shared baseline pipeline.
+6. **External validation** — the final pipeline was benchmarked against a
+   published academic online-3D-bin-packing model
+   (`Online-3D-BPP-DRL`, AAAI 2021) on identical terms, and separately
+   compared against an independent team's non-AI solution to the same
+   problem statement (Genetic Algorithm clustering + a commercial 3D
+   packing API), documented in the sibling `online-3d-bpp-benchmark/`
+   folder.
 
-## `good-data-generator/`
+## Key technical findings
 
-Generates synthetic ULD/package instances with controllable volume/weight fill ratios and priority-vs-economy package mix.
+- **Candidate-generation geometry, not model sophistication, was the
+  single biggest lever.** Every packing strategy — trained and
+  heuristic alike — originally generated placement candidates from
+  corner-adjacent points of already-placed boxes only, structurally
+  missing valid placements in gaps that don't touch an existing box's
+  corner. Replacing this with a complete empty-space decomposition
+  improved every strategy by 200–2,000 points before any model changes.
+- **Reinforcement learning on the package-selection side consistently
+  underperformed a hand-tuned formula** across every configuration tested
+  (single-instance RL/GRPO, multi-instance generalized GRPO, IL-warm-start
+  GRPO fine-tuning) — diagnosed as a genuinely jagged, discontinuous cost
+  landscape rather than a tuning failure, and corroborated independently
+  by a separate team's report of the same finding on the same problem
+  statement.
+- **The RL 3D placement policy (Eclipse) has a real, measured, positive
+  contribution** — +339 points by controlled ablation (remove it from the
+  ensemble, re-run, compare) — the clearest positive AI result in the
+  project outside of Cherry's own model.
+- **A "centrifuging" compaction technique** (slide placed boxes toward
+  one corner to consolidate fragmented free space) was investigated in
+  depth: mechanically valid and genuinely effective in isolation, of
+  negligible value once naively added to an already-strong ensemble, and
+  ultimately real and generalizable once correctly targeted — an evict
+  → compact → refill move, screened by a trained model rather than
+  exhaustive search. This became Cherry.
 
-```
-good-data-generator/
-├── src/
-│   ├── config.py      — dimension/weight pools, target ratios, instance-size bounds
-│   ├── generators.py  — generate_ulds, generate_packages, generate_instance, generate_dataset
-│   ├── sampling.py    — dimension/weight pools and scaling helpers
-│   └── summary.py     — dataset-level summary statistics
-├── notebooks/
-│   ├── 01_setup.ipynb
-│   ├── 02_generate.ipynb
-│   └── 03_summary.ipynb
-└── requirements.txt
-```
+## Project history
 
-Each instance independently samples ULD dimensions/weight limits, then generates Priority and Economy package pools scaled so the overall volume/weight fill ratio and the priority share both land near configured targets. Output per instance: `<tag>_ulds.csv`, `<tag>_packages.csv`, plus a dataset-level `metadata.csv`.
+The repository grew through several complete pipeline iterations before
+arriving at the current architecture. Each earlier stage remains in the
+repository, unmodified, as a record of what was tried:
 
-## `h1_h2_cargo/`
+- **`good-data-generator/`** — the synthetic instance generator, used
+  unchanged from the earliest iteration through to the final one.
+- **`h1_h2_cargo/`** — the original heuristic baseline: ULD partitioning,
+  an H1-scored binary-search split of Economy packages, extreme-point
+  greedy packing, and an H2-scored retroactive fill pass. Still used as a
+  labelling source and a reference packer.
+- **`good-il-over-greedy(c)/`** — the first learned model, trained purely
+  to imitate `h1_h2_cargo`'s assignments.
+- **`rl_fineuning_over_il/`** — the first attempt at improving past the
+  imitation-learned checkpoint with policy-gradient RL.
+- **`model_b(c)/`** — a from-scratch learned assignment policy and
+  environment, exploring a different action/state representation from
+  the IL-then-RL line.
+- **`rl_over_il_h1h2/`** — RL fine-tuning integrated directly with the
+  H1/H2 heuristic packer, the immediate predecessor to the final
+  production environment.
+- **`rl_packer/`** — the 3D placement-policy component (geometry,
+  environment, actor-critic network) developed alongside the above and
+  ultimately shared by every later packer ensemble, including Eclipse's.
+- **`common/`** — evaluation and comparison utilities used across the
+  above iterations to keep results comparable as the architecture changed.
 
-Greedy heuristic baseline and reference packing engine, used both as a standalone solver.
-
-```
-h1_h2_cargo/
-├── geometry.py            — Package/ULD/PlacedBox primitives, coordinate conventions
-├── extreme_points.py      — checkpoint/rollback extreme-point tracker for fast placement search
-├── uld_partition.py       — Step 1: partitions ULDs into a priority bucket and an "other" bucket
-├── h1_heuristic.py        — economy package scorer feeding the binary-search split
-├── binary_search_split.py — splits economy packages into Set 1 / Set 2 via trial packing
-├── selector.py            — candidate placement generator and scorer
-├── greedy_pack.py         — single-pass greedy placer
-├── h2_heuristic.py        — leftover economy package scorer for retroactive allocation
-├── greedy_pipeline.py     — orchestrates partition → split → pack → retroactive H2 fill
-├── dataset_io.py          — reads the cargo dataset layout (toy/generated splits, ULD catalogue)
-├── run_greedy.py          — CLI batch runner: `python run_greedy.py --data-root data --split <split> --out <dir>`
-├── run_dataset.py         — parallel batch runner (ProcessPoolExecutor) over a full split
-└── k_results.csv          — per-K result summary
-```
-
-Pipeline (priority packages always packed first, economy packages split and scored by H1/H2 so high-value/expensive-to-delay items are placed earliest): `uld_partition` → `binary_search_split` (H1-scored) → `greedy_pack` → retroactive `h2_heuristic` fill of leftovers.
-
-## `good-il-over-greedy/`
-
-Imitation-learning Transformer that learns to reproduce the greedy heuristic's package→ULD assignments, providing a warm-start checkpoint for RL.
-
-```
-good-il-over-greedy/
-├── src/
-│   ├── config.py       — architecture dims (checkpoint-shape-defining — don't change post-training), training hyperparameters
-│   ├── model.py         — TransformerClusterer architecture
-│   ├── data_utils.py    — ClusteringDataset, collate_fn, build_tensors, chunking
-│   ├── labeller.py       — Labeller strategy pattern; GreedyLabeller wraps the h1_h2_cargo heuristic for training labels
-│   ├── losses.py         — capacity_violation_penalty
-│   ├── inference.py      — chunked inference for instances of any size
-│   └── train_il.py       — train_il()
-├── notebooks/
-│   ├── 01_setup.ipynb
-│   ├── 02_train.ipynb
-│   └── 03_evaluate.ipynb
-└── requirements.txt
-```
-
-`Labeller` is a strategy pattern — swap in a different heuristic by subclassing `Labeller` and passing it to `ClusteringDataset()` without touching the model or training loop. `inference.py`'s chunked inference is safe to call unconditionally, including for instances within the model's normal capacity.
-
-## `rl_fineuning_over_il/`
-
-Reinforcement learning fine-tuning of the IL Transformer checkpoint.
-
-```
-rl_fineuning_over_il/
-├── src/
-│   ├── config.py       — all hyperparameters and constants
-│   ├── model.py        — TransformerClusterer architecture
-│   ├── data_utils.py   — feature extraction, build_tensors, chunking, IL sampling
-│   ├── packer.py       — EPI and py3dbp 3-D bin-packing strategies
-│   ├── reward.py       — compute_packing_cost, capacity-violation penalty
-│   └── train_rl.py     — train_rl(), rl_sample_actions_safe(), rl_assign_argmax_safe()
-├── notebooks/
-│   ├── 01_setup.ipynb  — imports, path config, device setup
-│   ├── 02_train.ipynb  — load IL weights, K-value map, call train_rl()
-│   └── 03_evaluate.ipynb — argmax inference, RL vs IL comparison, visualization
-└── requirements.txt
-```
-
-### Prerequisites
-
-1. Train the IL model first (`good-il-over-greedy/`) — the RL loop requires the resulting IL checkpoint (`transformer_imitation_v2.pt`).
-2. Prepare data: `good_data/synthetic_train/` and `good_data/synthetic_test/` with `metadata.csv`, `<tag>_ulds.csv`, and `<tag>_packages.csv` files (e.g. from `good-data-generator/`).
-
-### Quick start
-
-```bash
-pip install -r requirements.txt
-```
-
-Then run the notebooks in order:
-
-1. `notebooks/01_setup.ipynb` — set `DATA_DIR` and `CLUSTER_DIR`
-2. `notebooks/02_train.ipynb` — runs `train_rl()`; saves checkpoint to `CLUSTER_DIR`
-3. `notebooks/03_evaluate.ipynb` — loads best checkpoint, plots RL vs IL cost per K
-
-### Key design decisions
-
-**Chunking** (`src/data_utils.py`, `src/train_rl.py`): The model has fixed-shape inputs baked into the IL checkpoint. Instances with more than `MAX_N_PKGS` packages or `MAX_N_ULDS` ULDs are split into chunks instead of being truncated or crashing.
-
-**Capacity penalty** (`src/reward.py`): `model.sample_actions()` hard-masks weight/volume before sampling, which prevents the network from ever seeing a gradient for preferring overflowing ULDs. `rl_capacity_violation_penalty()` adds a differentiable penalty computed from raw pre-mask logits so the policy is actively pushed toward respecting capacity.
-
-**K-value spread penalty**: Each training instance is assigned one of `K ∈ {100, 500, 1000, 3000, 5000}`. The cost function is `delay_cost + K × n_priority_ulds`, so the model learns a policy that generalizes across different trade-offs between delay and spread.
-
-**Packer strategies**: `EPIPacker` (built-in, no extra deps) and `pd3Packer` (requires `py3dbp`). Swap via the `packer=` argument to `train_rl()`.
+The final architecture — a trained Priority Clusterer, a best-of-N packer
+ensemble built around `rl_packer`'s placement policy, a real-geometry
+local search, and the Cherry/Eclipse/Halley model comparisons — lives in
+`ga_cargo_packing/` and `gnn_economy_selector/`.
 
 ## License
 

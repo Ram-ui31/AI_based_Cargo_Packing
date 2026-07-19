@@ -1,0 +1,470 @@
+/Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/site-packages/torch/nn/modules/transformer.py:392: UserWarning: enable_nested_tensor is True, but self.use_nested_tensor is False because encoder_layer.norm_first was True
+  warnings.warn(
+Device        : mps
+Data root     : /Users/ramupadhyay/Desktop/good_data
+Old IL weights: /Users/ramupadhyay/Desktop/ga_cargo_packing/checkpoints/il/transformer_imitation_ga.pt
+Save dir      : /Users/ramupadhyay/Desktop/ga_cargo_packing/checkpoints/rl_ppo
+Grafted k_proj + output_head K-column (zero-init) onto old IL checkpoint: epoch=233, val_loss=0.7602019447546738
+Assigned K values to 1000 instances.
+Packer      : rl_packer (/Users/ramupadhyay/Desktop/cargoism/uld_heightmap_rl/checkpoints/rl_packer/placement_policy.pt)
+Train pool: 811 instances (189 oversized instances skipped -- chunking not supported in the PPO path).
+Warming up per-K baseline for K values: [100, 500, 1000, 3000, 5000]
+  K=100: baseline=16787.4 +/- 6492.3 (from 8 rollouts)
+  K=500: baseline=15266.5 +/- 6742.1 (from 8 rollouts)
+  K=1000: baseline=22586.0 +/- 7007.4 (from 8 rollouts)
+  K=3000: baseline=24757.2 +/- 7361.1 (from 8 rollouts)
+  K=5000: baseline=26557.2 +/- 6569.0 (from 8 rollouts)
+    Checkpoint saved (best val_rl_cost = 15740.4)
+
+────────────────────────────────────────────────────────────────────────
+  Update   10  [                              ] 10/400  patience 0/12
+────────────────────────────────────────────────────────────────────────
+  REWARD
+    mean_cost      :   16664.12
+    mean_advantage :    +0.3750
+  LOSS
+    policy_loss    :   -0.23943
+    entropy_loss   :   -9.22487
+    capacity_loss  :    0.00000
+    hinge_loss     :    0.70106
+    spread_loss    :    4.92248
+    total_loss     :   -3.84076
+  VALIDATION
+    val_rl_cost    :   15740.40
+  PACKING
+    priority_dropped :     0.00
+    economy_dropped  :    79.25
+────────────────────────────────────────────────────────────────────────
+
+────────────────────────────────────────────────────────────────────────
+  Update   20  [█                             ] 20/400  patience 1/12
+────────────────────────────────────────────────────────────────────────
+  REWARD
+    mean_cost      :   15073.25
+    mean_advantage :    +0.0933
+  LOSS
+    policy_loss    :    0.06956
+    entropy_loss   :  -12.98745
+    capacity_loss  :    0.00000
+    hinge_loss     :    0.18662
+    spread_loss    :    3.06443
+    total_loss     :   -9.66684
+  VALIDATION
+    val_rl_cost    :   16756.30
+  PACKING
+    priority_dropped :     0.00
+    economy_dropped  :   101.50
+────────────────────────────────────────────────────────────────────────
+
+────────────────────────────────────────────────────────────────────────
+  Update   30  [██                            ] 30/400  patience 2/12
+────────────────────────────────────────────────────────────────────────
+  REWARD
+    mean_cost      :   17068.88
+    mean_advantage :    -0.0239
+  LOSS
+    policy_loss    :    0.10292
+    entropy_loss   :  -11.03385
+    capacity_loss  :    0.00000
+    hinge_loss     :    0.15643
+    spread_loss    :    3.29159
+    total_loss     :   -7.48292
+  VALIDATION
+    val_rl_cost    :   17703.92
+  PACKING
+    priority_dropped :     0.00
+    economy_dropped  :    92.25
+────────────────────────────────────────────────────────────────────────
+
+────────────────────────────────────────────────────────────────────────
+  Update   40  [███                           ] 40/400  patience 3/12
+────────────────────────────────────────────────────────────────────────
+  REWARD
+    mean_cost      :   18449.38
+    mean_advantage :    -0.1898
+  LOSS
+    policy_loss    :    0.61448
+    entropy_loss   :  -10.83908
+    capacity_loss  :    0.00000
+    hinge_loss     :    0.15257
+    spread_loss    :    5.17933
+    total_loss     :   -4.89270
+  VALIDATION
+    val_rl_cost    :   16988.50
+  PACKING
+    priority_dropped :     0.00
+    economy_dropped  :    94.88
+────────────────────────────────────────────────────────────────────────
+
+────────────────────────────────────────────────────────────────────────
+  Update   50  [███                           ] 50/400  patience 4/12
+────────────────────────────────────────────────────────────────────────
+  REWARD
+    mean_cost      :   20474.12
+    mean_advantage :    -0.0693
+  LOSS
+    policy_loss    :    0.22557
+    entropy_loss   :  -12.79938
+    capacity_loss  :    0.00000
+    hinge_loss     :    0.11416
+    spread_loss    :    5.61528
+    total_loss     :   -6.84437
+  VALIDATION
+    val_rl_cost    :   17086.35
+  PACKING
+    priority_dropped :     0.00
+    economy_dropped  :    97.00
+────────────────────────────────────────────────────────────────────────
+
+────────────────────────────────────────────────────────────────────────
+  Update   60  [████                          ] 60/400  patience 5/12
+────────────────────────────────────────────────────────────────────────
+  REWARD
+    mean_cost      :   16654.50
+    mean_advantage :    +0.0464
+  LOSS
+    policy_loss    :   -0.18054
+    entropy_loss   :  -13.18656
+    capacity_loss  :    0.00000
+    hinge_loss     :    0.17741
+    spread_loss    :    4.32976
+    total_loss     :   -8.85993
+  VALIDATION
+    val_rl_cost    :   16877.67
+  PACKING
+    priority_dropped :     0.00
+    economy_dropped  :    96.00
+────────────────────────────────────────────────────────────────────────
+
+────────────────────────────────────────────────────────────────────────
+  Update   70  [█████                         ] 70/400  patience 6/12
+────────────────────────────────────────────────────────────────────────
+  REWARD
+    mean_cost      :   23757.50
+    mean_advantage :    -0.8665
+  LOSS
+    policy_loss    :    0.71499
+    entropy_loss   :  -16.11407
+    capacity_loss  :    0.00000
+    hinge_loss     :    0.09596
+    spread_loss    :    4.87256
+    total_loss     :  -10.43057
+  VALIDATION
+    val_rl_cost    :   15832.30
+  PACKING
+    priority_dropped :     0.00
+    economy_dropped  :   117.25
+────────────────────────────────────────────────────────────────────────
+
+────────────────────────────────────────────────────────────────────────
+  Update   80  [██████                        ] 80/400  patience 7/12
+────────────────────────────────────────────────────────────────────────
+  REWARD
+    mean_cost      :   20353.75
+    mean_advantage :    -0.3769
+  LOSS
+    policy_loss    :    0.20959
+    entropy_loss   :  -13.91559
+    capacity_loss  :    0.00000
+    hinge_loss     :    0.12421
+    spread_loss    :    4.46130
+    total_loss     :   -9.12049
+  VALIDATION
+    val_rl_cost    :   18932.92
+  PACKING
+    priority_dropped :     0.00
+    economy_dropped  :   109.38
+────────────────────────────────────────────────────────────────────────
+
+────────────────────────────────────────────────────────────────────────
+  Update   90  [██████                        ] 90/400  patience 8/12
+────────────────────────────────────────────────────────────────────────
+  REWARD
+    mean_cost      :   21116.88
+    mean_advantage :    -0.3816
+  LOSS
+    policy_loss    :    0.37966
+    entropy_loss   :  -15.41021
+    capacity_loss  :    0.00000
+    hinge_loss     :    0.08980
+    spread_loss    :    3.46167
+    total_loss     :  -11.47907
+  VALIDATION
+    val_rl_cost    :   17799.92
+  PACKING
+    priority_dropped :     0.00
+    economy_dropped  :   118.25
+────────────────────────────────────────────────────────────────────────
+    Checkpoint saved (best val_rl_cost = 15572.2)
+
+────────────────────────────────────────────────────────────────────────
+  Update  100  [███████                       ] 100/400  patience 0/12
+────────────────────────────────────────────────────────────────────────
+  REWARD
+    mean_cost      :   13955.12
+    mean_advantage :    +0.2821
+  LOSS
+    policy_loss    :   -0.24389
+    entropy_loss   :  -10.27353
+    capacity_loss  :    0.00000
+    hinge_loss     :    0.10755
+    spread_loss    :    4.02125
+    total_loss     :   -6.38861
+  VALIDATION
+    val_rl_cost    :   15572.23
+  PACKING
+    priority_dropped :     0.00
+    economy_dropped  :    87.50
+────────────────────────────────────────────────────────────────────────
+
+────────────────────────────────────────────────────────────────────────
+  Update  110  [████████                      ] 110/400  patience 1/12
+────────────────────────────────────────────────────────────────────────
+  REWARD
+    mean_cost      :   18506.88
+    mean_advantage :    +0.0224
+  LOSS
+    policy_loss    :   -0.05020
+    entropy_loss   :  -11.53237
+    capacity_loss  :    0.00000
+    hinge_loss     :    0.06849
+    spread_loss    :    4.87499
+    total_loss     :   -6.63909
+  VALIDATION
+    val_rl_cost    :   17015.33
+  PACKING
+    priority_dropped :     0.00
+    economy_dropped  :    97.75
+────────────────────────────────────────────────────────────────────────
+
+────────────────────────────────────────────────────────────────────────
+  Update  120  [█████████                     ] 120/400  patience 2/12
+────────────────────────────────────────────────────────────────────────
+  REWARD
+    mean_cost      :   22125.75
+    mean_advantage :    -0.4282
+  LOSS
+    policy_loss    :    4.45511
+    entropy_loss   :  -14.15575
+    capacity_loss  :    0.00000
+    hinge_loss     :    0.10491
+    spread_loss    :    5.89413
+    total_loss     :   -3.70160
+  VALIDATION
+    val_rl_cost    :   16777.42
+  PACKING
+    priority_dropped :     0.00
+    economy_dropped  :   105.38
+────────────────────────────────────────────────────────────────────────
+
+────────────────────────────────────────────────────────────────────────
+  Update  130  [█████████                     ] 130/400  patience 3/12
+────────────────────────────────────────────────────────────────────────
+  REWARD
+    mean_cost      :   14528.00
+    mean_advantage :    +0.5268
+  LOSS
+    policy_loss    :   -0.36639
+    entropy_loss   :   -9.11958
+    capacity_loss  :    0.00000
+    hinge_loss     :    0.09226
+    spread_loss    :    3.87081
+    total_loss     :   -5.52290
+  VALIDATION
+    val_rl_cost    :   17829.00
+  PACKING
+    priority_dropped :     0.00
+    economy_dropped  :    78.38
+────────────────────────────────────────────────────────────────────────
+
+────────────────────────────────────────────────────────────────────────
+  Update  140  [██████████                    ] 140/400  patience 4/12
+────────────────────────────────────────────────────────────────────────
+  REWARD
+    mean_cost      :   17071.75
+    mean_advantage :    +0.0242
+  LOSS
+    policy_loss    :    0.12555
+    entropy_loss   :  -11.77740
+    capacity_loss  :    0.00000
+    hinge_loss     :    0.11907
+    spread_loss    :    4.15217
+    total_loss     :   -7.38061
+  VALIDATION
+    val_rl_cost    :   16107.38
+  PACKING
+    priority_dropped :     0.00
+    economy_dropped  :    92.88
+────────────────────────────────────────────────────────────────────────
+
+────────────────────────────────────────────────────────────────────────
+  Update  150  [███████████                   ] 150/400  patience 5/12
+────────────────────────────────────────────────────────────────────────
+  REWARD
+    mean_cost      :   17751.88
+    mean_advantage :    +0.2623
+  LOSS
+    policy_loss    :   -0.12185
+    entropy_loss   :   -9.95722
+    capacity_loss  :    0.00000
+    hinge_loss     :    0.07626
+    spread_loss    :    5.15379
+    total_loss     :   -4.84901
+  VALIDATION
+    val_rl_cost    :   18533.28
+  PACKING
+    priority_dropped :     0.00
+    economy_dropped  :    82.75
+────────────────────────────────────────────────────────────────────────
+
+────────────────────────────────────────────────────────────────────────
+  Update  160  [████████████                  ] 160/400  patience 6/12
+────────────────────────────────────────────────────────────────────────
+  REWARD
+    mean_cost      :   22737.62
+    mean_advantage :    -0.6119
+  LOSS
+    policy_loss    :    0.50816
+    entropy_loss   :  -15.13581
+    capacity_loss  :    0.00000
+    hinge_loss     :    0.12192
+    spread_loss    :    5.74041
+    total_loss     :   -8.76533
+  VALIDATION
+    val_rl_cost    :   17083.42
+  PACKING
+    priority_dropped :     0.00
+    economy_dropped  :   111.25
+────────────────────────────────────────────────────────────────────────
+
+────────────────────────────────────────────────────────────────────────
+  Update  170  [████████████                  ] 170/400  patience 7/12
+────────────────────────────────────────────────────────────────────────
+  REWARD
+    mean_cost      :   13247.12
+    mean_advantage :    +0.5143
+  LOSS
+    policy_loss    :   -0.34087
+    entropy_loss   :   -8.86804
+    capacity_loss  :    0.00000
+    hinge_loss     :    0.10696
+    spread_loss    :    4.15078
+    total_loss     :   -4.95118
+  VALIDATION
+    val_rl_cost    :   15891.50
+  PACKING
+    priority_dropped :     0.00
+    economy_dropped  :    75.38
+────────────────────────────────────────────────────────────────────────
+
+────────────────────────────────────────────────────────────────────────
+  Update  180  [█████████████                 ] 180/400  patience 8/12
+────────────────────────────────────────────────────────────────────────
+  REWARD
+    mean_cost      :   17782.12
+    mean_advantage :    -0.1116
+  LOSS
+    policy_loss    :    0.17348
+    entropy_loss   :  -12.70036
+    capacity_loss  :    0.00000
+    hinge_loss     :    0.08871
+    spread_loss    :    4.00048
+    total_loss     :   -8.43770
+  VALIDATION
+    val_rl_cost    :   16325.48
+  PACKING
+    priority_dropped :     0.00
+    economy_dropped  :   102.00
+────────────────────────────────────────────────────────────────────────
+
+────────────────────────────────────────────────────────────────────────
+  Update  190  [██████████████                ] 190/400  patience 9/12
+────────────────────────────────────────────────────────────────────────
+  REWARD
+    mean_cost      :   17347.62
+    mean_advantage :    -0.1759
+  LOSS
+    policy_loss    :    0.42530
+    entropy_loss   :  -11.55006
+    capacity_loss  :    0.00000
+    hinge_loss     :    0.19157
+    spread_loss    :    4.63748
+    total_loss     :   -6.29571
+  VALIDATION
+    val_rl_cost    :   17663.35
+  PACKING
+    priority_dropped :     0.00
+    economy_dropped  :    94.62
+────────────────────────────────────────────────────────────────────────
+
+────────────────────────────────────────────────────────────────────────
+  Update  200  [███████████████               ] 200/400  patience 10/12
+────────────────────────────────────────────────────────────────────────
+  REWARD
+    mean_cost      :   19691.88
+    mean_advantage :    -0.4590
+  LOSS
+    policy_loss    :    0.36252
+    entropy_loss   :  -14.43843
+    capacity_loss  :    0.00000
+    hinge_loss     :    0.08191
+    spread_loss    :    5.02190
+    total_loss     :   -8.97211
+  VALIDATION
+    val_rl_cost    :   16538.95
+  PACKING
+    priority_dropped :     0.00
+    economy_dropped  :   114.50
+────────────────────────────────────────────────────────────────────────
+
+────────────────────────────────────────────────────────────────────────
+  Update  210  [███████████████               ] 210/400  patience 11/12
+────────────────────────────────────────────────────────────────────────
+  REWARD
+    mean_cost      :   16806.88
+    mean_advantage :    -0.0461
+  LOSS
+    policy_loss    :    0.17893
+    entropy_loss   :  -12.44913
+    capacity_loss  :    0.00000
+    hinge_loss     :    0.10174
+    spread_loss    :    3.58910
+    total_loss     :   -8.57936
+  VALIDATION
+    val_rl_cost    :   16645.10
+  PACKING
+    priority_dropped :     0.00
+    economy_dropped  :   103.50
+────────────────────────────────────────────────────────────────────────
+
+────────────────────────────────────────────────────────────────────────
+  Update  220  [████████████████              ] 220/400  patience 12/12
+────────────────────────────────────────────────────────────────────────
+  REWARD
+    mean_cost      :   13888.88
+    mean_advantage :    -0.1317
+  LOSS
+    policy_loss    :    0.27748
+    entropy_loss   :  -11.91137
+    capacity_loss  :    0.00000
+    hinge_loss     :    0.05513
+    spread_loss    :    3.51680
+    total_loss     :   -8.06196
+  VALIDATION
+    val_rl_cost    :   16196.38
+  PACKING
+    priority_dropped :     0.00
+    economy_dropped  :    90.38
+────────────────────────────────────────────────────────────────────────
+
+  [Early Stop] No val improvement for 12 checks.
+
+PPO training complete. Best val cost: 15572.2
+     update  reward/mean_cost  ...  pack/economy_dropped  val/rl_cost
+215     216         17535.625  ...                84.375          NaN
+216     217         19570.375  ...                84.875          NaN
+217     218         13900.875  ...                89.000          NaN
+218     219         18650.625  ...                97.125          NaN
+219     220         13888.875  ...                90.375    16196.375
+
+[5 rows x 12 columns]

@@ -1,0 +1,3 @@
+# Large training-data file, regenerate locally with:
+#   python src/generate_centrifuge_data.py
+data/centrifuge_train.jsonl
