@@ -1,0 +1,8638 @@
+{
+  "source_file": "/Users/ramupadhyay/Downloads/input.csv",
+  "checkpoint": "checkpoints/rl_ppo_contrastive_v7/transformer_rl_ppo_contrastive.pt",
+  "k_value": 5000.0,
+  "summary": {
+    "n_ulds": 6,
+    "n_packages": 400,
+    "n_priority": 103,
+    "n_economy": 297,
+    "total_cost": 30475.0,
+    "spread_cost": 15000.0,
+    "delay_cost": 15475.0,
+    "spread_n_priority_ulds": 3,
+    "priority_dropped": 0,
+    "economy_dropped": 167
+  },
+  "ulds": [
+    {
+      "uld_id": "U1",
+      "dimensions": {
+        "length": 224.0,
+        "width": 318.0,
+        "height": 162.0
+      },
+      "weight_limit": 2500.0
+    },
+    {
+      "uld_id": "U2",
+      "dimensions": {
+        "length": 224.0,
+        "width": 318.0,
+        "height": 162.0
+      },
+      "weight_limit": 2500.0
+    },
+    {
+      "uld_id": "U3",
+      "dimensions": {
+        "length": 244.0,
+        "width": 318.0,
+        "height": 244.0
+      },
+      "weight_limit": 2800.0
+    },
+    {
+      "uld_id": "U4",
+      "dimensions": {
+        "length": 244.0,
+        "width": 318.0,
+        "height": 244.0
+      },
+      "weight_limit": 2800.0
+    },
+    {
+      "uld_id": "U5",
+      "dimensions": {
+        "length": 244.0,
+        "width": 318.0,
+        "height": 285.0
+      },
+      "weight_limit": 3500.0
+    },
+    {
+      "uld_id": "U6",
+      "dimensions": {
+        "length": 244.0,
+        "width": 318.0,
+        "height": 285.0
+      },
+      "weight_limit": 3500.0
+    }
+  ],
+  "packages": [
+    {
+      "package_id": "P-1",
+      "type": "Economy",
+      "assigned_uld_id": "U1",
+      "placed": true,
+      "reason": "placed",
+      "dimensions": {
+        "length": 99.0,
+        "width": 53.0,
+        "height": 55.0
+      },
+      "weight": 61.0,
+      "delay_cost": 176.0,
+      "coordinates": {
+        "leftmost_downmost": {
+          "x": 71,
+          "y": 0,
+          "z": 0
+        },
+        "rightmost_topmost": {
+          "x": 170,
+          "y": 55,
+          "z": 53
+        }
+      }
+    },
+    {
+      "package_id": "P-123",
+      "type": "Economy",
+      "assigned_uld_id": "U1",
+      "placed": true,
+      "reason": "placed",
+      "dimensions": {
+        "length": 43.0,
+        "width": 62.0,
+        "height": 40.0
+      },
+      "weight": 7.0,
+      "delay_cost": 75.0,
+      "coordinates": {
+        "leftmost_downmost": {
+          "x": 85,
+          "y": 275,
+          "z": 44
+        },
+        "rightmost_topmost": {
+          "x": 147,
+          "y": 318,
+          "z": 84
+        }
+      }
+    },
+    {
+      "package_id": "P-130",
+      "type": "Economy",
+      "assigned_uld_id": "U1",
+      "placed": true,
+      "reason": "placed",
+      "dimensions": {
+        "length": 78.0,
+        "width": 45.0,
+        "height": 40.0
+      },
+      "weight": 18.0,
+      "delay_cost": 79.0,
+      "coordinates": {
+        "leftmost_downmost": {
+          "x": 85,
+          "y": 275,
+          "z": 84
+        },
+        "rightmost_topmost": {
+          "x": 130,
+          "y": 315,
+          "z": 162
+        }
+      }
+    },
+    {
+      "package_id": "P-14",
+      "type": "Economy",
+      "assigned_uld_id": "U1",
+      "placed": true,
+      "reason": "placed",
+      "dimensions": {
+        "length": 45.0,
+        "width": 46.0,
+        "height": 81.0
+      },
+      "weight": 27.0,
+      "delay_cost": 68.0,
+      "coordinates": {
+        "leftmost_downmost": {
+          "x": 143,
+          "y": 190,
+          "z": 0
+        },
+        "rightmost_topmost": {
+          "x": 224,
+          "y": 236,
+          "z": 45
+        }
+      }
+    },
+    {
+      "package_id": "P-152",
+      "type": "Economy",
+      "assigned_uld_id": "U1",
+      "placed": true,
+      "reason": "placed",
+      "dimensions": {
+        "length": 67.0,
+        "width": 57.0,
+        "height": 49.0
+      },
+      "weight": 39.0,
+      "delay_cost": 73.0,
+      "coordinates": {
+        "leftmost_downmost": {
+          "x": 170,
+          "y": 128,
+          "z": 54
+        },
+        "rightmost_topmost": {
+          "x": 219,
+          "y": 185,
+          "z": 121
+        }
+      }
+    },
+    {
+      "package_id": "P-167",
+      "type": "Economy",
+      "assigned_uld_id": "U1",
+      "placed": true,
+      "reason": "placed",
+      "dimensions": {
+        "length": 47.0,
+        "width": 50.0,
+        "height": 100.0
+      },
+      "weight": 33.0,
+      "delay_cost": 124.0,
+      "coordinates": {
+        "leftmost_downmost": {
+          "x": 0,
+          "y": 82,
+          "z": 42
+        },
+        "rightmost_topmost": {
+          "x": 50,
+          "y": 182,
+          "z": 89
+        }
+      }
+    },
+    {
+      "package_id": "P-171",
+      "type": "Economy",
+      "assigned_uld_id": "U1",
+      "placed": true,
+      "reason": "placed",
+      "dimensions": {
+        "length": 50.0,
+        "width": 55.0,
+        "height": 93.0
+      },
+      "weight": 55.0,
+      "delay_cost": 110.0,
+      "coordinates": {
+        "leftmost_downmost": {
+          "x": 0,
+          "y": 182,
+          "z": 102
+        },
+        "rightmost_topmost": {
+          "x": 55,
+          "y": 275,
+          "z": 152
+        }
+      }
+    },
+    {
+      "package_id": "P-172",
+      "type": "Economy",
+      "assigned_uld_id": "U1",
+      "placed": true,
+      "reason": "placed",
+      "dimensions": {
+        "length": 51.0,
+        "width": 71.0,
+        "height": 76.0
+      },
+      "weight": 22.0,
+      "delay_cost": 112.0,
+      "coordinates": {
+        "leftmost_downmost": {
+          "x": 143,
+          "y": 114,
+          "z": 0
+        },
+        "rightmost_topmost": {
+          "x": 214,
+          "y": 190,
+          "z": 51
+        }
+      }
+    },
+    {
+      "package_id": "P-177",
+      "type": "Economy",
+      "assigned_uld_id": "U1",
+      "placed": true,
+      "reason": "placed",
+      "dimensions": {
+        "length": 44.0,
+        "width": 41.0,
+        "height": 99.0
+      },
+      "weight": 17.0,
+      "delay_cost": 77.0,
+      "coordinates": {
+        "leftmost_downmost": {
+          "x": 170,
+          "y": 0,
+          "z": 121
+        },
+        "rightmost_topmost": {
+          "x": 214,
+          "y": 99,
+          "z": 162
+        }
+      }
+    },
+    {
+      "package_id": "P-185",
+      "type": "Economy",
+      "assigned_uld_id": "U1",
+      "placed": true,
+      "reason": "placed",
+      "dimensions": {
+        "length": 42.0,
+        "width": 67.0,
+        "height": 100.0
+      },
+      "weight": 52.0,
+      "delay_cost": 133.0,
+      "coordinates": {
+        "leftmost_downmost": {
+          "x": 0,
+          "y": 82,
+          "z": 0
+        },
+        "rightmost_topmost": {
+          "x": 67,
+          "y": 182,
+          "z": 42
+        }
+      }
+    },
+    {
+      "package_id": "P-202",
+      "type": "Economy",
+      "assigned_uld_id": "U1",
+      "placed": true,
+      "reason": "placed",
+      "dimensions": {
+        "length": 52.0,
+        "width": 94.0,
+        "height": 40.0
+      },
+      "weight": 57.0,
+      "delay_cost": 105.0,
+      "coordinates": {
+        "leftmost_downmost": {
+          "x": 170,
+          "y": 275,
+          "z": 0
+        },
+        "rightmost_topmost": {
+          "x": 222,
+          "y": 315,
+          "z": 94
+        }
+      }
+    },
+    {
+      "package_id": "P-206",
+      "type": "Economy",
+      "assigned_uld_id": "U1",
+      "placed": true,
+      "reason": "placed",
+      "dimensions": {
+        "length": 60.0,
+        "width": 47.0,
+        "height": 41.0
+      },
+      "weight": 29.0,
+      "delay_cost": 85.0,
+      "coordinates": {
+        "leftmost_downmost": {
+          "x": 170,
+          "y": 191,
+          "z": 121
+        },
+        "rightmost_topmost": {
+          "x": 217,
+          "y": 251,
+          "z": 162
+        }
+      }
+    },
+    {
+      "package_id": "P-221",
+      "type": "Economy",
+      "assigned_uld_id": "U1",
+      "placed": true,
+      "reason": "placed",
+      "dimensions": {
+        "length": 68.0,
+        "width": 44.0,
+        "height": 49.0
+      },
+      "weight": 13.0,
+      "delay_cost": 86.0,
+      "coordinates": {
+        "leftmost_downmost": {
+          "x": 126,
+          "y": 156,
+          "z": 55
+        },
+        "rightmost_topmost": {
+          "x": 170,
+          "y": 224,
+          "z": 104
+        }
+      }
+    },
+    {
+      "package_id": "P-248",
+      "type": "Economy",
+      "assigned_uld_id": "U1",
+      "placed": true,
+      "reason": "placed",
+      "dimensions": {
+        "length": 77.0,
+        "width": 67.0,
+        "height": 52.0
+      },
+      "weight": 70.0,
+      "delay_cost": 139.0,
+      "coordinates": {
+        "leftmost_downmost": {
+          "x": 170,
+          "y": 51,
+          "z": 54
+        },
+        "rightmost_topmost": {
+          "x": 222,
+          "y": 128,
+          "z": 121
+        }
+      }
+    },
+    {
+      "package_id": "P-25",
+      "type": "Economy",
+      "assigned_uld_id": "U1",
+      "placed": true,
+      "reason": "placed",
+      "dimensions": {
+        "length": 44.0,
+        "width": 77.0,
+        "height": 53.0
+      },
+      "weight": 37.0,
+      "delay_cost": 108.0,
+      "coordinates": {
+        "leftmost_downmost": {
+          "x": 126,
+          "y": 103,
+          "z": 55
+        },
+        "rightmost_topmost": {
+          "x": 170,
+          "y": 156,
+          "z": 132
+        }
+      }
+    },
+    {
+      "package_id": "P-257",
+      "type": "Economy",
+      "assigned_uld_id": "U1",
+      "placed": true,
+      "reason": "placed",
+      "dimensions": {
+        "length": 67.0,
+        "width": 51.0,
+        "height": 54.0
+      },
+      "weight": 40.0,
+      "delay_cost": 103.0,
+      "coordinates": {
+        "leftmost_downmost": {
+          "x": 170,
+          "y": 0,
+          "z": 54
+        },
+        "rightmost_topmost": {
+          "x": 224,
+          "y": 51,
+          "z": 121
+        }
+      }
+    },
+    {
+      "package_id": "P-258",
+      "type": "Economy",
+      "assigned_uld_id": "U1",
+      "placed": true,
+      "reason": "placed",
+      "dimensions": {
+        "length": 71.0,
+        "width": 55.0,
+        "height": 82.0
+      },
+      "weight": 43.0,
+      "delay_cost": 138.0,
+      "coordinates": {
+        "leftmost_downmost": {
+          "x": 0,
+          "y": 0,
+          "z": 0
+        },
+        "rightmost_topmost": {
+          "x": 71,
+          "y": 82,
+          "z": 55
+        }
+      }
+    },
+    {
+      "package_id": "P-26",
+      "type": "Economy",
+      "assigned_uld_id": "U1",
+      "placed": true,
+      "reason": "placed",
+      "dimensions": {
+        "length": 69.0,
+        "width": 56.0,
+        "height": 73.0
+      },
+      "weight": 56.0,
+      "delay_cost": 130.0,
+      "coordinates": {
+        "leftmost_downmost": {
+          "x": 0,
+          "y": 82,
+          "z": 89
+        },
+        "rightmost_topmost": {
+          "x": 56,
+          "y": 151,
+          "z": 162
+        }
+      }
+    },
+    {
+      "package_id": "P-27",
+      "type": "Economy",
+      "assigned_uld_id": "U1",
+      "placed": true,
+      "reason": "placed",
+      "dimensions": {
+        "length": 93.0,
+        "width": 62.0,
+        "height": 49.0
+      },
+      "weight": 18.0,
+      "delay_cost": 122.0,
+      "coordinates": {
+        "leftmost_downmost": {
+          "x": 0,
+          "y": 182,
+          "z": 0
+        },
+        "rightmost_topmost": {
+          "x": 62,
+          "y": 275,
+          "z": 49
+        }
+      }
+    },
+    {
+      "package_id": "P-271",
+      "type": "Economy",
+      "assigned_uld_id": "U1",
+      "placed": true,
+      "reason": "placed",
+      "dimensions": {
+        "length": 41.0,
+        "width": 44.0,
+        "height": 92.0
+      },
+      "weight": 30.0,
+      "delay_cost": 63.0,
+      "coordinates": {
+        "leftmost_downmost": {
+          "x": 170,
+          "y": 99,
+          "z": 121
+        },
+        "rightmost_topmost": {
+          "x": 214,
+          "y": 191,
+          "z": 162
+        }
+      }
+    },
+    {
+      "package_id": "P-272",
+      "type": "Economy",
+      "assigned_uld_id": "U1",
+      "placed": true,
+      "reason": "placed",
+      "dimensions": {
+        "length": 75.0,
+        "width": 64.0,
+        "height": 40.0
+      },
+      "weight": 54.0,
+      "delay_cost": 133.0,
+      "coordinates": {
+        "leftmost_downmost": {
+          "x": 62,
+          "y": 182,
+          "z": 40
+        },
+        "rightmost_topmost": {
+          "x": 126,
+          "y": 257,
+          "z": 80
+        }
+      }
+    },
+    {
+      "package_id": "P-276",
+      "type": "Economy",
+      "assigned_uld_id": "U1",
+      "placed": true,
+      "reason": "placed",
+      "dimensions": {
+        "length": 46.0,
+        "width": 69.0,
+        "height": 62.0
+      },
+      "weight": 29.0,
+      "delay_cost": 70.0,
+      "coordinates": {
+        "leftmost_downmost": {
+          "x": 64,
+          "y": 53,
+          "z": 55
+        },
+        "rightmost_topmost": {
+          "x": 126,
+          "y": 99,
+          "z": 124
+        }
+      }
+    },
+    {
+      "package_id": "P-289",
+      "type": "Economy",
+      "assigned_uld_id": "U1",
+      "placed": true,
+      "reason": "placed",
+      "dimensions": {
+        "length": 70.0,
+        "width": 43.0,
+        "height": 66.0
+      },
+      "weight": 28.0,
+      "delay_cost": 79.0,
+      "coordinates": {
+        "leftmost_downmost": {
+          "x": 0,
+          "y": 275,
+          "z": 74
+        },
+        "rightmost_topmost": {
+          "x": 66,
+          "y": 318,
+          "z": 144
+        }
+      }
+    },
+    {
+      "package_id": "P-29",
+      "type": "Economy",
+      "assigned_uld_id": "U1",
+      "placed": true,
+      "reason": "placed",
+      "dimensions": {
+        "length": 62.0,
+        "width": 86.0,
+        "height": 53.0
+      },
+      "weight": 23.0,
+      "delay_cost": 122.0,
+      "coordinates": {
+        "leftmost_downmost": {
+          "x": 64,
+          "y": 0,
+          "z": 55
+        },
+        "rightmost_topmost": {
+          "x": 126,
+          "y": 53,
+          "z": 141
+        }
+      }
+    },
+    {
+      "package_id": "P-291",
+      "type": "Economy",
+      "assigned_uld_id": "U1",
+      "placed": true,
+      "reason": "placed",
+      "dimensions": {
+        "length": 74.0,
+        "width": 81.0,
+        "height": 40.0
+      },
+      "weight": 42.0,
+      "delay_cost": 124.0,
+      "coordinates": {
+        "leftmost_downmost": {
+          "x": 62,
+          "y": 182,
+          "z": 0
+        },
+        "rightmost_topmost": {
+          "x": 136,
+          "y": 263,
+          "z": 40
+        }
+      }
+    },
+    {
+      "package_id": "P-313",
+      "type": "Economy",
+      "assigned_uld_id": "U1",
+      "placed": true,
+      "reason": "placed",
+      "dimensions": {
+        "length": 91.0,
+        "width": 54.0,
+        "height": 54.0
+      },
+      "weight": 73.0,
+      "delay_cost": 120.0,
+      "coordinates": {
+        "leftmost_downmost": {
+          "x": 170,
+          "y": 0,
+          "z": 0
+        },
+        "rightmost_topmost": {
+          "x": 224,
+          "y": 91,
+          "z": 54
+        }
+      }
+    },
+    {
+      "package_id": "P-317",
+      "type": "Economy",
+      "assigned_uld_id": "U1",
+      "placed": true,
+      "reason": "placed",
+      "dimensions": {
+        "length": 53.0,
+        "width": 86.0,
+        "height": 50.0
+      },
+      "weight": 44.0,
+      "delay_cost": 89.0,
+      "coordinates": {
+        "leftmost_downmost": {
+          "x": 64,
+          "y": 220,
+          "z": 111
+        },
+        "rightmost_topmost": {
+          "x": 150,
+          "y": 273,
+          "z": 161
+        }
+      }
+    },
+    {
+      "package_id": "P-324",
+      "type": "Economy",
+      "assigned_uld_id": "U1",
+      "placed": true,
+      "reason": "placed",
+      "dimensions": {
+        "length": 68.0,
+        "width": 40.0,
+        "height": 41.0
+      },
+      "weight": 27.0,
+      "delay_cost": 122.0,
+      "coordinates": {
+        "leftmost_downmost": {
+          "x": 130,
+          "y": 275,
+          "z": 84
+        },
+        "rightmost_topmost": {
+          "x": 170,
+          "y": 316,
+          "z": 152
+        }
+      }
+    },
+    {
+      "package_id": "P-326",
+      "type": "Economy",
+      "assigned_uld_id": "U1",
+      "placed": true,
+      "reason": "placed",
+      "dimensions": {
+        "length": 84.0,
+        "width": 51.0,
+        "height": 45.0
+      },
+      "weight": 17.0,
+      "delay_cost": 136.0,
+      "coordinates": {
+        "leftmost_downmost": {
+          "x": 64,
+          "y": 175,
+          "z": 111
+        },
+        "rightmost_topmost": {
+          "x": 148,
+          "y": 220,
+          "z": 162
+        }
+      }
+    },
+    {
+      "package_id": "P-327",
+      "type": "Economy",
+      "assigned_uld_id": "U1",
+      "placed": true,
+      "reason": "placed",
+      "dimensions": {
+        "length": 58.0,
+        "width": 96.0,
+        "height": 44.0
+      },
+      "weight": 18.0,
+      "delay_cost": 119.0,
+      "coordinates": {
+        "leftmost_downmost": {
+          "x": 126,
+          "y": 0,
+          "z": 55
+        },
+        "rightmost_topmost": {
+          "x": 170,
+          "y": 58,
+          "z": 151
+        }
+      }
+    },
+    {
+      "package_id": "P-336",
+      "type": "Economy",
+      "assigned_uld_id": "U1",
+      "placed": true,
+      "reason": "placed",
+      "dimensions": {
+        "length": 49.0,
+        "width": 68.0,
+        "height": 72.0
+      },
+      "weight": 33.0,
+      "delay_cost": 114.0,
+      "coordinates": {
+        "leftmost_downmost": {
+          "x": 71,
+          "y": 114,
+          "z": 0
+        },
+        "rightmost_topmost": {
+          "x": 143,
+          "y": 182,
+          "z": 49
+        }
+      }
+    },
+    {
+      "package_id": "P-357",
+      "type": "Economy",
+      "assigned_uld_id": "U1",
+      "placed": true,
+      "reason": "placed",
+      "dimensions": {
+        "length": 40.0,
+        "width": 58.0,
+        "height": 56.0
+      },
+      "weight": 15.0,
+      "delay_cost": 110.0,
+      "coordinates": {
+        "leftmost_downmost": {
+          "x": 64,
+          "y": 140,
+          "z": 55
+        },
+        "rightmost_topmost": {
+          "x": 122,
+          "y": 180,
+          "z": 111
+        }
+      }
+    },
+    {
+      "package_id": "P-37",
+      "type": "Economy",
+      "assigned_uld_id": "U1",
+      "placed": true,
+      "reason": "placed",
+      "dimensions": {
+        "length": 59.0,
+        "width": 76.0,
+        "height": 51.0
+      },
+      "weight": 33.0,
+      "delay_cost": 131.0,
+      "coordinates": {
+        "leftmost_downmost": {
+          "x": 64,
+          "y": 99,
+          "z": 111
+        },
+        "rightmost_topmost": {
+          "x": 123,
+          "y": 175,
+          "z": 162
+        }
+      }
+    },
+    {
+      "package_id": "P-378",
+      "type": "Economy",
+      "assigned_uld_id": "U1",
+      "placed": true,
+      "reason": "placed",
+      "dimensions": {
+        "length": 59.0,
+        "width": 53.0,
+        "height": 89.0
+      },
+      "weight": 61.0,
+      "delay_cost": 131.0,
+      "coordinates": {
+        "leftmost_downmost": {
+          "x": 71,
+          "y": 55,
+          "z": 0
+        },
+        "rightmost_topmost": {
+          "x": 160,
+          "y": 114,
+          "z": 53
+        }
+      }
+    },
+    {
+      "package_id": "P-380",
+      "type": "Economy",
+      "assigned_uld_id": "U1",
+      "placed": true,
+      "reason": "placed",
+      "dimensions": {
+        "length": 41.0,
+        "width": 56.0,
+        "height": 62.0
+      },
+      "weight": 22.0,
+      "delay_cost": 102.0,
+      "coordinates": {
+        "leftmost_downmost": {
+          "x": 64,
+          "y": 99,
+          "z": 55
+        },
+        "rightmost_topmost": {
+          "x": 126,
+          "y": 140,
+          "z": 111
+        }
+      }
+    },
+    {
+      "package_id": "P-385",
+      "type": "Economy",
+      "assigned_uld_id": "U1",
+      "placed": true,
+      "reason": "placed",
+      "dimensions": {
+        "length": 64.0,
+        "width": 48.0,
+        "height": 40.0
+      },
+      "weight": 23.0,
+      "delay_cost": 113.0,
+      "coordinates": {
+        "leftmost_downmost": {
+          "x": 170,
+          "y": 275,
+          "z": 94
+        },
+        "rightmost_topmost": {
+          "x": 218,
+          "y": 315,
+          "z": 158
+        }
+      }
+    },
+    {
+      "package_id": "P-399",
+      "type": "Economy",
+      "assigned_uld_id": "U1",
+      "placed": true,
+      "reason": "placed",
+      "dimensions": {
+        "length": 45.0,
+        "width": 44.0,
+        "height": 89.0
+      },
+      "weight": 22.0,
+      "delay_cost": 63.0,
+      "coordinates": {
+        "leftmost_downmost": {
+          "x": 126,
+          "y": 58,
+          "z": 55
+        },
+        "rightmost_topmost": {
+          "x": 170,
+          "y": 103,
+          "z": 144
+        }
+      }
+    },
+    {
+      "package_id": "P-48",
+      "type": "Economy",
+      "assigned_uld_id": "U1",
+      "placed": true,
+      "reason": "placed",
+      "dimensions": {
+        "length": 53.0,
+        "width": 65.0,
+        "height": 48.0
+      },
+      "weight": 33.0,
+      "delay_cost": 67.0,
+      "coordinates": {
+        "leftmost_downmost": {
+          "x": 170,
+          "y": 185,
+          "z": 54
+        },
+        "rightmost_topmost": {
+          "x": 223,
+          "y": 233,
+          "z": 119
+        }
+      }
+    },
+    {
+      "package_id": "P-57",
+      "type": "Economy",
+      "assigned_uld_id": "U1",
+      "placed": true,
+      "reason": "placed",
+      "dimensions": {
+        "length": 83.0,
+        "width": 64.0,
+        "height": 59.0
+      },
+      "weight": 32.0,
+      "delay_cost": 137.0,
+      "coordinates": {
+        "leftmost_downmost": {
+          "x": 0,
+          "y": 0,
+          "z": 55
+        },
+        "rightmost_topmost": {
+          "x": 64,
+          "y": 59,
+          "z": 138
+        }
+      }
+    },
+    {
+      "package_id": "P-75",
+      "type": "Economy",
+      "assigned_uld_id": "U1",
+      "placed": true,
+      "reason": "placed",
+      "dimensions": {
+        "length": 74.0,
+        "width": 43.0,
+        "height": 85.0
+      },
+      "weight": 42.0,
+      "delay_cost": 128.0,
+      "coordinates": {
+        "leftmost_downmost": {
+          "x": 0,
+          "y": 275,
+          "z": 0
+        },
+        "rightmost_topmost": {
+          "x": 85,
+          "y": 318,
+          "z": 74
+        }
+      }
+    },
+    {
+      "package_id": "P-80",
+      "type": "Economy",
+      "assigned_uld_id": "U1",
+      "placed": true,
+      "reason": "placed",
+      "dimensions": {
+        "length": 43.0,
+        "width": 85.0,
+        "height": 44.0
+      },
+      "weight": 20.0,
+      "delay_cost": 127.0,
+      "coordinates": {
+        "leftmost_downmost": {
+          "x": 85,
+          "y": 275,
+          "z": 0
+        },
+        "rightmost_topmost": {
+          "x": 170,
+          "y": 318,
+          "z": 44
+        }
+      }
+    },
+    {
+      "package_id": "P-97",
+      "type": "Economy",
+      "assigned_uld_id": "U1",
+      "placed": true,
+      "reason": "placed",
+      "dimensions": {
+        "length": 53.0,
+        "width": 53.0,
+        "height": 93.0
+      },
+      "weight": 54.0,
+      "delay_cost": 120.0,
+      "coordinates": {
+        "leftmost_downmost": {
+          "x": 0,
+          "y": 182,
+          "z": 49
+        },
+        "rightmost_topmost": {
+          "x": 53,
+          "y": 275,
+          "z": 102
+        }
+      }
+    },
+    {
+      "package_id": "P-12",
+      "type": "Economy",
+      "assigned_uld_id": "U2",
+      "placed": true,
+      "reason": "placed",
+      "dimensions": {
+        "length": 48.0,
+        "width": 80.0,
+        "height": 88.0
+      },
+      "weight": 27.0,
+      "delay_cost": 117.0,
+      "coordinates": {
+        "leftmost_downmost": {
+          "x": 0,
+          "y": 183,
+          "z": 43
+        },
+        "rightmost_topmost": {
+          "x": 80,
+          "y": 271,
+          "z": 91
+        }
+      }
+    },
+    {
+      "package_id": "P-120",
+      "type": "Economy",
+      "assigned_uld_id": "U2",
+      "placed": true,
+      "reason": "placed",
+      "dimensions": {
+        "length": 48.0,
+        "width": 91.0,
+        "height": 74.0
+      },
+      "weight": 82.0,
+      "delay_cost": 105.0,
+      "coordinates": {
+        "leftmost_downmost": {
+          "x": 147,
+          "y": 183,
+          "z": 43
+        },
+        "rightmost_topmost": {
+          "x": 221,
+          "y": 274,
+          "z": 91
+        }
+      }
+    },
+    {
+      "package_id": "P-135",
+      "type": "Economy",
+      "assigned_uld_id": "U2",
+      "placed": true,
+      "reason": "placed",
+      "dimensions": {
+        "length": 108.0,
+        "width": 66.0,
+        "height": 45.0
+      },
+      "weight": 56.0,
+      "delay_cost": 132.0,
+      "coordinates": {
+        "leftmost_downmost": {
+          "x": 102,
+          "y": 0,
+          "z": 42
+        },
+        "rightmost_topmost": {
+          "x": 210,
+          "y": 45,
+          "z": 108
+        }
+      }
+    },
+    {
+      "package_id": "P-146",
+      "type": "Economy",
+      "assigned_uld_id": "U2",
+      "placed": true,
+      "reason": "placed",
+      "dimensions": {
+        "length": 100.0,
+        "width": 45.0,
+        "height": 56.0
+      },
+      "weight": 46.0,
+      "delay_cost": 92.0,
+      "coordinates": {
+        "leftmost_downmost": {
+          "x": 102,
+          "y": 127,
+          "z": 108
+        },
+        "rightmost_topmost": {
+          "x": 202,
+          "y": 183,
+          "z": 153
+        }
+      }
+    },
+    {
+      "package_id": "P-153",
+      "type": "Economy",
+      "assigned_uld_id": "U2",
+      "placed": true,
+      "reason": "placed",
+      "dimensions": {
+        "length": 62.0,
+        "width": 64.0,
+        "height": 51.0
+      },
+      "weight": 59.0,
+      "delay_cost": 62.0,
+      "coordinates": {
+        "leftmost_downmost": {
+          "x": 160,
+          "y": 123,
+          "z": 40
+        },
+        "rightmost_topmost": {
+          "x": 224,
+          "y": 174,
+          "z": 102
+        }
+      }
+    },
+    {
+      "package_id": "P-159",
+      "type": "Economy",
+      "assigned_uld_id": "U2",
+      "placed": true,
+      "reason": "placed",
+      "dimensions": {
+        "length": 50.0,
+        "width": 92.0,
+        "height": 52.0
+      },
+      "weight": 15.0,
+      "delay_cost": 66.0,
+      "coordinates": {
+        "leftmost_downmost": {
+          "x": 0,
+          "y": 44,
+          "z": 112
+        },
+        "rightmost_topmost": {
+          "x": 52,
+          "y": 136,
+          "z": 162
+        }
+      }
+    },
+    {
+      "package_id": "P-164",
+      "type": "Economy",
+      "assigned_uld_id": "U2",
+      "placed": true,
+      "reason": "placed",
+      "dimensions": {
+        "length": 102.0,
+        "width": 40.0,
+        "height": 87.0
+      },
+      "weight": 99.0,
+      "delay_cost": 124.0,
+      "coordinates": {
+        "leftmost_downmost": {
+          "x": 0,
+          "y": 0,
+          "z": 0
+        },
+        "rightmost_topmost": {
+          "x": 102,
+          "y": 87,
+          "z": 40
+        }
+      }
+    },
+    {
+      "package_id": "P-170",
+      "type": "Economy",
+      "assigned_uld_id": "U2",
+      "placed": true,
+      "reason": "placed",
+      "dimensions": {
+        "length": 100.0,
+        "width": 81.0,
+        "height": 44.0
+      },
+      "weight": 39.0,
+      "delay_cost": 120.0,
+      "coordinates": {
+        "leftmost_downmost": {
+          "x": 0,
+          "y": 0,
+          "z": 40
+        },
+        "rightmost_topmost": {
+          "x": 100,
+          "y": 44,
+          "z": 121
+        }
+      }
+    },
+    {
+      "package_id": "P-189",
+      "type": "Economy",
+      "assigned_uld_id": "U2",
+      "placed": true,
+      "reason": "placed",
+      "dimensions": {
+        "length": 56.0,
+        "width": 63.0,
+        "height": 87.0
+      },
+      "weight": 66.0,
+      "delay_cost": 121.0,
+      "coordinates": {
+        "leftmost_downmost": {
+          "x": 73,
+          "y": 123,
+          "z": 40
+        },
+        "rightmost_topmost": {
+          "x": 160,
+          "y": 179,
+          "z": 103
+        }
+      }
+    },
+    {
+      "package_id": "P-192",
+      "type": "Economy",
+      "assigned_uld_id": "U2",
+      "placed": true,
+      "reason": "placed",
+      "dimensions": {
+        "length": 54.0,
+        "width": 76.0,
+        "height": 74.0
+      },
+      "weight": 33.0,
+      "delay_cost": 106.0,
+      "coordinates": {
+        "leftmost_downmost": {
+          "x": 102,
+          "y": 53,
+          "z": 108
+        },
+        "rightmost_topmost": {
+          "x": 178,
+          "y": 127,
+          "z": 162
+        }
+      }
+    },
+    {
+      "package_id": "P-220",
+      "type": "Economy",
+      "assigned_uld_id": "U2",
+      "placed": true,
+      "reason": "placed",
+      "dimensions": {
+        "length": 44.0,
+        "width": 104.0,
+        "height": 71.0
+      },
+      "weight": 80.0,
+      "delay_cost": 137.0,
+      "coordinates": {
+        "leftmost_downmost": {
+          "x": 0,
+          "y": 183,
+          "z": 91
+        },
+        "rightmost_topmost": {
+          "x": 44,
+          "y": 287,
+          "z": 162
+        }
+      }
+    },
+    {
+      "package_id": "P-234",
+      "type": "Economy",
+      "assigned_uld_id": "U2",
+      "placed": true,
+      "reason": "placed",
+      "dimensions": {
+        "length": 43.0,
+        "width": 65.0,
+        "height": 104.0
+      },
+      "weight": 60.0,
+      "delay_cost": 101.0,
+      "coordinates": {
+        "leftmost_downmost": {
+          "x": 159,
+          "y": 183,
+          "z": 0
+        },
+        "rightmost_topmost": {
+          "x": 224,
+          "y": 287,
+          "z": 43
+        }
+      }
+    },
+    {
+      "package_id": "P-260",
+      "type": "Economy",
+      "assigned_uld_id": "U2",
+      "placed": true,
+      "reason": "placed",
+      "dimensions": {
+        "length": 43.0,
+        "width": 49.0,
+        "height": 99.0
+      },
+      "weight": 20.0,
+      "delay_cost": 65.0,
+      "coordinates": {
+        "leftmost_downmost": {
+          "x": 52,
+          "y": 44,
+          "z": 112
+        },
+        "rightmost_topmost": {
+          "x": 95,
+          "y": 143,
+          "z": 161
+        }
+      }
+    },
+    {
+      "package_id": "P-261",
+      "type": "Economy",
+      "assigned_uld_id": "U2",
+      "placed": true,
+      "reason": "placed",
+      "dimensions": {
+        "length": 100.0,
+        "width": 77.0,
+        "height": 42.0
+      },
+      "weight": 80.0,
+      "delay_cost": 114.0,
+      "coordinates": {
+        "leftmost_downmost": {
+          "x": 82,
+          "y": 183,
+          "z": 0
+        },
+        "rightmost_topmost": {
+          "x": 159,
+          "y": 283,
+          "z": 42
+        }
+      }
+    },
+    {
+      "package_id": "P-307",
+      "type": "Economy",
+      "assigned_uld_id": "U2",
+      "placed": true,
+      "reason": "placed",
+      "dimensions": {
+        "length": 43.0,
+        "width": 82.0,
+        "height": 96.0
+      },
+      "weight": 100.0,
+      "delay_cost": 123.0,
+      "coordinates": {
+        "leftmost_downmost": {
+          "x": 0,
+          "y": 183,
+          "z": 0
+        },
+        "rightmost_topmost": {
+          "x": 82,
+          "y": 279,
+          "z": 43
+        }
+      }
+    },
+    {
+      "package_id": "P-31",
+      "type": "Economy",
+      "assigned_uld_id": "U2",
+      "placed": true,
+      "reason": "placed",
+      "dimensions": {
+        "length": 71.0,
+        "width": 49.0,
+        "height": 76.0
+      },
+      "weight": 67.0,
+      "delay_cost": 76.0,
+      "coordinates": {
+        "leftmost_downmost": {
+          "x": 87,
+          "y": 183,
+          "z": 91
+        },
+        "rightmost_topmost": {
+          "x": 136,
+          "y": 259,
+          "z": 162
+        }
+      }
+    },
+    {
+      "package_id": "P-32",
+      "type": "Economy",
+      "assigned_uld_id": "U2",
+      "placed": true,
+      "reason": "placed",
+      "dimensions": {
+        "length": 70.0,
+        "width": 44.0,
+        "height": 98.0
+      },
+      "weight": 53.0,
+      "delay_cost": 124.0,
+      "coordinates": {
+        "leftmost_downmost": {
+          "x": 147,
+          "y": 274,
+          "z": 43
+        },
+        "rightmost_topmost": {
+          "x": 217,
+          "y": 318,
+          "z": 141
+        }
+      }
+    },
+    {
+      "package_id": "P-322",
+      "type": "Economy",
+      "assigned_uld_id": "U2",
+      "placed": true,
+      "reason": "placed",
+      "dimensions": {
+        "length": 45.0,
+        "width": 66.0,
+        "height": 102.0
+      },
+      "weight": 72.0,
+      "delay_cost": 104.0,
+      "coordinates": {
+        "leftmost_downmost": {
+          "x": 102,
+          "y": 45,
+          "z": 42
+        },
+        "rightmost_topmost": {
+          "x": 204,
+          "y": 90,
+          "z": 108
+        }
+      }
+    },
+    {
+      "package_id": "P-331",
+      "type": "Economy",
+      "assigned_uld_id": "U2",
+      "placed": true,
+      "reason": "placed",
+      "dimensions": {
+        "length": 71.0,
+        "width": 43.0,
+        "height": 88.0
+      },
+      "weight": 64.0,
+      "delay_cost": 91.0,
+      "coordinates": {
+        "leftmost_downmost": {
+          "x": 44,
+          "y": 183,
+          "z": 91
+        },
+        "rightmost_topmost": {
+          "x": 87,
+          "y": 271,
+          "z": 162
+        }
+      }
+    },
+    {
+      "package_id": "P-337",
+      "type": "Economy",
+      "assigned_uld_id": "U2",
+      "placed": true,
+      "reason": "placed",
+      "dimensions": {
+        "length": 40.0,
+        "width": 77.0,
+        "height": 102.0
+      },
+      "weight": 52.0,
+      "delay_cost": 102.0,
+      "coordinates": {
+        "leftmost_downmost": {
+          "x": 102,
+          "y": 74,
+          "z": 0
+        },
+        "rightmost_topmost": {
+          "x": 204,
+          "y": 151,
+          "z": 40
+        }
+      }
+    },
+    {
+      "package_id": "P-363",
+      "type": "Economy",
+      "assigned_uld_id": "U2",
+      "placed": true,
+      "reason": "placed",
+      "dimensions": {
+        "length": 67.0,
+        "width": 72.0,
+        "height": 79.0
+      },
+      "weight": 29.0,
+      "delay_cost": 136.0,
+      "coordinates": {
+        "leftmost_downmost": {
+          "x": 0,
+          "y": 44,
+          "z": 40
+        },
+        "rightmost_topmost": {
+          "x": 67,
+          "y": 123,
+          "z": 112
+        }
+      }
+    },
+    {
+      "package_id": "P-375",
+      "type": "Economy",
+      "assigned_uld_id": "U2",
+      "placed": true,
+      "reason": "placed",
+      "dimensions": {
+        "length": 48.0,
+        "width": 67.0,
+        "height": 97.0
+      },
+      "weight": 35.0,
+      "delay_cost": 99.0,
+      "coordinates": {
+        "leftmost_downmost": {
+          "x": 80,
+          "y": 183,
+          "z": 43
+        },
+        "rightmost_topmost": {
+          "x": 147,
+          "y": 280,
+          "z": 91
+        }
+      }
+    },
+    {
+      "package_id": "P-384",
+      "type": "Economy",
+      "assigned_uld_id": "U2",
+      "placed": true,
+      "reason": "placed",
+      "dimensions": {
+        "length": 69.0,
+        "width": 73.0,
+        "height": 60.0
+      },
+      "weight": 16.0,
+      "delay_cost": 97.0,
+      "coordinates": {
+        "leftmost_downmost": {
+          "x": 0,
+          "y": 123,
+          "z": 40
+        },
+        "rightmost_topmost": {
+          "x": 73,
+          "y": 183,
+          "z": 109
+        }
+      }
+    },
+    {
+      "package_id": "P-40",
+      "type": "Economy",
+      "assigned_uld_id": "U2",
+      "placed": true,
+      "reason": "placed",
+      "dimensions": {
+        "length": 70.0,
+        "width": 45.0,
+        "height": 90.0
+      },
+      "weight": 78.0,
+      "delay_cost": 106.0,
+      "coordinates": {
+        "leftmost_downmost": {
+          "x": 44,
+          "y": 271,
+          "z": 91
+        },
+        "rightmost_topmost": {
+          "x": 134,
+          "y": 316,
+          "z": 161
+        }
+      }
+    },
+    {
+      "package_id": "P-5",
+      "type": "Economy",
+      "assigned_uld_id": "U2",
+      "placed": true,
+      "reason": "placed",
+      "dimensions": {
+        "length": 88.0,
+        "width": 58.0,
+        "height": 64.0
+      },
+      "weight": 93.0,
+      "delay_cost": 139.0,
+      "coordinates": {
+        "leftmost_downmost": {
+          "x": 136,
+          "y": 183,
+          "z": 91
+        },
+        "rightmost_topmost": {
+          "x": 224,
+          "y": 247,
+          "z": 149
+        }
+      }
+    },
+    {
+      "package_id": "P-76",
+      "type": "Economy",
+      "assigned_uld_id": "U2",
+      "placed": true,
+      "reason": "placed",
+      "dimensions": {
+        "length": 40.0,
+        "width": 92.0,
+        "height": 96.0
+      },
+      "weight": 81.0,
+      "delay_cost": 123.0,
+      "coordinates": {
+        "leftmost_downmost": {
+          "x": 0,
+          "y": 87,
+          "z": 0
+        },
+        "rightmost_topmost": {
+          "x": 92,
+          "y": 183,
+          "z": 40
+        }
+      }
+    },
+    {
+      "package_id": "P-78",
+      "type": "Economy",
+      "assigned_uld_id": "U2",
+      "placed": true,
+      "reason": "placed",
+      "dimensions": {
+        "length": 74.0,
+        "width": 104.0,
+        "height": 42.0
+      },
+      "weight": 85.0,
+      "delay_cost": 116.0,
+      "coordinates": {
+        "leftmost_downmost": {
+          "x": 102,
+          "y": 0,
+          "z": 0
+        },
+        "rightmost_topmost": {
+          "x": 206,
+          "y": 74,
+          "z": 42
+        }
+      }
+    },
+    {
+      "package_id": "P-85",
+      "type": "Economy",
+      "assigned_uld_id": "U2",
+      "placed": true,
+      "reason": "placed",
+      "dimensions": {
+        "length": 47.0,
+        "width": 68.0,
+        "height": 44.0
+      },
+      "weight": 42.0,
+      "delay_cost": 74.0,
+      "coordinates": {
+        "leftmost_downmost": {
+          "x": 0,
+          "y": 271,
+          "z": 43
+        },
+        "rightmost_topmost": {
+          "x": 68,
+          "y": 315,
+          "z": 90
+        }
+      }
+    },
+    {
+      "package_id": "P-87",
+      "type": "Economy",
+      "assigned_uld_id": "U2",
+      "placed": true,
+      "reason": "placed",
+      "dimensions": {
+        "length": 54.0,
+        "width": 53.0,
+        "height": 107.0
+      },
+      "weight": 84.0,
+      "delay_cost": 116.0,
+      "coordinates": {
+        "leftmost_downmost": {
+          "x": 102,
+          "y": 0,
+          "z": 108
+        },
+        "rightmost_topmost": {
+          "x": 209,
+          "y": 53,
+          "z": 162
+        }
+      }
+    },
+    {
+      "package_id": "P-112",
+      "type": "Priority",
+      "assigned_uld_id": "U3",
+      "placed": true,
+      "reason": "placed",
+      "dimensions": {
+        "length": 63.0,
+        "width": 79.0,
+        "height": 67.0
+      },
+      "weight": 20.0,
+      "delay_cost": 0.0,
+      "coordinates": {
+        "leftmost_downmost": {
+          "x": 139,
+          "y": 0,
+          "z": 49
+        },
+        "rightmost_topmost": {
+          "x": 218,
+          "y": 67,
+          "z": 112
+        }
+      }
+    },
+    {
+      "package_id": "P-117",
+      "type": "Priority",
+      "assigned_uld_id": "U3",
+      "placed": true,
+      "reason": "placed",
+      "dimensions": {
+        "length": 52.0,
+        "width": 49.0,
+        "height": 65.0
+      },
+      "weight": 33.0,
+      "delay_cost": 0.0,
+      "coordinates": {
+        "leftmost_downmost": {
+          "x": 54,
+          "y": 262,
+          "z": 90
+        },
+        "rightmost_topmost": {
+          "x": 119,
+          "y": 311,
+          "z": 142
+        }
+      }
+    },
+    {
+      "package_id": "P-122",
+      "type": "Economy",
+      "assigned_uld_id": "U3",
+      "placed": true,
+      "reason": "placed",
+      "dimensions": {
+        "length": 77.0,
+        "width": 104.0,
+        "height": 46.0
+      },
+      "weight": 67.0,
+      "delay_cost": 105.0,
+      "coordinates": {
+        "leftmost_downmost": {
+          "x": 139,
+          "y": 0,
+          "z": 167
+        },
+        "rightmost_topmost": {
+          "x": 243,
+          "y": 46,
+          "z": 244
+        }
+      }
+    },
+    {
+      "package_id": "P-126",
+      "type": "Priority",
+      "assigned_uld_id": "U3",
+      "placed": true,
+      "reason": "placed",
+      "dimensions": {
+        "length": 85.0,
+        "width": 64.0,
+        "height": 60.0
+      },
+      "weight": 94.0,
+      "delay_cost": 0.0,
+      "coordinates": {
+        "leftmost_downmost": {
+          "x": 54,
+          "y": 69,
+          "z": 0
+        },
+        "rightmost_topmost": {
+          "x": 139,
+          "y": 133,
+          "z": 60
+        }
+      }
+    },
+    {
+      "package_id": "P-136",
+      "type": "Priority",
+      "assigned_uld_id": "U3",
+      "placed": true,
+      "reason": "placed",
+      "dimensions": {
+        "length": 47.0,
+        "width": 66.0,
+        "height": 102.0
+      },
+      "weight": 36.0,
+      "delay_cost": 0.0,
+      "coordinates": {
+        "leftmost_downmost": {
+          "x": 139,
+          "y": 67,
+          "z": 0
+        },
+        "rightmost_topmost": {
+          "x": 241,
+          "y": 133,
+          "z": 47
+        }
+      }
+    },
+    {
+      "package_id": "P-147",
+      "type": "Priority",
+      "assigned_uld_id": "U3",
+      "placed": true,
+      "reason": "placed",
+      "dimensions": {
+        "length": 65.0,
+        "width": 46.0,
+        "height": 55.0
+      },
+      "weight": 36.0,
+      "delay_cost": 0.0,
+      "coordinates": {
+        "leftmost_downmost": {
+          "x": 154,
+          "y": 194,
+          "z": 88
+        },
+        "rightmost_topmost": {
+          "x": 219,
+          "y": 249,
+          "z": 134
+        }
+      }
+    },
+    {
+      "package_id": "P-148",
+      "type": "Priority",
+      "assigned_uld_id": "U3",
+      "placed": true,
+      "reason": "placed",
+      "dimensions": {
+        "length": 67.0,
+        "width": 100.0,
+        "height": 49.0
+      },
+      "weight": 50.0,
+      "delay_cost": 0.0,
+      "coordinates": {
+        "leftmost_downmost": {
+          "x": 139,
+          "y": 0,
+          "z": 0
+        },
+        "rightmost_topmost": {
+          "x": 239,
+          "y": 67,
+          "z": 49
+        }
+      }
+    },
+    {
+      "package_id": "P-149",
+      "type": "Economy",
+      "assigned_uld_id": "U3",
+      "placed": true,
+      "reason": "placed",
+      "dimensions": {
+        "length": 63.0,
+        "width": 45.0,
+        "height": 104.0
+      },
+      "weight": 76.0,
+      "delay_cost": 84.0,
+      "coordinates": {
+        "leftmost_downmost": {
+          "x": 199,
+          "y": 67,
+          "z": 91
+        },
+        "rightmost_topmost": {
+          "x": 244,
+          "y": 130,
+          "z": 195
+        }
+      }
+    },
+    {
+      "package_id": "P-15",
+      "type": "Priority",
+      "assigned_uld_id": "U3",
+      "placed": true,
+      "reason": "placed",
+      "dimensions": {
+        "length": 84.0,
+        "width": 49.0,
+        "height": 60.0
+      },
+      "weight": 57.0,
+      "delay_cost": 0.0,
+      "coordinates": {
+        "leftmost_downmost": {
+          "x": 54,
+          "y": 202,
+          "z": 43
+        },
+        "rightmost_topmost": {
+          "x": 138,
+          "y": 262,
+          "z": 92
+        }
+      }
+    },
+    {
+      "package_id": "P-150",
+      "type": "Priority",
+      "assigned_uld_id": "U3",
+      "placed": true,
+      "reason": "placed",
+      "dimensions": {
+        "length": 54.0,
+        "width": 42.0,
+        "height": 58.0
+      },
+      "weight": 12.0,
+      "delay_cost": 0.0,
+      "coordinates": {
+        "leftmost_downmost": {
+          "x": 0,
+          "y": 78,
+          "z": 68
+        },
+        "rightmost_topmost": {
+          "x": 54,
+          "y": 136,
+          "z": 110
+        }
+      }
+    },
+    {
+      "package_id": "P-17",
+      "type": "Priority",
+      "assigned_uld_id": "U3",
+      "placed": true,
+      "reason": "placed",
+      "dimensions": {
+        "length": 83.0,
+        "width": 63.0,
+        "height": 57.0
+      },
+      "weight": 29.0,
+      "delay_cost": 0.0,
+      "coordinates": {
+        "leftmost_downmost": {
+          "x": 54,
+          "y": 0,
+          "z": 60
+        },
+        "rightmost_topmost": {
+          "x": 137,
+          "y": 63,
+          "z": 117
+        }
+      }
+    },
+    {
+      "package_id": "P-182",
+      "type": "Economy",
+      "assigned_uld_id": "U3",
+      "placed": true,
+      "reason": "placed",
+      "dimensions": {
+        "length": 45.0,
+        "width": 70.0,
+        "height": 78.0
+      },
+      "weight": 42.0,
+      "delay_cost": 65.0,
+      "coordinates": {
+        "leftmost_downmost": {
+          "x": 54,
+          "y": 63,
+          "z": 121
+        },
+        "rightmost_topmost": {
+          "x": 132,
+          "y": 133,
+          "z": 166
+        }
+      }
+    },
+    {
+      "package_id": "P-187",
+      "type": "Priority",
+      "assigned_uld_id": "U3",
+      "placed": true,
+      "reason": "placed",
+      "dimensions": {
+        "length": 54.0,
+        "width": 84.0,
+        "height": 78.0
+      },
+      "weight": 97.0,
+      "delay_cost": 0.0,
+      "coordinates": {
+        "leftmost_downmost": {
+          "x": 0,
+          "y": 0,
+          "z": 0
+        },
+        "rightmost_topmost": {
+          "x": 54,
+          "y": 78,
+          "z": 84
+        }
+      }
+    },
+    {
+      "package_id": "P-188",
+      "type": "Priority",
+      "assigned_uld_id": "U3",
+      "placed": true,
+      "reason": "placed",
+      "dimensions": {
+        "length": 86.0,
+        "width": 51.0,
+        "height": 51.0
+      },
+      "weight": 12.0,
+      "delay_cost": 0.0,
+      "coordinates": {
+        "leftmost_downmost": {
+          "x": 154,
+          "y": 267,
+          "z": 0
+        },
+        "rightmost_topmost": {
+          "x": 240,
+          "y": 318,
+          "z": 51
+        }
+      }
+    },
+    {
+      "package_id": "P-194",
+      "type": "Economy",
+      "assigned_uld_id": "U3",
+      "placed": true,
+      "reason": "placed",
+      "dimensions": {
+        "length": 71.0,
+        "width": 48.0,
+        "height": 109.0
+      },
+      "weight": 97.0,
+      "delay_cost": 116.0,
+      "coordinates": {
+        "leftmost_downmost": {
+          "x": 0,
+          "y": 167,
+          "z": 135
+        },
+        "rightmost_topmost": {
+          "x": 48,
+          "y": 238,
+          "z": 244
+        }
+      }
+    },
+    {
+      "package_id": "P-199",
+      "type": "Priority",
+      "assigned_uld_id": "U3",
+      "placed": true,
+      "reason": "placed",
+      "dimensions": {
+        "length": 58.0,
+        "width": 67.0,
+        "height": 73.0
+      },
+      "weight": 59.0,
+      "delay_cost": 0.0,
+      "coordinates": {
+        "leftmost_downmost": {
+          "x": 54,
+          "y": 133,
+          "z": 83
+        },
+        "rightmost_topmost": {
+          "x": 127,
+          "y": 200,
+          "z": 141
+        }
+      }
+    },
+    {
+      "package_id": "P-208",
+      "type": "Economy",
+      "assigned_uld_id": "U3",
+      "placed": true,
+      "reason": "placed",
+      "dimensions": {
+        "length": 89.0,
+        "width": 50.0,
+        "height": 102.0
+      },
+      "weight": 117.0,
+      "delay_cost": 127.0,
+      "coordinates": {
+        "leftmost_downmost": {
+          "x": 0,
+          "y": 78,
+          "z": 110
+        },
+        "rightmost_topmost": {
+          "x": 50,
+          "y": 167,
+          "z": 212
+        }
+      }
+    },
+    {
+      "package_id": "P-214",
+      "type": "Priority",
+      "assigned_uld_id": "U3",
+      "placed": true,
+      "reason": "placed",
+      "dimensions": {
+        "length": 58.0,
+        "width": 81.0,
+        "height": 61.0
+      },
+      "weight": 40.0,
+      "delay_cost": 0.0,
+      "coordinates": {
+        "leftmost_downmost": {
+          "x": 154,
+          "y": 133,
+          "z": 53
+        },
+        "rightmost_topmost": {
+          "x": 235,
+          "y": 194,
+          "z": 111
+        }
+      }
+    },
+    {
+      "package_id": "P-216",
+      "type": "Priority",
+      "assigned_uld_id": "U3",
+      "placed": true,
+      "reason": "placed",
+      "dimensions": {
+        "length": 44.0,
+        "width": 64.0,
+        "height": 83.0
+      },
+      "weight": 57.0,
+      "delay_cost": 0.0,
+      "coordinates": {
+        "leftmost_downmost": {
+          "x": 139,
+          "y": 67,
+          "z": 47
+        },
+        "rightmost_topmost": {
+          "x": 222,
+          "y": 131,
+          "z": 91
+        }
+      }
+    },
+    {
+      "package_id": "P-218",
+      "type": "Economy",
+      "assigned_uld_id": "U3",
+      "placed": true,
+      "reason": "placed",
+      "dimensions": {
+        "length": 90.0,
+        "width": 77.0,
+        "height": 59.0
+      },
+      "weight": 63.0,
+      "delay_cost": 134.0,
+      "coordinates": {
+        "leftmost_downmost": {
+          "x": 154,
+          "y": 133,
+          "z": 111
+        },
+        "rightmost_topmost": {
+          "x": 244,
+          "y": 192,
+          "z": 188
+        }
+      }
+    },
+    {
+      "package_id": "P-222",
+      "type": "Priority",
+      "assigned_uld_id": "U3",
+      "placed": true,
+      "reason": "placed",
+      "dimensions": {
+        "length": 88.0,
+        "width": 73.0,
+        "height": 41.0
+      },
+      "weight": 59.0,
+      "delay_cost": 0.0,
+      "coordinates": {
+        "leftmost_downmost": {
+          "x": 154,
+          "y": 194,
+          "z": 0
+        },
+        "rightmost_topmost": {
+          "x": 242,
+          "y": 267,
+          "z": 41
+        }
+      }
+    },
+    {
+      "package_id": "P-225",
+      "type": "Economy",
+      "assigned_uld_id": "U3",
+      "placed": true,
+      "reason": "placed",
+      "dimensions": {
+        "length": 54.0,
+        "width": 68.0,
+        "height": 93.0
+      },
+      "weight": 52.0,
+      "delay_cost": 98.0,
+      "coordinates": {
+        "leftmost_downmost": {
+          "x": 54,
+          "y": 262,
+          "z": 142
+        },
+        "rightmost_topmost": {
+          "x": 147,
+          "y": 316,
+          "z": 210
+        }
+      }
+    },
+    {
+      "package_id": "P-227",
+      "type": "Economy",
+      "assigned_uld_id": "U3",
+      "placed": true,
+      "reason": "placed",
+      "dimensions": {
+        "length": 59.0,
+        "width": 73.0,
+        "height": 96.0
+      },
+      "weight": 58.0,
+      "delay_cost": 118.0,
+      "coordinates": {
+        "leftmost_downmost": {
+          "x": 54,
+          "y": 202,
+          "z": 166
+        },
+        "rightmost_topmost": {
+          "x": 150,
+          "y": 261,
+          "z": 239
+        }
+      }
+    },
+    {
+      "package_id": "P-231",
+      "type": "Economy",
+      "assigned_uld_id": "U3",
+      "placed": true,
+      "reason": "placed",
+      "dimensions": {
+        "length": 96.0,
+        "width": 68.0,
+        "height": 49.0
+      },
+      "weight": 48.0,
+      "delay_cost": 91.0,
+      "coordinates": {
+        "leftmost_downmost": {
+          "x": 0,
+          "y": 0,
+          "z": 148
+        },
+        "rightmost_topmost": {
+          "x": 49,
+          "y": 68,
+          "z": 244
+        }
+      }
+    },
+    {
+      "package_id": "P-232",
+      "type": "Priority",
+      "assigned_uld_id": "U3",
+      "placed": true,
+      "reason": "placed",
+      "dimensions": {
+        "length": 67.0,
+        "width": 84.0,
+        "height": 47.0
+      },
+      "weight": 38.0,
+      "delay_cost": 0.0,
+      "coordinates": {
+        "leftmost_downmost": {
+          "x": 154,
+          "y": 194,
+          "z": 41
+        },
+        "rightmost_topmost": {
+          "x": 238,
+          "y": 261,
+          "z": 88
+        }
+      }
+    },
+    {
+      "package_id": "P-246",
+      "type": "Economy",
+      "assigned_uld_id": "U3",
+      "placed": true,
+      "reason": "placed",
+      "dimensions": {
+        "length": 60.0,
+        "width": 102.0,
+        "height": 61.0
+      },
+      "weight": 58.0,
+      "delay_cost": 106.0,
+      "coordinates": {
+        "leftmost_downmost": {
+          "x": 139,
+          "y": 67,
+          "z": 138
+        },
+        "rightmost_topmost": {
+          "x": 199,
+          "y": 128,
+          "z": 240
+        }
+      }
+    },
+    {
+      "package_id": "P-249",
+      "type": "Economy",
+      "assigned_uld_id": "U3",
+      "placed": true,
+      "reason": "placed",
+      "dimensions": {
+        "length": 89.0,
+        "width": 67.0,
+        "height": 55.0
+      },
+      "weight": 66.0,
+      "delay_cost": 88.0,
+      "coordinates": {
+        "leftmost_downmost": {
+          "x": 139,
+          "y": 0,
+          "z": 112
+        },
+        "rightmost_topmost": {
+          "x": 228,
+          "y": 67,
+          "z": 167
+        }
+      }
+    },
+    {
+      "package_id": "P-265",
+      "type": "Priority",
+      "assigned_uld_id": "U3",
+      "placed": true,
+      "reason": "placed",
+      "dimensions": {
+        "length": 47.0,
+        "width": 60.0,
+        "height": 58.0
+      },
+      "weight": 37.0,
+      "delay_cost": 0.0,
+      "coordinates": {
+        "leftmost_downmost": {
+          "x": 139,
+          "y": 67,
+          "z": 91
+        },
+        "rightmost_topmost": {
+          "x": 199,
+          "y": 125,
+          "z": 138
+        }
+      }
+    },
+    {
+      "package_id": "P-266",
+      "type": "Priority",
+      "assigned_uld_id": "U3",
+      "placed": true,
+      "reason": "placed",
+      "dimensions": {
+        "length": 61.0,
+        "width": 88.0,
+        "height": 53.0
+      },
+      "weight": 37.0,
+      "delay_cost": 0.0,
+      "coordinates": {
+        "leftmost_downmost": {
+          "x": 0,
+          "y": 167,
+          "z": 0
+        },
+        "rightmost_topmost": {
+          "x": 53,
+          "y": 255,
+          "z": 61
+        }
+      }
+    },
+    {
+      "package_id": "P-275",
+      "type": "Priority",
+      "assigned_uld_id": "U3",
+      "placed": true,
+      "reason": "placed",
+      "dimensions": {
+        "length": 74.0,
+        "width": 77.0,
+        "height": 45.0
+      },
+      "weight": 31.0,
+      "delay_cost": 0.0,
+      "coordinates": {
+        "leftmost_downmost": {
+          "x": 0,
+          "y": 167,
+          "z": 61
+        },
+        "rightmost_topmost": {
+          "x": 45,
+          "y": 244,
+          "z": 135
+        }
+      }
+    },
+    {
+      "package_id": "P-280",
+      "type": "Priority",
+      "assigned_uld_id": "U3",
+      "placed": true,
+      "reason": "placed",
+      "dimensions": {
+        "length": 90.0,
+        "width": 61.0,
+        "height": 53.0
+      },
+      "weight": 75.0,
+      "delay_cost": 0.0,
+      "coordinates": {
+        "leftmost_downmost": {
+          "x": 154,
+          "y": 133,
+          "z": 0
+        },
+        "rightmost_topmost": {
+          "x": 244,
+          "y": 194,
+          "z": 53
+        }
+      }
+    },
+    {
+      "package_id": "P-290",
+      "type": "Economy",
+      "assigned_uld_id": "U3",
+      "placed": true,
+      "reason": "placed",
+      "dimensions": {
+        "length": 80.0,
+        "width": 69.0,
+        "height": 46.0
+      },
+      "weight": 23.0,
+      "delay_cost": 64.0,
+      "coordinates": {
+        "leftmost_downmost": {
+          "x": 54,
+          "y": 133,
+          "z": 141
+        },
+        "rightmost_topmost": {
+          "x": 134,
+          "y": 202,
+          "z": 187
+        }
+      }
+    },
+    {
+      "package_id": "P-3",
+      "type": "Priority",
+      "assigned_uld_id": "U3",
+      "placed": true,
+      "reason": "placed",
+      "dimensions": {
+        "length": 42.0,
+        "width": 101.0,
+        "height": 51.0
+      },
+      "weight": 17.0,
+      "delay_cost": 0.0,
+      "coordinates": {
+        "leftmost_downmost": {
+          "x": 154,
+          "y": 267,
+          "z": 51
+        },
+        "rightmost_topmost": {
+          "x": 196,
+          "y": 318,
+          "z": 152
+        }
+      }
+    },
+    {
+      "package_id": "P-304",
+      "type": "Priority",
+      "assigned_uld_id": "U3",
+      "placed": true,
+      "reason": "placed",
+      "dimensions": {
+        "length": 51.0,
+        "width": 68.0,
+        "height": 89.0
+      },
+      "weight": 31.0,
+      "delay_cost": 0.0,
+      "coordinates": {
+        "leftmost_downmost": {
+          "x": 0,
+          "y": 78,
+          "z": 0
+        },
+        "rightmost_topmost": {
+          "x": 51,
+          "y": 167,
+          "z": 68
+        }
+      }
+    },
+    {
+      "package_id": "P-310",
+      "type": "Priority",
+      "assigned_uld_id": "U3",
+      "placed": true,
+      "reason": "placed",
+      "dimensions": {
+        "length": 65.0,
+        "width": 59.0,
+        "height": 43.0
+      },
+      "weight": 15.0,
+      "delay_cost": 0.0,
+      "coordinates": {
+        "leftmost_downmost": {
+          "x": 0,
+          "y": 255,
+          "z": 65
+        },
+        "rightmost_topmost": {
+          "x": 43,
+          "y": 314,
+          "z": 130
+        }
+      }
+    },
+    {
+      "package_id": "P-320",
+      "type": "Priority",
+      "assigned_uld_id": "U3",
+      "placed": true,
+      "reason": "placed",
+      "dimensions": {
+        "length": 64.0,
+        "width": 53.0,
+        "height": 57.0
+      },
+      "weight": 55.0,
+      "delay_cost": 0.0,
+      "coordinates": {
+        "leftmost_downmost": {
+          "x": 0,
+          "y": 0,
+          "z": 84
+        },
+        "rightmost_topmost": {
+          "x": 53,
+          "y": 57,
+          "z": 148
+        }
+      }
+    },
+    {
+      "package_id": "P-334",
+      "type": "Economy",
+      "assigned_uld_id": "U3",
+      "placed": true,
+      "reason": "placed",
+      "dimensions": {
+        "length": 65.0,
+        "width": 99.0,
+        "height": 54.0
+      },
+      "weight": 103.0,
+      "delay_cost": 102.0,
+      "coordinates": {
+        "leftmost_downmost": {
+          "x": 54,
+          "y": 133,
+          "z": 187
+        },
+        "rightmost_topmost": {
+          "x": 153,
+          "y": 198,
+          "z": 241
+        }
+      }
+    },
+    {
+      "package_id": "P-342",
+      "type": "Economy",
+      "assigned_uld_id": "U3",
+      "placed": true,
+      "reason": "placed",
+      "dimensions": {
+        "length": 63.0,
+        "width": 66.0,
+        "height": 78.0
+      },
+      "weight": 83.0,
+      "delay_cost": 85.0,
+      "coordinates": {
+        "leftmost_downmost": {
+          "x": 54,
+          "y": 63,
+          "z": 166
+        },
+        "rightmost_topmost": {
+          "x": 117,
+          "y": 129,
+          "z": 244
+        }
+      }
+    },
+    {
+      "package_id": "P-345",
+      "type": "Priority",
+      "assigned_uld_id": "U3",
+      "placed": true,
+      "reason": "placed",
+      "dimensions": {
+        "length": 43.0,
+        "width": 78.0,
+        "height": 47.0
+      },
+      "weight": 43.0,
+      "delay_cost": 0.0,
+      "coordinates": {
+        "leftmost_downmost": {
+          "x": 54,
+          "y": 262,
+          "z": 47
+        },
+        "rightmost_topmost": {
+          "x": 132,
+          "y": 309,
+          "z": 90
+        }
+      }
+    },
+    {
+      "package_id": "P-350",
+      "type": "Priority",
+      "assigned_uld_id": "U3",
+      "placed": true,
+      "reason": "placed",
+      "dimensions": {
+        "length": 85.0,
+        "width": 60.0,
+        "height": 69.0
+      },
+      "weight": 52.0,
+      "delay_cost": 0.0,
+      "coordinates": {
+        "leftmost_downmost": {
+          "x": 54,
+          "y": 0,
+          "z": 0
+        },
+        "rightmost_topmost": {
+          "x": 139,
+          "y": 69,
+          "z": 60
+        }
+      }
+    },
+    {
+      "package_id": "P-352",
+      "type": "Priority",
+      "assigned_uld_id": "U3",
+      "placed": true,
+      "reason": "placed",
+      "dimensions": {
+        "length": 89.0,
+        "width": 43.0,
+        "height": 66.0
+      },
+      "weight": 32.0,
+      "delay_cost": 0.0,
+      "coordinates": {
+        "leftmost_downmost": {
+          "x": 54,
+          "y": 133,
+          "z": 40
+        },
+        "rightmost_topmost": {
+          "x": 143,
+          "y": 199,
+          "z": 83
+        }
+      }
+    },
+    {
+      "package_id": "P-353",
+      "type": "Priority",
+      "assigned_uld_id": "U3",
+      "placed": true,
+      "reason": "placed",
+      "dimensions": {
+        "length": 66.0,
+        "width": 61.0,
+        "height": 70.0
+      },
+      "weight": 33.0,
+      "delay_cost": 0.0,
+      "coordinates": {
+        "leftmost_downmost": {
+          "x": 54,
+          "y": 63,
+          "z": 60
+        },
+        "rightmost_topmost": {
+          "x": 120,
+          "y": 133,
+          "z": 121
+        }
+      }
+    },
+    {
+      "package_id": "P-355",
+      "type": "Economy",
+      "assigned_uld_id": "U3",
+      "placed": true,
+      "reason": "placed",
+      "dimensions": {
+        "length": 45.0,
+        "width": 60.0,
+        "height": 52.0
+      },
+      "weight": 42.0,
+      "delay_cost": 72.0,
+      "coordinates": {
+        "leftmost_downmost": {
+          "x": 154,
+          "y": 133,
+          "z": 188
+        },
+        "rightmost_topmost": {
+          "x": 199,
+          "y": 193,
+          "z": 240
+        }
+      }
+    },
+    {
+      "package_id": "P-358",
+      "type": "Economy",
+      "assigned_uld_id": "U3",
+      "placed": true,
+      "reason": "placed",
+      "dimensions": {
+        "length": 81.0,
+        "width": 60.0,
+        "height": 74.0
+      },
+      "weight": 55.0,
+      "delay_cost": 93.0,
+      "coordinates": {
+        "leftmost_downmost": {
+          "x": 54,
+          "y": 202,
+          "z": 92
+        },
+        "rightmost_topmost": {
+          "x": 135,
+          "y": 262,
+          "z": 166
+        }
+      }
+    },
+    {
+      "package_id": "P-387",
+      "type": "Economy",
+      "assigned_uld_id": "U3",
+      "placed": true,
+      "reason": "placed",
+      "dimensions": {
+        "length": 42.0,
+        "width": 47.0,
+        "height": 96.0
+      },
+      "weight": 37.0,
+      "delay_cost": 140.0,
+      "coordinates": {
+        "leftmost_downmost": {
+          "x": 199,
+          "y": 67,
+          "z": 195
+        },
+        "rightmost_topmost": {
+          "x": 241,
+          "y": 163,
+          "z": 242
+        }
+      }
+    },
+    {
+      "package_id": "P-398",
+      "type": "Economy",
+      "assigned_uld_id": "U3",
+      "placed": true,
+      "reason": "placed",
+      "dimensions": {
+        "length": 52.0,
+        "width": 103.0,
+        "height": 85.0
+      },
+      "weight": 68.0,
+      "delay_cost": 130.0,
+      "coordinates": {
+        "leftmost_downmost": {
+          "x": 54,
+          "y": 0,
+          "z": 117
+        },
+        "rightmost_topmost": {
+          "x": 139,
+          "y": 52,
+          "z": 220
+        }
+      }
+    },
+    {
+      "package_id": "P-44",
+      "type": "Economy",
+      "assigned_uld_id": "U3",
+      "placed": true,
+      "reason": "placed",
+      "dimensions": {
+        "length": 84.0,
+        "width": 40.0,
+        "height": 49.0
+      },
+      "weight": 28.0,
+      "delay_cost": 87.0,
+      "coordinates": {
+        "leftmost_downmost": {
+          "x": 196,
+          "y": 267,
+          "z": 51
+        },
+        "rightmost_topmost": {
+          "x": 236,
+          "y": 316,
+          "z": 135
+        }
+      }
+    },
+    {
+      "package_id": "P-49",
+      "type": "Priority",
+      "assigned_uld_id": "U3",
+      "placed": true,
+      "reason": "placed",
+      "dimensions": {
+        "length": 69.0,
+        "width": 40.0,
+        "height": 100.0
+      },
+      "weight": 55.0,
+      "delay_cost": 0.0,
+      "coordinates": {
+        "leftmost_downmost": {
+          "x": 54,
+          "y": 133,
+          "z": 0
+        },
+        "rightmost_topmost": {
+          "x": 154,
+          "y": 202,
+          "z": 40
+        }
+      }
+    },
+    {
+      "package_id": "P-54",
+      "type": "Economy",
+      "assigned_uld_id": "U3",
+      "placed": true,
+      "reason": "placed",
+      "dimensions": {
+        "length": 106.0,
+        "width": 51.0,
+        "height": 59.0
+      },
+      "weight": 20.0,
+      "delay_cost": 98.0,
+      "coordinates": {
+        "leftmost_downmost": {
+          "x": 0,
+          "y": 255,
+          "z": 130
+        },
+        "rightmost_topmost": {
+          "x": 51,
+          "y": 314,
+          "z": 236
+        }
+      }
+    },
+    {
+      "package_id": "P-65",
+      "type": "Economy",
+      "assigned_uld_id": "U3",
+      "placed": true,
+      "reason": "placed",
+      "dimensions": {
+        "length": 50.0,
+        "width": 78.0,
+        "height": 110.0
+      },
+      "weight": 56.0,
+      "delay_cost": 121.0,
+      "coordinates": {
+        "leftmost_downmost": {
+          "x": 154,
+          "y": 194,
+          "z": 134
+        },
+        "rightmost_topmost": {
+          "x": 232,
+          "y": 244,
+          "z": 244
+        }
+      }
+    },
+    {
+      "package_id": "P-69",
+      "type": "Priority",
+      "assigned_uld_id": "U3",
+      "placed": true,
+      "reason": "placed",
+      "dimensions": {
+        "length": 84.0,
+        "width": 47.0,
+        "height": 54.0
+      },
+      "weight": 57.0,
+      "delay_cost": 0.0,
+      "coordinates": {
+        "leftmost_downmost": {
+          "x": 54,
+          "y": 262,
+          "z": 0
+        },
+        "rightmost_topmost": {
+          "x": 138,
+          "y": 316,
+          "z": 47
+        }
+      }
+    },
+    {
+      "package_id": "P-71",
+      "type": "Priority",
+      "assigned_uld_id": "U3",
+      "placed": true,
+      "reason": "placed",
+      "dimensions": {
+        "length": 99.0,
+        "width": 43.0,
+        "height": 60.0
+      },
+      "weight": 41.0,
+      "delay_cost": 0.0,
+      "coordinates": {
+        "leftmost_downmost": {
+          "x": 54,
+          "y": 202,
+          "z": 0
+        },
+        "rightmost_topmost": {
+          "x": 153,
+          "y": 262,
+          "z": 43
+        }
+      }
+    },
+    {
+      "package_id": "P-86",
+      "type": "Priority",
+      "assigned_uld_id": "U3",
+      "placed": true,
+      "reason": "placed",
+      "dimensions": {
+        "length": 65.0,
+        "width": 63.0,
+        "height": 41.0
+      },
+      "weight": 50.0,
+      "delay_cost": 0.0,
+      "coordinates": {
+        "leftmost_downmost": {
+          "x": 0,
+          "y": 255,
+          "z": 0
+        },
+        "rightmost_topmost": {
+          "x": 41,
+          "y": 318,
+          "z": 65
+        }
+      }
+    },
+    {
+      "package_id": "P-96",
+      "type": "Economy",
+      "assigned_uld_id": "U3",
+      "placed": true,
+      "reason": "placed",
+      "dimensions": {
+        "length": 50.0,
+        "width": 65.0,
+        "height": 84.0
+      },
+      "weight": 40.0,
+      "delay_cost": 68.0,
+      "coordinates": {
+        "leftmost_downmost": {
+          "x": 154,
+          "y": 267,
+          "z": 152
+        },
+        "rightmost_topmost": {
+          "x": 238,
+          "y": 317,
+          "z": 217
+        }
+      }
+    },
+    {
+      "package_id": "P-144",
+      "type": "Economy",
+      "assigned_uld_id": "U4",
+      "placed": true,
+      "reason": "placed",
+      "dimensions": {
+        "length": 59.0,
+        "width": 72.0,
+        "height": 106.0
+      },
+      "weight": 120.0,
+      "delay_cost": 111.0,
+      "coordinates": {
+        "leftmost_downmost": {
+          "x": 107,
+          "y": 43,
+          "z": 0
+        },
+        "rightmost_topmost": {
+          "x": 213,
+          "y": 102,
+          "z": 72
+        }
+      }
+    },
+    {
+      "package_id": "P-151",
+      "type": "Economy",
+      "assigned_uld_id": "U4",
+      "placed": true,
+      "reason": "placed",
+      "dimensions": {
+        "length": 44.0,
+        "width": 106.0,
+        "height": 79.0
+      },
+      "weight": 23.0,
+      "delay_cost": 89.0,
+      "coordinates": {
+        "leftmost_downmost": {
+          "x": 107,
+          "y": 0,
+          "z": 102
+        },
+        "rightmost_topmost": {
+          "x": 213,
+          "y": 44,
+          "z": 181
+        }
+      }
+    },
+    {
+      "package_id": "P-155",
+      "type": "Economy",
+      "assigned_uld_id": "U4",
+      "placed": true,
+      "reason": "placed",
+      "dimensions": {
+        "length": 95.0,
+        "width": 87.0,
+        "height": 47.0
+      },
+      "weight": 95.0,
+      "delay_cost": 99.0,
+      "coordinates": {
+        "leftmost_downmost": {
+          "x": 84,
+          "y": 102,
+          "z": 56
+        },
+        "rightmost_topmost": {
+          "x": 171,
+          "y": 197,
+          "z": 103
+        }
+      }
+    },
+    {
+      "package_id": "P-166",
+      "type": "Economy",
+      "assigned_uld_id": "U4",
+      "placed": true,
+      "reason": "placed",
+      "dimensions": {
+        "length": 84.0,
+        "width": 62.0,
+        "height": 103.0
+      },
+      "weight": 142.0,
+      "delay_cost": 134.0,
+      "coordinates": {
+        "leftmost_downmost": {
+          "x": 0,
+          "y": 102,
+          "z": 0
+        },
+        "rightmost_topmost": {
+          "x": 84,
+          "y": 205,
+          "z": 62
+        }
+      }
+    },
+    {
+      "package_id": "P-174",
+      "type": "Economy",
+      "assigned_uld_id": "U4",
+      "placed": true,
+      "reason": "placed",
+      "dimensions": {
+        "length": 107.0,
+        "width": 101.0,
+        "height": 47.0
+      },
+      "weight": 107.0,
+      "delay_cost": 127.0,
+      "coordinates": {
+        "leftmost_downmost": {
+          "x": 0,
+          "y": 0,
+          "z": 0
+        },
+        "rightmost_topmost": {
+          "x": 107,
+          "y": 47,
+          "z": 101
+        }
+      }
+    },
+    {
+      "package_id": "P-176",
+      "type": "Economy",
+      "assigned_uld_id": "U4",
+      "placed": true,
+      "reason": "placed",
+      "dimensions": {
+        "length": 60.0,
+        "width": 62.0,
+        "height": 102.0
+      },
+      "weight": 42.0,
+      "delay_cost": 87.0,
+      "coordinates": {
+        "leftmost_downmost": {
+          "x": 107,
+          "y": 64,
+          "z": 181
+        },
+        "rightmost_topmost": {
+          "x": 209,
+          "y": 126,
+          "z": 241
+        }
+      }
+    },
+    {
+      "package_id": "P-205",
+      "type": "Economy",
+      "assigned_uld_id": "U4",
+      "placed": true,
+      "reason": "placed",
+      "dimensions": {
+        "length": 47.0,
+        "width": 40.0,
+        "height": 109.0
+      },
+      "weight": 24.0,
+      "delay_cost": 107.0,
+      "coordinates": {
+        "leftmost_downmost": {
+          "x": 170,
+          "y": 205,
+          "z": 204
+        },
+        "rightmost_topmost": {
+          "x": 217,
+          "y": 314,
+          "z": 244
+        }
+      }
+    },
+    {
+      "package_id": "P-241",
+      "type": "Economy",
+      "assigned_uld_id": "U4",
+      "placed": true,
+      "reason": "placed",
+      "dimensions": {
+        "length": 71.0,
+        "width": 74.0,
+        "height": 91.0
+      },
+      "weight": 25.0,
+      "delay_cost": 115.0,
+      "coordinates": {
+        "leftmost_downmost": {
+          "x": 170,
+          "y": 205,
+          "z": 133
+        },
+        "rightmost_topmost": {
+          "x": 244,
+          "y": 296,
+          "z": 204
+        }
+      }
+    },
+    {
+      "package_id": "P-247",
+      "type": "Economy",
+      "assigned_uld_id": "U4",
+      "placed": true,
+      "reason": "placed",
+      "dimensions": {
+        "length": 98.0,
+        "width": 62.0,
+        "height": 79.0
+      },
+      "weight": 61.0,
+      "delay_cost": 136.0,
+      "coordinates": {
+        "leftmost_downmost": {
+          "x": 0,
+          "y": 205,
+          "z": 115
+        },
+        "rightmost_topmost": {
+          "x": 79,
+          "y": 303,
+          "z": 177
+        }
+      }
+    },
+    {
+      "package_id": "P-250",
+      "type": "Economy",
+      "assigned_uld_id": "U4",
+      "placed": true,
+      "reason": "placed",
+      "dimensions": {
+        "length": 65.0,
+        "width": 59.0,
+        "height": 102.0
+      },
+      "weight": 105.0,
+      "delay_cost": 89.0,
+      "coordinates": {
+        "leftmost_downmost": {
+          "x": 174,
+          "y": 212,
+          "z": 57
+        },
+        "rightmost_topmost": {
+          "x": 239,
+          "y": 314,
+          "z": 116
+        }
+      }
+    },
+    {
+      "package_id": "P-253",
+      "type": "Economy",
+      "assigned_uld_id": "U4",
+      "placed": true,
+      "reason": "placed",
+      "dimensions": {
+        "length": 91.0,
+        "width": 49.0,
+        "height": 99.0
+      },
+      "weight": 99.0,
+      "delay_cost": 98.0,
+      "coordinates": {
+        "leftmost_downmost": {
+          "x": 0,
+          "y": 102,
+          "z": 119
+        },
+        "rightmost_topmost": {
+          "x": 49,
+          "y": 201,
+          "z": 210
+        }
+      }
+    },
+    {
+      "package_id": "P-263",
+      "type": "Economy",
+      "assigned_uld_id": "U4",
+      "placed": true,
+      "reason": "placed",
+      "dimensions": {
+        "length": 56.0,
+        "width": 83.0,
+        "height": 98.0
+      },
+      "weight": 33.0,
+      "delay_cost": 107.0,
+      "coordinates": {
+        "leftmost_downmost": {
+          "x": 0,
+          "y": 205,
+          "z": 177
+        },
+        "rightmost_topmost": {
+          "x": 83,
+          "y": 303,
+          "z": 233
+        }
+      }
+    },
+    {
+      "package_id": "P-279",
+      "type": "Economy",
+      "assigned_uld_id": "U4",
+      "placed": true,
+      "reason": "placed",
+      "dimensions": {
+        "length": 85.0,
+        "width": 99.0,
+        "height": 52.0
+      },
+      "weight": 118.0,
+      "delay_cost": 101.0,
+      "coordinates": {
+        "leftmost_downmost": {
+          "x": 49,
+          "y": 102,
+          "z": 119
+        },
+        "rightmost_topmost": {
+          "x": 101,
+          "y": 201,
+          "z": 204
+        }
+      }
+    },
+    {
+      "package_id": "P-28",
+      "type": "Economy",
+      "assigned_uld_id": "U4",
+      "placed": true,
+      "reason": "placed",
+      "dimensions": {
+        "length": 81.0,
+        "width": 64.0,
+        "height": 95.0
+      },
+      "weight": 70.0,
+      "delay_cost": 139.0,
+      "coordinates": {
+        "leftmost_downmost": {
+          "x": 0,
+          "y": 205,
+          "z": 51
+        },
+        "rightmost_topmost": {
+          "x": 81,
+          "y": 300,
+          "z": 115
+        }
+      }
+    },
+    {
+      "package_id": "P-298",
+      "type": "Economy",
+      "assigned_uld_id": "U4",
+      "placed": true,
+      "reason": "placed",
+      "dimensions": {
+        "length": 44.0,
+        "width": 91.0,
+        "height": 86.0
+      },
+      "weight": 57.0,
+      "delay_cost": 83.0,
+      "coordinates": {
+        "leftmost_downmost": {
+          "x": 86,
+          "y": 205,
+          "z": 89
+        },
+        "rightmost_topmost": {
+          "x": 172,
+          "y": 296,
+          "z": 133
+        }
+      }
+    },
+    {
+      "package_id": "P-303",
+      "type": "Economy",
+      "assigned_uld_id": "U4",
+      "placed": true,
+      "reason": "placed",
+      "dimensions": {
+        "length": 57.0,
+        "width": 62.0,
+        "height": 106.0
+      },
+      "weight": 75.0,
+      "delay_cost": 85.0,
+      "coordinates": {
+        "leftmost_downmost": {
+          "x": 174,
+          "y": 212,
+          "z": 0
+        },
+        "rightmost_topmost": {
+          "x": 236,
+          "y": 318,
+          "z": 57
+        }
+      }
+    },
+    {
+      "package_id": "P-308",
+      "type": "Economy",
+      "assigned_uld_id": "U4",
+      "placed": true,
+      "reason": "placed",
+      "dimensions": {
+        "length": 57.0,
+        "width": 64.0,
+        "height": 110.0
+      },
+      "weight": 62.0,
+      "delay_cost": 87.0,
+      "coordinates": {
+        "leftmost_downmost": {
+          "x": 107,
+          "y": 0,
+          "z": 181
+        },
+        "rightmost_topmost": {
+          "x": 217,
+          "y": 64,
+          "z": 238
+        }
+      }
+    },
+    {
+      "package_id": "P-311",
+      "type": "Economy",
+      "assigned_uld_id": "U4",
+      "placed": true,
+      "reason": "placed",
+      "dimensions": {
+        "length": 79.0,
+        "width": 101.0,
+        "height": 43.0
+      },
+      "weight": 26.0,
+      "delay_cost": 69.0,
+      "coordinates": {
+        "leftmost_downmost": {
+          "x": 107,
+          "y": 44,
+          "z": 102
+        },
+        "rightmost_topmost": {
+          "x": 208,
+          "y": 87,
+          "z": 181
+        }
+      }
+    },
+    {
+      "package_id": "P-312",
+      "type": "Economy",
+      "assigned_uld_id": "U4",
+      "placed": true,
+      "reason": "placed",
+      "dimensions": {
+        "length": 90.0,
+        "width": 97.0,
+        "height": 56.0
+      },
+      "weight": 121.0,
+      "delay_cost": 120.0,
+      "coordinates": {
+        "leftmost_downmost": {
+          "x": 84,
+          "y": 102,
+          "z": 0
+        },
+        "rightmost_topmost": {
+          "x": 174,
+          "y": 199,
+          "z": 56
+        }
+      }
+    },
+    {
+      "package_id": "P-314",
+      "type": "Economy",
+      "assigned_uld_id": "U4",
+      "placed": true,
+      "reason": "placed",
+      "dimensions": {
+        "length": 84.0,
+        "width": 53.0,
+        "height": 93.0
+      },
+      "weight": 48.0,
+      "delay_cost": 93.0,
+      "coordinates": {
+        "leftmost_downmost": {
+          "x": 86,
+          "y": 205,
+          "z": 133
+        },
+        "rightmost_topmost": {
+          "x": 170,
+          "y": 298,
+          "z": 186
+        }
+      }
+    },
+    {
+      "package_id": "P-315",
+      "type": "Economy",
+      "assigned_uld_id": "U4",
+      "placed": true,
+      "reason": "placed",
+      "dimensions": {
+        "length": 50.0,
+        "width": 75.0,
+        "height": 53.0
+      },
+      "weight": 14.0,
+      "delay_cost": 104.0,
+      "coordinates": {
+        "leftmost_downmost": {
+          "x": 193,
+          "y": 126,
+          "z": 181
+        },
+        "rightmost_topmost": {
+          "x": 243,
+          "y": 201,
+          "z": 234
+        }
+      }
+    },
+    {
+      "package_id": "P-332",
+      "type": "Economy",
+      "assigned_uld_id": "U4",
+      "placed": true,
+      "reason": "placed",
+      "dimensions": {
+        "length": 57.0,
+        "width": 103.0,
+        "height": 79.0
+      },
+      "weight": 63.0,
+      "delay_cost": 108.0,
+      "coordinates": {
+        "leftmost_downmost": {
+          "x": 0,
+          "y": 102,
+          "z": 62
+        },
+        "rightmost_topmost": {
+          "x": 79,
+          "y": 205,
+          "z": 119
+        }
+      }
+    },
+    {
+      "package_id": "P-335",
+      "type": "Economy",
+      "assigned_uld_id": "U4",
+      "placed": true,
+      "reason": "placed",
+      "dimensions": {
+        "length": 91.0,
+        "width": 57.0,
+        "height": 95.0
+      },
+      "weight": 47.0,
+      "delay_cost": 140.0,
+      "coordinates": {
+        "leftmost_downmost": {
+          "x": 0,
+          "y": 42,
+          "z": 101
+        },
+        "rightmost_topmost": {
+          "x": 91,
+          "y": 99,
+          "z": 196
+        }
+      }
+    },
+    {
+      "package_id": "P-338",
+      "type": "Economy",
+      "assigned_uld_id": "U4",
+      "placed": true,
+      "reason": "placed",
+      "dimensions": {
+        "length": 46.0,
+        "width": 88.0,
+        "height": 87.0
+      },
+      "weight": 75.0,
+      "delay_cost": 70.0,
+      "coordinates": {
+        "leftmost_downmost": {
+          "x": 86,
+          "y": 205,
+          "z": 43
+        },
+        "rightmost_topmost": {
+          "x": 174,
+          "y": 292,
+          "z": 89
+        }
+      }
+    },
+    {
+      "package_id": "P-362",
+      "type": "Economy",
+      "assigned_uld_id": "U4",
+      "placed": true,
+      "reason": "placed",
+      "dimensions": {
+        "length": 75.0,
+        "width": 61.0,
+        "height": 86.0
+      },
+      "weight": 99.0,
+      "delay_cost": 92.0,
+      "coordinates": {
+        "leftmost_downmost": {
+          "x": 107,
+          "y": 126,
+          "z": 181
+        },
+        "rightmost_topmost": {
+          "x": 193,
+          "y": 201,
+          "z": 242
+        }
+      }
+    },
+    {
+      "package_id": "P-364",
+      "type": "Economy",
+      "assigned_uld_id": "U4",
+      "placed": true,
+      "reason": "placed",
+      "dimensions": {
+        "length": 68.0,
+        "width": 53.0,
+        "height": 110.0
+      },
+      "weight": 29.0,
+      "delay_cost": 94.0,
+      "coordinates": {
+        "leftmost_downmost": {
+          "x": 174,
+          "y": 102,
+          "z": 63
+        },
+        "rightmost_topmost": {
+          "x": 242,
+          "y": 212,
+          "z": 116
+        }
+      }
+    },
+    {
+      "package_id": "P-371",
+      "type": "Economy",
+      "assigned_uld_id": "U4",
+      "placed": true,
+      "reason": "placed",
+      "dimensions": {
+        "length": 91.0,
+        "width": 52.0,
+        "height": 48.0
+      },
+      "weight": 50.0,
+      "delay_cost": 106.0,
+      "coordinates": {
+        "leftmost_downmost": {
+          "x": 0,
+          "y": 42,
+          "z": 196
+        },
+        "rightmost_topmost": {
+          "x": 91,
+          "y": 94,
+          "z": 244
+        }
+      }
+    },
+    {
+      "package_id": "P-382",
+      "type": "Economy",
+      "assigned_uld_id": "U4",
+      "placed": true,
+      "reason": "placed",
+      "dimensions": {
+        "length": 102.0,
+        "width": 106.0,
+        "height": 43.0
+      },
+      "weight": 41.0,
+      "delay_cost": 130.0,
+      "coordinates": {
+        "leftmost_downmost": {
+          "x": 107,
+          "y": 0,
+          "z": 0
+        },
+        "rightmost_topmost": {
+          "x": 213,
+          "y": 43,
+          "z": 102
+        }
+      }
+    },
+    {
+      "package_id": "P-386",
+      "type": "Economy",
+      "assigned_uld_id": "U4",
+      "placed": true,
+      "reason": "placed",
+      "dimensions": {
+        "length": 63.0,
+        "width": 110.0,
+        "height": 65.0
+      },
+      "weight": 88.0,
+      "delay_cost": 120.0,
+      "coordinates": {
+        "leftmost_downmost": {
+          "x": 174,
+          "y": 102,
+          "z": 0
+        },
+        "rightmost_topmost": {
+          "x": 239,
+          "y": 212,
+          "z": 63
+        }
+      }
+    },
+    {
+      "package_id": "P-396",
+      "type": "Economy",
+      "assigned_uld_id": "U4",
+      "placed": true,
+      "reason": "placed",
+      "dimensions": {
+        "length": 102.0,
+        "width": 109.0,
+        "height": 42.0
+      },
+      "weight": 118.0,
+      "delay_cost": 120.0,
+      "coordinates": {
+        "leftmost_downmost": {
+          "x": 0,
+          "y": 0,
+          "z": 101
+        },
+        "rightmost_topmost": {
+          "x": 102,
+          "y": 42,
+          "z": 210
+        }
+      }
+    },
+    {
+      "package_id": "P-43",
+      "type": "Economy",
+      "assigned_uld_id": "U4",
+      "placed": true,
+      "reason": "placed",
+      "dimensions": {
+        "length": 51.0,
+        "width": 86.0,
+        "height": 108.0
+      },
+      "weight": 87.0,
+      "delay_cost": 109.0,
+      "coordinates": {
+        "leftmost_downmost": {
+          "x": 0,
+          "y": 205,
+          "z": 0
+        },
+        "rightmost_topmost": {
+          "x": 86,
+          "y": 313,
+          "z": 51
+        }
+      }
+    },
+    {
+      "package_id": "P-58",
+      "type": "Economy",
+      "assigned_uld_id": "U4",
+      "placed": true,
+      "reason": "placed",
+      "dimensions": {
+        "length": 95.0,
+        "width": 102.0,
+        "height": 55.0
+      },
+      "weight": 126.0,
+      "delay_cost": 134.0,
+      "coordinates": {
+        "leftmost_downmost": {
+          "x": 0,
+          "y": 47,
+          "z": 0
+        },
+        "rightmost_topmost": {
+          "x": 102,
+          "y": 102,
+          "z": 95
+        }
+      }
+    },
+    {
+      "package_id": "P-62",
+      "type": "Economy",
+      "assigned_uld_id": "U4",
+      "placed": true,
+      "reason": "placed",
+      "dimensions": {
+        "length": 43.0,
+        "width": 92.0,
+        "height": 88.0
+      },
+      "weight": 25.0,
+      "delay_cost": 84.0,
+      "coordinates": {
+        "leftmost_downmost": {
+          "x": 86,
+          "y": 205,
+          "z": 0
+        },
+        "rightmost_topmost": {
+          "x": 174,
+          "y": 297,
+          "z": 43
+        }
+      }
+    },
+    {
+      "package_id": "P-72",
+      "type": "Economy",
+      "assigned_uld_id": "U4",
+      "placed": true,
+      "reason": "placed",
+      "dimensions": {
+        "length": 89.0,
+        "width": 83.0,
+        "height": 44.0
+      },
+      "weight": 79.0,
+      "delay_cost": 66.0,
+      "coordinates": {
+        "leftmost_downmost": {
+          "x": 86,
+          "y": 205,
+          "z": 186
+        },
+        "rightmost_topmost": {
+          "x": 169,
+          "y": 294,
+          "z": 230
+        }
+      }
+    },
+    {
+      "package_id": "P-79",
+      "type": "Economy",
+      "assigned_uld_id": "U4",
+      "placed": true,
+      "reason": "placed",
+      "dimensions": {
+        "length": 86.0,
+        "width": 62.0,
+        "height": 75.0
+      },
+      "weight": 61.0,
+      "delay_cost": 91.0,
+      "coordinates": {
+        "leftmost_downmost": {
+          "x": 101,
+          "y": 102,
+          "z": 119
+        },
+        "rightmost_topmost": {
+          "x": 176,
+          "y": 188,
+          "z": 181
+        }
+      }
+    },
+    {
+      "package_id": "P-92",
+      "type": "Economy",
+      "assigned_uld_id": "U4",
+      "placed": true,
+      "reason": "placed",
+      "dimensions": {
+        "length": 58.0,
+        "width": 58.0,
+        "height": 65.0
+      },
+      "weight": 59.0,
+      "delay_cost": 138.0,
+      "coordinates": {
+        "leftmost_downmost": {
+          "x": 176,
+          "y": 102,
+          "z": 119
+        },
+        "rightmost_topmost": {
+          "x": 234,
+          "y": 167,
+          "z": 177
+        }
+      }
+    },
+    {
+      "package_id": "P-10",
+      "type": "Priority",
+      "assigned_uld_id": "U5",
+      "placed": true,
+      "reason": "placed",
+      "dimensions": {
+        "length": 88.0,
+        "width": 70.0,
+        "height": 85.0
+      },
+      "weight": 81.0,
+      "delay_cost": 0.0,
+      "coordinates": {
+        "leftmost_downmost": {
+          "x": 96,
+          "y": 220,
+          "z": 215
+        },
+        "rightmost_topmost": {
+          "x": 181,
+          "y": 308,
+          "z": 285
+        }
+      }
+    },
+    {
+      "package_id": "P-103",
+      "type": "Priority",
+      "assigned_uld_id": "U5",
+      "placed": true,
+      "reason": "placed",
+      "dimensions": {
+        "length": 44.0,
+        "width": 78.0,
+        "height": 102.0
+      },
+      "weight": 84.0,
+      "delay_cost": 0.0,
+      "coordinates": {
+        "leftmost_downmost": {
+          "x": 178,
+          "y": 110,
+          "z": 193
+        },
+        "rightmost_topmost": {
+          "x": 222,
+          "y": 212,
+          "z": 271
+        }
+      }
+    },
+    {
+      "package_id": "P-105",
+      "type": "Priority",
+      "assigned_uld_id": "U5",
+      "placed": true,
+      "reason": "placed",
+      "dimensions": {
+        "length": 80.0,
+        "width": 95.0,
+        "height": 103.0
+      },
+      "weight": 225.0,
+      "delay_cost": 0.0,
+      "coordinates": {
+        "leftmost_downmost": {
+          "x": 160,
+          "y": 0,
+          "z": 0
+        },
+        "rightmost_topmost": {
+          "x": 240,
+          "y": 95,
+          "z": 103
+        }
+      }
+    },
+    {
+      "package_id": "P-129",
+      "type": "Priority",
+      "assigned_uld_id": "U5",
+      "placed": true,
+      "reason": "placed",
+      "dimensions": {
+        "length": 110.0,
+        "width": 59.0,
+        "height": 85.0
+      },
+      "weight": 64.0,
+      "delay_cost": 0.0,
+      "coordinates": {
+        "leftmost_downmost": {
+          "x": 69,
+          "y": 0,
+          "z": 185
+        },
+        "rightmost_topmost": {
+          "x": 128,
+          "y": 110,
+          "z": 270
+        }
+      }
+    },
+    {
+      "package_id": "P-133",
+      "type": "Priority",
+      "assigned_uld_id": "U5",
+      "placed": true,
+      "reason": "placed",
+      "dimensions": {
+        "length": 63.0,
+        "width": 109.0,
+        "height": 91.0
+      },
+      "weight": 174.0,
+      "delay_cost": 0.0,
+      "coordinates": {
+        "leftmost_downmost": {
+          "x": 128,
+          "y": 0,
+          "z": 185
+        },
+        "rightmost_topmost": {
+          "x": 191,
+          "y": 109,
+          "z": 276
+        }
+      }
+    },
+    {
+      "package_id": "P-134",
+      "type": "Priority",
+      "assigned_uld_id": "U5",
+      "placed": true,
+      "reason": "placed",
+      "dimensions": {
+        "length": 80.0,
+        "width": 88.0,
+        "height": 97.0
+      },
+      "weight": 150.0,
+      "delay_cost": 0.0,
+      "coordinates": {
+        "leftmost_downmost": {
+          "x": 138,
+          "y": 110,
+          "z": 105
+        },
+        "rightmost_topmost": {
+          "x": 218,
+          "y": 207,
+          "z": 193
+        }
+      }
+    },
+    {
+      "package_id": "P-139",
+      "type": "Priority",
+      "assigned_uld_id": "U5",
+      "placed": true,
+      "reason": "placed",
+      "dimensions": {
+        "length": 96.0,
+        "width": 84.0,
+        "height": 75.0
+      },
+      "weight": 123.0,
+      "delay_cost": 0.0,
+      "coordinates": {
+        "leftmost_downmost": {
+          "x": 138,
+          "y": 218,
+          "z": 0
+        },
+        "rightmost_topmost": {
+          "x": 213,
+          "y": 302,
+          "z": 96
+        }
+      }
+    },
+    {
+      "package_id": "P-145",
+      "type": "Priority",
+      "assigned_uld_id": "U5",
+      "placed": true,
+      "reason": "placed",
+      "dimensions": {
+        "length": 75.0,
+        "width": 106.0,
+        "height": 79.0
+      },
+      "weight": 66.0,
+      "delay_cost": 0.0,
+      "coordinates": {
+        "leftmost_downmost": {
+          "x": 81,
+          "y": 0,
+          "z": 95
+        },
+        "rightmost_topmost": {
+          "x": 156,
+          "y": 106,
+          "z": 174
+        }
+      }
+    },
+    {
+      "package_id": "P-165",
+      "type": "Priority",
+      "assigned_uld_id": "U5",
+      "placed": true,
+      "reason": "placed",
+      "dimensions": {
+        "length": 103.0,
+        "width": 96.0,
+        "height": 93.0
+      },
+      "weight": 267.0,
+      "delay_cost": 0.0,
+      "coordinates": {
+        "leftmost_downmost": {
+          "x": 122,
+          "y": 110,
+          "z": 0
+        },
+        "rightmost_topmost": {
+          "x": 215,
+          "y": 206,
+          "z": 103
+        }
+      }
+    },
+    {
+      "package_id": "P-20",
+      "type": "Priority",
+      "assigned_uld_id": "U5",
+      "placed": true,
+      "reason": "placed",
+      "dimensions": {
+        "length": 88.0,
+        "width": 106.0,
+        "height": 56.0
+      },
+      "weight": 71.0,
+      "delay_cost": 0.0,
+      "coordinates": {
+        "leftmost_downmost": {
+          "x": 68,
+          "y": 110,
+          "z": 193
+        },
+        "rightmost_topmost": {
+          "x": 124,
+          "y": 216,
+          "z": 281
+        }
+      }
+    },
+    {
+      "package_id": "P-207",
+      "type": "Priority",
+      "assigned_uld_id": "U5",
+      "placed": true,
+      "reason": "placed",
+      "dimensions": {
+        "length": 70.0,
+        "width": 45.0,
+        "height": 95.0
+      },
+      "weight": 46.0,
+      "delay_cost": 0.0,
+      "coordinates": {
+        "leftmost_downmost": {
+          "x": 181,
+          "y": 220,
+          "z": 215
+        },
+        "rightmost_topmost": {
+          "x": 226,
+          "y": 315,
+          "z": 285
+        }
+      }
+    },
+    {
+      "package_id": "P-211",
+      "type": "Priority",
+      "assigned_uld_id": "U5",
+      "placed": true,
+      "reason": "placed",
+      "dimensions": {
+        "length": 96.0,
+        "width": 95.0,
+        "height": 81.0
+      },
+      "weight": 142.0,
+      "delay_cost": 0.0,
+      "coordinates": {
+        "leftmost_downmost": {
+          "x": 88,
+          "y": 220,
+          "z": 105
+        },
+        "rightmost_topmost": {
+          "x": 169,
+          "y": 316,
+          "z": 200
+        }
+      }
+    },
+    {
+      "package_id": "P-255",
+      "type": "Priority",
+      "assigned_uld_id": "U5",
+      "placed": true,
+      "reason": "placed",
+      "dimensions": {
+        "length": 64.0,
+        "width": 98.0,
+        "height": 96.0
+      },
+      "weight": 78.0,
+      "delay_cost": 0.0,
+      "coordinates": {
+        "leftmost_downmost": {
+          "x": 0,
+          "y": 220,
+          "z": 215
+        },
+        "rightmost_topmost": {
+          "x": 96,
+          "y": 318,
+          "z": 279
+        }
+      }
+    },
+    {
+      "package_id": "P-274",
+      "type": "Priority",
+      "assigned_uld_id": "U5",
+      "placed": true,
+      "reason": "placed",
+      "dimensions": {
+        "length": 75.0,
+        "width": 88.0,
+        "height": 110.0
+      },
+      "weight": 114.0,
+      "delay_cost": 0.0,
+      "coordinates": {
+        "leftmost_downmost": {
+          "x": 0,
+          "y": 110,
+          "z": 105
+        },
+        "rightmost_topmost": {
+          "x": 75,
+          "y": 220,
+          "z": 193
+        }
+      }
+    },
+    {
+      "package_id": "P-277",
+      "type": "Priority",
+      "assigned_uld_id": "U5",
+      "placed": true,
+      "reason": "placed",
+      "dimensions": {
+        "length": 54.0,
+        "width": 108.0,
+        "height": 105.0
+      },
+      "weight": 93.0,
+      "delay_cost": 0.0,
+      "coordinates": {
+        "leftmost_downmost": {
+          "x": 0,
+          "y": 110,
+          "z": 0
+        },
+        "rightmost_topmost": {
+          "x": 54,
+          "y": 218,
+          "z": 105
+        }
+      }
+    },
+    {
+      "package_id": "P-282",
+      "type": "Priority",
+      "assigned_uld_id": "U5",
+      "placed": true,
+      "reason": "placed",
+      "dimensions": {
+        "length": 107.0,
+        "width": 92.0,
+        "height": 54.0
+      },
+      "weight": 147.0,
+      "delay_cost": 0.0,
+      "coordinates": {
+        "leftmost_downmost": {
+          "x": 124,
+          "y": 110,
+          "z": 193
+        },
+        "rightmost_topmost": {
+          "x": 178,
+          "y": 217,
+          "z": 285
+        }
+      }
+    },
+    {
+      "package_id": "P-283",
+      "type": "Priority",
+      "assigned_uld_id": "U5",
+      "placed": true,
+      "reason": "placed",
+      "dimensions": {
+        "length": 100.0,
+        "width": 97.0,
+        "height": 66.0
+      },
+      "weight": 79.0,
+      "delay_cost": 0.0,
+      "coordinates": {
+        "leftmost_downmost": {
+          "x": 0,
+          "y": 218,
+          "z": 0
+        },
+        "rightmost_topmost": {
+          "x": 66,
+          "y": 318,
+          "z": 97
+        }
+      }
+    },
+    {
+      "package_id": "P-295",
+      "type": "Priority",
+      "assigned_uld_id": "U5",
+      "placed": true,
+      "reason": "placed",
+      "dimensions": {
+        "length": 49.0,
+        "width": 109.0,
+        "height": 69.0
+      },
+      "weight": 32.0,
+      "delay_cost": 0.0,
+      "coordinates": {
+        "leftmost_downmost": {
+          "x": 191,
+          "y": 0,
+          "z": 185
+        },
+        "rightmost_topmost": {
+          "x": 240,
+          "y": 109,
+          "z": 254
+        }
+      }
+    },
+    {
+      "package_id": "P-297",
+      "type": "Priority",
+      "assigned_uld_id": "U5",
+      "placed": true,
+      "reason": "placed",
+      "dimensions": {
+        "length": 103.0,
+        "width": 101.0,
+        "height": 68.0
+      },
+      "weight": 149.0,
+      "delay_cost": 0.0,
+      "coordinates": {
+        "leftmost_downmost": {
+          "x": 54,
+          "y": 110,
+          "z": 0
+        },
+        "rightmost_topmost": {
+          "x": 122,
+          "y": 213,
+          "z": 101
+        }
+      }
+    },
+    {
+      "package_id": "P-299",
+      "type": "Priority",
+      "assigned_uld_id": "U5",
+      "placed": true,
+      "reason": "placed",
+      "dimensions": {
+        "length": 83.0,
+        "width": 87.0,
+        "height": 80.0
+      },
+      "weight": 55.0,
+      "delay_cost": 0.0,
+      "coordinates": {
+        "leftmost_downmost": {
+          "x": 160,
+          "y": 0,
+          "z": 103
+        },
+        "rightmost_topmost": {
+          "x": 243,
+          "y": 87,
+          "z": 183
+        }
+      }
+    },
+    {
+      "package_id": "P-300",
+      "type": "Priority",
+      "assigned_uld_id": "U5",
+      "placed": true,
+      "reason": "placed",
+      "dimensions": {
+        "length": 97.0,
+        "width": 69.0,
+        "height": 101.0
+      },
+      "weight": 57.0,
+      "delay_cost": 0.0,
+      "coordinates": {
+        "leftmost_downmost": {
+          "x": 0,
+          "y": 0,
+          "z": 185
+        },
+        "rightmost_topmost": {
+          "x": 69,
+          "y": 101,
+          "z": 282
+        }
+      }
+    },
+    {
+      "package_id": "P-333",
+      "type": "Priority",
+      "assigned_uld_id": "U5",
+      "placed": true,
+      "reason": "placed",
+      "dimensions": {
+        "length": 100.0,
+        "width": 85.0,
+        "height": 72.0
+      },
+      "weight": 59.0,
+      "delay_cost": 0.0,
+      "coordinates": {
+        "leftmost_downmost": {
+          "x": 66,
+          "y": 218,
+          "z": 0
+        },
+        "rightmost_topmost": {
+          "x": 138,
+          "y": 318,
+          "z": 85
+        }
+      }
+    },
+    {
+      "package_id": "P-346",
+      "type": "Priority",
+      "assigned_uld_id": "U5",
+      "placed": true,
+      "reason": "placed",
+      "dimensions": {
+        "length": 83.0,
+        "width": 95.0,
+        "height": 110.0
+      },
+      "weight": 54.0,
+      "delay_cost": 0.0,
+      "coordinates": {
+        "leftmost_downmost": {
+          "x": 0,
+          "y": 0,
+          "z": 0
+        },
+        "rightmost_topmost": {
+          "x": 83,
+          "y": 110,
+          "z": 95
+        }
+      }
+    },
+    {
+      "package_id": "P-356",
+      "type": "Priority",
+      "assigned_uld_id": "U5",
+      "placed": true,
+      "reason": "placed",
+      "dimensions": {
+        "length": 77.0,
+        "width": 99.0,
+        "height": 95.0
+      },
+      "weight": 133.0,
+      "delay_cost": 0.0,
+      "coordinates": {
+        "leftmost_downmost": {
+          "x": 83,
+          "y": 0,
+          "z": 0
+        },
+        "rightmost_topmost": {
+          "x": 160,
+          "y": 99,
+          "z": 95
+        }
+      }
+    },
+    {
+      "package_id": "P-365",
+      "type": "Priority",
+      "assigned_uld_id": "U5",
+      "placed": true,
+      "reason": "placed",
+      "dimensions": {
+        "length": 88.0,
+        "width": 110.0,
+        "height": 95.0
+      },
+      "weight": 217.0,
+      "delay_cost": 0.0,
+      "coordinates": {
+        "leftmost_downmost": {
+          "x": 0,
+          "y": 220,
+          "z": 105
+        },
+        "rightmost_topmost": {
+          "x": 88,
+          "y": 315,
+          "z": 215
+        }
+      }
+    },
+    {
+      "package_id": "P-394",
+      "type": "Priority",
+      "assigned_uld_id": "U5",
+      "placed": true,
+      "reason": "placed",
+      "dimensions": {
+        "length": 109.0,
+        "width": 90.0,
+        "height": 81.0
+      },
+      "weight": 68.0,
+      "delay_cost": 0.0,
+      "coordinates": {
+        "leftmost_downmost": {
+          "x": 0,
+          "y": 0,
+          "z": 95
+        },
+        "rightmost_topmost": {
+          "x": 81,
+          "y": 109,
+          "z": 185
+        }
+      }
+    },
+    {
+      "package_id": "P-41",
+      "type": "Priority",
+      "assigned_uld_id": "U5",
+      "placed": true,
+      "reason": "placed",
+      "dimensions": {
+        "length": 104.0,
+        "width": 90.0,
+        "height": 68.0
+      },
+      "weight": 72.0,
+      "delay_cost": 0.0,
+      "coordinates": {
+        "leftmost_downmost": {
+          "x": 0,
+          "y": 110,
+          "z": 193
+        },
+        "rightmost_topmost": {
+          "x": 68,
+          "y": 214,
+          "z": 283
+        }
+      }
+    },
+    {
+      "package_id": "P-45",
+      "type": "Priority",
+      "assigned_uld_id": "U5",
+      "placed": true,
+      "reason": "placed",
+      "dimensions": {
+        "length": 91.0,
+        "width": 72.0,
+        "height": 81.0
+      },
+      "weight": 92.0,
+      "delay_cost": 0.0,
+      "coordinates": {
+        "leftmost_downmost": {
+          "x": 169,
+          "y": 220,
+          "z": 105
+        },
+        "rightmost_topmost": {
+          "x": 241,
+          "y": 301,
+          "z": 196
+        }
+      }
+    },
+    {
+      "package_id": "P-73",
+      "type": "Priority",
+      "assigned_uld_id": "U5",
+      "placed": true,
+      "reason": "placed",
+      "dimensions": {
+        "length": 104.0,
+        "width": 86.0,
+        "height": 63.0
+      },
+      "weight": 79.0,
+      "delay_cost": 0.0,
+      "coordinates": {
+        "leftmost_downmost": {
+          "x": 75,
+          "y": 110,
+          "z": 105
+        },
+        "rightmost_topmost": {
+          "x": 138,
+          "y": 214,
+          "z": 191
+        }
+      }
+    },
+    {
+      "package_id": "P-106",
+      "type": "Priority",
+      "assigned_uld_id": "U6",
+      "placed": true,
+      "reason": "placed",
+      "dimensions": {
+        "length": 90.0,
+        "width": 54.0,
+        "height": 92.0
+      },
+      "weight": 100.0,
+      "delay_cost": 0.0,
+      "coordinates": {
+        "leftmost_downmost": {
+          "x": 83,
+          "y": 0,
+          "z": 89
+        },
+        "rightmost_topmost": {
+          "x": 173,
+          "y": 54,
+          "z": 181
+        }
+      }
+    },
+    {
+      "package_id": "P-109",
+      "type": "Priority",
+      "assigned_uld_id": "U6",
+      "placed": true,
+      "reason": "placed",
+      "dimensions": {
+        "length": 98.0,
+        "width": 79.0,
+        "height": 44.0
+      },
+      "weight": 53.0,
+      "delay_cost": 0.0,
+      "coordinates": {
+        "leftmost_downmost": {
+          "x": 145,
+          "y": 112,
+          "z": 181
+        },
+        "rightmost_topmost": {
+          "x": 243,
+          "y": 156,
+          "z": 260
+        }
+      }
+    },
+    {
+      "package_id": "P-124",
+      "type": "Priority",
+      "assigned_uld_id": "U6",
+      "placed": true,
+      "reason": "placed",
+      "dimensions": {
+        "length": 54.0,
+        "width": 104.0,
+        "height": 72.0
+      },
+      "weight": 96.0,
+      "delay_cost": 0.0,
+      "coordinates": {
+        "leftmost_downmost": {
+          "x": 73,
+          "y": 0,
+          "z": 181
+        },
+        "rightmost_topmost": {
+          "x": 145,
+          "y": 54,
+          "z": 285
+        }
+      }
+    },
+    {
+      "package_id": "P-125",
+      "type": "Priority",
+      "assigned_uld_id": "U6",
+      "placed": true,
+      "reason": "placed",
+      "dimensions": {
+        "length": 68.0,
+        "width": 85.0,
+        "height": 91.0
+      },
+      "weight": 139.0,
+      "delay_cost": 0.0,
+      "coordinates": {
+        "leftmost_downmost": {
+          "x": 48,
+          "y": 188,
+          "z": 0
+        },
+        "rightmost_topmost": {
+          "x": 116,
+          "y": 279,
+          "z": 85
+        }
+      }
+    },
+    {
+      "package_id": "P-142",
+      "type": "Priority",
+      "assigned_uld_id": "U6",
+      "placed": true,
+      "reason": "placed",
+      "dimensions": {
+        "length": 92.0,
+        "width": 74.0,
+        "height": 83.0
+      },
+      "weight": 169.0,
+      "delay_cost": 0.0,
+      "coordinates": {
+        "leftmost_downmost": {
+          "x": 0,
+          "y": 0,
+          "z": 89
+        },
+        "rightmost_topmost": {
+          "x": 83,
+          "y": 74,
+          "z": 181
+        }
+      }
+    },
+    {
+      "package_id": "P-157",
+      "type": "Priority",
+      "assigned_uld_id": "U6",
+      "placed": true,
+      "reason": "placed",
+      "dimensions": {
+        "length": 88.0,
+        "width": 88.0,
+        "height": 54.0
+      },
+      "weight": 30.0,
+      "delay_cost": 0.0,
+      "coordinates": {
+        "leftmost_downmost": {
+          "x": 56,
+          "y": 197,
+          "z": 181
+        },
+        "rightmost_topmost": {
+          "x": 110,
+          "y": 285,
+          "z": 269
+        }
+      }
+    },
+    {
+      "package_id": "P-16",
+      "type": "Priority",
+      "assigned_uld_id": "U6",
+      "placed": true,
+      "reason": "placed",
+      "dimensions": {
+        "length": 48.0,
+        "width": 93.0,
+        "height": 63.0
+      },
+      "weight": 82.0,
+      "delay_cost": 0.0,
+      "coordinates": {
+        "leftmost_downmost": {
+          "x": 173,
+          "y": 270,
+          "z": 0
+        },
+        "rightmost_topmost": {
+          "x": 236,
+          "y": 318,
+          "z": 93
+        }
+      }
+    },
+    {
+      "package_id": "P-162",
+      "type": "Priority",
+      "assigned_uld_id": "U6",
+      "placed": true,
+      "reason": "placed",
+      "dimensions": {
+        "length": 46.0,
+        "width": 104.0,
+        "height": 65.0
+      },
+      "weight": 36.0,
+      "delay_cost": 0.0,
+      "coordinates": {
+        "leftmost_downmost": {
+          "x": 0,
+          "y": 64,
+          "z": 181
+        },
+        "rightmost_topmost": {
+          "x": 65,
+          "y": 110,
+          "z": 285
+        }
+      }
+    },
+    {
+      "package_id": "P-163",
+      "type": "Priority",
+      "assigned_uld_id": "U6",
+      "placed": true,
+      "reason": "placed",
+      "dimensions": {
+        "length": 49.0,
+        "width": 83.0,
+        "height": 83.0
+      },
+      "weight": 45.0,
+      "delay_cost": 0.0,
+      "coordinates": {
+        "leftmost_downmost": {
+          "x": 145,
+          "y": 202,
+          "z": 181
+        },
+        "rightmost_topmost": {
+          "x": 228,
+          "y": 251,
+          "z": 264
+        }
+      }
+    },
+    {
+      "package_id": "P-168",
+      "type": "Priority",
+      "assigned_uld_id": "U6",
+      "placed": true,
+      "reason": "placed",
+      "dimensions": {
+        "length": 68.0,
+        "width": 87.0,
+        "height": 88.0
+      },
+      "weight": 109.0,
+      "delay_cost": 0.0,
+      "coordinates": {
+        "leftmost_downmost": {
+          "x": 0,
+          "y": 110,
+          "z": 181
+        },
+        "rightmost_topmost": {
+          "x": 68,
+          "y": 197,
+          "z": 269
+        }
+      }
+    },
+    {
+      "package_id": "P-180",
+      "type": "Priority",
+      "assigned_uld_id": "U6",
+      "placed": true,
+      "reason": "placed",
+      "dimensions": {
+        "length": 80.0,
+        "width": 71.0,
+        "height": 59.0
+      },
+      "weight": 43.0,
+      "delay_cost": 0.0,
+      "coordinates": {
+        "leftmost_downmost": {
+          "x": 173,
+          "y": 79,
+          "z": 66
+        },
+        "rightmost_topmost": {
+          "x": 244,
+          "y": 159,
+          "z": 125
+        }
+      }
+    },
+    {
+      "package_id": "P-181",
+      "type": "Priority",
+      "assigned_uld_id": "U6",
+      "placed": true,
+      "reason": "placed",
+      "dimensions": {
+        "length": 98.0,
+        "width": 58.0,
+        "height": 57.0
+      },
+      "weight": 93.0,
+      "delay_cost": 0.0,
+      "coordinates": {
+        "leftmost_downmost": {
+          "x": 116,
+          "y": 188,
+          "z": 72
+        },
+        "rightmost_topmost": {
+          "x": 173,
+          "y": 286,
+          "z": 130
+        }
+      }
+    },
+    {
+      "package_id": "P-183",
+      "type": "Priority",
+      "assigned_uld_id": "U6",
+      "placed": true,
+      "reason": "placed",
+      "dimensions": {
+        "length": 105.0,
+        "width": 72.0,
+        "height": 57.0
+      },
+      "weight": 37.0,
+      "delay_cost": 0.0,
+      "coordinates": {
+        "leftmost_downmost": {
+          "x": 116,
+          "y": 188,
+          "z": 0
+        },
+        "rightmost_topmost": {
+          "x": 173,
+          "y": 293,
+          "z": 72
+        }
+      }
+    },
+    {
+      "package_id": "P-2",
+      "type": "Priority",
+      "assigned_uld_id": "U6",
+      "placed": true,
+      "reason": "placed",
+      "dimensions": {
+        "length": 56.0,
+        "width": 99.0,
+        "height": 81.0
+      },
+      "weight": 53.0,
+      "delay_cost": 0.0,
+      "coordinates": {
+        "leftmost_downmost": {
+          "x": 145,
+          "y": 0,
+          "z": 181
+        },
+        "rightmost_topmost": {
+          "x": 244,
+          "y": 56,
+          "z": 262
+        }
+      }
+    },
+    {
+      "package_id": "P-212",
+      "type": "Priority",
+      "assigned_uld_id": "U6",
+      "placed": true,
+      "reason": "placed",
+      "dimensions": {
+        "length": 105.0,
+        "width": 74.0,
+        "height": 48.0
+      },
+      "weight": 96.0,
+      "delay_cost": 0.0,
+      "coordinates": {
+        "leftmost_downmost": {
+          "x": 0,
+          "y": 190,
+          "z": 101
+        },
+        "rightmost_topmost": {
+          "x": 48,
+          "y": 295,
+          "z": 175
+        }
+      }
+    },
+    {
+      "package_id": "P-215",
+      "type": "Priority",
+      "assigned_uld_id": "U6",
+      "placed": true,
+      "reason": "placed",
+      "dimensions": {
+        "length": 87.0,
+        "width": 89.0,
+        "height": 80.0
+      },
+      "weight": 126.0,
+      "delay_cost": 0.0,
+      "coordinates": {
+        "leftmost_downmost": {
+          "x": 0,
+          "y": 0,
+          "z": 0
+        },
+        "rightmost_topmost": {
+          "x": 87,
+          "y": 80,
+          "z": 89
+        }
+      }
+    },
+    {
+      "package_id": "P-217",
+      "type": "Priority",
+      "assigned_uld_id": "U6",
+      "placed": true,
+      "reason": "placed",
+      "dimensions": {
+        "length": 78.0,
+        "width": 74.0,
+        "height": 72.0
+      },
+      "weight": 97.0,
+      "delay_cost": 0.0,
+      "coordinates": {
+        "leftmost_downmost": {
+          "x": 73,
+          "y": 54,
+          "z": 181
+        },
+        "rightmost_topmost": {
+          "x": 145,
+          "y": 128,
+          "z": 259
+        }
+      }
+    },
+    {
+      "package_id": "P-219",
+      "type": "Priority",
+      "assigned_uld_id": "U6",
+      "placed": true,
+      "reason": "placed",
+      "dimensions": {
+        "length": 94.0,
+        "width": 61.0,
+        "height": 76.0
+      },
+      "weight": 57.0,
+      "delay_cost": 0.0,
+      "coordinates": {
+        "leftmost_downmost": {
+          "x": 173,
+          "y": 176,
+          "z": 62
+        },
+        "rightmost_topmost": {
+          "x": 234,
+          "y": 270,
+          "z": 138
+        }
+      }
+    },
+    {
+      "package_id": "P-224",
+      "type": "Priority",
+      "assigned_uld_id": "U6",
+      "placed": true,
+      "reason": "placed",
+      "dimensions": {
+        "length": 68.0,
+        "width": 99.0,
+        "height": 56.0
+      },
+      "weight": 103.0,
+      "delay_cost": 0.0,
+      "coordinates": {
+        "leftmost_downmost": {
+          "x": 145,
+          "y": 56,
+          "z": 181
+        },
+        "rightmost_topmost": {
+          "x": 244,
+          "y": 112,
+          "z": 249
+        }
+      }
+    },
+    {
+      "package_id": "P-226",
+      "type": "Priority",
+      "assigned_uld_id": "U6",
+      "placed": true,
+      "reason": "placed",
+      "dimensions": {
+        "length": 60.0,
+        "width": 72.0,
+        "height": 74.0
+      },
+      "weight": 27.0,
+      "delay_cost": 0.0,
+      "coordinates": {
+        "leftmost_downmost": {
+          "x": 73,
+          "y": 128,
+          "z": 181
+        },
+        "rightmost_topmost": {
+          "x": 145,
+          "y": 188,
+          "z": 255
+        }
+      }
+    },
+    {
+      "package_id": "P-23",
+      "type": "Priority",
+      "assigned_uld_id": "U6",
+      "placed": true,
+      "reason": "placed",
+      "dimensions": {
+        "length": 51.0,
+        "width": 50.0,
+        "height": 110.0
+      },
+      "weight": 59.0,
+      "delay_cost": 0.0,
+      "coordinates": {
+        "leftmost_downmost": {
+          "x": 116,
+          "y": 188,
+          "z": 130
+        },
+        "rightmost_topmost": {
+          "x": 166,
+          "y": 298,
+          "z": 181
+        }
+      }
+    },
+    {
+      "package_id": "P-236",
+      "type": "Priority",
+      "assigned_uld_id": "U6",
+      "placed": true,
+      "reason": "placed",
+      "dimensions": {
+        "length": 91.0,
+        "width": 56.0,
+        "height": 56.0
+      },
+      "weight": 57.0,
+      "delay_cost": 0.0,
+      "coordinates": {
+        "leftmost_downmost": {
+          "x": 173,
+          "y": 79,
+          "z": 125
+        },
+        "rightmost_topmost": {
+          "x": 229,
+          "y": 170,
+          "z": 181
+        }
+      }
+    },
+    {
+      "package_id": "P-238",
+      "type": "Priority",
+      "assigned_uld_id": "U6",
+      "placed": true,
+      "reason": "placed",
+      "dimensions": {
+        "length": 50.0,
+        "width": 69.0,
+        "height": 102.0
+      },
+      "weight": 74.0,
+      "delay_cost": 0.0,
+      "coordinates": {
+        "leftmost_downmost": {
+          "x": 52,
+          "y": 80,
+          "z": 95
+        },
+        "rightmost_topmost": {
+          "x": 102,
+          "y": 182,
+          "z": 164
+        }
+      }
+    },
+    {
+      "package_id": "P-252",
+      "type": "Priority",
+      "assigned_uld_id": "U6",
+      "placed": true,
+      "reason": "placed",
+      "dimensions": {
+        "length": 48.0,
+        "width": 110.0,
+        "height": 95.0
+      },
+      "weight": 139.0,
+      "delay_cost": 0.0,
+      "coordinates": {
+        "leftmost_downmost": {
+          "x": 0,
+          "y": 80,
+          "z": 0
+        },
+        "rightmost_topmost": {
+          "x": 48,
+          "y": 190,
+          "z": 95
+        }
+      }
+    },
+    {
+      "package_id": "P-264",
+      "type": "Priority",
+      "assigned_uld_id": "U6",
+      "placed": true,
+      "reason": "placed",
+      "dimensions": {
+        "length": 60.0,
+        "width": 68.0,
+        "height": 108.0
+      },
+      "weight": 35.0,
+      "delay_cost": 0.0,
+      "coordinates": {
+        "leftmost_downmost": {
+          "x": 102,
+          "y": 80,
+          "z": 56
+        },
+        "rightmost_topmost": {
+          "x": 170,
+          "y": 188,
+          "z": 116
+        }
+      }
+    },
+    {
+      "package_id": "P-270",
+      "type": "Priority",
+      "assigned_uld_id": "U6",
+      "placed": true,
+      "reason": "placed",
+      "dimensions": {
+        "length": 52.0,
+        "width": 70.0,
+        "height": 47.0
+      },
+      "weight": 12.0,
+      "delay_cost": 0.0,
+      "coordinates": {
+        "leftmost_downmost": {
+          "x": 48,
+          "y": 266,
+          "z": 101
+        },
+        "rightmost_topmost": {
+          "x": 95,
+          "y": 318,
+          "z": 171
+        }
+      }
+    },
+    {
+      "package_id": "P-273",
+      "type": "Priority",
+      "assigned_uld_id": "U6",
+      "placed": true,
+      "reason": "placed",
+      "dimensions": {
+        "length": 85.0,
+        "width": 79.0,
+        "height": 71.0
+      },
+      "weight": 127.0,
+      "delay_cost": 0.0,
+      "coordinates": {
+        "leftmost_downmost": {
+          "x": 173,
+          "y": 0,
+          "z": 0
+        },
+        "rightmost_topmost": {
+          "x": 244,
+          "y": 79,
+          "z": 85
+        }
+      }
+    },
+    {
+      "package_id": "P-284",
+      "type": "Priority",
+      "assigned_uld_id": "U6",
+      "placed": true,
+      "reason": "placed",
+      "dimensions": {
+        "length": 70.0,
+        "width": 110.0,
+        "height": 52.0
+      },
+      "weight": 86.0,
+      "delay_cost": 0.0,
+      "coordinates": {
+        "leftmost_downmost": {
+          "x": 0,
+          "y": 80,
+          "z": 95
+        },
+        "rightmost_topmost": {
+          "x": 52,
+          "y": 190,
+          "z": 165
+        }
+      }
+    },
+    {
+      "package_id": "P-285",
+      "type": "Priority",
+      "assigned_uld_id": "U6",
+      "placed": true,
+      "reason": "placed",
+      "dimensions": {
+        "length": 81.0,
+        "width": 108.0,
+        "height": 54.0
+      },
+      "weight": 78.0,
+      "delay_cost": 0.0,
+      "coordinates": {
+        "leftmost_downmost": {
+          "x": 48,
+          "y": 80,
+          "z": 0
+        },
+        "rightmost_topmost": {
+          "x": 102,
+          "y": 188,
+          "z": 81
+        }
+      }
+    },
+    {
+      "package_id": "P-319",
+      "type": "Priority",
+      "assigned_uld_id": "U6",
+      "placed": true,
+      "reason": "placed",
+      "dimensions": {
+        "length": 48.0,
+        "width": 102.0,
+        "height": 101.0
+      },
+      "weight": 144.0,
+      "delay_cost": 0.0,
+      "coordinates": {
+        "leftmost_downmost": {
+          "x": 0,
+          "y": 190,
+          "z": 0
+        },
+        "rightmost_topmost": {
+          "x": 48,
+          "y": 292,
+          "z": 101
+        }
+      }
+    },
+    {
+      "package_id": "P-329",
+      "type": "Priority",
+      "assigned_uld_id": "U6",
+      "placed": true,
+      "reason": "placed",
+      "dimensions": {
+        "length": 94.0,
+        "width": 65.0,
+        "height": 58.0
+      },
+      "weight": 26.0,
+      "delay_cost": 0.0,
+      "coordinates": {
+        "leftmost_downmost": {
+          "x": 102,
+          "y": 80,
+          "z": 116
+        },
+        "rightmost_topmost": {
+          "x": 160,
+          "y": 174,
+          "z": 181
+        }
+      }
+    },
+    {
+      "package_id": "P-36",
+      "type": "Priority",
+      "assigned_uld_id": "U6",
+      "placed": true,
+      "reason": "placed",
+      "dimensions": {
+        "length": 86.0,
+        "width": 80.0,
+        "height": 78.0
+      },
+      "weight": 146.0,
+      "delay_cost": 0.0,
+      "coordinates": {
+        "leftmost_downmost": {
+          "x": 87,
+          "y": 0,
+          "z": 0
+        },
+        "rightmost_topmost": {
+          "x": 173,
+          "y": 78,
+          "z": 80
+        }
+      }
+    },
+    {
+      "package_id": "P-360",
+      "type": "Priority",
+      "assigned_uld_id": "U6",
+      "placed": true,
+      "reason": "placed",
+      "dimensions": {
+        "length": 80.0,
+        "width": 76.0,
+        "height": 53.0
+      },
+      "weight": 23.0,
+      "delay_cost": 0.0,
+      "coordinates": {
+        "leftmost_downmost": {
+          "x": 48,
+          "y": 190,
+          "z": 101
+        },
+        "rightmost_topmost": {
+          "x": 101,
+          "y": 266,
+          "z": 181
+        }
+      }
+    },
+    {
+      "package_id": "P-366",
+      "type": "Priority",
+      "assigned_uld_id": "U6",
+      "placed": true,
+      "reason": "placed",
+      "dimensions": {
+        "length": 56.0,
+        "width": 71.0,
+        "height": 105.0
+      },
+      "weight": 112.0,
+      "delay_cost": 0.0,
+      "coordinates": {
+        "leftmost_downmost": {
+          "x": 102,
+          "y": 80,
+          "z": 0
+        },
+        "rightmost_topmost": {
+          "x": 173,
+          "y": 185,
+          "z": 56
+        }
+      }
+    },
+    {
+      "package_id": "P-393",
+      "type": "Economy",
+      "assigned_uld_id": "U6",
+      "placed": true,
+      "reason": "placed",
+      "dimensions": {
+        "length": 44.0,
+        "width": 47.0,
+        "height": 65.0
+      },
+      "weight": 23.0,
+      "delay_cost": 133.0,
+      "coordinates": {
+        "leftmost_downmost": {
+          "x": 173,
+          "y": 270,
+          "z": 93
+        },
+        "rightmost_topmost": {
+          "x": 238,
+          "y": 317,
+          "z": 137
+        }
+      }
+    },
+    {
+      "package_id": "P-42",
+      "type": "Priority",
+      "assigned_uld_id": "U6",
+      "placed": true,
+      "reason": "placed",
+      "dimensions": {
+        "length": 62.0,
+        "width": 109.0,
+        "height": 41.0
+      },
+      "weight": 46.0,
+      "delay_cost": 0.0,
+      "coordinates": {
+        "leftmost_downmost": {
+          "x": 173,
+          "y": 176,
+          "z": 138
+        },
+        "rightmost_topmost": {
+          "x": 235,
+          "y": 285,
+          "z": 179
+        }
+      }
+    },
+    {
+      "package_id": "P-46",
+      "type": "Priority",
+      "assigned_uld_id": "U6",
+      "placed": true,
+      "reason": "placed",
+      "dimensions": {
+        "length": 71.0,
+        "width": 62.0,
+        "height": 94.0
+      },
+      "weight": 39.0,
+      "delay_cost": 0.0,
+      "coordinates": {
+        "leftmost_downmost": {
+          "x": 173,
+          "y": 176,
+          "z": 0
+        },
+        "rightmost_topmost": {
+          "x": 244,
+          "y": 270,
+          "z": 62
+        }
+      }
+    },
+    {
+      "package_id": "P-50",
+      "type": "Priority",
+      "assigned_uld_id": "U6",
+      "placed": true,
+      "reason": "placed",
+      "dimensions": {
+        "length": 73.0,
+        "width": 104.0,
+        "height": 64.0
+      },
+      "weight": 75.0,
+      "delay_cost": 0.0,
+      "coordinates": {
+        "leftmost_downmost": {
+          "x": 0,
+          "y": 0,
+          "z": 181
+        },
+        "rightmost_topmost": {
+          "x": 73,
+          "y": 64,
+          "z": 285
+        }
+      }
+    },
+    {
+      "package_id": "P-6",
+      "type": "Priority",
+      "assigned_uld_id": "U6",
+      "placed": true,
+      "reason": "placed",
+      "dimensions": {
+        "length": 91.0,
+        "width": 56.0,
+        "height": 84.0
+      },
+      "weight": 47.0,
+      "delay_cost": 0.0,
+      "coordinates": {
+        "leftmost_downmost": {
+          "x": 0,
+          "y": 197,
+          "z": 181
+        },
+        "rightmost_topmost": {
+          "x": 56,
+          "y": 281,
+          "z": 272
+        }
+      }
+    },
+    {
+      "package_id": "P-68",
+      "type": "Priority",
+      "assigned_uld_id": "U6",
+      "placed": true,
+      "reason": "placed",
+      "dimensions": {
+        "length": 92.0,
+        "width": 46.0,
+        "height": 81.0
+      },
+      "weight": 62.0,
+      "delay_cost": 0.0,
+      "coordinates": {
+        "leftmost_downmost": {
+          "x": 145,
+          "y": 156,
+          "z": 181
+        },
+        "rightmost_topmost": {
+          "x": 237,
+          "y": 202,
+          "z": 262
+        }
+      }
+    },
+    {
+      "package_id": "P-82",
+      "type": "Priority",
+      "assigned_uld_id": "U6",
+      "placed": true,
+      "reason": "placed",
+      "dimensions": {
+        "length": 66.0,
+        "width": 71.0,
+        "height": 97.0
+      },
+      "weight": 130.0,
+      "delay_cost": 0.0,
+      "coordinates": {
+        "leftmost_downmost": {
+          "x": 173,
+          "y": 79,
+          "z": 0
+        },
+        "rightmost_topmost": {
+          "x": 244,
+          "y": 176,
+          "z": 66
+        }
+      }
+    },
+    {
+      "package_id": "P-9",
+      "type": "Priority",
+      "assigned_uld_id": "U6",
+      "placed": true,
+      "reason": "placed",
+      "dimensions": {
+        "length": 73.0,
+        "width": 71.0,
+        "height": 88.0
+      },
+      "weight": 50.0,
+      "delay_cost": 0.0,
+      "coordinates": {
+        "leftmost_downmost": {
+          "x": 173,
+          "y": 0,
+          "z": 85
+        },
+        "rightmost_topmost": {
+          "x": 244,
+          "y": 73,
+          "z": 173
+        }
+      }
+    },
+    {
+      "package_id": "P-94",
+      "type": "Priority",
+      "assigned_uld_id": "U6",
+      "placed": true,
+      "reason": "placed",
+      "dimensions": {
+        "length": 67.0,
+        "width": 98.0,
+        "height": 66.0
+      },
+      "weight": 95.0,
+      "delay_cost": 0.0,
+      "coordinates": {
+        "leftmost_downmost": {
+          "x": 145,
+          "y": 251,
+          "z": 181
+        },
+        "rightmost_topmost": {
+          "x": 211,
+          "y": 318,
+          "z": 279
+        }
+      }
+    },
+    {
+      "package_id": "P-100",
+      "type": "Economy",
+      "assigned_uld_id": null,
+      "placed": false,
+      "reason": "packer_unfit",
+      "dimensions": {
+        "length": 100.0,
+        "width": 62.0,
+        "height": 87.0
+      },
+      "weight": 104.0,
+      "delay_cost": 79.0,
+      "coordinates": null
+    },
+    {
+      "package_id": "P-101",
+      "type": "Economy",
+      "assigned_uld_id": null,
+      "placed": false,
+      "reason": "packer_unfit",
+      "dimensions": {
+        "length": 102.0,
+        "width": 82.0,
+        "height": 76.0
+      },
+      "weight": 154.0,
+      "delay_cost": 109.0,
+      "coordinates": null
+    },
+    {
+      "package_id": "P-102",
+      "type": "Economy",
+      "assigned_uld_id": null,
+      "placed": false,
+      "reason": "packer_unfit",
+      "dimensions": {
+        "length": 70.0,
+        "width": 106.0,
+        "height": 64.0
+      },
+      "weight": 70.0,
+      "delay_cost": 135.0,
+      "coordinates": null
+    },
+    {
+      "package_id": "P-104",
+      "type": "Economy",
+      "assigned_uld_id": null,
+      "placed": false,
+      "reason": "clusterer_none",
+      "dimensions": {
+        "length": 90.0,
+        "width": 95.0,
+        "height": 95.0
+      },
+      "weight": 110.0,
+      "delay_cost": 108.0,
+      "coordinates": null
+    },
+    {
+      "package_id": "P-107",
+      "type": "Economy",
+      "assigned_uld_id": null,
+      "placed": false,
+      "reason": "clusterer_none",
+      "dimensions": {
+        "length": 99.0,
+        "width": 100.0,
+        "height": 100.0
+      },
+      "weight": 252.0,
+      "delay_cost": 134.0,
+      "coordinates": null
+    },
+    {
+      "package_id": "P-108",
+      "type": "Economy",
+      "assigned_uld_id": null,
+      "placed": false,
+      "reason": "packer_unfit",
+      "dimensions": {
+        "length": 47.0,
+        "width": 109.0,
+        "height": 70.0
+      },
+      "weight": 95.0,
+      "delay_cost": 90.0,
+      "coordinates": null
+    },
+    {
+      "package_id": "P-11",
+      "type": "Economy",
+      "assigned_uld_id": null,
+      "placed": false,
+      "reason": "packer_unfit",
+      "dimensions": {
+        "length": 55.0,
+        "width": 80.0,
+        "height": 81.0
+      },
+      "weight": 23.0,
+      "delay_cost": 96.0,
+      "coordinates": null
+    },
+    {
+      "package_id": "P-110",
+      "type": "Economy",
+      "assigned_uld_id": null,
+      "placed": false,
+      "reason": "clusterer_none",
+      "dimensions": {
+        "length": 86.0,
+        "width": 88.0,
+        "height": 100.0
+      },
+      "weight": 158.0,
+      "delay_cost": 89.0,
+      "coordinates": null
+    },
+    {
+      "package_id": "P-111",
+      "type": "Economy",
+      "assigned_uld_id": null,
+      "placed": false,
+      "reason": "packer_unfit",
+      "dimensions": {
+        "length": 62.0,
+        "width": 103.0,
+        "height": 65.0
+      },
+      "weight": 27.0,
+      "delay_cost": 60.0,
+      "coordinates": null
+    },
+    {
+      "package_id": "P-113",
+      "type": "Economy",
+      "assigned_uld_id": null,
+      "placed": false,
+      "reason": "packer_unfit",
+      "dimensions": {
+        "length": 55.0,
+        "width": 86.0,
+        "height": 75.0
+      },
+      "weight": 88.0,
+      "delay_cost": 87.0,
+      "coordinates": null
+    },
+    {
+      "package_id": "P-114",
+      "type": "Economy",
+      "assigned_uld_id": null,
+      "placed": false,
+      "reason": "clusterer_none",
+      "dimensions": {
+        "length": 80.0,
+        "width": 93.0,
+        "height": 104.0
+      },
+      "weight": 175.0,
+      "delay_cost": 124.0,
+      "coordinates": null
+    },
+    {
+      "package_id": "P-115",
+      "type": "Economy",
+      "assigned_uld_id": null,
+      "placed": false,
+      "reason": "packer_unfit",
+      "dimensions": {
+        "length": 46.0,
+        "width": 105.0,
+        "height": 102.0
+      },
+      "weight": 112.0,
+      "delay_cost": 105.0,
+      "coordinates": null
+    },
+    {
+      "package_id": "P-116",
+      "type": "Economy",
+      "assigned_uld_id": null,
+      "placed": false,
+      "reason": "clusterer_none",
+      "dimensions": {
+        "length": 106.0,
+        "width": 109.0,
+        "height": 83.0
+      },
+      "weight": 132.0,
+      "delay_cost": 128.0,
+      "coordinates": null
+    },
+    {
+      "package_id": "P-118",
+      "type": "Economy",
+      "assigned_uld_id": null,
+      "placed": false,
+      "reason": "packer_unfit",
+      "dimensions": {
+        "length": 90.0,
+        "width": 82.0,
+        "height": 75.0
+      },
+      "weight": 55.0,
+      "delay_cost": 114.0,
+      "coordinates": null
+    },
+    {
+      "package_id": "P-119",
+      "type": "Economy",
+      "assigned_uld_id": null,
+      "placed": false,
+      "reason": "packer_unfit",
+      "dimensions": {
+        "length": 41.0,
+        "width": 79.0,
+        "height": 104.0
+      },
+      "weight": 25.0,
+      "delay_cost": 61.0,
+      "coordinates": null
+    },
+    {
+      "package_id": "P-121",
+      "type": "Economy",
+      "assigned_uld_id": null,
+      "placed": false,
+      "reason": "packer_unfit",
+      "dimensions": {
+        "length": 79.0,
+        "width": 108.0,
+        "height": 80.0
+      },
+      "weight": 99.0,
+      "delay_cost": 124.0,
+      "coordinates": null
+    },
+    {
+      "package_id": "P-127",
+      "type": "Economy",
+      "assigned_uld_id": null,
+      "placed": false,
+      "reason": "packer_unfit",
+      "dimensions": {
+        "length": 71.0,
+        "width": 78.0,
+        "height": 67.0
+      },
+      "weight": 79.0,
+      "delay_cost": 66.0,
+      "coordinates": null
+    },
+    {
+      "package_id": "P-128",
+      "type": "Economy",
+      "assigned_uld_id": null,
+      "placed": false,
+      "reason": "packer_unfit",
+      "dimensions": {
+        "length": 79.0,
+        "width": 102.0,
+        "height": 66.0
+      },
+      "weight": 44.0,
+      "delay_cost": 92.0,
+      "coordinates": null
+    },
+    {
+      "package_id": "P-13",
+      "type": "Economy",
+      "assigned_uld_id": null,
+      "placed": false,
+      "reason": "packer_unfit",
+      "dimensions": {
+        "length": 55.0,
+        "width": 94.0,
+        "height": 87.0
+      },
+      "weight": 41.0,
+      "delay_cost": 73.0,
+      "coordinates": null
+    },
+    {
+      "package_id": "P-131",
+      "type": "Economy",
+      "assigned_uld_id": null,
+      "placed": false,
+      "reason": "packer_unfit",
+      "dimensions": {
+        "length": 82.0,
+        "width": 80.0,
+        "height": 79.0
+      },
+      "weight": 84.0,
+      "delay_cost": 109.0,
+      "coordinates": null
+    },
+    {
+      "package_id": "P-132",
+      "type": "Economy",
+      "assigned_uld_id": null,
+      "placed": false,
+      "reason": "packer_unfit",
+      "dimensions": {
+        "length": 92.0,
+        "width": 102.0,
+        "height": 42.0
+      },
+      "weight": 115.0,
+      "delay_cost": 77.0,
+      "coordinates": null
+    },
+    {
+      "package_id": "P-137",
+      "type": "Economy",
+      "assigned_uld_id": null,
+      "placed": false,
+      "reason": "packer_unfit",
+      "dimensions": {
+        "length": 59.0,
+        "width": 110.0,
+        "height": 96.0
+      },
+      "weight": 108.0,
+      "delay_cost": 120.0,
+      "coordinates": null
+    },
+    {
+      "package_id": "P-138",
+      "type": "Economy",
+      "assigned_uld_id": null,
+      "placed": false,
+      "reason": "packer_unfit",
+      "dimensions": {
+        "length": 85.0,
+        "width": 80.0,
+        "height": 89.0
+      },
+      "weight": 142.0,
+      "delay_cost": 87.0,
+      "coordinates": null
+    },
+    {
+      "package_id": "P-140",
+      "type": "Economy",
+      "assigned_uld_id": null,
+      "placed": false,
+      "reason": "packer_unfit",
+      "dimensions": {
+        "length": 84.0,
+        "width": 106.0,
+        "height": 65.0
+      },
+      "weight": 60.0,
+      "delay_cost": 119.0,
+      "coordinates": null
+    },
+    {
+      "package_id": "P-141",
+      "type": "Economy",
+      "assigned_uld_id": null,
+      "placed": false,
+      "reason": "packer_unfit",
+      "dimensions": {
+        "length": 70.0,
+        "width": 43.0,
+        "height": 87.0
+      },
+      "weight": 34.0,
+      "delay_cost": 70.0,
+      "coordinates": null
+    },
+    {
+      "package_id": "P-143",
+      "type": "Economy",
+      "assigned_uld_id": null,
+      "placed": false,
+      "reason": "clusterer_none",
+      "dimensions": {
+        "length": 82.0,
+        "width": 100.0,
+        "height": 106.0
+      },
+      "weight": 206.0,
+      "delay_cost": 76.0,
+      "coordinates": null
+    },
+    {
+      "package_id": "P-154",
+      "type": "Economy",
+      "assigned_uld_id": null,
+      "placed": false,
+      "reason": "packer_unfit",
+      "dimensions": {
+        "length": 64.0,
+        "width": 103.0,
+        "height": 91.0
+      },
+      "weight": 47.0,
+      "delay_cost": 118.0,
+      "coordinates": null
+    },
+    {
+      "package_id": "P-156",
+      "type": "Economy",
+      "assigned_uld_id": null,
+      "placed": false,
+      "reason": "packer_unfit",
+      "dimensions": {
+        "length": 47.0,
+        "width": 73.0,
+        "height": 110.0
+      },
+      "weight": 57.0,
+      "delay_cost": 124.0,
+      "coordinates": null
+    },
+    {
+      "package_id": "P-158",
+      "type": "Economy",
+      "assigned_uld_id": null,
+      "placed": false,
+      "reason": "clusterer_none",
+      "dimensions": {
+        "length": 72.0,
+        "width": 107.0,
+        "height": 95.0
+      },
+      "weight": 135.0,
+      "delay_cost": 61.0,
+      "coordinates": null
+    },
+    {
+      "package_id": "P-160",
+      "type": "Economy",
+      "assigned_uld_id": null,
+      "placed": false,
+      "reason": "clusterer_none",
+      "dimensions": {
+        "length": 108.0,
+        "width": 82.0,
+        "height": 99.0
+      },
+      "weight": 232.0,
+      "delay_cost": 84.0,
+      "coordinates": null
+    },
+    {
+      "package_id": "P-161",
+      "type": "Economy",
+      "assigned_uld_id": null,
+      "placed": false,
+      "reason": "packer_unfit",
+      "dimensions": {
+        "length": 78.0,
+        "width": 97.0,
+        "height": 62.0
+      },
+      "weight": 127.0,
+      "delay_cost": 67.0,
+      "coordinates": null
+    },
+    {
+      "package_id": "P-169",
+      "type": "Economy",
+      "assigned_uld_id": null,
+      "placed": false,
+      "reason": "packer_unfit",
+      "dimensions": {
+        "length": 48.0,
+        "width": 87.0,
+        "height": 94.0
+      },
+      "weight": 102.0,
+      "delay_cost": 136.0,
+      "coordinates": null
+    },
+    {
+      "package_id": "P-173",
+      "type": "Economy",
+      "assigned_uld_id": null,
+      "placed": false,
+      "reason": "clusterer_none",
+      "dimensions": {
+        "length": 92.0,
+        "width": 81.0,
+        "height": 89.0
+      },
+      "weight": 130.0,
+      "delay_cost": 81.0,
+      "coordinates": null
+    },
+    {
+      "package_id": "P-175",
+      "type": "Economy",
+      "assigned_uld_id": null,
+      "placed": false,
+      "reason": "packer_unfit",
+      "dimensions": {
+        "length": 66.0,
+        "width": 88.0,
+        "height": 96.0
+      },
+      "weight": 127.0,
+      "delay_cost": 121.0,
+      "coordinates": null
+    },
+    {
+      "package_id": "P-178",
+      "type": "Economy",
+      "assigned_uld_id": null,
+      "placed": false,
+      "reason": "packer_unfit",
+      "dimensions": {
+        "length": 78.0,
+        "width": 69.0,
+        "height": 96.0
+      },
+      "weight": 97.0,
+      "delay_cost": 98.0,
+      "coordinates": null
+    },
+    {
+      "package_id": "P-179",
+      "type": "Economy",
+      "assigned_uld_id": null,
+      "placed": false,
+      "reason": "packer_unfit",
+      "dimensions": {
+        "length": 62.0,
+        "width": 73.0,
+        "height": 63.0
+      },
+      "weight": 38.0,
+      "delay_cost": 84.0,
+      "coordinates": null
+    },
+    {
+      "package_id": "P-18",
+      "type": "Economy",
+      "assigned_uld_id": null,
+      "placed": false,
+      "reason": "clusterer_none",
+      "dimensions": {
+        "length": 68.0,
+        "width": 101.0,
+        "height": 95.0
+      },
+      "weight": 96.0,
+      "delay_cost": 65.0,
+      "coordinates": null
+    },
+    {
+      "package_id": "P-184",
+      "type": "Economy",
+      "assigned_uld_id": null,
+      "placed": false,
+      "reason": "clusterer_none",
+      "dimensions": {
+        "length": 88.0,
+        "width": 96.0,
+        "height": 74.0
+      },
+      "weight": 129.0,
+      "delay_cost": 84.0,
+      "coordinates": null
+    },
+    {
+      "package_id": "P-186",
+      "type": "Economy",
+      "assigned_uld_id": null,
+      "placed": false,
+      "reason": "packer_unfit",
+      "dimensions": {
+        "length": 47.0,
+        "width": 84.0,
+        "height": 93.0
+      },
+      "weight": 60.0,
+      "delay_cost": 118.0,
+      "coordinates": null
+    },
+    {
+      "package_id": "P-19",
+      "type": "Economy",
+      "assigned_uld_id": null,
+      "placed": false,
+      "reason": "packer_unfit",
+      "dimensions": {
+        "length": 51.0,
+        "width": 87.0,
+        "height": 69.0
+      },
+      "weight": 73.0,
+      "delay_cost": 107.0,
+      "coordinates": null
+    },
+    {
+      "package_id": "P-190",
+      "type": "Economy",
+      "assigned_uld_id": null,
+      "placed": false,
+      "reason": "packer_unfit",
+      "dimensions": {
+        "length": 108.0,
+        "width": 101.0,
+        "height": 52.0
+      },
+      "weight": 143.0,
+      "delay_cost": 128.0,
+      "coordinates": null
+    },
+    {
+      "package_id": "P-191",
+      "type": "Economy",
+      "assigned_uld_id": null,
+      "placed": false,
+      "reason": "clusterer_none",
+      "dimensions": {
+        "length": 100.0,
+        "width": 71.0,
+        "height": 94.0
+      },
+      "weight": 123.0,
+      "delay_cost": 64.0,
+      "coordinates": null
+    },
+    {
+      "package_id": "P-193",
+      "type": "Economy",
+      "assigned_uld_id": null,
+      "placed": false,
+      "reason": "packer_unfit",
+      "dimensions": {
+        "length": 72.0,
+        "width": 87.0,
+        "height": 67.0
+      },
+      "weight": 113.0,
+      "delay_cost": 75.0,
+      "coordinates": null
+    },
+    {
+      "package_id": "P-195",
+      "type": "Economy",
+      "assigned_uld_id": null,
+      "placed": false,
+      "reason": "packer_unfit",
+      "dimensions": {
+        "length": 102.0,
+        "width": 57.0,
+        "height": 72.0
+      },
+      "weight": 62.0,
+      "delay_cost": 90.0,
+      "coordinates": null
+    },
+    {
+      "package_id": "P-196",
+      "type": "Economy",
+      "assigned_uld_id": null,
+      "placed": false,
+      "reason": "packer_unfit",
+      "dimensions": {
+        "length": 64.0,
+        "width": 107.0,
+        "height": 66.0
+      },
+      "weight": 85.0,
+      "delay_cost": 60.0,
+      "coordinates": null
+    },
+    {
+      "package_id": "P-197",
+      "type": "Economy",
+      "assigned_uld_id": null,
+      "placed": false,
+      "reason": "clusterer_none",
+      "dimensions": {
+        "length": 109.0,
+        "width": 82.0,
+        "height": 99.0
+      },
+      "weight": 68.0,
+      "delay_cost": 85.0,
+      "coordinates": null
+    },
+    {
+      "package_id": "P-198",
+      "type": "Economy",
+      "assigned_uld_id": null,
+      "placed": false,
+      "reason": "packer_unfit",
+      "dimensions": {
+        "length": 74.0,
+        "width": 59.0,
+        "height": 84.0
+      },
+      "weight": 68.0,
+      "delay_cost": 113.0,
+      "coordinates": null
+    },
+    {
+      "package_id": "P-200",
+      "type": "Economy",
+      "assigned_uld_id": null,
+      "placed": false,
+      "reason": "packer_unfit",
+      "dimensions": {
+        "length": 74.0,
+        "width": 74.0,
+        "height": 83.0
+      },
+      "weight": 81.0,
+      "delay_cost": 95.0,
+      "coordinates": null
+    },
+    {
+      "package_id": "P-201",
+      "type": "Economy",
+      "assigned_uld_id": null,
+      "placed": false,
+      "reason": "packer_unfit",
+      "dimensions": {
+        "length": 80.0,
+        "width": 106.0,
+        "height": 76.0
+      },
+      "weight": 159.0,
+      "delay_cost": 139.0,
+      "coordinates": null
+    },
+    {
+      "package_id": "P-203",
+      "type": "Economy",
+      "assigned_uld_id": null,
+      "placed": false,
+      "reason": "clusterer_none",
+      "dimensions": {
+        "length": 68.0,
+        "width": 106.0,
+        "height": 93.0
+      },
+      "weight": 52.0,
+      "delay_cost": 63.0,
+      "coordinates": null
+    },
+    {
+      "package_id": "P-204",
+      "type": "Economy",
+      "assigned_uld_id": null,
+      "placed": false,
+      "reason": "packer_unfit",
+      "dimensions": {
+        "length": 55.0,
+        "width": 88.0,
+        "height": 103.0
+      },
+      "weight": 150.0,
+      "delay_cost": 101.0,
+      "coordinates": null
+    },
+    {
+      "package_id": "P-209",
+      "type": "Economy",
+      "assigned_uld_id": null,
+      "placed": false,
+      "reason": "packer_unfit",
+      "dimensions": {
+        "length": 75.0,
+        "width": 44.0,
+        "height": 72.0
+      },
+      "weight": 57.0,
+      "delay_cost": 74.0,
+      "coordinates": null
+    },
+    {
+      "package_id": "P-21",
+      "type": "Economy",
+      "assigned_uld_id": null,
+      "placed": false,
+      "reason": "clusterer_none",
+      "dimensions": {
+        "length": 105.0,
+        "width": 71.0,
+        "height": 105.0
+      },
+      "weight": 223.0,
+      "delay_cost": 116.0,
+      "coordinates": null
+    },
+    {
+      "package_id": "P-210",
+      "type": "Economy",
+      "assigned_uld_id": null,
+      "placed": false,
+      "reason": "packer_unfit",
+      "dimensions": {
+        "length": 45.0,
+        "width": 93.0,
+        "height": 88.0
+      },
+      "weight": 64.0,
+      "delay_cost": 67.0,
+      "coordinates": null
+    },
+    {
+      "package_id": "P-213",
+      "type": "Economy",
+      "assigned_uld_id": null,
+      "placed": false,
+      "reason": "packer_unfit",
+      "dimensions": {
+        "length": 71.0,
+        "width": 50.0,
+        "height": 105.0
+      },
+      "weight": 94.0,
+      "delay_cost": 66.0,
+      "coordinates": null
+    },
+    {
+      "package_id": "P-22",
+      "type": "Economy",
+      "assigned_uld_id": null,
+      "placed": false,
+      "reason": "clusterer_none",
+      "dimensions": {
+        "length": 100.0,
+        "width": 92.0,
+        "height": 99.0
+      },
+      "weight": 191.0,
+      "delay_cost": 86.0,
+      "coordinates": null
+    },
+    {
+      "package_id": "P-223",
+      "type": "Economy",
+      "assigned_uld_id": null,
+      "placed": false,
+      "reason": "clusterer_none",
+      "dimensions": {
+        "length": 83.0,
+        "width": 92.0,
+        "height": 109.0
+      },
+      "weight": 145.0,
+      "delay_cost": 66.0,
+      "coordinates": null
+    },
+    {
+      "package_id": "P-228",
+      "type": "Economy",
+      "assigned_uld_id": null,
+      "placed": false,
+      "reason": "packer_unfit",
+      "dimensions": {
+        "length": 98.0,
+        "width": 92.0,
+        "height": 51.0
+      },
+      "weight": 128.0,
+      "delay_cost": 75.0,
+      "coordinates": null
+    },
+    {
+      "package_id": "P-229",
+      "type": "Economy",
+      "assigned_uld_id": null,
+      "placed": false,
+      "reason": "packer_unfit",
+      "dimensions": {
+        "length": 69.0,
+        "width": 81.0,
+        "height": 104.0
+      },
+      "weight": 171.0,
+      "delay_cost": 116.0,
+      "coordinates": null
+    },
+    {
+      "package_id": "P-230",
+      "type": "Economy",
+      "assigned_uld_id": null,
+      "placed": false,
+      "reason": "packer_unfit",
+      "dimensions": {
+        "length": 46.0,
+        "width": 48.0,
+        "height": 86.0
+      },
+      "weight": 44.0,
+      "delay_cost": 82.0,
+      "coordinates": null
+    },
+    {
+      "package_id": "P-233",
+      "type": "Economy",
+      "assigned_uld_id": null,
+      "placed": false,
+      "reason": "packer_unfit",
+      "dimensions": {
+        "length": 71.0,
+        "width": 59.0,
+        "height": 101.0
+      },
+      "weight": 120.0,
+      "delay_cost": 63.0,
+      "coordinates": null
+    },
+    {
+      "package_id": "P-235",
+      "type": "Economy",
+      "assigned_uld_id": null,
+      "placed": false,
+      "reason": "clusterer_none",
+      "dimensions": {
+        "length": 80.0,
+        "width": 105.0,
+        "height": 84.0
+      },
+      "weight": 61.0,
+      "delay_cost": 95.0,
+      "coordinates": null
+    },
+    {
+      "package_id": "P-237",
+      "type": "Economy",
+      "assigned_uld_id": null,
+      "placed": false,
+      "reason": "clusterer_none",
+      "dimensions": {
+        "length": 97.0,
+        "width": 74.0,
+        "height": 101.0
+      },
+      "weight": 193.0,
+      "delay_cost": 97.0,
+      "coordinates": null
+    },
+    {
+      "package_id": "P-239",
+      "type": "Economy",
+      "assigned_uld_id": null,
+      "placed": false,
+      "reason": "packer_unfit",
+      "dimensions": {
+        "length": 79.0,
+        "width": 85.0,
+        "height": 71.0
+      },
+      "weight": 94.0,
+      "delay_cost": 93.0,
+      "coordinates": null
+    },
+    {
+      "package_id": "P-24",
+      "type": "Economy",
+      "assigned_uld_id": null,
+      "placed": false,
+      "reason": "packer_unfit",
+      "dimensions": {
+        "length": 81.0,
+        "width": 109.0,
+        "height": 55.0
+      },
+      "weight": 123.0,
+      "delay_cost": 69.0,
+      "coordinates": null
+    },
+    {
+      "package_id": "P-240",
+      "type": "Economy",
+      "assigned_uld_id": null,
+      "placed": false,
+      "reason": "packer_unfit",
+      "dimensions": {
+        "length": 101.0,
+        "width": 88.0,
+        "height": 65.0
+      },
+      "weight": 84.0,
+      "delay_cost": 127.0,
+      "coordinates": null
+    },
+    {
+      "package_id": "P-242",
+      "type": "Economy",
+      "assigned_uld_id": null,
+      "placed": false,
+      "reason": "packer_unfit",
+      "dimensions": {
+        "length": 89.0,
+        "width": 69.0,
+        "height": 53.0
+      },
+      "weight": 48.0,
+      "delay_cost": 118.0,
+      "coordinates": null
+    },
+    {
+      "package_id": "P-243",
+      "type": "Economy",
+      "assigned_uld_id": null,
+      "placed": false,
+      "reason": "packer_unfit",
+      "dimensions": {
+        "length": 69.0,
+        "width": 77.0,
+        "height": 105.0
+      },
+      "weight": 98.0,
+      "delay_cost": 76.0,
+      "coordinates": null
+    },
+    {
+      "package_id": "P-244",
+      "type": "Economy",
+      "assigned_uld_id": null,
+      "placed": false,
+      "reason": "packer_unfit",
+      "dimensions": {
+        "length": 76.0,
+        "width": 62.0,
+        "height": 75.0
+      },
+      "weight": 24.0,
+      "delay_cost": 111.0,
+      "coordinates": null
+    },
+    {
+      "package_id": "P-245",
+      "type": "Economy",
+      "assigned_uld_id": null,
+      "placed": false,
+      "reason": "packer_unfit",
+      "dimensions": {
+        "length": 53.0,
+        "width": 105.0,
+        "height": 80.0
+      },
+      "weight": 61.0,
+      "delay_cost": 67.0,
+      "coordinates": null
+    },
+    {
+      "package_id": "P-251",
+      "type": "Economy",
+      "assigned_uld_id": null,
+      "placed": false,
+      "reason": "packer_unfit",
+      "dimensions": {
+        "length": 78.0,
+        "width": 44.0,
+        "height": 106.0
+      },
+      "weight": 106.0,
+      "delay_cost": 71.0,
+      "coordinates": null
+    },
+    {
+      "package_id": "P-254",
+      "type": "Economy",
+      "assigned_uld_id": null,
+      "placed": false,
+      "reason": "packer_unfit",
+      "dimensions": {
+        "length": 99.0,
+        "width": 51.0,
+        "height": 79.0
+      },
+      "weight": 101.0,
+      "delay_cost": 72.0,
+      "coordinates": null
+    },
+    {
+      "package_id": "P-256",
+      "type": "Economy",
+      "assigned_uld_id": null,
+      "placed": false,
+      "reason": "packer_unfit",
+      "dimensions": {
+        "length": 92.0,
+        "width": 64.0,
+        "height": 66.0
+      },
+      "weight": 117.0,
+      "delay_cost": 99.0,
+      "coordinates": null
+    },
+    {
+      "package_id": "P-259",
+      "type": "Economy",
+      "assigned_uld_id": null,
+      "placed": false,
+      "reason": "packer_unfit",
+      "dimensions": {
+        "length": 84.0,
+        "width": 72.0,
+        "height": 86.0
+      },
+      "weight": 55.0,
+      "delay_cost": 98.0,
+      "coordinates": null
+    },
+    {
+      "package_id": "P-262",
+      "type": "Economy",
+      "assigned_uld_id": null,
+      "placed": false,
+      "reason": "clusterer_none",
+      "dimensions": {
+        "length": 103.0,
+        "width": 92.0,
+        "height": 109.0
+      },
+      "weight": 99.0,
+      "delay_cost": 65.0,
+      "coordinates": null
+    },
+    {
+      "package_id": "P-267",
+      "type": "Economy",
+      "assigned_uld_id": null,
+      "placed": false,
+      "reason": "packer_unfit",
+      "dimensions": {
+        "length": 54.0,
+        "width": 97.0,
+        "height": 98.0
+      },
+      "weight": 130.0,
+      "delay_cost": 116.0,
+      "coordinates": null
+    },
+    {
+      "package_id": "P-268",
+      "type": "Economy",
+      "assigned_uld_id": null,
+      "placed": false,
+      "reason": "packer_unfit",
+      "dimensions": {
+        "length": 84.0,
+        "width": 63.0,
+        "height": 100.0
+      },
+      "weight": 99.0,
+      "delay_cost": 95.0,
+      "coordinates": null
+    },
+    {
+      "package_id": "P-269",
+      "type": "Economy",
+      "assigned_uld_id": null,
+      "placed": false,
+      "reason": "packer_unfit",
+      "dimensions": {
+        "length": 58.0,
+        "width": 56.0,
+        "height": 74.0
+      },
+      "weight": 25.0,
+      "delay_cost": 85.0,
+      "coordinates": null
+    },
+    {
+      "package_id": "P-278",
+      "type": "Economy",
+      "assigned_uld_id": null,
+      "placed": false,
+      "reason": "packer_unfit",
+      "dimensions": {
+        "length": 73.0,
+        "width": 44.0,
+        "height": 80.0
+      },
+      "weight": 60.0,
+      "delay_cost": 96.0,
+      "coordinates": null
+    },
+    {
+      "package_id": "P-281",
+      "type": "Economy",
+      "assigned_uld_id": null,
+      "placed": false,
+      "reason": "packer_unfit",
+      "dimensions": {
+        "length": 55.0,
+        "width": 84.0,
+        "height": 105.0
+      },
+      "weight": 57.0,
+      "delay_cost": 95.0,
+      "coordinates": null
+    },
+    {
+      "package_id": "P-286",
+      "type": "Economy",
+      "assigned_uld_id": null,
+      "placed": false,
+      "reason": "packer_unfit",
+      "dimensions": {
+        "length": 93.0,
+        "width": 75.0,
+        "height": 73.0
+      },
+      "weight": 133.0,
+      "delay_cost": 102.0,
+      "coordinates": null
+    },
+    {
+      "package_id": "P-287",
+      "type": "Economy",
+      "assigned_uld_id": null,
+      "placed": false,
+      "reason": "clusterer_none",
+      "dimensions": {
+        "length": 99.0,
+        "width": 86.0,
+        "height": 84.0
+      },
+      "weight": 94.0,
+      "delay_cost": 110.0,
+      "coordinates": null
+    },
+    {
+      "package_id": "P-288",
+      "type": "Economy",
+      "assigned_uld_id": null,
+      "placed": false,
+      "reason": "packer_unfit",
+      "dimensions": {
+        "length": 61.0,
+        "width": 101.0,
+        "height": 94.0
+      },
+      "weight": 36.0,
+      "delay_cost": 122.0,
+      "coordinates": null
+    },
+    {
+      "package_id": "P-292",
+      "type": "Economy",
+      "assigned_uld_id": null,
+      "placed": false,
+      "reason": "clusterer_none",
+      "dimensions": {
+        "length": 63.0,
+        "width": 100.0,
+        "height": 93.0
+      },
+      "weight": 46.0,
+      "delay_cost": 66.0,
+      "coordinates": null
+    },
+    {
+      "package_id": "P-293",
+      "type": "Economy",
+      "assigned_uld_id": null,
+      "placed": false,
+      "reason": "packer_unfit",
+      "dimensions": {
+        "length": 56.0,
+        "width": 104.0,
+        "height": 56.0
+      },
+      "weight": 78.0,
+      "delay_cost": 81.0,
+      "coordinates": null
+    },
+    {
+      "package_id": "P-294",
+      "type": "Economy",
+      "assigned_uld_id": null,
+      "placed": false,
+      "reason": "packer_unfit",
+      "dimensions": {
+        "length": 88.0,
+        "width": 93.0,
+        "height": 44.0
+      },
+      "weight": 30.0,
+      "delay_cost": 69.0,
+      "coordinates": null
+    },
+    {
+      "package_id": "P-296",
+      "type": "Economy",
+      "assigned_uld_id": null,
+      "placed": false,
+      "reason": "clusterer_none",
+      "dimensions": {
+        "length": 92.0,
+        "width": 81.0,
+        "height": 93.0
+      },
+      "weight": 50.0,
+      "delay_cost": 60.0,
+      "coordinates": null
+    },
+    {
+      "package_id": "P-30",
+      "type": "Economy",
+      "assigned_uld_id": null,
+      "placed": false,
+      "reason": "clusterer_none",
+      "dimensions": {
+        "length": 88.0,
+        "width": 85.0,
+        "height": 102.0
+      },
+      "weight": 164.0,
+      "delay_cost": 70.0,
+      "coordinates": null
+    },
+    {
+      "package_id": "P-301",
+      "type": "Economy",
+      "assigned_uld_id": null,
+      "placed": false,
+      "reason": "packer_unfit",
+      "dimensions": {
+        "length": 61.0,
+        "width": 72.0,
+        "height": 69.0
+      },
+      "weight": 76.0,
+      "delay_cost": 72.0,
+      "coordinates": null
+    },
+    {
+      "package_id": "P-302",
+      "type": "Economy",
+      "assigned_uld_id": null,
+      "placed": false,
+      "reason": "packer_unfit",
+      "dimensions": {
+        "length": 64.0,
+        "width": 106.0,
+        "height": 65.0
+      },
+      "weight": 98.0,
+      "delay_cost": 84.0,
+      "coordinates": null
+    },
+    {
+      "package_id": "P-305",
+      "type": "Economy",
+      "assigned_uld_id": null,
+      "placed": false,
+      "reason": "packer_unfit",
+      "dimensions": {
+        "length": 53.0,
+        "width": 58.0,
+        "height": 63.0
+      },
+      "weight": 22.0,
+      "delay_cost": 104.0,
+      "coordinates": null
+    },
+    {
+      "package_id": "P-306",
+      "type": "Economy",
+      "assigned_uld_id": null,
+      "placed": false,
+      "reason": "clusterer_none",
+      "dimensions": {
+        "length": 88.0,
+        "width": 91.0,
+        "height": 90.0
+      },
+      "weight": 57.0,
+      "delay_cost": 106.0,
+      "coordinates": null
+    },
+    {
+      "package_id": "P-309",
+      "type": "Economy",
+      "assigned_uld_id": null,
+      "placed": false,
+      "reason": "clusterer_none",
+      "dimensions": {
+        "length": 104.0,
+        "width": 91.0,
+        "height": 60.0
+      },
+      "weight": 135.0,
+      "delay_cost": 66.0,
+      "coordinates": null
+    },
+    {
+      "package_id": "P-316",
+      "type": "Economy",
+      "assigned_uld_id": null,
+      "placed": false,
+      "reason": "packer_unfit",
+      "dimensions": {
+        "length": 105.0,
+        "width": 103.0,
+        "height": 71.0
+      },
+      "weight": 201.0,
+      "delay_cost": 123.0,
+      "coordinates": null
+    },
+    {
+      "package_id": "P-318",
+      "type": "Economy",
+      "assigned_uld_id": null,
+      "placed": false,
+      "reason": "clusterer_none",
+      "dimensions": {
+        "length": 86.0,
+        "width": 75.0,
+        "height": 99.0
+      },
+      "weight": 47.0,
+      "delay_cost": 89.0,
+      "coordinates": null
+    },
+    {
+      "package_id": "P-321",
+      "type": "Economy",
+      "assigned_uld_id": null,
+      "placed": false,
+      "reason": "packer_unfit",
+      "dimensions": {
+        "length": 71.0,
+        "width": 78.0,
+        "height": 98.0
+      },
+      "weight": 92.0,
+      "delay_cost": 91.0,
+      "coordinates": null
+    },
+    {
+      "package_id": "P-323",
+      "type": "Economy",
+      "assigned_uld_id": null,
+      "placed": false,
+      "reason": "packer_unfit",
+      "dimensions": {
+        "length": 72.0,
+        "width": 98.0,
+        "height": 97.0
+      },
+      "weight": 183.0,
+      "delay_cost": 129.0,
+      "coordinates": null
+    },
+    {
+      "package_id": "P-325",
+      "type": "Economy",
+      "assigned_uld_id": null,
+      "placed": false,
+      "reason": "packer_unfit",
+      "dimensions": {
+        "length": 80.0,
+        "width": 63.0,
+        "height": 77.0
+      },
+      "weight": 93.0,
+      "delay_cost": 74.0,
+      "coordinates": null
+    },
+    {
+      "package_id": "P-328",
+      "type": "Economy",
+      "assigned_uld_id": null,
+      "placed": false,
+      "reason": "packer_unfit",
+      "dimensions": {
+        "length": 50.0,
+        "width": 78.0,
+        "height": 82.0
+      },
+      "weight": 57.0,
+      "delay_cost": 72.0,
+      "coordinates": null
+    },
+    {
+      "package_id": "P-33",
+      "type": "Economy",
+      "assigned_uld_id": null,
+      "placed": false,
+      "reason": "packer_unfit",
+      "dimensions": {
+        "length": 90.0,
+        "width": 89.0,
+        "height": 73.0
+      },
+      "weight": 132.0,
+      "delay_cost": 136.0,
+      "coordinates": null
+    },
+    {
+      "package_id": "P-330",
+      "type": "Economy",
+      "assigned_uld_id": null,
+      "placed": false,
+      "reason": "clusterer_none",
+      "dimensions": {
+        "length": 105.0,
+        "width": 106.0,
+        "height": 97.0
+      },
+      "weight": 271.0,
+      "delay_cost": 75.0,
+      "coordinates": null
+    },
+    {
+      "package_id": "P-339",
+      "type": "Economy",
+      "assigned_uld_id": null,
+      "placed": false,
+      "reason": "packer_unfit",
+      "dimensions": {
+        "length": 54.0,
+        "width": 76.0,
+        "height": 76.0
+      },
+      "weight": 80.0,
+      "delay_cost": 94.0,
+      "coordinates": null
+    },
+    {
+      "package_id": "P-34",
+      "type": "Economy",
+      "assigned_uld_id": null,
+      "placed": false,
+      "reason": "packer_unfit",
+      "dimensions": {
+        "length": 87.0,
+        "width": 45.0,
+        "height": 81.0
+      },
+      "weight": 45.0,
+      "delay_cost": 77.0,
+      "coordinates": null
+    },
+    {
+      "package_id": "P-340",
+      "type": "Economy",
+      "assigned_uld_id": null,
+      "placed": false,
+      "reason": "packer_unfit",
+      "dimensions": {
+        "length": 103.0,
+        "width": 90.0,
+        "height": 49.0
+      },
+      "weight": 66.0,
+      "delay_cost": 98.0,
+      "coordinates": null
+    },
+    {
+      "package_id": "P-341",
+      "type": "Economy",
+      "assigned_uld_id": null,
+      "placed": false,
+      "reason": "packer_unfit",
+      "dimensions": {
+        "length": 72.0,
+        "width": 87.0,
+        "height": 57.0
+      },
+      "weight": 50.0,
+      "delay_cost": 109.0,
+      "coordinates": null
+    },
+    {
+      "package_id": "P-343",
+      "type": "Economy",
+      "assigned_uld_id": null,
+      "placed": false,
+      "reason": "packer_unfit",
+      "dimensions": {
+        "length": 107.0,
+        "width": 67.0,
+        "height": 77.0
+      },
+      "weight": 98.0,
+      "delay_cost": 130.0,
+      "coordinates": null
+    },
+    {
+      "package_id": "P-344",
+      "type": "Economy",
+      "assigned_uld_id": null,
+      "placed": false,
+      "reason": "packer_unfit",
+      "dimensions": {
+        "length": 55.0,
+        "width": 89.0,
+        "height": 92.0
+      },
+      "weight": 111.0,
+      "delay_cost": 95.0,
+      "coordinates": null
+    },
+    {
+      "package_id": "P-347",
+      "type": "Economy",
+      "assigned_uld_id": null,
+      "placed": false,
+      "reason": "packer_unfit",
+      "dimensions": {
+        "length": 53.0,
+        "width": 105.0,
+        "height": 102.0
+      },
+      "weight": 96.0,
+      "delay_cost": 116.0,
+      "coordinates": null
+    },
+    {
+      "package_id": "P-348",
+      "type": "Economy",
+      "assigned_uld_id": null,
+      "placed": false,
+      "reason": "packer_unfit",
+      "dimensions": {
+        "length": 89.0,
+        "width": 77.0,
+        "height": 56.0
+      },
+      "weight": 60.0,
+      "delay_cost": 89.0,
+      "coordinates": null
+    },
+    {
+      "package_id": "P-349",
+      "type": "Economy",
+      "assigned_uld_id": null,
+      "placed": false,
+      "reason": "clusterer_none",
+      "dimensions": {
+        "length": 99.0,
+        "width": 104.0,
+        "height": 68.0
+      },
+      "weight": 70.0,
+      "delay_cost": 80.0,
+      "coordinates": null
+    },
+    {
+      "package_id": "P-35",
+      "type": "Economy",
+      "assigned_uld_id": null,
+      "placed": false,
+      "reason": "packer_unfit",
+      "dimensions": {
+        "length": 83.0,
+        "width": 72.0,
+        "height": 63.0
+      },
+      "weight": 96.0,
+      "delay_cost": 103.0,
+      "coordinates": null
+    },
+    {
+      "package_id": "P-351",
+      "type": "Economy",
+      "assigned_uld_id": null,
+      "placed": false,
+      "reason": "packer_unfit",
+      "dimensions": {
+        "length": 107.0,
+        "width": 41.0,
+        "height": 92.0
+      },
+      "weight": 42.0,
+      "delay_cost": 112.0,
+      "coordinates": null
+    },
+    {
+      "package_id": "P-354",
+      "type": "Economy",
+      "assigned_uld_id": null,
+      "placed": false,
+      "reason": "packer_unfit",
+      "dimensions": {
+        "length": 52.0,
+        "width": 70.0,
+        "height": 70.0
+      },
+      "weight": 47.0,
+      "delay_cost": 78.0,
+      "coordinates": null
+    },
+    {
+      "package_id": "P-359",
+      "type": "Economy",
+      "assigned_uld_id": null,
+      "placed": false,
+      "reason": "clusterer_none",
+      "dimensions": {
+        "length": 101.0,
+        "width": 86.0,
+        "height": 98.0
+      },
+      "weight": 188.0,
+      "delay_cost": 103.0,
+      "coordinates": null
+    },
+    {
+      "package_id": "P-361",
+      "type": "Economy",
+      "assigned_uld_id": null,
+      "placed": false,
+      "reason": "packer_unfit",
+      "dimensions": {
+        "length": 65.0,
+        "width": 61.0,
+        "height": 51.0
+      },
+      "weight": 55.0,
+      "delay_cost": 68.0,
+      "coordinates": null
+    },
+    {
+      "package_id": "P-367",
+      "type": "Economy",
+      "assigned_uld_id": null,
+      "placed": false,
+      "reason": "packer_unfit",
+      "dimensions": {
+        "length": 54.0,
+        "width": 69.0,
+        "height": 106.0
+      },
+      "weight": 74.0,
+      "delay_cost": 106.0,
+      "coordinates": null
+    },
+    {
+      "package_id": "P-368",
+      "type": "Economy",
+      "assigned_uld_id": null,
+      "placed": false,
+      "reason": "clusterer_none",
+      "dimensions": {
+        "length": 71.0,
+        "width": 99.0,
+        "height": 97.0
+      },
+      "weight": 178.0,
+      "delay_cost": 85.0,
+      "coordinates": null
+    },
+    {
+      "package_id": "P-369",
+      "type": "Economy",
+      "assigned_uld_id": null,
+      "placed": false,
+      "reason": "packer_unfit",
+      "dimensions": {
+        "length": 84.0,
+        "width": 75.0,
+        "height": 58.0
+      },
+      "weight": 92.0,
+      "delay_cost": 110.0,
+      "coordinates": null
+    },
+    {
+      "package_id": "P-370",
+      "type": "Economy",
+      "assigned_uld_id": null,
+      "placed": false,
+      "reason": "packer_unfit",
+      "dimensions": {
+        "length": 106.0,
+        "width": 47.0,
+        "height": 100.0
+      },
+      "weight": 95.0,
+      "delay_cost": 68.0,
+      "coordinates": null
+    },
+    {
+      "package_id": "P-372",
+      "type": "Economy",
+      "assigned_uld_id": null,
+      "placed": false,
+      "reason": "clusterer_none",
+      "dimensions": {
+        "length": 110.0,
+        "width": 84.0,
+        "height": 79.0
+      },
+      "weight": 182.0,
+      "delay_cost": 96.0,
+      "coordinates": null
+    },
+    {
+      "package_id": "P-373",
+      "type": "Economy",
+      "assigned_uld_id": null,
+      "placed": false,
+      "reason": "packer_unfit",
+      "dimensions": {
+        "length": 62.0,
+        "width": 84.0,
+        "height": 72.0
+      },
+      "weight": 108.0,
+      "delay_cost": 105.0,
+      "coordinates": null
+    },
+    {
+      "package_id": "P-374",
+      "type": "Economy",
+      "assigned_uld_id": null,
+      "placed": false,
+      "reason": "packer_unfit",
+      "dimensions": {
+        "length": 81.0,
+        "width": 71.0,
+        "height": 101.0
+      },
+      "weight": 169.0,
+      "delay_cost": 96.0,
+      "coordinates": null
+    },
+    {
+      "package_id": "P-376",
+      "type": "Economy",
+      "assigned_uld_id": null,
+      "placed": false,
+      "reason": "clusterer_none",
+      "dimensions": {
+        "length": 101.0,
+        "width": 101.0,
+        "height": 89.0
+      },
+      "weight": 73.0,
+      "delay_cost": 96.0,
+      "coordinates": null
+    },
+    {
+      "package_id": "P-377",
+      "type": "Economy",
+      "assigned_uld_id": null,
+      "placed": false,
+      "reason": "clusterer_none",
+      "dimensions": {
+        "length": 101.0,
+        "width": 88.0,
+        "height": 105.0
+      },
+      "weight": 118.0,
+      "delay_cost": 80.0,
+      "coordinates": null
+    },
+    {
+      "package_id": "P-379",
+      "type": "Economy",
+      "assigned_uld_id": null,
+      "placed": false,
+      "reason": "clusterer_none",
+      "dimensions": {
+        "length": 68.0,
+        "width": 89.0,
+        "height": 98.0
+      },
+      "weight": 58.0,
+      "delay_cost": 77.0,
+      "coordinates": null
+    },
+    {
+      "package_id": "P-38",
+      "type": "Economy",
+      "assigned_uld_id": null,
+      "placed": false,
+      "reason": "packer_unfit",
+      "dimensions": {
+        "length": 84.0,
+        "width": 96.0,
+        "height": 48.0
+      },
+      "weight": 21.0,
+      "delay_cost": 60.0,
+      "coordinates": null
+    },
+    {
+      "package_id": "P-381",
+      "type": "Economy",
+      "assigned_uld_id": null,
+      "placed": false,
+      "reason": "packer_unfit",
+      "dimensions": {
+        "length": 64.0,
+        "width": 48.0,
+        "height": 69.0
+      },
+      "weight": 60.0,
+      "delay_cost": 87.0,
+      "coordinates": null
+    },
+    {
+      "package_id": "P-383",
+      "type": "Economy",
+      "assigned_uld_id": null,
+      "placed": false,
+      "reason": "packer_unfit",
+      "dimensions": {
+        "length": 85.0,
+        "width": 103.0,
+        "height": 60.0
+      },
+      "weight": 61.0,
+      "delay_cost": 83.0,
+      "coordinates": null
+    },
+    {
+      "package_id": "P-388",
+      "type": "Economy",
+      "assigned_uld_id": null,
+      "placed": false,
+      "reason": "clusterer_none",
+      "dimensions": {
+        "length": 99.0,
+        "width": 89.0,
+        "height": 97.0
+      },
+      "weight": 88.0,
+      "delay_cost": 134.0,
+      "coordinates": null
+    },
+    {
+      "package_id": "P-389",
+      "type": "Economy",
+      "assigned_uld_id": null,
+      "placed": false,
+      "reason": "packer_unfit",
+      "dimensions": {
+        "length": 49.0,
+        "width": 95.0,
+        "height": 72.0
+      },
+      "weight": 55.0,
+      "delay_cost": 61.0,
+      "coordinates": null
+    },
+    {
+      "package_id": "P-39",
+      "type": "Economy",
+      "assigned_uld_id": null,
+      "placed": false,
+      "reason": "packer_unfit",
+      "dimensions": {
+        "length": 96.0,
+        "width": 64.0,
+        "height": 61.0
+      },
+      "weight": 61.0,
+      "delay_cost": 111.0,
+      "coordinates": null
+    },
+    {
+      "package_id": "P-390",
+      "type": "Economy",
+      "assigned_uld_id": null,
+      "placed": false,
+      "reason": "clusterer_none",
+      "dimensions": {
+        "length": 82.0,
+        "width": 106.0,
+        "height": 96.0
+      },
+      "weight": 244.0,
+      "delay_cost": 114.0,
+      "coordinates": null
+    },
+    {
+      "package_id": "P-391",
+      "type": "Economy",
+      "assigned_uld_id": null,
+      "placed": false,
+      "reason": "packer_unfit",
+      "dimensions": {
+        "length": 65.0,
+        "width": 87.0,
+        "height": 73.0
+      },
+      "weight": 71.0,
+      "delay_cost": 122.0,
+      "coordinates": null
+    },
+    {
+      "package_id": "P-392",
+      "type": "Economy",
+      "assigned_uld_id": null,
+      "placed": false,
+      "reason": "packer_unfit",
+      "dimensions": {
+        "length": 87.0,
+        "width": 63.0,
+        "height": 40.0
+      },
+      "weight": 59.0,
+      "delay_cost": 74.0,
+      "coordinates": null
+    },
+    {
+      "package_id": "P-395",
+      "type": "Economy",
+      "assigned_uld_id": null,
+      "placed": false,
+      "reason": "packer_unfit",
+      "dimensions": {
+        "length": 60.0,
+        "width": 108.0,
+        "height": 73.0
+      },
+      "weight": 112.0,
+      "delay_cost": 107.0,
+      "coordinates": null
+    },
+    {
+      "package_id": "P-397",
+      "type": "Economy",
+      "assigned_uld_id": null,
+      "placed": false,
+      "reason": "packer_unfit",
+      "dimensions": {
+        "length": 80.0,
+        "width": 51.0,
+        "height": 59.0
+      },
+      "weight": 51.0,
+      "delay_cost": 81.0,
+      "coordinates": null
+    },
+    {
+      "package_id": "P-4",
+      "type": "Economy",
+      "assigned_uld_id": null,
+      "placed": false,
+      "reason": "packer_unfit",
+      "dimensions": {
+        "length": 108.0,
+        "width": 75.0,
+        "height": 56.0
+      },
+      "weight": 73.0,
+      "delay_cost": 138.0,
+      "coordinates": null
+    },
+    {
+      "package_id": "P-400",
+      "type": "Economy",
+      "assigned_uld_id": null,
+      "placed": false,
+      "reason": "packer_unfit",
+      "dimensions": {
+        "length": 52.0,
+        "width": 50.0,
+        "height": 64.0
+      },
+      "weight": 37.0,
+      "delay_cost": 71.0,
+      "coordinates": null
+    },
+    {
+      "package_id": "P-47",
+      "type": "Economy",
+      "assigned_uld_id": null,
+      "placed": false,
+      "reason": "clusterer_none",
+      "dimensions": {
+        "length": 86.0,
+        "width": 58.0,
+        "height": 104.0
+      },
+      "weight": 149.0,
+      "delay_cost": 67.0,
+      "coordinates": null
+    },
+    {
+      "package_id": "P-51",
+      "type": "Economy",
+      "assigned_uld_id": null,
+      "placed": false,
+      "reason": "packer_unfit",
+      "dimensions": {
+        "length": 57.0,
+        "width": 86.0,
+        "height": 97.0
+      },
+      "weight": 65.0,
+      "delay_cost": 67.0,
+      "coordinates": null
+    },
+    {
+      "package_id": "P-52",
+      "type": "Economy",
+      "assigned_uld_id": null,
+      "placed": false,
+      "reason": "clusterer_none",
+      "dimensions": {
+        "length": 104.0,
+        "width": 88.0,
+        "height": 102.0
+      },
+      "weight": 96.0,
+      "delay_cost": 121.0,
+      "coordinates": null
+    },
+    {
+      "package_id": "P-53",
+      "type": "Economy",
+      "assigned_uld_id": null,
+      "placed": false,
+      "reason": "packer_unfit",
+      "dimensions": {
+        "length": 44.0,
+        "width": 53.0,
+        "height": 106.0
+      },
+      "weight": 14.0,
+      "delay_cost": 74.0,
+      "coordinates": null
+    },
+    {
+      "package_id": "P-55",
+      "type": "Economy",
+      "assigned_uld_id": null,
+      "placed": false,
+      "reason": "clusterer_none",
+      "dimensions": {
+        "length": 95.0,
+        "width": 93.0,
+        "height": 77.0
+      },
+      "weight": 71.0,
+      "delay_cost": 78.0,
+      "coordinates": null
+    },
+    {
+      "package_id": "P-56",
+      "type": "Economy",
+      "assigned_uld_id": null,
+      "placed": false,
+      "reason": "packer_unfit",
+      "dimensions": {
+        "length": 65.0,
+        "width": 68.0,
+        "height": 109.0
+      },
+      "weight": 77.0,
+      "delay_cost": 85.0,
+      "coordinates": null
+    },
+    {
+      "package_id": "P-59",
+      "type": "Economy",
+      "assigned_uld_id": null,
+      "placed": false,
+      "reason": "packer_unfit",
+      "dimensions": {
+        "length": 85.0,
+        "width": 79.0,
+        "height": 49.0
+      },
+      "weight": 26.0,
+      "delay_cost": 111.0,
+      "coordinates": null
+    },
+    {
+      "package_id": "P-60",
+      "type": "Economy",
+      "assigned_uld_id": null,
+      "placed": false,
+      "reason": "packer_unfit",
+      "dimensions": {
+        "length": 60.0,
+        "width": 85.0,
+        "height": 87.0
+      },
+      "weight": 23.0,
+      "delay_cost": 84.0,
+      "coordinates": null
+    },
+    {
+      "package_id": "P-61",
+      "type": "Economy",
+      "assigned_uld_id": null,
+      "placed": false,
+      "reason": "packer_unfit",
+      "dimensions": {
+        "length": 57.0,
+        "width": 109.0,
+        "height": 95.0
+      },
+      "weight": 130.0,
+      "delay_cost": 136.0,
+      "coordinates": null
+    },
+    {
+      "package_id": "P-63",
+      "type": "Economy",
+      "assigned_uld_id": null,
+      "placed": false,
+      "reason": "packer_unfit",
+      "dimensions": {
+        "length": 75.0,
+        "width": 69.0,
+        "height": 85.0
+      },
+      "weight": 111.0,
+      "delay_cost": 116.0,
+      "coordinates": null
+    },
+    {
+      "package_id": "P-64",
+      "type": "Economy",
+      "assigned_uld_id": null,
+      "placed": false,
+      "reason": "clusterer_none",
+      "dimensions": {
+        "length": 100.0,
+        "width": 56.0,
+        "height": 104.0
+      },
+      "weight": 123.0,
+      "delay_cost": 62.0,
+      "coordinates": null
+    },
+    {
+      "package_id": "P-66",
+      "type": "Economy",
+      "assigned_uld_id": null,
+      "placed": false,
+      "reason": "packer_unfit",
+      "dimensions": {
+        "length": 50.0,
+        "width": 47.0,
+        "height": 86.0
+      },
+      "weight": 53.0,
+      "delay_cost": 72.0,
+      "coordinates": null
+    },
+    {
+      "package_id": "P-67",
+      "type": "Economy",
+      "assigned_uld_id": null,
+      "placed": false,
+      "reason": "packer_unfit",
+      "dimensions": {
+        "length": 76.0,
+        "width": 57.0,
+        "height": 101.0
+      },
+      "weight": 34.0,
+      "delay_cost": 65.0,
+      "coordinates": null
+    },
+    {
+      "package_id": "P-7",
+      "type": "Economy",
+      "assigned_uld_id": null,
+      "placed": false,
+      "reason": "packer_unfit",
+      "dimensions": {
+        "length": 88.0,
+        "width": 78.0,
+        "height": 93.0
+      },
+      "weight": 117.0,
+      "delay_cost": 102.0,
+      "coordinates": null
+    },
+    {
+      "package_id": "P-70",
+      "type": "Economy",
+      "assigned_uld_id": null,
+      "placed": false,
+      "reason": "clusterer_none",
+      "dimensions": {
+        "length": 108.0,
+        "width": 101.0,
+        "height": 77.0
+      },
+      "weight": 158.0,
+      "delay_cost": 102.0,
+      "coordinates": null
+    },
+    {
+      "package_id": "P-74",
+      "type": "Economy",
+      "assigned_uld_id": null,
+      "placed": false,
+      "reason": "packer_unfit",
+      "dimensions": {
+        "length": 73.0,
+        "width": 87.0,
+        "height": 69.0
+      },
+      "weight": 115.0,
+      "delay_cost": 61.0,
+      "coordinates": null
+    },
+    {
+      "package_id": "P-77",
+      "type": "Economy",
+      "assigned_uld_id": null,
+      "placed": false,
+      "reason": "packer_unfit",
+      "dimensions": {
+        "length": 96.0,
+        "width": 50.0,
+        "height": 65.0
+      },
+      "weight": 57.0,
+      "delay_cost": 88.0,
+      "coordinates": null
+    },
+    {
+      "package_id": "P-8",
+      "type": "Economy",
+      "assigned_uld_id": null,
+      "placed": false,
+      "reason": "clusterer_none",
+      "dimensions": {
+        "length": 108.0,
+        "width": 105.0,
+        "height": 76.0
+      },
+      "weight": 142.0,
+      "delay_cost": 108.0,
+      "coordinates": null
+    },
+    {
+      "package_id": "P-81",
+      "type": "Economy",
+      "assigned_uld_id": null,
+      "placed": false,
+      "reason": "clusterer_none",
+      "dimensions": {
+        "length": 110.0,
+        "width": 101.0,
+        "height": 93.0
+      },
+      "weight": 94.0,
+      "delay_cost": 116.0,
+      "coordinates": null
+    },
+    {
+      "package_id": "P-83",
+      "type": "Economy",
+      "assigned_uld_id": null,
+      "placed": false,
+      "reason": "clusterer_none",
+      "dimensions": {
+        "length": 106.0,
+        "width": 105.0,
+        "height": 99.0
+      },
+      "weight": 168.0,
+      "delay_cost": 97.0,
+      "coordinates": null
+    },
+    {
+      "package_id": "P-84",
+      "type": "Economy",
+      "assigned_uld_id": null,
+      "placed": false,
+      "reason": "packer_unfit",
+      "dimensions": {
+        "length": 94.0,
+        "width": 66.0,
+        "height": 78.0
+      },
+      "weight": 41.0,
+      "delay_cost": 82.0,
+      "coordinates": null
+    },
+    {
+      "package_id": "P-88",
+      "type": "Economy",
+      "assigned_uld_id": null,
+      "placed": false,
+      "reason": "packer_unfit",
+      "dimensions": {
+        "length": 70.0,
+        "width": 106.0,
+        "height": 62.0
+      },
+      "weight": 106.0,
+      "delay_cost": 74.0,
+      "coordinates": null
+    },
+    {
+      "package_id": "P-89",
+      "type": "Economy",
+      "assigned_uld_id": null,
+      "placed": false,
+      "reason": "clusterer_none",
+      "dimensions": {
+        "length": 68.0,
+        "width": 109.0,
+        "height": 108.0
+      },
+      "weight": 60.0,
+      "delay_cost": 117.0,
+      "coordinates": null
+    },
+    {
+      "package_id": "P-90",
+      "type": "Economy",
+      "assigned_uld_id": null,
+      "placed": false,
+      "reason": "packer_unfit",
+      "dimensions": {
+        "length": 44.0,
+        "width": 98.0,
+        "height": 102.0
+      },
+      "weight": 119.0,
+      "delay_cost": 60.0,
+      "coordinates": null
+    },
+    {
+      "package_id": "P-91",
+      "type": "Economy",
+      "assigned_uld_id": null,
+      "placed": false,
+      "reason": "packer_unfit",
+      "dimensions": {
+        "length": 91.0,
+        "width": 92.0,
+        "height": 50.0
+      },
+      "weight": 89.0,
+      "delay_cost": 76.0,
+      "coordinates": null
+    },
+    {
+      "package_id": "P-93",
+      "type": "Economy",
+      "assigned_uld_id": null,
+      "placed": false,
+      "reason": "packer_unfit",
+      "dimensions": {
+        "length": 88.0,
+        "width": 68.0,
+        "height": 92.0
+      },
+      "weight": 100.0,
+      "delay_cost": 133.0,
+      "coordinates": null
+    },
+    {
+      "package_id": "P-95",
+      "type": "Economy",
+      "assigned_uld_id": null,
+      "placed": false,
+      "reason": "packer_unfit",
+      "dimensions": {
+        "length": 91.0,
+        "width": 69.0,
+        "height": 89.0
+      },
+      "weight": 68.0,
+      "delay_cost": 73.0,
+      "coordinates": null
+    },
+    {
+      "package_id": "P-98",
+      "type": "Economy",
+      "assigned_uld_id": null,
+      "placed": false,
+      "reason": "clusterer_none",
+      "dimensions": {
+        "length": 108.0,
+        "width": 63.0,
+        "height": 94.0
+      },
+      "weight": 139.0,
+      "delay_cost": 76.0,
+      "coordinates": null
+    },
+    {
+      "package_id": "P-99",
+      "type": "Economy",
+      "assigned_uld_id": null,
+      "placed": false,
+      "reason": "packer_unfit",
+      "dimensions": {
+        "length": 71.0,
+        "width": 70.0,
+        "height": 68.0
+      },
+      "weight": 28.0,
+      "delay_cost": 108.0,
+      "coordinates": null
+    }
+  ]
+}

@@ -1,0 +1,13 @@
+{
+  "total_cost": 28452.0,
+  "delay_cost": 13452.0,
+  "spread_cost": 15000.0,
+  "n_priority_ulds": 3,
+  "n_placed_total": 254,
+  "n_priority_total": 103,
+  "n_economy_total": 297,
+  "n_unplaced_priority": 0,
+  "n_unplaced_economy": 146,
+  "k_value": 5000.0,
+  "n_ulds": 6
+}

@@ -1,0 +1,106 @@
+[
+  {
+    "name": "A: d16_l1_qp1",
+    "auc": 0.8688637983199309,
+    "arch": {
+      "d_model": 16,
+      "n_heads": 2,
+      "n_layers": 1,
+      "dropout": 0.2
+    },
+    "qp": 1,
+    "data": "formula",
+    "time_s": 41.03506517410278
+  },
+  {
+    "name": "B: d24_l2_qp2",
+    "auc": 0.8703510557697258,
+    "arch": {
+      "d_model": 24,
+      "n_heads": 2,
+      "n_layers": 2,
+      "dropout": 0.3
+    },
+    "qp": 2,
+    "data": "formula",
+    "time_s": 91.47488307952881
+  },
+  {
+    "name": "C: d32_l2_qp1",
+    "auc": 0.8737991729456966,
+    "arch": {
+      "d_model": 32,
+      "n_heads": 4,
+      "n_layers": 2,
+      "dropout": 0.2
+    },
+    "qp": 1,
+    "data": "formula",
+    "time_s": 179.26078701019287
+  },
+  {
+    "name": "D: d64_l3_qp1",
+    "auc": 0.8777632742817164,
+    "arch": {
+      "d_model": 64,
+      "n_heads": 4,
+      "n_layers": 3,
+      "dropout": 0.15
+    },
+    "qp": 1,
+    "data": "formula",
+    "time_s": 318.9067339897156
+  },
+  {
+    "name": "E: d24_l2_qp3",
+    "auc": 0.8658846640964685,
+    "arch": {
+      "d_model": 24,
+      "n_heads": 2,
+      "n_layers": 2,
+      "dropout": 0.5
+    },
+    "qp": 3,
+    "data": "formula",
+    "time_s": 105.49678111076355
+  },
+  {
+    "name": "F: d16_l1_qp2",
+    "auc": 0.8673790006895117,
+    "arch": {
+      "d_model": 16,
+      "n_heads": 2,
+      "n_layers": 1,
+      "dropout": 0.2
+    },
+    "qp": 2,
+    "data": "formula",
+    "time_s": 51.356717109680176
+  },
+  {
+    "name": "G: d24_l2_qp2_allscenes",
+    "auc": 0.7553706608777646,
+    "arch": {
+      "d_model": 24,
+      "n_heads": 2,
+      "n_layers": 2,
+      "dropout": 0.3
+    },
+    "qp": 2,
+    "data": "all",
+    "time_s": 303.855605840683
+  },
+  {
+    "name": "H: d16_l1_qp1_allscenes",
+    "auc": 0.7532281815450027,
+    "arch": {
+      "d_model": 16,
+      "n_heads": 2,
+      "n_layers": 1,
+      "dropout": 0.2
+    },
+    "qp": 1,
+    "data": "all",
+    "time_s": 151.03191566467285
+  }
+]
