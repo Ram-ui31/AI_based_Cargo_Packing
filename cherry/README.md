@@ -37,15 +37,6 @@ rigorously, but the A/B evidence doesn't support that it helps yet.
 
 ## Results across every method tried
 
-![Method progression](graphs/01_method_progression.png)
-
-For the complete picture — all ~40 real-validated approaches tried across
-the whole project (every classical formula variant, GA/ILP attempt, GNN
-ranker, RL fine-tune, the MILP-exact-solver ceiling check, and the final
-local-search progression), sorted worst to best:
-
-![Full comparison, every approach](graphs/09_full_comparison_all_approaches.png)
-
 | Method | Cost | Notes |
 |---|---|---|
 | Classical formula (hand-tuned heuristic) | 30,475 | Best of ~15 formula/ILP/GA variants |
@@ -114,8 +105,6 @@ what is choosing within it.
 
 ## The AI model that IS proven to help
 
-![Candidate generation impact](graphs/04_candidate_generation_impact.png)
-
 The single biggest lever this project found was not a smarter model — it
 was fixing a shared structural bottleneck. Every packing strategy (the
 trained RL placement policy *and* every heuristic) generated candidate
@@ -134,8 +123,6 @@ network, not an assumption.
 
 ## The AI model that was built, trained correctly, but didn't prove out
 
-![Training and validation curves](graphs/03_training_validation_curves.png)
-
 `SwapProposer` (`src/model/swap_proposer.py`) is a small pairwise-ranking
 network: given two candidate moves tried against the same starting point,
 predict which one is more promising. It's trained on real `(move, cost
@@ -148,19 +135,16 @@ not by the group of moves they came from. Two pairs sharing a move could
 end up on opposite sides of the split, inflating the reported validation
 accuracy (it initially looked like ~89%). Fixed to split by group first —
 the honest, leakage-free number is **~75-77% pairwise accuracy** against a
-50% chance baseline (see `src/model/train_swap_proposer.py` for the fix,
-and the loss/accuracy curves above, which show real training dynamics
-including mild overfitting after ~epoch 150, not an artificially smooth
-curve).
-
-![Search convergence](graphs/02_search_convergence.png)
+50% chance baseline (see `src/model/train_swap_proposer.py` for the fix —
+the real training dynamics show mild overfitting after ~epoch 150, not an
+artificially smooth curve).
 
 Despite training correctly and validating with real signal, **the guided
 search did not empirically beat plain local search**: across three
 independent guided-search runs, the model's search either matched vanilla
-search's plateau or stagnated *faster* than vanilla search did. The chart
-above shows this directly — the AI-guided lines are short and mostly flat,
-while vanilla local search's line shows a long, genuine, gradual descent.
+search's plateau or stagnated *faster* than vanilla search did — the
+AI-guided runs converged in short, mostly-flat trajectories, while vanilla
+local search's cost showed a long, genuine, gradual descent.
 
 **Why, honestly**: the model's training data is narrow — only moves tried
 near an already-converged, near-optimal solution. It never saw diverse,
@@ -376,8 +360,7 @@ of the 60 (20 instances × 3 pipelines) runs. Raw per-instance data in
        result of +82 reported above). The model ranked P-149 at **#4/151**
        (a top-10 shortlist would catch it) but ranked P-79 near the
        bottom (only caught by K=50) — it got the applicable win right and
-       missed the redundant one, visible directly in
-       `graphs/06_centrifuge_real_instance_eval.png`.
+       missed the redundant one.
      - **Practical read**: a top-10 model-guided shortlist, real-verified
        for real, would have found the one applicable win at roughly
        1/15th the number of expensive geometric checks versus exhaustively
@@ -385,9 +368,7 @@ of the 60 (20 instances × 3 pipelines) runs. Raw per-instance data in
      - Files: `gnn_economy_selector/src/generate_centrifuge_data.py`,
        `centrifuge_proposer.py`, `train_centrifuge_proposer.py`;
        `checkpoints/centrifuge_proposer.pt`, `checkpoints/centrifuge_proposer_history.json`;
-       `results/centrifuge_real_instance_eval.json`;
-       `graphs/05_centrifuge_proposer_training.png`,
-       `graphs/06_centrifuge_real_instance_eval.png`.
+       `results/centrifuge_real_instance_eval.json`.
      - Honest caveat: precision@1 (~15–20%) is modest — the model is not
        a precise ranker (3 false positives ranked above the true winner
        P-149 on the real instance, and it missed P-79 almost entirely).

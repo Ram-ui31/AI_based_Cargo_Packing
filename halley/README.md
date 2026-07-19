@@ -51,17 +51,6 @@ local search loop.
 
 ## Why generalized RL training did not beat a hand-tuned heuristic
 
-![Method progression](graphs/01_method_progression.png)
-
-For the complete picture — all ~40 real-validated approaches tried across
-the whole project, including where Halley (`Halley: multi-instance GRPO
-(final, generalized)`, 30,608) sits relative to every classical formula,
-GA/ILP attempt, other GNN rankers, RL fine-tunes, the MILP-exact-solver
-ceiling check, and the final local-search progression, sorted worst to
-best:
-
-![Full comparison, every approach](graphs/09_full_comparison_all_approaches.png)
-
 This is the most important negative result in the project, and Halley is
 exactly the model at the center of it. GRPO (a genuine on-policy
 reinforcement learning algorithm — sample candidate orderings, evaluate

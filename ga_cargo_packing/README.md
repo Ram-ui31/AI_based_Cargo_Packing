@@ -1,13 +1,12 @@
 # GA-labelled ULD packing pipeline
 
 > **Session 4 update**: the real-world stress instance's cost (see "Known
-> limitation" below) has since been driven from 33,857 down to **29,564**
-> against a competing team's benchmark of **29,203** (gap: 361), via a
-> completely different technique family (real-packer-evaluated local search,
-> not model training) — see
+> limitation" below) has since been driven from 33,857 down to **29,564**,
+> via a completely different technique family (real-packer-evaluated local
+> search, not model training) — see
 > [`gnn_economy_selector/README.md`](../gnn_economy_selector/README.md) for
-> the full story, and `results/plots/` for the session's charts. Short
-> version: RL/GRPO hit a structural ceiling around 30,608-30,672 because
+> the full story. Short version: RL/GRPO hit a structural ceiling around
+> 30,608-30,672 because
 > it's a smooth (gradient-based) optimizer fighting a jaggy, discrete cost
 > landscape; a local beam search directly on the real packer's output broke
 > through to 29,656, and a follow-up reformulation as a direct
