@@ -1,0 +1,182 @@
+[
+  {
+    "instance": "instance_051",
+    "K": 100.0,
+    "cost": 7271.0,
+    "delay_cost": 7171.0,
+    "spread_cost": 100.0,
+    "unplaced_priority_count": 0,
+    "unplaced_economy_count": 59
+  },
+  {
+    "instance": "instance_050",
+    "K": 100.0,
+    "cost": 11108.0,
+    "delay_cost": 10908.0,
+    "spread_cost": 200.0,
+    "unplaced_priority_count": 0,
+    "unplaced_economy_count": 89
+  },
+  {
+    "instance": "instance_025",
+    "K": 100.0,
+    "cost": 18543.0,
+    "delay_cost": 18343.0,
+    "spread_cost": 200.0,
+    "unplaced_priority_count": 0,
+    "unplaced_economy_count": 153
+  },
+  {
+    "instance": "instance_097",
+    "K": 100.0,
+    "cost": 21514.0,
+    "delay_cost": 21214.0,
+    "spread_cost": 300.0,
+    "unplaced_priority_count": 0,
+    "unplaced_economy_count": 180
+  },
+  {
+    "instance": "instance_039",
+    "K": 500.0,
+    "cost": 8128.0,
+    "delay_cost": 7128.0,
+    "spread_cost": 1000.0,
+    "unplaced_priority_count": 0,
+    "unplaced_economy_count": 59
+  },
+  {
+    "instance": "instance_045",
+    "K": 500.0,
+    "cost": 12556.0,
+    "delay_cost": 11556.0,
+    "spread_cost": 1000.0,
+    "unplaced_priority_count": 0,
+    "unplaced_economy_count": 101
+  },
+  {
+    "instance": "instance_076",
+    "K": 500.0,
+    "cost": 17471.0,
+    "delay_cost": 15971.0,
+    "spread_cost": 1500.0,
+    "unplaced_priority_count": 0,
+    "unplaced_economy_count": 133
+  },
+  {
+    "instance": "instance_078",
+    "K": 500.0,
+    "cost": 23070.0,
+    "delay_cost": 22070.0,
+    "spread_cost": 1000.0,
+    "unplaced_priority_count": 0,
+    "unplaced_economy_count": 185
+  },
+  {
+    "instance": "instance_005",
+    "K": 1000.0,
+    "cost": 5670.0,
+    "delay_cost": 4670.0,
+    "spread_cost": 1000.0,
+    "unplaced_priority_count": 0,
+    "unplaced_economy_count": 38
+  },
+  {
+    "instance": "instance_003",
+    "K": 1000.0,
+    "cost": 8661.0,
+    "delay_cost": 7661.0,
+    "spread_cost": 1000.0,
+    "unplaced_priority_count": 0,
+    "unplaced_economy_count": 71
+  },
+  {
+    "instance": "instance_093",
+    "K": 1000.0,
+    "cost": 17587.0,
+    "delay_cost": 15587.0,
+    "spread_cost": 2000.0,
+    "unplaced_priority_count": 0,
+    "unplaced_economy_count": 127
+  },
+  {
+    "instance": "instance_075",
+    "K": 1000.0,
+    "cost": 25497.0,
+    "delay_cost": 22497.0,
+    "spread_cost": 3000.0,
+    "unplaced_priority_count": 0,
+    "unplaced_economy_count": 190
+  },
+  {
+    "instance": "instance_098",
+    "K": 3000.0,
+    "cost": 10858.0,
+    "delay_cost": 4858.0,
+    "spread_cost": 6000.0,
+    "unplaced_priority_count": 0,
+    "unplaced_economy_count": 42
+  },
+  {
+    "instance": "instance_030",
+    "K": 3000.0,
+    "cost": 12486.0,
+    "delay_cost": 9486.0,
+    "spread_cost": 3000.0,
+    "unplaced_priority_count": 0,
+    "unplaced_economy_count": 83
+  },
+  {
+    "instance": "instance_048",
+    "K": 3000.0,
+    "cost": 16729.0,
+    "delay_cost": 13729.0,
+    "spread_cost": 3000.0,
+    "unplaced_priority_count": 0,
+    "unplaced_economy_count": 115
+  },
+  {
+    "instance": "instance_072",
+    "K": 3000.0,
+    "cost": 27414.0,
+    "delay_cost": 21414.0,
+    "spread_cost": 6000.0,
+    "unplaced_priority_count": 0,
+    "unplaced_economy_count": 189
+  },
+  {
+    "instance": "instance_085",
+    "K": 5000.0,
+    "cost": 15817.0,
+    "delay_cost": 5817.0,
+    "spread_cost": 10000.0,
+    "unplaced_priority_count": 0,
+    "unplaced_economy_count": 50
+  },
+  {
+    "instance": "instance_006",
+    "K": 5000.0,
+    "cost": 24143.0,
+    "delay_cost": 9143.0,
+    "spread_cost": 15000.0,
+    "unplaced_priority_count": 0,
+    "unplaced_economy_count": 79
+  },
+  {
+    "instance": "instance_008",
+    "K": 5000.0,
+    "cost": 24929.0,
+    "delay_cost": 14929.0,
+    "spread_cost": 10000.0,
+    "unplaced_priority_count": 0,
+    "unplaced_economy_count": 128
+  },
+  {
+    "instance": "instance_019",
+    "K": 5000.0,
+    "cost": 44534.0,
+    "delay_cost": 24534.0,
+    "spread_cost": 20000.0,
+    "unplaced_priority_count": 0,
+    "unplaced_economy_count": 206
+  }
+]

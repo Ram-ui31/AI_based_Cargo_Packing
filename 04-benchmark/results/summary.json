@@ -1,0 +1,68 @@
+{
+  "ffd": {
+    "real_instance": {
+      "total_cost": 43139.0,
+      "delay_cost": 23139.0,
+      "spread_cost": 20000.0,
+      "n_priority_ulds": 4,
+      "unplaced_priority_count": 0,
+      "unplaced_economy_count": 235
+    },
+    "sweep_20_instance": {
+      "per_k_avg": {
+        "100.0": 15376.25,
+        "500.0": 15615.75,
+        "1000.0": 14667.5,
+        "3000.0": 17263.5,
+        "5000.0": 26403.5
+      },
+      "grand_avg": 17865.3,
+      "instances_with_unplaced_priority": 0,
+      "total_unplaced_priority": 0
+    }
+  },
+  "laff": {
+    "real_instance": {
+      "total_cost": 43639.0,
+      "delay_cost": 23639.0,
+      "spread_cost": 20000.0,
+      "n_priority_ulds": 4,
+      "unplaced_priority_count": 0,
+      "unplaced_economy_count": 240
+    },
+    "sweep_20_instance": {
+      "per_k_avg": {
+        "100.0": 14609.0,
+        "500.0": 15306.25,
+        "1000.0": 14353.75,
+        "3000.0": 16871.75,
+        "5000.0": 27355.75
+      },
+      "grand_avg": 17699.3,
+      "instances_with_unplaced_priority": 0,
+      "total_unplaced_priority": 0
+    }
+  },
+  "bfd": {
+    "real_instance": {
+      "total_cost": 43100.0,
+      "delay_cost": 23100.0,
+      "spread_cost": 20000.0,
+      "n_priority_ulds": 4,
+      "unplaced_priority_count": 0,
+      "unplaced_economy_count": 235
+    },
+    "sweep_20_instance": {
+      "per_k_avg": {
+        "100.0": 15556.0,
+        "500.0": 15954.75,
+        "1000.0": 15067.0,
+        "3000.0": 20910.5,
+        "5000.0": 26730.5
+      },
+      "grand_avg": 18843.75,
+      "instances_with_unplaced_priority": 0,
+      "total_unplaced_priority": 0
+    }
+  }
+}

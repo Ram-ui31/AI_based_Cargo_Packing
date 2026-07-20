@@ -6,8 +6,8 @@ heuristic local search. This folder headlines **Halley**, a
 `PackageSetRanker` set-attention Transformer trained with GRPO
 (group-relative policy optimization) across many synthetic instances — one
 of three models evaluated side-by-side in this project (see
-`results/three_model_k_sweep.json` and the sibling `eclipse/` and
-`cherry/` folders for the other two).
+`results/three_model_k_sweep.json` and the sibling `02-eclipse/` and
+`01-cherry/` folders for the other two).
 
 Halley scores every Economy package (given its own features plus global
 instance context) and sorts them descending to produce the seed order fed
@@ -23,10 +23,7 @@ beat a hand-tuned heuristic" below for the honest full story, and the
 
 ## Full pipeline — input to final cost
 
-![Overview flowchart](flowcharts/overview_flowchart.png)
-
-See `flowcharts/detailed_flowchart.png` for the internal structure of the
-local search loop.
+![Detailed flowchart](flowcharts/detailed_flowchart.png)
 
 1. **Input**: packages + ULDs + K (delay-cost multiplier) parsed from CSV.
 2. **Priority-to-ULD assignment**: a trained Transformer (`priority_clusterer.pt`,
@@ -45,7 +42,7 @@ local search loop.
    value-density baseline, just a different order feeding it).
 6. **Hybrid 3D packer**: the same 5-way best-of-N ensemble used everywhere
    else in this project (includes Eclipse, the RL placement policy — see
-   `eclipse/README.md`), unchanged. Halley only affects *which order*
+   `02-eclipse/README.md`), unchanged. Halley only affects *which order*
    packages are offered to this stage, not how they're placed.
 7. **Final packing solution.**
 
@@ -72,8 +69,7 @@ property of *this problem*, not a tuning failure specific to Halley.
 
 ## How Halley generalizes — 3-model comparison across all 5 K values
 
-![3-model K sweep](graphs/07_three_model_k_sweep.png)
-![Grand average](graphs/08_three_model_grand_average.png)
+![Halley vs classical heuristics vs RL baseline](../04-benchmark/graphs/04_halley_grand_average_comparison.png)
 
 Despite the negative single-instance result above, Halley was packed to
 completion on 20 held-out `good_data/synthetic_test` instances (4 per K,
@@ -102,7 +98,7 @@ to move.
 ## Repository layout
 
 ```
-halley/
+03-halley/
 ├── README.md
 ├── src/
 │   ├── model_core/         -- Priority Clusterer (trained network, different model) + shared config
