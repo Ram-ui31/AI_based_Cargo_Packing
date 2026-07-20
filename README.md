@@ -17,8 +17,8 @@ dropped (the baseline drops at least one Priority package in 17 of the
 
 | I want to... | Go to |
 |---|---|
-| See the final, best-performing system | [`cherry/`](cherry/) |
-| Understand the three model variants that were compared head-to-head | [`cherry/`](cherry/), [`eclipse/`](eclipse/), [`halley/`](halley/) |
+| See the final, best-performing system | [`01-cherry/`](01-cherry/) |
+| Understand the three model variants that were compared head-to-head | [`01-cherry/`](01-cherry/), [`02-eclipse/`](02-eclipse/), [`03-halley/`](03-halley/) |
 | See the research/development environment that produced them | [`ga_cargo_packing/`](ga_cargo_packing/), [`gnn_economy_selector/`](gnn_economy_selector/) |
 | See how the project evaluated against a published academic baseline | `online-3d-bpp-benchmark/` *(sibling folder alongside this repo, not itself part of it)* |
 | See the earlier project iterations that led here | [Project history](#project-history) below |
@@ -54,9 +54,9 @@ AI-guided local-search variant that never demonstrated an improvement).
 
 ```
 cargoism/git/                    ← repository root
-├── cherry/                — FINAL: best-performing pipeline (9,499 avg)
-├── eclipse/                — RL placement-policy pipeline (10,631 avg)
-├── halley/                 — GRPO economy-ordering pipeline (10,540 avg)
+├── 01-cherry/              — FINAL: best-performing pipeline (9,499 avg)
+├── 02-eclipse/             — RL placement-policy pipeline (10,631 avg)
+├── 03-halley/              — GRPO economy-ordering pipeline (10,540 avg)
 ├── ga_cargo_packing/       — research environment: assignment, local
 │                              search, packer ensemble, EMS geometry
 ├── gnn_economy_selector/   — research environment: economy-ranking
