@@ -66,16 +66,8 @@ cargoism/git/                    ← repository root
 │                              and move-screening model training
 ├── rl_packer/              — shared 3D placement-policy source (geometry,
 │                              environment, actor-critic network)
-├── common/                  — shared evaluation/comparison utilities
-│                              across earlier pipeline iterations
 ├── good-data-generator/    — synthetic ULD/package instance generator
 ├── h1_h2_cargo/             — hand-tuned greedy heuristic baseline
-├── good-il-over-greedy(c)/ — imitation-learning Transformer trained
-│                              on the greedy baseline's labels
-├── model_b(c)/              — learned assignment-policy environment
-├── rl_fineuning_over_il/   — early RL fine-tune of the IL checkpoint
-├── rl_over_il_h1h2/         — RL fine-tune combined with the H1/H2
-│                              heuristic packer
 └── LICENSE
 ```
 
@@ -93,12 +85,13 @@ separately from source.
    (ULD partitioning, binary-search economy split, extreme-point packing)
    used both as a standalone solver and as the initial label source for
    imitation learning.
-3. **Imitation learning → RL fine-tuning** (`good-il-over-greedy(c)/`,
-   `rl_fineuning_over_il/`, `model_b(c)/`, `rl_over_il_h1h2/`) — a
-   sequence of iterations training a Transformer to imitate, then improve
-   past, the heuristic baseline, progressively adding K-awareness,
-   3D-placement integration, and a dedicated RL placement policy
-   (`rl_packer/`).
+3. **Imitation learning → RL fine-tuning** — a sequence of iterations
+   training a Transformer to imitate, then improve past, the heuristic
+   baseline, progressively adding K-awareness, 3D-placement integration,
+   and a dedicated RL placement policy (`rl_packer/`). These intermediate
+   iterations are no longer kept in this repository; the surviving,
+   currently-relevant training lineage lives in `ga_cargo_packing/versions/`
+   (step 4 below).
 4. **Production research environment** (`ga_cargo_packing/`,
    `gnn_economy_selector/`) — where the final architecture took shape: a
    trained Priority Clusterer, a 5-way best-of-N packer ensemble
@@ -155,30 +148,29 @@ separately from source.
 ## Project history
 
 The repository grew through several complete pipeline iterations before
-arriving at the current architecture. Each earlier stage remains in the
-repository, unmodified, as a record of what was tried:
+arriving at the current architecture. Two early-stage folders remain,
+since later code still depends on them:
 
 - **`good-data-generator/`** — the synthetic instance generator, used
   unchanged from the earliest iteration through to the final one.
 - **`h1_h2_cargo/`** — the original heuristic baseline: ULD partitioning,
   an H1-scored binary-search split of Economy packages, extreme-point
   greedy packing, and an H2-scored retroactive fill pass. Still used as a
-  labelling source and a reference packer.
-- **`good-il-over-greedy(c)/`** — the first learned model, trained purely
-  to imitate `h1_h2_cargo`'s assignments.
-- **`rl_fineuning_over_il/`** — the first attempt at improving past the
-  imitation-learned checkpoint with policy-gradient RL.
-- **`model_b(c)/`** — a from-scratch learned assignment policy and
-  environment, exploring a different action/state representation from
-  the IL-then-RL line.
-- **`rl_over_il_h1h2/`** — RL fine-tuning integrated directly with the
-  H1/H2 heuristic packer, the immediate predecessor to the final
-  production environment.
+  labelling source and a reference packer (`ga_cargo_packing`'s GA
+  labeller imports it directly).
 - **`rl_packer/`** — the 3D placement-policy component (geometry,
   environment, actor-critic network) developed alongside the above and
-  ultimately shared by every later packer ensemble, including Eclipse's.
-- **`common/`** — evaluation and comparison utilities used across the
-  above iterations to keep results comparable as the architecture changed.
+  ultimately shared by every later packer ensemble, including Eclipse's
+  and Cherry's/Halley's own packer adapters.
+
+Between the heuristic baseline and the production research environment,
+several intermediate iterations (imitation learning on the greedy
+baseline's labels, early RL fine-tuning, an alternative assignment-policy
+environment, and evaluation utilities tying them together) were tried and
+superseded; they are no longer kept in this repository. The surviving,
+currently-relevant part of that lineage — the Priority Clusterer's full
+training history including abandoned branches — lives in
+`ga_cargo_packing/versions/`.
 
 The final architecture — a trained Priority Clusterer, a best-of-N packer
 ensemble built around `rl_packer`'s placement policy, a real-geometry
