@@ -4,8 +4,8 @@ A hybrid system for packing air cargo (Priority and Economy packages) into
 ULDs (Unit Load Devices), combining trained neural network components with
 heuristic local search. This folder headlines **Eclipse**, the trained RL
 3D placement policy — one of three models evaluated side-by-side in this
-project (see `results/three_model_k_sweep.json` and the sibling `halley/`
-and `cherry/` folders for the other two).
+project (see `results/three_model_k_sweep.json` and the sibling
+`03-halley/` and `01-cherry/` folders for the other two).
 
 Eclipse is a density-fine-tuned reinforcement-learning placement policy:
 given a container's current state and a package to place, it picks where
@@ -14,16 +14,13 @@ heuristic strategies for every single container.
 
 **Final result (this pipeline, no further AI refinement on top): total
 cost 28,452** (`results/final_metrics.json`). Zero Priority packages
-dropped. `cherry/` shows what one further AI-guided refinement pass adds
+dropped. `01-cherry/` shows what one further AI-guided refinement pass adds
 on top of this exact pipeline (28,452 → 28,409); this folder documents
 the pipeline Eclipse is actually part of, on its own.
 
 ## Full pipeline — input to final cost
 
-![Overview flowchart](flowcharts/overview_flowchart.png)
-
-See `flowcharts/detailed_flowchart.png` for the internal structure of the
-local search loop.
+![Detailed flowchart](flowcharts/detailed_flowchart.png)
 
 1. **Input**: packages + ULDs + K (delay-cost multiplier) parsed from CSV.
 2. **Priority-to-ULD assignment**: a trained Transformer (`priority_clusterer.pt`,
@@ -51,8 +48,7 @@ assumption, a controlled before/after measurement.
 
 ## How Eclipse generalizes — 3-model comparison across all 5 K values
 
-![3-model K sweep](graphs/07_three_model_k_sweep.png)
-![Grand average](graphs/08_three_model_grand_average.png)
+![Eclipse vs classical heuristics vs RL baseline](../04-benchmark/graphs/03_eclipse_grand_average_comparison.png)
 
 Eclipse's pipeline (labeled "baseline" in the shared comparison — Eclipse
 is *part of* every pipeline tested, including Halley's and Cherry's, since
@@ -74,7 +70,7 @@ grand-average (10,631) sits close to Halley's (10,540) — Halley's
 economy-ordering swap is a coin flip that roughly cancels out on average
 — while Cherry's additional refinement pass on top of this same pipeline
 is a clear, consistent improvement (9,499, winning 20/20 individual
-instances). See `cherry/README.md` for that refinement's full story.
+instances). See `01-cherry/README.md` for that refinement's full story.
 
 ## Why reinforcement learning on the *selection* side did not work
 (context, not Eclipse's own story)
@@ -83,13 +79,13 @@ Eclipse is a placement policy and is proven to help (+339 points,
 measured). It's worth being precise that this is a *different* model from
 the RL/GRPO approaches that were tried for package *selection/ordering*
 and did **not** work (30,608–30,672, worse than a hand-tuned formula at
-30,475) — see `halley/README.md` for that full negative-result writeup,
+30,475) — see `03-halley/README.md` for that full negative-result writeup,
 since Halley is exactly that model, generalized across many instances.
 
 ## Repository layout
 
 ```
-eclipse/
+02-eclipse/
 ├── README.md
 ├── src/
 │   ├── model_core/         -- Priority Clusterer (trained network) + shared config
@@ -126,4 +122,4 @@ From `results/final_metrics.json`:
 | Total packages placed | 254 / 400 |
 
 This is Eclipse's own pipeline result — no further AI-guided refinement
-applied on top (that's Cherry's contribution, documented in `cherry/`).
+applied on top (that's Cherry's contribution, documented in `01-cherry/`).

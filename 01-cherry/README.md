@@ -157,13 +157,10 @@ differently-shaped supervised model.
 
 ## Architecture
 
-![Overview flowchart](flowcharts/overview_flowchart.png)
-
-See `flowcharts/detailed_flowchart.png` for the full pipeline including the
-local search loop's internal structure.
+![Detailed flowchart](flowcharts/detailed_flowchart.png)
 
 ```
-cherry/
+01-cherry/
 ├── README.md
 ├── src/
 │   ├── model_core/         -- Priority Clusterer (trained network) + shared config
@@ -249,6 +246,17 @@ a real but unreliable signal, matching its middling standalone real-instance
 result (30,608) noted earlier. Zero Priority packages were dropped in any
 of the 60 (20 instances × 3 pipelines) runs. Raw per-instance data in
 `results/three_model_k_sweep.json`.
+
+## Benchmarked against classical heuristics and an external RL baseline
+
+![Grand-average comparison](../04-benchmark/graphs/02_grand_average_comparison.png)
+
+Cherry also beats three independent from-scratch implementations of
+classical literature heuristics (First-Fit Decreasing, Largest Area Fit
+First, Best Fit Decreasing — all ~17,700–18,850 grand average, none of
+which reason about spread cost at all) and the external
+`Online-3D-BPP-DRL` RL baseline (15,535). See `../04-benchmark/README.md`
+for the full methodology and results.
 
 ## Open work
 
