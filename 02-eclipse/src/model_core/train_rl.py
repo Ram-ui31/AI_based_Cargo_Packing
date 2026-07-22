@@ -23,7 +23,7 @@ from .data_utils import (
     build_tensors, chunk_dataframe, needs_chunking, normalize_k,
     il_sample_assignment, il_sample_assignment_safe, actions_to_assignment,
 )
-from .reward import (
+from ..packer.reward import (
     compute_packing_cost, rl_capacity_violation_penalty,
     feasibility_hinge_loss, soft_spread_loss,
 )

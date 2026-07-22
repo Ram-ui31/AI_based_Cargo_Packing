@@ -22,6 +22,7 @@ dropped (the baseline drops at least one Priority package in 17 of the
 | See the research/development environment that produced them | [`ga_cargo_packing/`](ga_cargo_packing/), [`gnn_economy_selector/`](gnn_economy_selector/) |
 | See how the project evaluated against a published academic baseline | `online-3d-bpp-benchmark/` *(sibling folder alongside this repo, not itself part of it)* |
 | See how the project compares against classical literature heuristics | [`04-benchmark/`](04-benchmark/) |
+| **Run Cherry/Eclipse/Halley on your own instance CSV** | [`05-run-instructions/`](05-run-instructions/) |
 | See the earlier project iterations that led here | [Project history](#project-history) below |
 
 ## The three final models
@@ -60,6 +61,8 @@ cargoism/git/                    ← repository root
 ├── 03-halley/              — GRPO economy-ordering pipeline (10,540 avg)
 ├── 04-benchmark/           — independent classical-heuristic baselines
 │                              (FFD, LAFF, BFD), benchmarked against all three
+├── 05-run-instructions/    — how to run the three final models on your own
+│                              instance CSV
 ├── ga_cargo_packing/       — research environment: assignment, local
 │                              search, packer ensemble, EMS geometry
 ├── gnn_economy_selector/   — research environment: economy-ranking
