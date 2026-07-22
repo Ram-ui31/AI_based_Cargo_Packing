@@ -1,0 +1,12 @@
+{"round": 0, "policy_loss": -0.16905498504638672, "mean_reward": -214.0, "best_in_group_reward": -0.0, "best_ever_cost": 28452.0}
+{"round": 1, "policy_loss": 0.06446375697851181, "mean_reward": -276.3999938964844, "best_in_group_reward": -153.0, "best_ever_cost": 28452.0}
+{"round": 2, "policy_loss": -0.08280754089355469, "mean_reward": -113.4000015258789, "best_in_group_reward": -0.0, "best_ever_cost": 28452.0}
+{"round": 3, "policy_loss": -0.07305243611335754, "mean_reward": -378.79998779296875, "best_in_group_reward": -0.0, "best_ever_cost": 28452.0}
+{"round": 4, "policy_loss": -0.036189936101436615, "mean_reward": -236.5, "best_in_group_reward": -0.0, "best_ever_cost": 28452.0}
+{"round": 5, "policy_loss": -0.09288883209228516, "mean_reward": -168.6999969482422, "best_in_group_reward": -0.0, "best_ever_cost": 28452.0}
+{"round": 6, "policy_loss": -0.2835471034049988, "mean_reward": -397.6000061035156, "best_in_group_reward": -0.0, "best_ever_cost": 28452.0}
+{"round": 7, "policy_loss": -0.458592027425766, "mean_reward": -197.10000610351562, "best_in_group_reward": -0.0, "best_ever_cost": 28452.0}
+{"round": 8, "policy_loss": -0.1174994483590126, "mean_reward": -199.8000030517578, "best_in_group_reward": -0.0, "best_ever_cost": 28452.0}
+{"round": 9, "policy_loss": -0.11522646248340607, "mean_reward": -344.6000061035156, "best_in_group_reward": -0.0, "best_ever_cost": 28452.0}
+{"round": 10, "policy_loss": -0.08781471103429794, "mean_reward": -210.5, "best_in_group_reward": -0.0, "best_ever_cost": 28452.0}
+{"round": 11, "policy_loss": 0.014855289831757545, "mean_reward": -298.29998779296875, "best_in_group_reward": 10.0, "best_ever_cost": 28452.0}

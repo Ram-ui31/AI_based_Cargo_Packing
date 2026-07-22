@@ -1,0 +1,161 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>ARGO</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <filter id="argoSharpen">
+    <feConvolveMatrix order="3" kernelMatrix="0 -1 0  -1 5 -1  0 -1 0" preserveAlpha="true"></feConvolveMatrix>
+  </filter>
+</svg>
+<div id="app">
+
+  <!-- 1. Landing -->
+  <section class="page active" id="page-landing">
+    <div class="landing-frame">
+      <img class="landing-bg" src="assets/front_argo.png" alt="ARGO">
+
+      <button class="hotspot text-chip nav-chip" id="hs-about" style="left:3%; top:4%; width:22%; height:8%;">
+        <span class="chip-white">About</span>&nbsp;<span class="chip-tan">our models</span>
+      </button>
+      <button class="hotspot text-chip nav-chip" id="hs-demo" style="left:78%; top:4%; width:19%; height:8%;">
+        <span class="chip-white">Get</span>&nbsp;<span class="chip-tan">a demo</span>
+      </button>
+
+      <div class="text-chip hero-chip" style="left:28%; top:9%; width:44%; height:41%;">
+        <div class="argo-wordmark">ARGO</div>
+        <div class="argo-diamond">&#10022;</div>
+        <div class="argo-tagline">Introducing Argo : The World's first Small Packing Model, powered by
+          <span class="chip-tan">Cherry, a 1.23 Million-Parameter AI model.</span></div>
+      </div>
+
+      <button class="hotspot text-chip nav-chip" id="hs-product" style="left:38%; top:89%; width:24%; height:8%;">
+        <span class="chip-white">Use</span>&nbsp;<span class="chip-tan">our product</span>
+      </button>
+    </div>
+  </section>
+
+  <!-- 2. About Our Models -->
+  <section class="page" id="page-about" style="background-image:url('assets/best_models.png')">
+    <button class="back-btn" data-goto="page-landing">&larr; Back</button>
+    <button class="hotspot hotspot-round" id="hs-halley" style="left:3%; top:8%; width:29%; height:42%;" title="Halley"></button>
+    <button class="hotspot hotspot-round" id="hs-cherry" style="left:39%; top:16%; width:22%; height:36%;" title="Cherry"></button>
+    <button class="hotspot hotspot-round" id="hs-eclipse" style="left:69%; top:10%; width:24%; height:32%;" title="Eclipse"></button>
+    <div class="about-caption">Our 3 best models: Halley, Cherry and Eclipse. Click on their logos to read about them.</div>
+  </section>
+
+  <!-- 3. Model detail -->
+  <section class="page" id="page-detail" style="background-image:url('assets/cargo_compartment.png')">
+    <button class="back-btn" data-goto="page-about">&larr; Back</button>
+    <div class="detail-panel">
+      <h2 id="detail-title">Model</h2>
+      <div class="subtitle" id="detail-subtitle">subtitle</div>
+      <p id="detail-body">description</p>
+      <ul id="detail-list"></ul>
+    </div>
+  </section>
+
+  <!-- 4. Get a Demo (precomputed 3D viz) -->
+  <section class="page viz-page" id="page-demo-viz">
+    <div class="home-link" data-goto="page-landing">&larr; Home</div>
+    <div class="viz-canvas-wrap" id="demo-canvas-wrap"></div>
+    <div class="viz-topbar">
+      <div class="brand">ARGO &middot; Demo (400-package benchmark instance)</div>
+      <div class="viz-controls">
+        <div class="field-group">
+          <label>Model</label>
+          <select id="demo-model-select">
+            <option value="cherry">Cherry</option>
+            <option value="eclipse">Eclipse</option>
+            <option value="halley">Halley</option>
+          </select>
+        </div>
+      </div>
+    </div>
+    <div class="viz-side-panel" id="demo-side-panel"></div>
+    <div class="hint-text">Drag to rotate &middot; scroll to zoom</div>
+  </section>
+
+  <!-- 5. Use Our Product -->
+  <section class="page" id="page-upload" style="background-image:url('assets/argo_2nd.png')">
+    <button class="back-btn" data-goto="page-landing">&larr; Back</button>
+    <div class="upload-panel">
+      <div class="field-group">
+        <label>Instance CSV</label>
+        <input type="file" id="upload-file" accept=".csv">
+      </div>
+      <div class="field-group">
+        <label>Model</label>
+        <select id="upload-model-select">
+          <option value="cherry">Cherry</option>
+          <option value="eclipse">Eclipse</option>
+          <option value="halley">Halley</option>
+        </select>
+      </div>
+      <button class="pack-btn" id="pack-btn" disabled>Pack this shipment</button>
+    </div>
+    <div class="upload-error" id="upload-error"></div>
+    <div class="csv-format-box">
+      <div class="csv-format-title">Expected CSV format</div>
+
+      <div class="csv-format-section">
+        <div class="csv-format-label">1. A single number (the K value)</div>
+        <table class="csv-table"><tr><td>5000</td></tr></table>
+      </div>
+
+      <div class="csv-format-section">
+        <div class="csv-format-label">2. Blank line, then one row per ULD</div>
+        <table class="csv-table">
+          <tr><th>ID</th><th>Length</th><th>Width</th><th>Height</th><th>Weight limit</th></tr>
+          <tr><td>U1</td><td>224</td><td>318</td><td>162</td><td>2500</td></tr>
+        </table>
+      </div>
+
+      <div class="csv-format-section">
+        <div class="csv-format-label">3. Blank line, then one row per package</div>
+        <table class="csv-table">
+          <tr><th>ID</th><th>Length</th><th>Width</th><th>Height</th><th>Weight</th><th>Type</th><th>Delay cost</th></tr>
+          <tr><td>P-1</td><td>99</td><td>53</td><td>55</td><td>61</td><td>Economy</td><td>176</td></tr>
+          <tr><td>P-2</td><td>56</td><td>99</td><td>81</td><td>53</td><td>Priority</td><td>-</td></tr>
+        </table>
+      </div>
+
+      <div class="csv-format-note">Type is either "Priority" or "Economy" &mdash; Priority rows always put "-" in Delay cost (they can't be dropped, so there's no cost to look up).</div>
+    </div>
+  </section>
+
+  <!-- 6. Loading -->
+  <section class="page" id="page-loading" style="background-image:url('assets/argo_back.png')">
+    <div class="loading-panel">
+      <div class="status-msg" id="loading-message">Queued...</div>
+      <div class="progress-track"><div class="progress-fill" id="loading-fill"></div></div>
+      <div class="progress-pct" id="loading-pct">0%</div>
+    </div>
+  </section>
+
+  <!-- 7. Result 3D viz (live job) -->
+  <section class="page viz-page" id="page-result-viz" style="background-image:url('assets/in_cabin.png')">
+    <div class="home-link" data-goto="page-landing">&larr; Home</div>
+    <div class="viz-canvas-wrap" id="result-canvas-wrap"></div>
+    <div class="viz-topbar">
+      <div class="brand">ARGO &middot; Your shipment</div>
+      <div class="viz-controls">
+        <button class="pack-btn" data-goto="page-upload">Pack another shipment</button>
+      </div>
+    </div>
+    <div class="viz-side-panel" id="result-side-panel"></div>
+    <div class="hint-text">Drag to rotate &middot; scroll to zoom</div>
+  </section>
+
+</div>
+
+<script src="vendor/three.min.js"></script>
+<script src="vendor/OrbitControls.js"></script>
+<script src="viewer.js"></script>
+<script src="app.js"></script>
+</body>
+</html>

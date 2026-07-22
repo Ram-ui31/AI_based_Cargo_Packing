@@ -1,0 +1,3602 @@
+[
+  {
+    "Package_ID": "P-1",
+    "Length": 99.0,
+    "Width": 53.0,
+    "Height": 55.0,
+    "Weight": 61.0,
+    "Type": "Economy",
+    "Delay_Cost": 176.0
+  },
+  {
+    "Package_ID": "P-2",
+    "Length": 56.0,
+    "Width": 99.0,
+    "Height": 81.0,
+    "Weight": 53.0,
+    "Type": "Priority",
+    "Delay_Cost": null
+  },
+  {
+    "Package_ID": "P-3",
+    "Length": 42.0,
+    "Width": 101.0,
+    "Height": 51.0,
+    "Weight": 17.0,
+    "Type": "Priority",
+    "Delay_Cost": null
+  },
+  {
+    "Package_ID": "P-4",
+    "Length": 108.0,
+    "Width": 75.0,
+    "Height": 56.0,
+    "Weight": 73.0,
+    "Type": "Economy",
+    "Delay_Cost": 138.0
+  },
+  {
+    "Package_ID": "P-5",
+    "Length": 88.0,
+    "Width": 58.0,
+    "Height": 64.0,
+    "Weight": 93.0,
+    "Type": "Economy",
+    "Delay_Cost": 139.0
+  },
+  {
+    "Package_ID": "P-6",
+    "Length": 91.0,
+    "Width": 56.0,
+    "Height": 84.0,
+    "Weight": 47.0,
+    "Type": "Priority",
+    "Delay_Cost": null
+  },
+  {
+    "Package_ID": "P-7",
+    "Length": 88.0,
+    "Width": 78.0,
+    "Height": 93.0,
+    "Weight": 117.0,
+    "Type": "Economy",
+    "Delay_Cost": 102.0
+  },
+  {
+    "Package_ID": "P-8",
+    "Length": 108.0,
+    "Width": 105.0,
+    "Height": 76.0,
+    "Weight": 142.0,
+    "Type": "Economy",
+    "Delay_Cost": 108.0
+  },
+  {
+    "Package_ID": "P-9",
+    "Length": 73.0,
+    "Width": 71.0,
+    "Height": 88.0,
+    "Weight": 50.0,
+    "Type": "Priority",
+    "Delay_Cost": null
+  },
+  {
+    "Package_ID": "P-10",
+    "Length": 88.0,
+    "Width": 70.0,
+    "Height": 85.0,
+    "Weight": 81.0,
+    "Type": "Priority",
+    "Delay_Cost": null
+  },
+  {
+    "Package_ID": "P-11",
+    "Length": 55.0,
+    "Width": 80.0,
+    "Height": 81.0,
+    "Weight": 23.0,
+    "Type": "Economy",
+    "Delay_Cost": 96.0
+  },
+  {
+    "Package_ID": "P-12",
+    "Length": 48.0,
+    "Width": 80.0,
+    "Height": 88.0,
+    "Weight": 27.0,
+    "Type": "Economy",
+    "Delay_Cost": 117.0
+  },
+  {
+    "Package_ID": "P-13",
+    "Length": 55.0,
+    "Width": 94.0,
+    "Height": 87.0,
+    "Weight": 41.0,
+    "Type": "Economy",
+    "Delay_Cost": 73.0
+  },
+  {
+    "Package_ID": "P-14",
+    "Length": 45.0,
+    "Width": 46.0,
+    "Height": 81.0,
+    "Weight": 27.0,
+    "Type": "Economy",
+    "Delay_Cost": 68.0
+  },
+  {
+    "Package_ID": "P-15",
+    "Length": 84.0,
+    "Width": 49.0,
+    "Height": 60.0,
+    "Weight": 57.0,
+    "Type": "Priority",
+    "Delay_Cost": null
+  },
+  {
+    "Package_ID": "P-16",
+    "Length": 48.0,
+    "Width": 93.0,
+    "Height": 63.0,
+    "Weight": 82.0,
+    "Type": "Priority",
+    "Delay_Cost": null
+  },
+  {
+    "Package_ID": "P-17",
+    "Length": 83.0,
+    "Width": 63.0,
+    "Height": 57.0,
+    "Weight": 29.0,
+    "Type": "Priority",
+    "Delay_Cost": null
+  },
+  {
+    "Package_ID": "P-18",
+    "Length": 68.0,
+    "Width": 101.0,
+    "Height": 95.0,
+    "Weight": 96.0,
+    "Type": "Economy",
+    "Delay_Cost": 65.0
+  },
+  {
+    "Package_ID": "P-19",
+    "Length": 51.0,
+    "Width": 87.0,
+    "Height": 69.0,
+    "Weight": 73.0,
+    "Type": "Economy",
+    "Delay_Cost": 107.0
+  },
+  {
+    "Package_ID": "P-20",
+    "Length": 88.0,
+    "Width": 106.0,
+    "Height": 56.0,
+    "Weight": 71.0,
+    "Type": "Priority",
+    "Delay_Cost": null
+  },
+  {
+    "Package_ID": "P-21",
+    "Length": 105.0,
+    "Width": 71.0,
+    "Height": 105.0,
+    "Weight": 223.0,
+    "Type": "Economy",
+    "Delay_Cost": 116.0
+  },
+  {
+    "Package_ID": "P-22",
+    "Length": 100.0,
+    "Width": 92.0,
+    "Height": 99.0,
+    "Weight": 191.0,
+    "Type": "Economy",
+    "Delay_Cost": 86.0
+  },
+  {
+    "Package_ID": "P-23",
+    "Length": 51.0,
+    "Width": 50.0,
+    "Height": 110.0,
+    "Weight": 59.0,
+    "Type": "Priority",
+    "Delay_Cost": null
+  },
+  {
+    "Package_ID": "P-24",
+    "Length": 81.0,
+    "Width": 109.0,
+    "Height": 55.0,
+    "Weight": 123.0,
+    "Type": "Economy",
+    "Delay_Cost": 69.0
+  },
+  {
+    "Package_ID": "P-25",
+    "Length": 44.0,
+    "Width": 77.0,
+    "Height": 53.0,
+    "Weight": 37.0,
+    "Type": "Economy",
+    "Delay_Cost": 108.0
+  },
+  {
+    "Package_ID": "P-26",
+    "Length": 69.0,
+    "Width": 56.0,
+    "Height": 73.0,
+    "Weight": 56.0,
+    "Type": "Economy",
+    "Delay_Cost": 130.0
+  },
+  {
+    "Package_ID": "P-27",
+    "Length": 93.0,
+    "Width": 62.0,
+    "Height": 49.0,
+    "Weight": 18.0,
+    "Type": "Economy",
+    "Delay_Cost": 122.0
+  },
+  {
+    "Package_ID": "P-28",
+    "Length": 81.0,
+    "Width": 64.0,
+    "Height": 95.0,
+    "Weight": 70.0,
+    "Type": "Economy",
+    "Delay_Cost": 139.0
+  },
+  {
+    "Package_ID": "P-29",
+    "Length": 62.0,
+    "Width": 86.0,
+    "Height": 53.0,
+    "Weight": 23.0,
+    "Type": "Economy",
+    "Delay_Cost": 122.0
+  },
+  {
+    "Package_ID": "P-30",
+    "Length": 88.0,
+    "Width": 85.0,
+    "Height": 102.0,
+    "Weight": 164.0,
+    "Type": "Economy",
+    "Delay_Cost": 70.0
+  },
+  {
+    "Package_ID": "P-31",
+    "Length": 71.0,
+    "Width": 49.0,
+    "Height": 76.0,
+    "Weight": 67.0,
+    "Type": "Economy",
+    "Delay_Cost": 76.0
+  },
+  {
+    "Package_ID": "P-32",
+    "Length": 70.0,
+    "Width": 44.0,
+    "Height": 98.0,
+    "Weight": 53.0,
+    "Type": "Economy",
+    "Delay_Cost": 124.0
+  },
+  {
+    "Package_ID": "P-33",
+    "Length": 90.0,
+    "Width": 89.0,
+    "Height": 73.0,
+    "Weight": 132.0,
+    "Type": "Economy",
+    "Delay_Cost": 136.0
+  },
+  {
+    "Package_ID": "P-34",
+    "Length": 87.0,
+    "Width": 45.0,
+    "Height": 81.0,
+    "Weight": 45.0,
+    "Type": "Economy",
+    "Delay_Cost": 77.0
+  },
+  {
+    "Package_ID": "P-35",
+    "Length": 83.0,
+    "Width": 72.0,
+    "Height": 63.0,
+    "Weight": 96.0,
+    "Type": "Economy",
+    "Delay_Cost": 103.0
+  },
+  {
+    "Package_ID": "P-36",
+    "Length": 86.0,
+    "Width": 80.0,
+    "Height": 78.0,
+    "Weight": 146.0,
+    "Type": "Priority",
+    "Delay_Cost": null
+  },
+  {
+    "Package_ID": "P-37",
+    "Length": 59.0,
+    "Width": 76.0,
+    "Height": 51.0,
+    "Weight": 33.0,
+    "Type": "Economy",
+    "Delay_Cost": 131.0
+  },
+  {
+    "Package_ID": "P-38",
+    "Length": 84.0,
+    "Width": 96.0,
+    "Height": 48.0,
+    "Weight": 21.0,
+    "Type": "Economy",
+    "Delay_Cost": 60.0
+  },
+  {
+    "Package_ID": "P-39",
+    "Length": 96.0,
+    "Width": 64.0,
+    "Height": 61.0,
+    "Weight": 61.0,
+    "Type": "Economy",
+    "Delay_Cost": 111.0
+  },
+  {
+    "Package_ID": "P-40",
+    "Length": 70.0,
+    "Width": 45.0,
+    "Height": 90.0,
+    "Weight": 78.0,
+    "Type": "Economy",
+    "Delay_Cost": 106.0
+  },
+  {
+    "Package_ID": "P-41",
+    "Length": 104.0,
+    "Width": 90.0,
+    "Height": 68.0,
+    "Weight": 72.0,
+    "Type": "Priority",
+    "Delay_Cost": null
+  },
+  {
+    "Package_ID": "P-42",
+    "Length": 62.0,
+    "Width": 109.0,
+    "Height": 41.0,
+    "Weight": 46.0,
+    "Type": "Priority",
+    "Delay_Cost": null
+  },
+  {
+    "Package_ID": "P-43",
+    "Length": 51.0,
+    "Width": 86.0,
+    "Height": 108.0,
+    "Weight": 87.0,
+    "Type": "Economy",
+    "Delay_Cost": 109.0
+  },
+  {
+    "Package_ID": "P-44",
+    "Length": 84.0,
+    "Width": 40.0,
+    "Height": 49.0,
+    "Weight": 28.0,
+    "Type": "Economy",
+    "Delay_Cost": 87.0
+  },
+  {
+    "Package_ID": "P-45",
+    "Length": 91.0,
+    "Width": 72.0,
+    "Height": 81.0,
+    "Weight": 92.0,
+    "Type": "Priority",
+    "Delay_Cost": null
+  },
+  {
+    "Package_ID": "P-46",
+    "Length": 71.0,
+    "Width": 62.0,
+    "Height": 94.0,
+    "Weight": 39.0,
+    "Type": "Priority",
+    "Delay_Cost": null
+  },
+  {
+    "Package_ID": "P-47",
+    "Length": 86.0,
+    "Width": 58.0,
+    "Height": 104.0,
+    "Weight": 149.0,
+    "Type": "Economy",
+    "Delay_Cost": 67.0
+  },
+  {
+    "Package_ID": "P-48",
+    "Length": 53.0,
+    "Width": 65.0,
+    "Height": 48.0,
+    "Weight": 33.0,
+    "Type": "Economy",
+    "Delay_Cost": 67.0
+  },
+  {
+    "Package_ID": "P-49",
+    "Length": 69.0,
+    "Width": 40.0,
+    "Height": 100.0,
+    "Weight": 55.0,
+    "Type": "Priority",
+    "Delay_Cost": null
+  },
+  {
+    "Package_ID": "P-50",
+    "Length": 73.0,
+    "Width": 104.0,
+    "Height": 64.0,
+    "Weight": 75.0,
+    "Type": "Priority",
+    "Delay_Cost": null
+  },
+  {
+    "Package_ID": "P-51",
+    "Length": 57.0,
+    "Width": 86.0,
+    "Height": 97.0,
+    "Weight": 65.0,
+    "Type": "Economy",
+    "Delay_Cost": 67.0
+  },
+  {
+    "Package_ID": "P-52",
+    "Length": 104.0,
+    "Width": 88.0,
+    "Height": 102.0,
+    "Weight": 96.0,
+    "Type": "Economy",
+    "Delay_Cost": 121.0
+  },
+  {
+    "Package_ID": "P-53",
+    "Length": 44.0,
+    "Width": 53.0,
+    "Height": 106.0,
+    "Weight": 14.0,
+    "Type": "Economy",
+    "Delay_Cost": 74.0
+  },
+  {
+    "Package_ID": "P-54",
+    "Length": 106.0,
+    "Width": 51.0,
+    "Height": 59.0,
+    "Weight": 20.0,
+    "Type": "Economy",
+    "Delay_Cost": 98.0
+  },
+  {
+    "Package_ID": "P-55",
+    "Length": 95.0,
+    "Width": 93.0,
+    "Height": 77.0,
+    "Weight": 71.0,
+    "Type": "Economy",
+    "Delay_Cost": 78.0
+  },
+  {
+    "Package_ID": "P-56",
+    "Length": 65.0,
+    "Width": 68.0,
+    "Height": 109.0,
+    "Weight": 77.0,
+    "Type": "Economy",
+    "Delay_Cost": 85.0
+  },
+  {
+    "Package_ID": "P-57",
+    "Length": 83.0,
+    "Width": 64.0,
+    "Height": 59.0,
+    "Weight": 32.0,
+    "Type": "Economy",
+    "Delay_Cost": 137.0
+  },
+  {
+    "Package_ID": "P-58",
+    "Length": 95.0,
+    "Width": 102.0,
+    "Height": 55.0,
+    "Weight": 126.0,
+    "Type": "Economy",
+    "Delay_Cost": 134.0
+  },
+  {
+    "Package_ID": "P-59",
+    "Length": 85.0,
+    "Width": 79.0,
+    "Height": 49.0,
+    "Weight": 26.0,
+    "Type": "Economy",
+    "Delay_Cost": 111.0
+  },
+  {
+    "Package_ID": "P-60",
+    "Length": 60.0,
+    "Width": 85.0,
+    "Height": 87.0,
+    "Weight": 23.0,
+    "Type": "Economy",
+    "Delay_Cost": 84.0
+  },
+  {
+    "Package_ID": "P-61",
+    "Length": 57.0,
+    "Width": 109.0,
+    "Height": 95.0,
+    "Weight": 130.0,
+    "Type": "Economy",
+    "Delay_Cost": 136.0
+  },
+  {
+    "Package_ID": "P-62",
+    "Length": 43.0,
+    "Width": 92.0,
+    "Height": 88.0,
+    "Weight": 25.0,
+    "Type": "Economy",
+    "Delay_Cost": 84.0
+  },
+  {
+    "Package_ID": "P-63",
+    "Length": 75.0,
+    "Width": 69.0,
+    "Height": 85.0,
+    "Weight": 111.0,
+    "Type": "Economy",
+    "Delay_Cost": 116.0
+  },
+  {
+    "Package_ID": "P-64",
+    "Length": 100.0,
+    "Width": 56.0,
+    "Height": 104.0,
+    "Weight": 123.0,
+    "Type": "Economy",
+    "Delay_Cost": 62.0
+  },
+  {
+    "Package_ID": "P-65",
+    "Length": 50.0,
+    "Width": 78.0,
+    "Height": 110.0,
+    "Weight": 56.0,
+    "Type": "Economy",
+    "Delay_Cost": 121.0
+  },
+  {
+    "Package_ID": "P-66",
+    "Length": 50.0,
+    "Width": 47.0,
+    "Height": 86.0,
+    "Weight": 53.0,
+    "Type": "Economy",
+    "Delay_Cost": 72.0
+  },
+  {
+    "Package_ID": "P-67",
+    "Length": 76.0,
+    "Width": 57.0,
+    "Height": 101.0,
+    "Weight": 34.0,
+    "Type": "Economy",
+    "Delay_Cost": 65.0
+  },
+  {
+    "Package_ID": "P-68",
+    "Length": 92.0,
+    "Width": 46.0,
+    "Height": 81.0,
+    "Weight": 62.0,
+    "Type": "Priority",
+    "Delay_Cost": null
+  },
+  {
+    "Package_ID": "P-69",
+    "Length": 84.0,
+    "Width": 47.0,
+    "Height": 54.0,
+    "Weight": 57.0,
+    "Type": "Priority",
+    "Delay_Cost": null
+  },
+  {
+    "Package_ID": "P-70",
+    "Length": 108.0,
+    "Width": 101.0,
+    "Height": 77.0,
+    "Weight": 158.0,
+    "Type": "Economy",
+    "Delay_Cost": 102.0
+  },
+  {
+    "Package_ID": "P-71",
+    "Length": 99.0,
+    "Width": 43.0,
+    "Height": 60.0,
+    "Weight": 41.0,
+    "Type": "Priority",
+    "Delay_Cost": null
+  },
+  {
+    "Package_ID": "P-72",
+    "Length": 89.0,
+    "Width": 83.0,
+    "Height": 44.0,
+    "Weight": 79.0,
+    "Type": "Economy",
+    "Delay_Cost": 66.0
+  },
+  {
+    "Package_ID": "P-73",
+    "Length": 104.0,
+    "Width": 86.0,
+    "Height": 63.0,
+    "Weight": 79.0,
+    "Type": "Priority",
+    "Delay_Cost": null
+  },
+  {
+    "Package_ID": "P-74",
+    "Length": 73.0,
+    "Width": 87.0,
+    "Height": 69.0,
+    "Weight": 115.0,
+    "Type": "Economy",
+    "Delay_Cost": 61.0
+  },
+  {
+    "Package_ID": "P-75",
+    "Length": 74.0,
+    "Width": 43.0,
+    "Height": 85.0,
+    "Weight": 42.0,
+    "Type": "Economy",
+    "Delay_Cost": 128.0
+  },
+  {
+    "Package_ID": "P-76",
+    "Length": 40.0,
+    "Width": 92.0,
+    "Height": 96.0,
+    "Weight": 81.0,
+    "Type": "Economy",
+    "Delay_Cost": 123.0
+  },
+  {
+    "Package_ID": "P-77",
+    "Length": 96.0,
+    "Width": 50.0,
+    "Height": 65.0,
+    "Weight": 57.0,
+    "Type": "Economy",
+    "Delay_Cost": 88.0
+  },
+  {
+    "Package_ID": "P-78",
+    "Length": 74.0,
+    "Width": 104.0,
+    "Height": 42.0,
+    "Weight": 85.0,
+    "Type": "Economy",
+    "Delay_Cost": 116.0
+  },
+  {
+    "Package_ID": "P-79",
+    "Length": 86.0,
+    "Width": 62.0,
+    "Height": 75.0,
+    "Weight": 61.0,
+    "Type": "Economy",
+    "Delay_Cost": 91.0
+  },
+  {
+    "Package_ID": "P-80",
+    "Length": 43.0,
+    "Width": 85.0,
+    "Height": 44.0,
+    "Weight": 20.0,
+    "Type": "Economy",
+    "Delay_Cost": 127.0
+  },
+  {
+    "Package_ID": "P-81",
+    "Length": 110.0,
+    "Width": 101.0,
+    "Height": 93.0,
+    "Weight": 94.0,
+    "Type": "Economy",
+    "Delay_Cost": 116.0
+  },
+  {
+    "Package_ID": "P-82",
+    "Length": 66.0,
+    "Width": 71.0,
+    "Height": 97.0,
+    "Weight": 130.0,
+    "Type": "Priority",
+    "Delay_Cost": null
+  },
+  {
+    "Package_ID": "P-83",
+    "Length": 106.0,
+    "Width": 105.0,
+    "Height": 99.0,
+    "Weight": 168.0,
+    "Type": "Economy",
+    "Delay_Cost": 97.0
+  },
+  {
+    "Package_ID": "P-84",
+    "Length": 94.0,
+    "Width": 66.0,
+    "Height": 78.0,
+    "Weight": 41.0,
+    "Type": "Economy",
+    "Delay_Cost": 82.0
+  },
+  {
+    "Package_ID": "P-85",
+    "Length": 47.0,
+    "Width": 68.0,
+    "Height": 44.0,
+    "Weight": 42.0,
+    "Type": "Economy",
+    "Delay_Cost": 74.0
+  },
+  {
+    "Package_ID": "P-86",
+    "Length": 65.0,
+    "Width": 63.0,
+    "Height": 41.0,
+    "Weight": 50.0,
+    "Type": "Priority",
+    "Delay_Cost": null
+  },
+  {
+    "Package_ID": "P-87",
+    "Length": 54.0,
+    "Width": 53.0,
+    "Height": 107.0,
+    "Weight": 84.0,
+    "Type": "Economy",
+    "Delay_Cost": 116.0
+  },
+  {
+    "Package_ID": "P-88",
+    "Length": 70.0,
+    "Width": 106.0,
+    "Height": 62.0,
+    "Weight": 106.0,
+    "Type": "Economy",
+    "Delay_Cost": 74.0
+  },
+  {
+    "Package_ID": "P-89",
+    "Length": 68.0,
+    "Width": 109.0,
+    "Height": 108.0,
+    "Weight": 60.0,
+    "Type": "Economy",
+    "Delay_Cost": 117.0
+  },
+  {
+    "Package_ID": "P-90",
+    "Length": 44.0,
+    "Width": 98.0,
+    "Height": 102.0,
+    "Weight": 119.0,
+    "Type": "Economy",
+    "Delay_Cost": 60.0
+  },
+  {
+    "Package_ID": "P-91",
+    "Length": 91.0,
+    "Width": 92.0,
+    "Height": 50.0,
+    "Weight": 89.0,
+    "Type": "Economy",
+    "Delay_Cost": 76.0
+  },
+  {
+    "Package_ID": "P-92",
+    "Length": 58.0,
+    "Width": 58.0,
+    "Height": 65.0,
+    "Weight": 59.0,
+    "Type": "Economy",
+    "Delay_Cost": 138.0
+  },
+  {
+    "Package_ID": "P-93",
+    "Length": 88.0,
+    "Width": 68.0,
+    "Height": 92.0,
+    "Weight": 100.0,
+    "Type": "Economy",
+    "Delay_Cost": 133.0
+  },
+  {
+    "Package_ID": "P-94",
+    "Length": 67.0,
+    "Width": 98.0,
+    "Height": 66.0,
+    "Weight": 95.0,
+    "Type": "Priority",
+    "Delay_Cost": null
+  },
+  {
+    "Package_ID": "P-95",
+    "Length": 91.0,
+    "Width": 69.0,
+    "Height": 89.0,
+    "Weight": 68.0,
+    "Type": "Economy",
+    "Delay_Cost": 73.0
+  },
+  {
+    "Package_ID": "P-96",
+    "Length": 50.0,
+    "Width": 65.0,
+    "Height": 84.0,
+    "Weight": 40.0,
+    "Type": "Economy",
+    "Delay_Cost": 68.0
+  },
+  {
+    "Package_ID": "P-97",
+    "Length": 53.0,
+    "Width": 53.0,
+    "Height": 93.0,
+    "Weight": 54.0,
+    "Type": "Economy",
+    "Delay_Cost": 120.0
+  },
+  {
+    "Package_ID": "P-98",
+    "Length": 108.0,
+    "Width": 63.0,
+    "Height": 94.0,
+    "Weight": 139.0,
+    "Type": "Economy",
+    "Delay_Cost": 76.0
+  },
+  {
+    "Package_ID": "P-99",
+    "Length": 71.0,
+    "Width": 70.0,
+    "Height": 68.0,
+    "Weight": 28.0,
+    "Type": "Economy",
+    "Delay_Cost": 108.0
+  },
+  {
+    "Package_ID": "P-100",
+    "Length": 100.0,
+    "Width": 62.0,
+    "Height": 87.0,
+    "Weight": 104.0,
+    "Type": "Economy",
+    "Delay_Cost": 79.0
+  },
+  {
+    "Package_ID": "P-101",
+    "Length": 102.0,
+    "Width": 82.0,
+    "Height": 76.0,
+    "Weight": 154.0,
+    "Type": "Economy",
+    "Delay_Cost": 109.0
+  },
+  {
+    "Package_ID": "P-102",
+    "Length": 70.0,
+    "Width": 106.0,
+    "Height": 64.0,
+    "Weight": 70.0,
+    "Type": "Economy",
+    "Delay_Cost": 135.0
+  },
+  {
+    "Package_ID": "P-103",
+    "Length": 44.0,
+    "Width": 78.0,
+    "Height": 102.0,
+    "Weight": 84.0,
+    "Type": "Priority",
+    "Delay_Cost": null
+  },
+  {
+    "Package_ID": "P-104",
+    "Length": 90.0,
+    "Width": 95.0,
+    "Height": 95.0,
+    "Weight": 110.0,
+    "Type": "Economy",
+    "Delay_Cost": 108.0
+  },
+  {
+    "Package_ID": "P-105",
+    "Length": 80.0,
+    "Width": 95.0,
+    "Height": 103.0,
+    "Weight": 225.0,
+    "Type": "Priority",
+    "Delay_Cost": null
+  },
+  {
+    "Package_ID": "P-106",
+    "Length": 90.0,
+    "Width": 54.0,
+    "Height": 92.0,
+    "Weight": 100.0,
+    "Type": "Priority",
+    "Delay_Cost": null
+  },
+  {
+    "Package_ID": "P-107",
+    "Length": 99.0,
+    "Width": 100.0,
+    "Height": 100.0,
+    "Weight": 252.0,
+    "Type": "Economy",
+    "Delay_Cost": 134.0
+  },
+  {
+    "Package_ID": "P-108",
+    "Length": 47.0,
+    "Width": 109.0,
+    "Height": 70.0,
+    "Weight": 95.0,
+    "Type": "Economy",
+    "Delay_Cost": 90.0
+  },
+  {
+    "Package_ID": "P-109",
+    "Length": 98.0,
+    "Width": 79.0,
+    "Height": 44.0,
+    "Weight": 53.0,
+    "Type": "Priority",
+    "Delay_Cost": null
+  },
+  {
+    "Package_ID": "P-110",
+    "Length": 86.0,
+    "Width": 88.0,
+    "Height": 100.0,
+    "Weight": 158.0,
+    "Type": "Economy",
+    "Delay_Cost": 89.0
+  },
+  {
+    "Package_ID": "P-111",
+    "Length": 62.0,
+    "Width": 103.0,
+    "Height": 65.0,
+    "Weight": 27.0,
+    "Type": "Economy",
+    "Delay_Cost": 60.0
+  },
+  {
+    "Package_ID": "P-112",
+    "Length": 63.0,
+    "Width": 79.0,
+    "Height": 67.0,
+    "Weight": 20.0,
+    "Type": "Priority",
+    "Delay_Cost": null
+  },
+  {
+    "Package_ID": "P-113",
+    "Length": 55.0,
+    "Width": 86.0,
+    "Height": 75.0,
+    "Weight": 88.0,
+    "Type": "Economy",
+    "Delay_Cost": 87.0
+  },
+  {
+    "Package_ID": "P-114",
+    "Length": 80.0,
+    "Width": 93.0,
+    "Height": 104.0,
+    "Weight": 175.0,
+    "Type": "Economy",
+    "Delay_Cost": 124.0
+  },
+  {
+    "Package_ID": "P-115",
+    "Length": 46.0,
+    "Width": 105.0,
+    "Height": 102.0,
+    "Weight": 112.0,
+    "Type": "Economy",
+    "Delay_Cost": 105.0
+  },
+  {
+    "Package_ID": "P-116",
+    "Length": 106.0,
+    "Width": 109.0,
+    "Height": 83.0,
+    "Weight": 132.0,
+    "Type": "Economy",
+    "Delay_Cost": 128.0
+  },
+  {
+    "Package_ID": "P-117",
+    "Length": 52.0,
+    "Width": 49.0,
+    "Height": 65.0,
+    "Weight": 33.0,
+    "Type": "Priority",
+    "Delay_Cost": null
+  },
+  {
+    "Package_ID": "P-118",
+    "Length": 90.0,
+    "Width": 82.0,
+    "Height": 75.0,
+    "Weight": 55.0,
+    "Type": "Economy",
+    "Delay_Cost": 114.0
+  },
+  {
+    "Package_ID": "P-119",
+    "Length": 41.0,
+    "Width": 79.0,
+    "Height": 104.0,
+    "Weight": 25.0,
+    "Type": "Economy",
+    "Delay_Cost": 61.0
+  },
+  {
+    "Package_ID": "P-120",
+    "Length": 48.0,
+    "Width": 91.0,
+    "Height": 74.0,
+    "Weight": 82.0,
+    "Type": "Economy",
+    "Delay_Cost": 105.0
+  },
+  {
+    "Package_ID": "P-121",
+    "Length": 79.0,
+    "Width": 108.0,
+    "Height": 80.0,
+    "Weight": 99.0,
+    "Type": "Economy",
+    "Delay_Cost": 124.0
+  },
+  {
+    "Package_ID": "P-122",
+    "Length": 77.0,
+    "Width": 104.0,
+    "Height": 46.0,
+    "Weight": 67.0,
+    "Type": "Economy",
+    "Delay_Cost": 105.0
+  },
+  {
+    "Package_ID": "P-123",
+    "Length": 43.0,
+    "Width": 62.0,
+    "Height": 40.0,
+    "Weight": 7.0,
+    "Type": "Economy",
+    "Delay_Cost": 75.0
+  },
+  {
+    "Package_ID": "P-124",
+    "Length": 54.0,
+    "Width": 104.0,
+    "Height": 72.0,
+    "Weight": 96.0,
+    "Type": "Priority",
+    "Delay_Cost": null
+  },
+  {
+    "Package_ID": "P-125",
+    "Length": 68.0,
+    "Width": 85.0,
+    "Height": 91.0,
+    "Weight": 139.0,
+    "Type": "Priority",
+    "Delay_Cost": null
+  },
+  {
+    "Package_ID": "P-126",
+    "Length": 85.0,
+    "Width": 64.0,
+    "Height": 60.0,
+    "Weight": 94.0,
+    "Type": "Priority",
+    "Delay_Cost": null
+  },
+  {
+    "Package_ID": "P-127",
+    "Length": 71.0,
+    "Width": 78.0,
+    "Height": 67.0,
+    "Weight": 79.0,
+    "Type": "Economy",
+    "Delay_Cost": 66.0
+  },
+  {
+    "Package_ID": "P-128",
+    "Length": 79.0,
+    "Width": 102.0,
+    "Height": 66.0,
+    "Weight": 44.0,
+    "Type": "Economy",
+    "Delay_Cost": 92.0
+  },
+  {
+    "Package_ID": "P-129",
+    "Length": 110.0,
+    "Width": 59.0,
+    "Height": 85.0,
+    "Weight": 64.0,
+    "Type": "Priority",
+    "Delay_Cost": null
+  },
+  {
+    "Package_ID": "P-130",
+    "Length": 78.0,
+    "Width": 45.0,
+    "Height": 40.0,
+    "Weight": 18.0,
+    "Type": "Economy",
+    "Delay_Cost": 79.0
+  },
+  {
+    "Package_ID": "P-131",
+    "Length": 82.0,
+    "Width": 80.0,
+    "Height": 79.0,
+    "Weight": 84.0,
+    "Type": "Economy",
+    "Delay_Cost": 109.0
+  },
+  {
+    "Package_ID": "P-132",
+    "Length": 92.0,
+    "Width": 102.0,
+    "Height": 42.0,
+    "Weight": 115.0,
+    "Type": "Economy",
+    "Delay_Cost": 77.0
+  },
+  {
+    "Package_ID": "P-133",
+    "Length": 63.0,
+    "Width": 109.0,
+    "Height": 91.0,
+    "Weight": 174.0,
+    "Type": "Priority",
+    "Delay_Cost": null
+  },
+  {
+    "Package_ID": "P-134",
+    "Length": 80.0,
+    "Width": 88.0,
+    "Height": 97.0,
+    "Weight": 150.0,
+    "Type": "Priority",
+    "Delay_Cost": null
+  },
+  {
+    "Package_ID": "P-135",
+    "Length": 108.0,
+    "Width": 66.0,
+    "Height": 45.0,
+    "Weight": 56.0,
+    "Type": "Economy",
+    "Delay_Cost": 132.0
+  },
+  {
+    "Package_ID": "P-136",
+    "Length": 47.0,
+    "Width": 66.0,
+    "Height": 102.0,
+    "Weight": 36.0,
+    "Type": "Priority",
+    "Delay_Cost": null
+  },
+  {
+    "Package_ID": "P-137",
+    "Length": 59.0,
+    "Width": 110.0,
+    "Height": 96.0,
+    "Weight": 108.0,
+    "Type": "Economy",
+    "Delay_Cost": 120.0
+  },
+  {
+    "Package_ID": "P-138",
+    "Length": 85.0,
+    "Width": 80.0,
+    "Height": 89.0,
+    "Weight": 142.0,
+    "Type": "Economy",
+    "Delay_Cost": 87.0
+  },
+  {
+    "Package_ID": "P-139",
+    "Length": 96.0,
+    "Width": 84.0,
+    "Height": 75.0,
+    "Weight": 123.0,
+    "Type": "Priority",
+    "Delay_Cost": null
+  },
+  {
+    "Package_ID": "P-140",
+    "Length": 84.0,
+    "Width": 106.0,
+    "Height": 65.0,
+    "Weight": 60.0,
+    "Type": "Economy",
+    "Delay_Cost": 119.0
+  },
+  {
+    "Package_ID": "P-141",
+    "Length": 70.0,
+    "Width": 43.0,
+    "Height": 87.0,
+    "Weight": 34.0,
+    "Type": "Economy",
+    "Delay_Cost": 70.0
+  },
+  {
+    "Package_ID": "P-142",
+    "Length": 92.0,
+    "Width": 74.0,
+    "Height": 83.0,
+    "Weight": 169.0,
+    "Type": "Priority",
+    "Delay_Cost": null
+  },
+  {
+    "Package_ID": "P-143",
+    "Length": 82.0,
+    "Width": 100.0,
+    "Height": 106.0,
+    "Weight": 206.0,
+    "Type": "Economy",
+    "Delay_Cost": 76.0
+  },
+  {
+    "Package_ID": "P-144",
+    "Length": 59.0,
+    "Width": 72.0,
+    "Height": 106.0,
+    "Weight": 120.0,
+    "Type": "Economy",
+    "Delay_Cost": 111.0
+  },
+  {
+    "Package_ID": "P-145",
+    "Length": 75.0,
+    "Width": 106.0,
+    "Height": 79.0,
+    "Weight": 66.0,
+    "Type": "Priority",
+    "Delay_Cost": null
+  },
+  {
+    "Package_ID": "P-146",
+    "Length": 100.0,
+    "Width": 45.0,
+    "Height": 56.0,
+    "Weight": 46.0,
+    "Type": "Economy",
+    "Delay_Cost": 92.0
+  },
+  {
+    "Package_ID": "P-147",
+    "Length": 65.0,
+    "Width": 46.0,
+    "Height": 55.0,
+    "Weight": 36.0,
+    "Type": "Priority",
+    "Delay_Cost": null
+  },
+  {
+    "Package_ID": "P-148",
+    "Length": 67.0,
+    "Width": 100.0,
+    "Height": 49.0,
+    "Weight": 50.0,
+    "Type": "Priority",
+    "Delay_Cost": null
+  },
+  {
+    "Package_ID": "P-149",
+    "Length": 63.0,
+    "Width": 45.0,
+    "Height": 104.0,
+    "Weight": 76.0,
+    "Type": "Economy",
+    "Delay_Cost": 84.0
+  },
+  {
+    "Package_ID": "P-150",
+    "Length": 54.0,
+    "Width": 42.0,
+    "Height": 58.0,
+    "Weight": 12.0,
+    "Type": "Priority",
+    "Delay_Cost": null
+  },
+  {
+    "Package_ID": "P-151",
+    "Length": 44.0,
+    "Width": 106.0,
+    "Height": 79.0,
+    "Weight": 23.0,
+    "Type": "Economy",
+    "Delay_Cost": 89.0
+  },
+  {
+    "Package_ID": "P-152",
+    "Length": 67.0,
+    "Width": 57.0,
+    "Height": 49.0,
+    "Weight": 39.0,
+    "Type": "Economy",
+    "Delay_Cost": 73.0
+  },
+  {
+    "Package_ID": "P-153",
+    "Length": 62.0,
+    "Width": 64.0,
+    "Height": 51.0,
+    "Weight": 59.0,
+    "Type": "Economy",
+    "Delay_Cost": 62.0
+  },
+  {
+    "Package_ID": "P-154",
+    "Length": 64.0,
+    "Width": 103.0,
+    "Height": 91.0,
+    "Weight": 47.0,
+    "Type": "Economy",
+    "Delay_Cost": 118.0
+  },
+  {
+    "Package_ID": "P-155",
+    "Length": 95.0,
+    "Width": 87.0,
+    "Height": 47.0,
+    "Weight": 95.0,
+    "Type": "Economy",
+    "Delay_Cost": 99.0
+  },
+  {
+    "Package_ID": "P-156",
+    "Length": 47.0,
+    "Width": 73.0,
+    "Height": 110.0,
+    "Weight": 57.0,
+    "Type": "Economy",
+    "Delay_Cost": 124.0
+  },
+  {
+    "Package_ID": "P-157",
+    "Length": 88.0,
+    "Width": 88.0,
+    "Height": 54.0,
+    "Weight": 30.0,
+    "Type": "Priority",
+    "Delay_Cost": null
+  },
+  {
+    "Package_ID": "P-158",
+    "Length": 72.0,
+    "Width": 107.0,
+    "Height": 95.0,
+    "Weight": 135.0,
+    "Type": "Economy",
+    "Delay_Cost": 61.0
+  },
+  {
+    "Package_ID": "P-159",
+    "Length": 50.0,
+    "Width": 92.0,
+    "Height": 52.0,
+    "Weight": 15.0,
+    "Type": "Economy",
+    "Delay_Cost": 66.0
+  },
+  {
+    "Package_ID": "P-160",
+    "Length": 108.0,
+    "Width": 82.0,
+    "Height": 99.0,
+    "Weight": 232.0,
+    "Type": "Economy",
+    "Delay_Cost": 84.0
+  },
+  {
+    "Package_ID": "P-161",
+    "Length": 78.0,
+    "Width": 97.0,
+    "Height": 62.0,
+    "Weight": 127.0,
+    "Type": "Economy",
+    "Delay_Cost": 67.0
+  },
+  {
+    "Package_ID": "P-162",
+    "Length": 46.0,
+    "Width": 104.0,
+    "Height": 65.0,
+    "Weight": 36.0,
+    "Type": "Priority",
+    "Delay_Cost": null
+  },
+  {
+    "Package_ID": "P-163",
+    "Length": 49.0,
+    "Width": 83.0,
+    "Height": 83.0,
+    "Weight": 45.0,
+    "Type": "Priority",
+    "Delay_Cost": null
+  },
+  {
+    "Package_ID": "P-164",
+    "Length": 102.0,
+    "Width": 40.0,
+    "Height": 87.0,
+    "Weight": 99.0,
+    "Type": "Economy",
+    "Delay_Cost": 124.0
+  },
+  {
+    "Package_ID": "P-165",
+    "Length": 103.0,
+    "Width": 96.0,
+    "Height": 93.0,
+    "Weight": 267.0,
+    "Type": "Priority",
+    "Delay_Cost": null
+  },
+  {
+    "Package_ID": "P-166",
+    "Length": 84.0,
+    "Width": 62.0,
+    "Height": 103.0,
+    "Weight": 142.0,
+    "Type": "Economy",
+    "Delay_Cost": 134.0
+  },
+  {
+    "Package_ID": "P-167",
+    "Length": 47.0,
+    "Width": 50.0,
+    "Height": 100.0,
+    "Weight": 33.0,
+    "Type": "Economy",
+    "Delay_Cost": 124.0
+  },
+  {
+    "Package_ID": "P-168",
+    "Length": 68.0,
+    "Width": 87.0,
+    "Height": 88.0,
+    "Weight": 109.0,
+    "Type": "Priority",
+    "Delay_Cost": null
+  },
+  {
+    "Package_ID": "P-169",
+    "Length": 48.0,
+    "Width": 87.0,
+    "Height": 94.0,
+    "Weight": 102.0,
+    "Type": "Economy",
+    "Delay_Cost": 136.0
+  },
+  {
+    "Package_ID": "P-170",
+    "Length": 100.0,
+    "Width": 81.0,
+    "Height": 44.0,
+    "Weight": 39.0,
+    "Type": "Economy",
+    "Delay_Cost": 120.0
+  },
+  {
+    "Package_ID": "P-171",
+    "Length": 50.0,
+    "Width": 55.0,
+    "Height": 93.0,
+    "Weight": 55.0,
+    "Type": "Economy",
+    "Delay_Cost": 110.0
+  },
+  {
+    "Package_ID": "P-172",
+    "Length": 51.0,
+    "Width": 71.0,
+    "Height": 76.0,
+    "Weight": 22.0,
+    "Type": "Economy",
+    "Delay_Cost": 112.0
+  },
+  {
+    "Package_ID": "P-173",
+    "Length": 92.0,
+    "Width": 81.0,
+    "Height": 89.0,
+    "Weight": 130.0,
+    "Type": "Economy",
+    "Delay_Cost": 81.0
+  },
+  {
+    "Package_ID": "P-174",
+    "Length": 107.0,
+    "Width": 101.0,
+    "Height": 47.0,
+    "Weight": 107.0,
+    "Type": "Economy",
+    "Delay_Cost": 127.0
+  },
+  {
+    "Package_ID": "P-175",
+    "Length": 66.0,
+    "Width": 88.0,
+    "Height": 96.0,
+    "Weight": 127.0,
+    "Type": "Economy",
+    "Delay_Cost": 121.0
+  },
+  {
+    "Package_ID": "P-176",
+    "Length": 60.0,
+    "Width": 62.0,
+    "Height": 102.0,
+    "Weight": 42.0,
+    "Type": "Economy",
+    "Delay_Cost": 87.0
+  },
+  {
+    "Package_ID": "P-177",
+    "Length": 44.0,
+    "Width": 41.0,
+    "Height": 99.0,
+    "Weight": 17.0,
+    "Type": "Economy",
+    "Delay_Cost": 77.0
+  },
+  {
+    "Package_ID": "P-178",
+    "Length": 78.0,
+    "Width": 69.0,
+    "Height": 96.0,
+    "Weight": 97.0,
+    "Type": "Economy",
+    "Delay_Cost": 98.0
+  },
+  {
+    "Package_ID": "P-179",
+    "Length": 62.0,
+    "Width": 73.0,
+    "Height": 63.0,
+    "Weight": 38.0,
+    "Type": "Economy",
+    "Delay_Cost": 84.0
+  },
+  {
+    "Package_ID": "P-180",
+    "Length": 80.0,
+    "Width": 71.0,
+    "Height": 59.0,
+    "Weight": 43.0,
+    "Type": "Priority",
+    "Delay_Cost": null
+  },
+  {
+    "Package_ID": "P-181",
+    "Length": 98.0,
+    "Width": 58.0,
+    "Height": 57.0,
+    "Weight": 93.0,
+    "Type": "Priority",
+    "Delay_Cost": null
+  },
+  {
+    "Package_ID": "P-182",
+    "Length": 45.0,
+    "Width": 70.0,
+    "Height": 78.0,
+    "Weight": 42.0,
+    "Type": "Economy",
+    "Delay_Cost": 65.0
+  },
+  {
+    "Package_ID": "P-183",
+    "Length": 105.0,
+    "Width": 72.0,
+    "Height": 57.0,
+    "Weight": 37.0,
+    "Type": "Priority",
+    "Delay_Cost": null
+  },
+  {
+    "Package_ID": "P-184",
+    "Length": 88.0,
+    "Width": 96.0,
+    "Height": 74.0,
+    "Weight": 129.0,
+    "Type": "Economy",
+    "Delay_Cost": 84.0
+  },
+  {
+    "Package_ID": "P-185",
+    "Length": 42.0,
+    "Width": 67.0,
+    "Height": 100.0,
+    "Weight": 52.0,
+    "Type": "Economy",
+    "Delay_Cost": 133.0
+  },
+  {
+    "Package_ID": "P-186",
+    "Length": 47.0,
+    "Width": 84.0,
+    "Height": 93.0,
+    "Weight": 60.0,
+    "Type": "Economy",
+    "Delay_Cost": 118.0
+  },
+  {
+    "Package_ID": "P-187",
+    "Length": 54.0,
+    "Width": 84.0,
+    "Height": 78.0,
+    "Weight": 97.0,
+    "Type": "Priority",
+    "Delay_Cost": null
+  },
+  {
+    "Package_ID": "P-188",
+    "Length": 86.0,
+    "Width": 51.0,
+    "Height": 51.0,
+    "Weight": 12.0,
+    "Type": "Priority",
+    "Delay_Cost": null
+  },
+  {
+    "Package_ID": "P-189",
+    "Length": 56.0,
+    "Width": 63.0,
+    "Height": 87.0,
+    "Weight": 66.0,
+    "Type": "Economy",
+    "Delay_Cost": 121.0
+  },
+  {
+    "Package_ID": "P-190",
+    "Length": 108.0,
+    "Width": 101.0,
+    "Height": 52.0,
+    "Weight": 143.0,
+    "Type": "Economy",
+    "Delay_Cost": 128.0
+  },
+  {
+    "Package_ID": "P-191",
+    "Length": 100.0,
+    "Width": 71.0,
+    "Height": 94.0,
+    "Weight": 123.0,
+    "Type": "Economy",
+    "Delay_Cost": 64.0
+  },
+  {
+    "Package_ID": "P-192",
+    "Length": 54.0,
+    "Width": 76.0,
+    "Height": 74.0,
+    "Weight": 33.0,
+    "Type": "Economy",
+    "Delay_Cost": 106.0
+  },
+  {
+    "Package_ID": "P-193",
+    "Length": 72.0,
+    "Width": 87.0,
+    "Height": 67.0,
+    "Weight": 113.0,
+    "Type": "Economy",
+    "Delay_Cost": 75.0
+  },
+  {
+    "Package_ID": "P-194",
+    "Length": 71.0,
+    "Width": 48.0,
+    "Height": 109.0,
+    "Weight": 97.0,
+    "Type": "Economy",
+    "Delay_Cost": 116.0
+  },
+  {
+    "Package_ID": "P-195",
+    "Length": 102.0,
+    "Width": 57.0,
+    "Height": 72.0,
+    "Weight": 62.0,
+    "Type": "Economy",
+    "Delay_Cost": 90.0
+  },
+  {
+    "Package_ID": "P-196",
+    "Length": 64.0,
+    "Width": 107.0,
+    "Height": 66.0,
+    "Weight": 85.0,
+    "Type": "Economy",
+    "Delay_Cost": 60.0
+  },
+  {
+    "Package_ID": "P-197",
+    "Length": 109.0,
+    "Width": 82.0,
+    "Height": 99.0,
+    "Weight": 68.0,
+    "Type": "Economy",
+    "Delay_Cost": 85.0
+  },
+  {
+    "Package_ID": "P-198",
+    "Length": 74.0,
+    "Width": 59.0,
+    "Height": 84.0,
+    "Weight": 68.0,
+    "Type": "Economy",
+    "Delay_Cost": 113.0
+  },
+  {
+    "Package_ID": "P-199",
+    "Length": 58.0,
+    "Width": 67.0,
+    "Height": 73.0,
+    "Weight": 59.0,
+    "Type": "Priority",
+    "Delay_Cost": null
+  },
+  {
+    "Package_ID": "P-200",
+    "Length": 74.0,
+    "Width": 74.0,
+    "Height": 83.0,
+    "Weight": 81.0,
+    "Type": "Economy",
+    "Delay_Cost": 95.0
+  },
+  {
+    "Package_ID": "P-201",
+    "Length": 80.0,
+    "Width": 106.0,
+    "Height": 76.0,
+    "Weight": 159.0,
+    "Type": "Economy",
+    "Delay_Cost": 139.0
+  },
+  {
+    "Package_ID": "P-202",
+    "Length": 52.0,
+    "Width": 94.0,
+    "Height": 40.0,
+    "Weight": 57.0,
+    "Type": "Economy",
+    "Delay_Cost": 105.0
+  },
+  {
+    "Package_ID": "P-203",
+    "Length": 68.0,
+    "Width": 106.0,
+    "Height": 93.0,
+    "Weight": 52.0,
+    "Type": "Economy",
+    "Delay_Cost": 63.0
+  },
+  {
+    "Package_ID": "P-204",
+    "Length": 55.0,
+    "Width": 88.0,
+    "Height": 103.0,
+    "Weight": 150.0,
+    "Type": "Economy",
+    "Delay_Cost": 101.0
+  },
+  {
+    "Package_ID": "P-205",
+    "Length": 47.0,
+    "Width": 40.0,
+    "Height": 109.0,
+    "Weight": 24.0,
+    "Type": "Economy",
+    "Delay_Cost": 107.0
+  },
+  {
+    "Package_ID": "P-206",
+    "Length": 60.0,
+    "Width": 47.0,
+    "Height": 41.0,
+    "Weight": 29.0,
+    "Type": "Economy",
+    "Delay_Cost": 85.0
+  },
+  {
+    "Package_ID": "P-207",
+    "Length": 70.0,
+    "Width": 45.0,
+    "Height": 95.0,
+    "Weight": 46.0,
+    "Type": "Priority",
+    "Delay_Cost": null
+  },
+  {
+    "Package_ID": "P-208",
+    "Length": 89.0,
+    "Width": 50.0,
+    "Height": 102.0,
+    "Weight": 117.0,
+    "Type": "Economy",
+    "Delay_Cost": 127.0
+  },
+  {
+    "Package_ID": "P-209",
+    "Length": 75.0,
+    "Width": 44.0,
+    "Height": 72.0,
+    "Weight": 57.0,
+    "Type": "Economy",
+    "Delay_Cost": 74.0
+  },
+  {
+    "Package_ID": "P-210",
+    "Length": 45.0,
+    "Width": 93.0,
+    "Height": 88.0,
+    "Weight": 64.0,
+    "Type": "Economy",
+    "Delay_Cost": 67.0
+  },
+  {
+    "Package_ID": "P-211",
+    "Length": 96.0,
+    "Width": 95.0,
+    "Height": 81.0,
+    "Weight": 142.0,
+    "Type": "Priority",
+    "Delay_Cost": null
+  },
+  {
+    "Package_ID": "P-212",
+    "Length": 105.0,
+    "Width": 74.0,
+    "Height": 48.0,
+    "Weight": 96.0,
+    "Type": "Priority",
+    "Delay_Cost": null
+  },
+  {
+    "Package_ID": "P-213",
+    "Length": 71.0,
+    "Width": 50.0,
+    "Height": 105.0,
+    "Weight": 94.0,
+    "Type": "Economy",
+    "Delay_Cost": 66.0
+  },
+  {
+    "Package_ID": "P-214",
+    "Length": 58.0,
+    "Width": 81.0,
+    "Height": 61.0,
+    "Weight": 40.0,
+    "Type": "Priority",
+    "Delay_Cost": null
+  },
+  {
+    "Package_ID": "P-215",
+    "Length": 87.0,
+    "Width": 89.0,
+    "Height": 80.0,
+    "Weight": 126.0,
+    "Type": "Priority",
+    "Delay_Cost": null
+  },
+  {
+    "Package_ID": "P-216",
+    "Length": 44.0,
+    "Width": 64.0,
+    "Height": 83.0,
+    "Weight": 57.0,
+    "Type": "Priority",
+    "Delay_Cost": null
+  },
+  {
+    "Package_ID": "P-217",
+    "Length": 78.0,
+    "Width": 74.0,
+    "Height": 72.0,
+    "Weight": 97.0,
+    "Type": "Priority",
+    "Delay_Cost": null
+  },
+  {
+    "Package_ID": "P-218",
+    "Length": 90.0,
+    "Width": 77.0,
+    "Height": 59.0,
+    "Weight": 63.0,
+    "Type": "Economy",
+    "Delay_Cost": 134.0
+  },
+  {
+    "Package_ID": "P-219",
+    "Length": 94.0,
+    "Width": 61.0,
+    "Height": 76.0,
+    "Weight": 57.0,
+    "Type": "Priority",
+    "Delay_Cost": null
+  },
+  {
+    "Package_ID": "P-220",
+    "Length": 44.0,
+    "Width": 104.0,
+    "Height": 71.0,
+    "Weight": 80.0,
+    "Type": "Economy",
+    "Delay_Cost": 137.0
+  },
+  {
+    "Package_ID": "P-221",
+    "Length": 68.0,
+    "Width": 44.0,
+    "Height": 49.0,
+    "Weight": 13.0,
+    "Type": "Economy",
+    "Delay_Cost": 86.0
+  },
+  {
+    "Package_ID": "P-222",
+    "Length": 88.0,
+    "Width": 73.0,
+    "Height": 41.0,
+    "Weight": 59.0,
+    "Type": "Priority",
+    "Delay_Cost": null
+  },
+  {
+    "Package_ID": "P-223",
+    "Length": 83.0,
+    "Width": 92.0,
+    "Height": 109.0,
+    "Weight": 145.0,
+    "Type": "Economy",
+    "Delay_Cost": 66.0
+  },
+  {
+    "Package_ID": "P-224",
+    "Length": 68.0,
+    "Width": 99.0,
+    "Height": 56.0,
+    "Weight": 103.0,
+    "Type": "Priority",
+    "Delay_Cost": null
+  },
+  {
+    "Package_ID": "P-225",
+    "Length": 54.0,
+    "Width": 68.0,
+    "Height": 93.0,
+    "Weight": 52.0,
+    "Type": "Economy",
+    "Delay_Cost": 98.0
+  },
+  {
+    "Package_ID": "P-226",
+    "Length": 60.0,
+    "Width": 72.0,
+    "Height": 74.0,
+    "Weight": 27.0,
+    "Type": "Priority",
+    "Delay_Cost": null
+  },
+  {
+    "Package_ID": "P-227",
+    "Length": 59.0,
+    "Width": 73.0,
+    "Height": 96.0,
+    "Weight": 58.0,
+    "Type": "Economy",
+    "Delay_Cost": 118.0
+  },
+  {
+    "Package_ID": "P-228",
+    "Length": 98.0,
+    "Width": 92.0,
+    "Height": 51.0,
+    "Weight": 128.0,
+    "Type": "Economy",
+    "Delay_Cost": 75.0
+  },
+  {
+    "Package_ID": "P-229",
+    "Length": 69.0,
+    "Width": 81.0,
+    "Height": 104.0,
+    "Weight": 171.0,
+    "Type": "Economy",
+    "Delay_Cost": 116.0
+  },
+  {
+    "Package_ID": "P-230",
+    "Length": 46.0,
+    "Width": 48.0,
+    "Height": 86.0,
+    "Weight": 44.0,
+    "Type": "Economy",
+    "Delay_Cost": 82.0
+  },
+  {
+    "Package_ID": "P-231",
+    "Length": 96.0,
+    "Width": 68.0,
+    "Height": 49.0,
+    "Weight": 48.0,
+    "Type": "Economy",
+    "Delay_Cost": 91.0
+  },
+  {
+    "Package_ID": "P-232",
+    "Length": 67.0,
+    "Width": 84.0,
+    "Height": 47.0,
+    "Weight": 38.0,
+    "Type": "Priority",
+    "Delay_Cost": null
+  },
+  {
+    "Package_ID": "P-233",
+    "Length": 71.0,
+    "Width": 59.0,
+    "Height": 101.0,
+    "Weight": 120.0,
+    "Type": "Economy",
+    "Delay_Cost": 63.0
+  },
+  {
+    "Package_ID": "P-234",
+    "Length": 43.0,
+    "Width": 65.0,
+    "Height": 104.0,
+    "Weight": 60.0,
+    "Type": "Economy",
+    "Delay_Cost": 101.0
+  },
+  {
+    "Package_ID": "P-235",
+    "Length": 80.0,
+    "Width": 105.0,
+    "Height": 84.0,
+    "Weight": 61.0,
+    "Type": "Economy",
+    "Delay_Cost": 95.0
+  },
+  {
+    "Package_ID": "P-236",
+    "Length": 91.0,
+    "Width": 56.0,
+    "Height": 56.0,
+    "Weight": 57.0,
+    "Type": "Priority",
+    "Delay_Cost": null
+  },
+  {
+    "Package_ID": "P-237",
+    "Length": 97.0,
+    "Width": 74.0,
+    "Height": 101.0,
+    "Weight": 193.0,
+    "Type": "Economy",
+    "Delay_Cost": 97.0
+  },
+  {
+    "Package_ID": "P-238",
+    "Length": 50.0,
+    "Width": 69.0,
+    "Height": 102.0,
+    "Weight": 74.0,
+    "Type": "Priority",
+    "Delay_Cost": null
+  },
+  {
+    "Package_ID": "P-239",
+    "Length": 79.0,
+    "Width": 85.0,
+    "Height": 71.0,
+    "Weight": 94.0,
+    "Type": "Economy",
+    "Delay_Cost": 93.0
+  },
+  {
+    "Package_ID": "P-240",
+    "Length": 101.0,
+    "Width": 88.0,
+    "Height": 65.0,
+    "Weight": 84.0,
+    "Type": "Economy",
+    "Delay_Cost": 127.0
+  },
+  {
+    "Package_ID": "P-241",
+    "Length": 71.0,
+    "Width": 74.0,
+    "Height": 91.0,
+    "Weight": 25.0,
+    "Type": "Economy",
+    "Delay_Cost": 115.0
+  },
+  {
+    "Package_ID": "P-242",
+    "Length": 89.0,
+    "Width": 69.0,
+    "Height": 53.0,
+    "Weight": 48.0,
+    "Type": "Economy",
+    "Delay_Cost": 118.0
+  },
+  {
+    "Package_ID": "P-243",
+    "Length": 69.0,
+    "Width": 77.0,
+    "Height": 105.0,
+    "Weight": 98.0,
+    "Type": "Economy",
+    "Delay_Cost": 76.0
+  },
+  {
+    "Package_ID": "P-244",
+    "Length": 76.0,
+    "Width": 62.0,
+    "Height": 75.0,
+    "Weight": 24.0,
+    "Type": "Economy",
+    "Delay_Cost": 111.0
+  },
+  {
+    "Package_ID": "P-245",
+    "Length": 53.0,
+    "Width": 105.0,
+    "Height": 80.0,
+    "Weight": 61.0,
+    "Type": "Economy",
+    "Delay_Cost": 67.0
+  },
+  {
+    "Package_ID": "P-246",
+    "Length": 60.0,
+    "Width": 102.0,
+    "Height": 61.0,
+    "Weight": 58.0,
+    "Type": "Economy",
+    "Delay_Cost": 106.0
+  },
+  {
+    "Package_ID": "P-247",
+    "Length": 98.0,
+    "Width": 62.0,
+    "Height": 79.0,
+    "Weight": 61.0,
+    "Type": "Economy",
+    "Delay_Cost": 136.0
+  },
+  {
+    "Package_ID": "P-248",
+    "Length": 77.0,
+    "Width": 67.0,
+    "Height": 52.0,
+    "Weight": 70.0,
+    "Type": "Economy",
+    "Delay_Cost": 139.0
+  },
+  {
+    "Package_ID": "P-249",
+    "Length": 89.0,
+    "Width": 67.0,
+    "Height": 55.0,
+    "Weight": 66.0,
+    "Type": "Economy",
+    "Delay_Cost": 88.0
+  },
+  {
+    "Package_ID": "P-250",
+    "Length": 65.0,
+    "Width": 59.0,
+    "Height": 102.0,
+    "Weight": 105.0,
+    "Type": "Economy",
+    "Delay_Cost": 89.0
+  },
+  {
+    "Package_ID": "P-251",
+    "Length": 78.0,
+    "Width": 44.0,
+    "Height": 106.0,
+    "Weight": 106.0,
+    "Type": "Economy",
+    "Delay_Cost": 71.0
+  },
+  {
+    "Package_ID": "P-252",
+    "Length": 48.0,
+    "Width": 110.0,
+    "Height": 95.0,
+    "Weight": 139.0,
+    "Type": "Priority",
+    "Delay_Cost": null
+  },
+  {
+    "Package_ID": "P-253",
+    "Length": 91.0,
+    "Width": 49.0,
+    "Height": 99.0,
+    "Weight": 99.0,
+    "Type": "Economy",
+    "Delay_Cost": 98.0
+  },
+  {
+    "Package_ID": "P-254",
+    "Length": 99.0,
+    "Width": 51.0,
+    "Height": 79.0,
+    "Weight": 101.0,
+    "Type": "Economy",
+    "Delay_Cost": 72.0
+  },
+  {
+    "Package_ID": "P-255",
+    "Length": 64.0,
+    "Width": 98.0,
+    "Height": 96.0,
+    "Weight": 78.0,
+    "Type": "Priority",
+    "Delay_Cost": null
+  },
+  {
+    "Package_ID": "P-256",
+    "Length": 92.0,
+    "Width": 64.0,
+    "Height": 66.0,
+    "Weight": 117.0,
+    "Type": "Economy",
+    "Delay_Cost": 99.0
+  },
+  {
+    "Package_ID": "P-257",
+    "Length": 67.0,
+    "Width": 51.0,
+    "Height": 54.0,
+    "Weight": 40.0,
+    "Type": "Economy",
+    "Delay_Cost": 103.0
+  },
+  {
+    "Package_ID": "P-258",
+    "Length": 71.0,
+    "Width": 55.0,
+    "Height": 82.0,
+    "Weight": 43.0,
+    "Type": "Economy",
+    "Delay_Cost": 138.0
+  },
+  {
+    "Package_ID": "P-259",
+    "Length": 84.0,
+    "Width": 72.0,
+    "Height": 86.0,
+    "Weight": 55.0,
+    "Type": "Economy",
+    "Delay_Cost": 98.0
+  },
+  {
+    "Package_ID": "P-260",
+    "Length": 43.0,
+    "Width": 49.0,
+    "Height": 99.0,
+    "Weight": 20.0,
+    "Type": "Economy",
+    "Delay_Cost": 65.0
+  },
+  {
+    "Package_ID": "P-261",
+    "Length": 100.0,
+    "Width": 77.0,
+    "Height": 42.0,
+    "Weight": 80.0,
+    "Type": "Economy",
+    "Delay_Cost": 114.0
+  },
+  {
+    "Package_ID": "P-262",
+    "Length": 103.0,
+    "Width": 92.0,
+    "Height": 109.0,
+    "Weight": 99.0,
+    "Type": "Economy",
+    "Delay_Cost": 65.0
+  },
+  {
+    "Package_ID": "P-263",
+    "Length": 56.0,
+    "Width": 83.0,
+    "Height": 98.0,
+    "Weight": 33.0,
+    "Type": "Economy",
+    "Delay_Cost": 107.0
+  },
+  {
+    "Package_ID": "P-264",
+    "Length": 60.0,
+    "Width": 68.0,
+    "Height": 108.0,
+    "Weight": 35.0,
+    "Type": "Priority",
+    "Delay_Cost": null
+  },
+  {
+    "Package_ID": "P-265",
+    "Length": 47.0,
+    "Width": 60.0,
+    "Height": 58.0,
+    "Weight": 37.0,
+    "Type": "Priority",
+    "Delay_Cost": null
+  },
+  {
+    "Package_ID": "P-266",
+    "Length": 61.0,
+    "Width": 88.0,
+    "Height": 53.0,
+    "Weight": 37.0,
+    "Type": "Priority",
+    "Delay_Cost": null
+  },
+  {
+    "Package_ID": "P-267",
+    "Length": 54.0,
+    "Width": 97.0,
+    "Height": 98.0,
+    "Weight": 130.0,
+    "Type": "Economy",
+    "Delay_Cost": 116.0
+  },
+  {
+    "Package_ID": "P-268",
+    "Length": 84.0,
+    "Width": 63.0,
+    "Height": 100.0,
+    "Weight": 99.0,
+    "Type": "Economy",
+    "Delay_Cost": 95.0
+  },
+  {
+    "Package_ID": "P-269",
+    "Length": 58.0,
+    "Width": 56.0,
+    "Height": 74.0,
+    "Weight": 25.0,
+    "Type": "Economy",
+    "Delay_Cost": 85.0
+  },
+  {
+    "Package_ID": "P-270",
+    "Length": 52.0,
+    "Width": 70.0,
+    "Height": 47.0,
+    "Weight": 12.0,
+    "Type": "Priority",
+    "Delay_Cost": null
+  },
+  {
+    "Package_ID": "P-271",
+    "Length": 41.0,
+    "Width": 44.0,
+    "Height": 92.0,
+    "Weight": 30.0,
+    "Type": "Economy",
+    "Delay_Cost": 63.0
+  },
+  {
+    "Package_ID": "P-272",
+    "Length": 75.0,
+    "Width": 64.0,
+    "Height": 40.0,
+    "Weight": 54.0,
+    "Type": "Economy",
+    "Delay_Cost": 133.0
+  },
+  {
+    "Package_ID": "P-273",
+    "Length": 85.0,
+    "Width": 79.0,
+    "Height": 71.0,
+    "Weight": 127.0,
+    "Type": "Priority",
+    "Delay_Cost": null
+  },
+  {
+    "Package_ID": "P-274",
+    "Length": 75.0,
+    "Width": 88.0,
+    "Height": 110.0,
+    "Weight": 114.0,
+    "Type": "Priority",
+    "Delay_Cost": null
+  },
+  {
+    "Package_ID": "P-275",
+    "Length": 74.0,
+    "Width": 77.0,
+    "Height": 45.0,
+    "Weight": 31.0,
+    "Type": "Priority",
+    "Delay_Cost": null
+  },
+  {
+    "Package_ID": "P-276",
+    "Length": 46.0,
+    "Width": 69.0,
+    "Height": 62.0,
+    "Weight": 29.0,
+    "Type": "Economy",
+    "Delay_Cost": 70.0
+  },
+  {
+    "Package_ID": "P-277",
+    "Length": 54.0,
+    "Width": 108.0,
+    "Height": 105.0,
+    "Weight": 93.0,
+    "Type": "Priority",
+    "Delay_Cost": null
+  },
+  {
+    "Package_ID": "P-278",
+    "Length": 73.0,
+    "Width": 44.0,
+    "Height": 80.0,
+    "Weight": 60.0,
+    "Type": "Economy",
+    "Delay_Cost": 96.0
+  },
+  {
+    "Package_ID": "P-279",
+    "Length": 85.0,
+    "Width": 99.0,
+    "Height": 52.0,
+    "Weight": 118.0,
+    "Type": "Economy",
+    "Delay_Cost": 101.0
+  },
+  {
+    "Package_ID": "P-280",
+    "Length": 90.0,
+    "Width": 61.0,
+    "Height": 53.0,
+    "Weight": 75.0,
+    "Type": "Priority",
+    "Delay_Cost": null
+  },
+  {
+    "Package_ID": "P-281",
+    "Length": 55.0,
+    "Width": 84.0,
+    "Height": 105.0,
+    "Weight": 57.0,
+    "Type": "Economy",
+    "Delay_Cost": 95.0
+  },
+  {
+    "Package_ID": "P-282",
+    "Length": 107.0,
+    "Width": 92.0,
+    "Height": 54.0,
+    "Weight": 147.0,
+    "Type": "Priority",
+    "Delay_Cost": null
+  },
+  {
+    "Package_ID": "P-283",
+    "Length": 100.0,
+    "Width": 97.0,
+    "Height": 66.0,
+    "Weight": 79.0,
+    "Type": "Priority",
+    "Delay_Cost": null
+  },
+  {
+    "Package_ID": "P-284",
+    "Length": 70.0,
+    "Width": 110.0,
+    "Height": 52.0,
+    "Weight": 86.0,
+    "Type": "Priority",
+    "Delay_Cost": null
+  },
+  {
+    "Package_ID": "P-285",
+    "Length": 81.0,
+    "Width": 108.0,
+    "Height": 54.0,
+    "Weight": 78.0,
+    "Type": "Priority",
+    "Delay_Cost": null
+  },
+  {
+    "Package_ID": "P-286",
+    "Length": 93.0,
+    "Width": 75.0,
+    "Height": 73.0,
+    "Weight": 133.0,
+    "Type": "Economy",
+    "Delay_Cost": 102.0
+  },
+  {
+    "Package_ID": "P-287",
+    "Length": 99.0,
+    "Width": 86.0,
+    "Height": 84.0,
+    "Weight": 94.0,
+    "Type": "Economy",
+    "Delay_Cost": 110.0
+  },
+  {
+    "Package_ID": "P-288",
+    "Length": 61.0,
+    "Width": 101.0,
+    "Height": 94.0,
+    "Weight": 36.0,
+    "Type": "Economy",
+    "Delay_Cost": 122.0
+  },
+  {
+    "Package_ID": "P-289",
+    "Length": 70.0,
+    "Width": 43.0,
+    "Height": 66.0,
+    "Weight": 28.0,
+    "Type": "Economy",
+    "Delay_Cost": 79.0
+  },
+  {
+    "Package_ID": "P-290",
+    "Length": 80.0,
+    "Width": 69.0,
+    "Height": 46.0,
+    "Weight": 23.0,
+    "Type": "Economy",
+    "Delay_Cost": 64.0
+  },
+  {
+    "Package_ID": "P-291",
+    "Length": 74.0,
+    "Width": 81.0,
+    "Height": 40.0,
+    "Weight": 42.0,
+    "Type": "Economy",
+    "Delay_Cost": 124.0
+  },
+  {
+    "Package_ID": "P-292",
+    "Length": 63.0,
+    "Width": 100.0,
+    "Height": 93.0,
+    "Weight": 46.0,
+    "Type": "Economy",
+    "Delay_Cost": 66.0
+  },
+  {
+    "Package_ID": "P-293",
+    "Length": 56.0,
+    "Width": 104.0,
+    "Height": 56.0,
+    "Weight": 78.0,
+    "Type": "Economy",
+    "Delay_Cost": 81.0
+  },
+  {
+    "Package_ID": "P-294",
+    "Length": 88.0,
+    "Width": 93.0,
+    "Height": 44.0,
+    "Weight": 30.0,
+    "Type": "Economy",
+    "Delay_Cost": 69.0
+  },
+  {
+    "Package_ID": "P-295",
+    "Length": 49.0,
+    "Width": 109.0,
+    "Height": 69.0,
+    "Weight": 32.0,
+    "Type": "Priority",
+    "Delay_Cost": null
+  },
+  {
+    "Package_ID": "P-296",
+    "Length": 92.0,
+    "Width": 81.0,
+    "Height": 93.0,
+    "Weight": 50.0,
+    "Type": "Economy",
+    "Delay_Cost": 60.0
+  },
+  {
+    "Package_ID": "P-297",
+    "Length": 103.0,
+    "Width": 101.0,
+    "Height": 68.0,
+    "Weight": 149.0,
+    "Type": "Priority",
+    "Delay_Cost": null
+  },
+  {
+    "Package_ID": "P-298",
+    "Length": 44.0,
+    "Width": 91.0,
+    "Height": 86.0,
+    "Weight": 57.0,
+    "Type": "Economy",
+    "Delay_Cost": 83.0
+  },
+  {
+    "Package_ID": "P-299",
+    "Length": 83.0,
+    "Width": 87.0,
+    "Height": 80.0,
+    "Weight": 55.0,
+    "Type": "Priority",
+    "Delay_Cost": null
+  },
+  {
+    "Package_ID": "P-300",
+    "Length": 97.0,
+    "Width": 69.0,
+    "Height": 101.0,
+    "Weight": 57.0,
+    "Type": "Priority",
+    "Delay_Cost": null
+  },
+  {
+    "Package_ID": "P-301",
+    "Length": 61.0,
+    "Width": 72.0,
+    "Height": 69.0,
+    "Weight": 76.0,
+    "Type": "Economy",
+    "Delay_Cost": 72.0
+  },
+  {
+    "Package_ID": "P-302",
+    "Length": 64.0,
+    "Width": 106.0,
+    "Height": 65.0,
+    "Weight": 98.0,
+    "Type": "Economy",
+    "Delay_Cost": 84.0
+  },
+  {
+    "Package_ID": "P-303",
+    "Length": 57.0,
+    "Width": 62.0,
+    "Height": 106.0,
+    "Weight": 75.0,
+    "Type": "Economy",
+    "Delay_Cost": 85.0
+  },
+  {
+    "Package_ID": "P-304",
+    "Length": 51.0,
+    "Width": 68.0,
+    "Height": 89.0,
+    "Weight": 31.0,
+    "Type": "Priority",
+    "Delay_Cost": null
+  },
+  {
+    "Package_ID": "P-305",
+    "Length": 53.0,
+    "Width": 58.0,
+    "Height": 63.0,
+    "Weight": 22.0,
+    "Type": "Economy",
+    "Delay_Cost": 104.0
+  },
+  {
+    "Package_ID": "P-306",
+    "Length": 88.0,
+    "Width": 91.0,
+    "Height": 90.0,
+    "Weight": 57.0,
+    "Type": "Economy",
+    "Delay_Cost": 106.0
+  },
+  {
+    "Package_ID": "P-307",
+    "Length": 43.0,
+    "Width": 82.0,
+    "Height": 96.0,
+    "Weight": 100.0,
+    "Type": "Economy",
+    "Delay_Cost": 123.0
+  },
+  {
+    "Package_ID": "P-308",
+    "Length": 57.0,
+    "Width": 64.0,
+    "Height": 110.0,
+    "Weight": 62.0,
+    "Type": "Economy",
+    "Delay_Cost": 87.0
+  },
+  {
+    "Package_ID": "P-309",
+    "Length": 104.0,
+    "Width": 91.0,
+    "Height": 60.0,
+    "Weight": 135.0,
+    "Type": "Economy",
+    "Delay_Cost": 66.0
+  },
+  {
+    "Package_ID": "P-310",
+    "Length": 65.0,
+    "Width": 59.0,
+    "Height": 43.0,
+    "Weight": 15.0,
+    "Type": "Priority",
+    "Delay_Cost": null
+  },
+  {
+    "Package_ID": "P-311",
+    "Length": 79.0,
+    "Width": 101.0,
+    "Height": 43.0,
+    "Weight": 26.0,
+    "Type": "Economy",
+    "Delay_Cost": 69.0
+  },
+  {
+    "Package_ID": "P-312",
+    "Length": 90.0,
+    "Width": 97.0,
+    "Height": 56.0,
+    "Weight": 121.0,
+    "Type": "Economy",
+    "Delay_Cost": 120.0
+  },
+  {
+    "Package_ID": "P-313",
+    "Length": 91.0,
+    "Width": 54.0,
+    "Height": 54.0,
+    "Weight": 73.0,
+    "Type": "Economy",
+    "Delay_Cost": 120.0
+  },
+  {
+    "Package_ID": "P-314",
+    "Length": 84.0,
+    "Width": 53.0,
+    "Height": 93.0,
+    "Weight": 48.0,
+    "Type": "Economy",
+    "Delay_Cost": 93.0
+  },
+  {
+    "Package_ID": "P-315",
+    "Length": 50.0,
+    "Width": 75.0,
+    "Height": 53.0,
+    "Weight": 14.0,
+    "Type": "Economy",
+    "Delay_Cost": 104.0
+  },
+  {
+    "Package_ID": "P-316",
+    "Length": 105.0,
+    "Width": 103.0,
+    "Height": 71.0,
+    "Weight": 201.0,
+    "Type": "Economy",
+    "Delay_Cost": 123.0
+  },
+  {
+    "Package_ID": "P-317",
+    "Length": 53.0,
+    "Width": 86.0,
+    "Height": 50.0,
+    "Weight": 44.0,
+    "Type": "Economy",
+    "Delay_Cost": 89.0
+  },
+  {
+    "Package_ID": "P-318",
+    "Length": 86.0,
+    "Width": 75.0,
+    "Height": 99.0,
+    "Weight": 47.0,
+    "Type": "Economy",
+    "Delay_Cost": 89.0
+  },
+  {
+    "Package_ID": "P-319",
+    "Length": 48.0,
+    "Width": 102.0,
+    "Height": 101.0,
+    "Weight": 144.0,
+    "Type": "Priority",
+    "Delay_Cost": null
+  },
+  {
+    "Package_ID": "P-320",
+    "Length": 64.0,
+    "Width": 53.0,
+    "Height": 57.0,
+    "Weight": 55.0,
+    "Type": "Priority",
+    "Delay_Cost": null
+  },
+  {
+    "Package_ID": "P-321",
+    "Length": 71.0,
+    "Width": 78.0,
+    "Height": 98.0,
+    "Weight": 92.0,
+    "Type": "Economy",
+    "Delay_Cost": 91.0
+  },
+  {
+    "Package_ID": "P-322",
+    "Length": 45.0,
+    "Width": 66.0,
+    "Height": 102.0,
+    "Weight": 72.0,
+    "Type": "Economy",
+    "Delay_Cost": 104.0
+  },
+  {
+    "Package_ID": "P-323",
+    "Length": 72.0,
+    "Width": 98.0,
+    "Height": 97.0,
+    "Weight": 183.0,
+    "Type": "Economy",
+    "Delay_Cost": 129.0
+  },
+  {
+    "Package_ID": "P-324",
+    "Length": 68.0,
+    "Width": 40.0,
+    "Height": 41.0,
+    "Weight": 27.0,
+    "Type": "Economy",
+    "Delay_Cost": 122.0
+  },
+  {
+    "Package_ID": "P-325",
+    "Length": 80.0,
+    "Width": 63.0,
+    "Height": 77.0,
+    "Weight": 93.0,
+    "Type": "Economy",
+    "Delay_Cost": 74.0
+  },
+  {
+    "Package_ID": "P-326",
+    "Length": 84.0,
+    "Width": 51.0,
+    "Height": 45.0,
+    "Weight": 17.0,
+    "Type": "Economy",
+    "Delay_Cost": 136.0
+  },
+  {
+    "Package_ID": "P-327",
+    "Length": 58.0,
+    "Width": 96.0,
+    "Height": 44.0,
+    "Weight": 18.0,
+    "Type": "Economy",
+    "Delay_Cost": 119.0
+  },
+  {
+    "Package_ID": "P-328",
+    "Length": 50.0,
+    "Width": 78.0,
+    "Height": 82.0,
+    "Weight": 57.0,
+    "Type": "Economy",
+    "Delay_Cost": 72.0
+  },
+  {
+    "Package_ID": "P-329",
+    "Length": 94.0,
+    "Width": 65.0,
+    "Height": 58.0,
+    "Weight": 26.0,
+    "Type": "Priority",
+    "Delay_Cost": null
+  },
+  {
+    "Package_ID": "P-330",
+    "Length": 105.0,
+    "Width": 106.0,
+    "Height": 97.0,
+    "Weight": 271.0,
+    "Type": "Economy",
+    "Delay_Cost": 75.0
+  },
+  {
+    "Package_ID": "P-331",
+    "Length": 71.0,
+    "Width": 43.0,
+    "Height": 88.0,
+    "Weight": 64.0,
+    "Type": "Economy",
+    "Delay_Cost": 91.0
+  },
+  {
+    "Package_ID": "P-332",
+    "Length": 57.0,
+    "Width": 103.0,
+    "Height": 79.0,
+    "Weight": 63.0,
+    "Type": "Economy",
+    "Delay_Cost": 108.0
+  },
+  {
+    "Package_ID": "P-333",
+    "Length": 100.0,
+    "Width": 85.0,
+    "Height": 72.0,
+    "Weight": 59.0,
+    "Type": "Priority",
+    "Delay_Cost": null
+  },
+  {
+    "Package_ID": "P-334",
+    "Length": 65.0,
+    "Width": 99.0,
+    "Height": 54.0,
+    "Weight": 103.0,
+    "Type": "Economy",
+    "Delay_Cost": 102.0
+  },
+  {
+    "Package_ID": "P-335",
+    "Length": 91.0,
+    "Width": 57.0,
+    "Height": 95.0,
+    "Weight": 47.0,
+    "Type": "Economy",
+    "Delay_Cost": 140.0
+  },
+  {
+    "Package_ID": "P-336",
+    "Length": 49.0,
+    "Width": 68.0,
+    "Height": 72.0,
+    "Weight": 33.0,
+    "Type": "Economy",
+    "Delay_Cost": 114.0
+  },
+  {
+    "Package_ID": "P-337",
+    "Length": 40.0,
+    "Width": 77.0,
+    "Height": 102.0,
+    "Weight": 52.0,
+    "Type": "Economy",
+    "Delay_Cost": 102.0
+  },
+  {
+    "Package_ID": "P-338",
+    "Length": 46.0,
+    "Width": 88.0,
+    "Height": 87.0,
+    "Weight": 75.0,
+    "Type": "Economy",
+    "Delay_Cost": 70.0
+  },
+  {
+    "Package_ID": "P-339",
+    "Length": 54.0,
+    "Width": 76.0,
+    "Height": 76.0,
+    "Weight": 80.0,
+    "Type": "Economy",
+    "Delay_Cost": 94.0
+  },
+  {
+    "Package_ID": "P-340",
+    "Length": 103.0,
+    "Width": 90.0,
+    "Height": 49.0,
+    "Weight": 66.0,
+    "Type": "Economy",
+    "Delay_Cost": 98.0
+  },
+  {
+    "Package_ID": "P-341",
+    "Length": 72.0,
+    "Width": 87.0,
+    "Height": 57.0,
+    "Weight": 50.0,
+    "Type": "Economy",
+    "Delay_Cost": 109.0
+  },
+  {
+    "Package_ID": "P-342",
+    "Length": 63.0,
+    "Width": 66.0,
+    "Height": 78.0,
+    "Weight": 83.0,
+    "Type": "Economy",
+    "Delay_Cost": 85.0
+  },
+  {
+    "Package_ID": "P-343",
+    "Length": 107.0,
+    "Width": 67.0,
+    "Height": 77.0,
+    "Weight": 98.0,
+    "Type": "Economy",
+    "Delay_Cost": 130.0
+  },
+  {
+    "Package_ID": "P-344",
+    "Length": 55.0,
+    "Width": 89.0,
+    "Height": 92.0,
+    "Weight": 111.0,
+    "Type": "Economy",
+    "Delay_Cost": 95.0
+  },
+  {
+    "Package_ID": "P-345",
+    "Length": 43.0,
+    "Width": 78.0,
+    "Height": 47.0,
+    "Weight": 43.0,
+    "Type": "Priority",
+    "Delay_Cost": null
+  },
+  {
+    "Package_ID": "P-346",
+    "Length": 83.0,
+    "Width": 95.0,
+    "Height": 110.0,
+    "Weight": 54.0,
+    "Type": "Priority",
+    "Delay_Cost": null
+  },
+  {
+    "Package_ID": "P-347",
+    "Length": 53.0,
+    "Width": 105.0,
+    "Height": 102.0,
+    "Weight": 96.0,
+    "Type": "Economy",
+    "Delay_Cost": 116.0
+  },
+  {
+    "Package_ID": "P-348",
+    "Length": 89.0,
+    "Width": 77.0,
+    "Height": 56.0,
+    "Weight": 60.0,
+    "Type": "Economy",
+    "Delay_Cost": 89.0
+  },
+  {
+    "Package_ID": "P-349",
+    "Length": 99.0,
+    "Width": 104.0,
+    "Height": 68.0,
+    "Weight": 70.0,
+    "Type": "Economy",
+    "Delay_Cost": 80.0
+  },
+  {
+    "Package_ID": "P-350",
+    "Length": 85.0,
+    "Width": 60.0,
+    "Height": 69.0,
+    "Weight": 52.0,
+    "Type": "Priority",
+    "Delay_Cost": null
+  },
+  {
+    "Package_ID": "P-351",
+    "Length": 107.0,
+    "Width": 41.0,
+    "Height": 92.0,
+    "Weight": 42.0,
+    "Type": "Economy",
+    "Delay_Cost": 112.0
+  },
+  {
+    "Package_ID": "P-352",
+    "Length": 89.0,
+    "Width": 43.0,
+    "Height": 66.0,
+    "Weight": 32.0,
+    "Type": "Priority",
+    "Delay_Cost": null
+  },
+  {
+    "Package_ID": "P-353",
+    "Length": 66.0,
+    "Width": 61.0,
+    "Height": 70.0,
+    "Weight": 33.0,
+    "Type": "Priority",
+    "Delay_Cost": null
+  },
+  {
+    "Package_ID": "P-354",
+    "Length": 52.0,
+    "Width": 70.0,
+    "Height": 70.0,
+    "Weight": 47.0,
+    "Type": "Economy",
+    "Delay_Cost": 78.0
+  },
+  {
+    "Package_ID": "P-355",
+    "Length": 45.0,
+    "Width": 60.0,
+    "Height": 52.0,
+    "Weight": 42.0,
+    "Type": "Economy",
+    "Delay_Cost": 72.0
+  },
+  {
+    "Package_ID": "P-356",
+    "Length": 77.0,
+    "Width": 99.0,
+    "Height": 95.0,
+    "Weight": 133.0,
+    "Type": "Priority",
+    "Delay_Cost": null
+  },
+  {
+    "Package_ID": "P-357",
+    "Length": 40.0,
+    "Width": 58.0,
+    "Height": 56.0,
+    "Weight": 15.0,
+    "Type": "Economy",
+    "Delay_Cost": 110.0
+  },
+  {
+    "Package_ID": "P-358",
+    "Length": 81.0,
+    "Width": 60.0,
+    "Height": 74.0,
+    "Weight": 55.0,
+    "Type": "Economy",
+    "Delay_Cost": 93.0
+  },
+  {
+    "Package_ID": "P-359",
+    "Length": 101.0,
+    "Width": 86.0,
+    "Height": 98.0,
+    "Weight": 188.0,
+    "Type": "Economy",
+    "Delay_Cost": 103.0
+  },
+  {
+    "Package_ID": "P-360",
+    "Length": 80.0,
+    "Width": 76.0,
+    "Height": 53.0,
+    "Weight": 23.0,
+    "Type": "Priority",
+    "Delay_Cost": null
+  },
+  {
+    "Package_ID": "P-361",
+    "Length": 65.0,
+    "Width": 61.0,
+    "Height": 51.0,
+    "Weight": 55.0,
+    "Type": "Economy",
+    "Delay_Cost": 68.0
+  },
+  {
+    "Package_ID": "P-362",
+    "Length": 75.0,
+    "Width": 61.0,
+    "Height": 86.0,
+    "Weight": 99.0,
+    "Type": "Economy",
+    "Delay_Cost": 92.0
+  },
+  {
+    "Package_ID": "P-363",
+    "Length": 67.0,
+    "Width": 72.0,
+    "Height": 79.0,
+    "Weight": 29.0,
+    "Type": "Economy",
+    "Delay_Cost": 136.0
+  },
+  {
+    "Package_ID": "P-364",
+    "Length": 68.0,
+    "Width": 53.0,
+    "Height": 110.0,
+    "Weight": 29.0,
+    "Type": "Economy",
+    "Delay_Cost": 94.0
+  },
+  {
+    "Package_ID": "P-365",
+    "Length": 88.0,
+    "Width": 110.0,
+    "Height": 95.0,
+    "Weight": 217.0,
+    "Type": "Priority",
+    "Delay_Cost": null
+  },
+  {
+    "Package_ID": "P-366",
+    "Length": 56.0,
+    "Width": 71.0,
+    "Height": 105.0,
+    "Weight": 112.0,
+    "Type": "Priority",
+    "Delay_Cost": null
+  },
+  {
+    "Package_ID": "P-367",
+    "Length": 54.0,
+    "Width": 69.0,
+    "Height": 106.0,
+    "Weight": 74.0,
+    "Type": "Economy",
+    "Delay_Cost": 106.0
+  },
+  {
+    "Package_ID": "P-368",
+    "Length": 71.0,
+    "Width": 99.0,
+    "Height": 97.0,
+    "Weight": 178.0,
+    "Type": "Economy",
+    "Delay_Cost": 85.0
+  },
+  {
+    "Package_ID": "P-369",
+    "Length": 84.0,
+    "Width": 75.0,
+    "Height": 58.0,
+    "Weight": 92.0,
+    "Type": "Economy",
+    "Delay_Cost": 110.0
+  },
+  {
+    "Package_ID": "P-370",
+    "Length": 106.0,
+    "Width": 47.0,
+    "Height": 100.0,
+    "Weight": 95.0,
+    "Type": "Economy",
+    "Delay_Cost": 68.0
+  },
+  {
+    "Package_ID": "P-371",
+    "Length": 91.0,
+    "Width": 52.0,
+    "Height": 48.0,
+    "Weight": 50.0,
+    "Type": "Economy",
+    "Delay_Cost": 106.0
+  },
+  {
+    "Package_ID": "P-372",
+    "Length": 110.0,
+    "Width": 84.0,
+    "Height": 79.0,
+    "Weight": 182.0,
+    "Type": "Economy",
+    "Delay_Cost": 96.0
+  },
+  {
+    "Package_ID": "P-373",
+    "Length": 62.0,
+    "Width": 84.0,
+    "Height": 72.0,
+    "Weight": 108.0,
+    "Type": "Economy",
+    "Delay_Cost": 105.0
+  },
+  {
+    "Package_ID": "P-374",
+    "Length": 81.0,
+    "Width": 71.0,
+    "Height": 101.0,
+    "Weight": 169.0,
+    "Type": "Economy",
+    "Delay_Cost": 96.0
+  },
+  {
+    "Package_ID": "P-375",
+    "Length": 48.0,
+    "Width": 67.0,
+    "Height": 97.0,
+    "Weight": 35.0,
+    "Type": "Economy",
+    "Delay_Cost": 99.0
+  },
+  {
+    "Package_ID": "P-376",
+    "Length": 101.0,
+    "Width": 101.0,
+    "Height": 89.0,
+    "Weight": 73.0,
+    "Type": "Economy",
+    "Delay_Cost": 96.0
+  },
+  {
+    "Package_ID": "P-377",
+    "Length": 101.0,
+    "Width": 88.0,
+    "Height": 105.0,
+    "Weight": 118.0,
+    "Type": "Economy",
+    "Delay_Cost": 80.0
+  },
+  {
+    "Package_ID": "P-378",
+    "Length": 59.0,
+    "Width": 53.0,
+    "Height": 89.0,
+    "Weight": 61.0,
+    "Type": "Economy",
+    "Delay_Cost": 131.0
+  },
+  {
+    "Package_ID": "P-379",
+    "Length": 68.0,
+    "Width": 89.0,
+    "Height": 98.0,
+    "Weight": 58.0,
+    "Type": "Economy",
+    "Delay_Cost": 77.0
+  },
+  {
+    "Package_ID": "P-380",
+    "Length": 41.0,
+    "Width": 56.0,
+    "Height": 62.0,
+    "Weight": 22.0,
+    "Type": "Economy",
+    "Delay_Cost": 102.0
+  },
+  {
+    "Package_ID": "P-381",
+    "Length": 64.0,
+    "Width": 48.0,
+    "Height": 69.0,
+    "Weight": 60.0,
+    "Type": "Economy",
+    "Delay_Cost": 87.0
+  },
+  {
+    "Package_ID": "P-382",
+    "Length": 102.0,
+    "Width": 106.0,
+    "Height": 43.0,
+    "Weight": 41.0,
+    "Type": "Economy",
+    "Delay_Cost": 130.0
+  },
+  {
+    "Package_ID": "P-383",
+    "Length": 85.0,
+    "Width": 103.0,
+    "Height": 60.0,
+    "Weight": 61.0,
+    "Type": "Economy",
+    "Delay_Cost": 83.0
+  },
+  {
+    "Package_ID": "P-384",
+    "Length": 69.0,
+    "Width": 73.0,
+    "Height": 60.0,
+    "Weight": 16.0,
+    "Type": "Economy",
+    "Delay_Cost": 97.0
+  },
+  {
+    "Package_ID": "P-385",
+    "Length": 64.0,
+    "Width": 48.0,
+    "Height": 40.0,
+    "Weight": 23.0,
+    "Type": "Economy",
+    "Delay_Cost": 113.0
+  },
+  {
+    "Package_ID": "P-386",
+    "Length": 63.0,
+    "Width": 110.0,
+    "Height": 65.0,
+    "Weight": 88.0,
+    "Type": "Economy",
+    "Delay_Cost": 120.0
+  },
+  {
+    "Package_ID": "P-387",
+    "Length": 42.0,
+    "Width": 47.0,
+    "Height": 96.0,
+    "Weight": 37.0,
+    "Type": "Economy",
+    "Delay_Cost": 140.0
+  },
+  {
+    "Package_ID": "P-388",
+    "Length": 99.0,
+    "Width": 89.0,
+    "Height": 97.0,
+    "Weight": 88.0,
+    "Type": "Economy",
+    "Delay_Cost": 134.0
+  },
+  {
+    "Package_ID": "P-389",
+    "Length": 49.0,
+    "Width": 95.0,
+    "Height": 72.0,
+    "Weight": 55.0,
+    "Type": "Economy",
+    "Delay_Cost": 61.0
+  },
+  {
+    "Package_ID": "P-390",
+    "Length": 82.0,
+    "Width": 106.0,
+    "Height": 96.0,
+    "Weight": 244.0,
+    "Type": "Economy",
+    "Delay_Cost": 114.0
+  },
+  {
+    "Package_ID": "P-391",
+    "Length": 65.0,
+    "Width": 87.0,
+    "Height": 73.0,
+    "Weight": 71.0,
+    "Type": "Economy",
+    "Delay_Cost": 122.0
+  },
+  {
+    "Package_ID": "P-392",
+    "Length": 87.0,
+    "Width": 63.0,
+    "Height": 40.0,
+    "Weight": 59.0,
+    "Type": "Economy",
+    "Delay_Cost": 74.0
+  },
+  {
+    "Package_ID": "P-393",
+    "Length": 44.0,
+    "Width": 47.0,
+    "Height": 65.0,
+    "Weight": 23.0,
+    "Type": "Economy",
+    "Delay_Cost": 133.0
+  },
+  {
+    "Package_ID": "P-394",
+    "Length": 109.0,
+    "Width": 90.0,
+    "Height": 81.0,
+    "Weight": 68.0,
+    "Type": "Priority",
+    "Delay_Cost": null
+  },
+  {
+    "Package_ID": "P-395",
+    "Length": 60.0,
+    "Width": 108.0,
+    "Height": 73.0,
+    "Weight": 112.0,
+    "Type": "Economy",
+    "Delay_Cost": 107.0
+  },
+  {
+    "Package_ID": "P-396",
+    "Length": 102.0,
+    "Width": 109.0,
+    "Height": 42.0,
+    "Weight": 118.0,
+    "Type": "Economy",
+    "Delay_Cost": 120.0
+  },
+  {
+    "Package_ID": "P-397",
+    "Length": 80.0,
+    "Width": 51.0,
+    "Height": 59.0,
+    "Weight": 51.0,
+    "Type": "Economy",
+    "Delay_Cost": 81.0
+  },
+  {
+    "Package_ID": "P-398",
+    "Length": 52.0,
+    "Width": 103.0,
+    "Height": 85.0,
+    "Weight": 68.0,
+    "Type": "Economy",
+    "Delay_Cost": 130.0
+  },
+  {
+    "Package_ID": "P-399",
+    "Length": 45.0,
+    "Width": 44.0,
+    "Height": 89.0,
+    "Weight": 22.0,
+    "Type": "Economy",
+    "Delay_Cost": 63.0
+  },
+  {
+    "Package_ID": "P-400",
+    "Length": 52.0,
+    "Width": 50.0,
+    "Height": 64.0,
+    "Weight": 37.0,
+    "Type": "Economy",
+    "Delay_Cost": 71.0
+  }
+]

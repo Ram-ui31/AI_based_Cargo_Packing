@@ -1,0 +1,8 @@
+[
+  {"ULD_ID": "U1", "Length": 224, "Width": 318, "Height": 162, "Weight_Limit": 2500},
+  {"ULD_ID": "U2", "Length": 224, "Width": 318, "Height": 162, "Weight_Limit": 2500},
+  {"ULD_ID": "U3", "Length": 244, "Width": 318, "Height": 244, "Weight_Limit": 2800},
+  {"ULD_ID": "U4", "Length": 244, "Width": 318, "Height": 244, "Weight_Limit": 2800},
+  {"ULD_ID": "U5", "Length": 244, "Width": 318, "Height": 285, "Weight_Limit": 3500},
+  {"ULD_ID": "U6", "Length": 244, "Width": 318, "Height": 285, "Weight_Limit": 3500}
+]

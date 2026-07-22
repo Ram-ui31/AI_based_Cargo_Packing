@@ -1,0 +1,14 @@
+{
+  "model": "Eclipse",
+  "k_value": 5000.0,
+  "total_cost": 29382.0,
+  "delay_cost": 14382.0,
+  "spread_cost": 15000.0,
+  "n_priority_ulds": 3,
+  "n_priority_total": 103,
+  "n_priority_unplaced": 0,
+  "n_economy_total": 297,
+  "n_economy_unplaced": 158,
+  "unplaced_priority_ids": [],
+  "elapsed_seconds": 243.49948906898499
+}
