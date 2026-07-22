@@ -1,0 +1,14 @@
+{
+  "model": "Halley",
+  "k_value": 5000.0,
+  "total_cost": 29894.0,
+  "delay_cost": 14894.0,
+  "spread_cost": 15000.0,
+  "n_priority_ulds": 3,
+  "n_priority_total": 103,
+  "n_priority_unplaced": 0,
+  "n_economy_total": 297,
+  "n_economy_unplaced": 163,
+  "unplaced_priority_ids": [],
+  "elapsed_seconds": 247.97137427330017
+}

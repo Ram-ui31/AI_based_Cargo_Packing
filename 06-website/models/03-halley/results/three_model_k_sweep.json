@@ -1,0 +1,222 @@
+[
+  {
+    "instance": "instance_051",
+    "K": 100.0,
+    "n_packages": 120,
+    "rl_placement_cost": 5771.0,
+    "rl_placement_unplaced_prio": 0,
+    "multi_instance_grpo_cost": 5438.0,
+    "multi_instance_grpo_unplaced_prio": 0,
+    "cherry_cost": 4254.0,
+    "cherry_unplaced_prio": 0
+  },
+  {
+    "instance": "instance_050",
+    "K": 100.0,
+    "n_packages": 174,
+    "rl_placement_cost": 7951.0,
+    "rl_placement_unplaced_prio": 0,
+    "multi_instance_grpo_cost": 7873.0,
+    "multi_instance_grpo_unplaced_prio": 0,
+    "cherry_cost": 6735.0,
+    "cherry_unplaced_prio": 0
+  },
+  {
+    "instance": "instance_025",
+    "K": 100.0,
+    "n_packages": 276,
+    "rl_placement_cost": 8483.0,
+    "rl_placement_unplaced_prio": 0,
+    "multi_instance_grpo_cost": 7723.0,
+    "multi_instance_grpo_unplaced_prio": 0,
+    "cherry_cost": 7776.0,
+    "cherry_unplaced_prio": 0
+  },
+  {
+    "instance": "instance_097",
+    "K": 100.0,
+    "n_packages": 380,
+    "rl_placement_cost": 13797.0,
+    "rl_placement_unplaced_prio": 0,
+    "multi_instance_grpo_cost": 12251.0,
+    "multi_instance_grpo_unplaced_prio": 0,
+    "cherry_cost": 11596.0,
+    "cherry_unplaced_prio": 0
+  },
+  {
+    "instance": "instance_039",
+    "K": 500.0,
+    "n_packages": 113,
+    "rl_placement_cost": 3711.0,
+    "rl_placement_unplaced_prio": 0,
+    "multi_instance_grpo_cost": 4162.0,
+    "multi_instance_grpo_unplaced_prio": 0,
+    "cherry_cost": 3577.0,
+    "cherry_unplaced_prio": 0
+  },
+  {
+    "instance": "instance_045",
+    "K": 500.0,
+    "n_packages": 197,
+    "rl_placement_cost": 6788.0,
+    "rl_placement_unplaced_prio": 0,
+    "multi_instance_grpo_cost": 6752.0,
+    "multi_instance_grpo_unplaced_prio": 0,
+    "cherry_cost": 6148.0,
+    "cherry_unplaced_prio": 0
+  },
+  {
+    "instance": "instance_076",
+    "K": 500.0,
+    "n_packages": 274,
+    "rl_placement_cost": 10155.0,
+    "rl_placement_unplaced_prio": 0,
+    "multi_instance_grpo_cost": 10936.0,
+    "multi_instance_grpo_unplaced_prio": 0,
+    "cherry_cost": 8140.0,
+    "cherry_unplaced_prio": 0
+  },
+  {
+    "instance": "instance_078",
+    "K": 500.0,
+    "n_packages": 351,
+    "rl_placement_cost": 13418.0,
+    "rl_placement_unplaced_prio": 0,
+    "multi_instance_grpo_cost": 14390.0,
+    "multi_instance_grpo_unplaced_prio": 0,
+    "cherry_cost": 11455.0,
+    "cherry_unplaced_prio": 0
+  },
+  {
+    "instance": "instance_005",
+    "K": 1000.0,
+    "n_packages": 85,
+    "rl_placement_cost": 3825.0,
+    "rl_placement_unplaced_prio": 0,
+    "multi_instance_grpo_cost": 3551.0,
+    "multi_instance_grpo_unplaced_prio": 0,
+    "cherry_cost": 3345.0,
+    "cherry_unplaced_prio": 0
+  },
+  {
+    "instance": "instance_003",
+    "K": 1000.0,
+    "n_packages": 156,
+    "rl_placement_cost": 5600.0,
+    "rl_placement_unplaced_prio": 0,
+    "multi_instance_grpo_cost": 5404.0,
+    "multi_instance_grpo_unplaced_prio": 0,
+    "cherry_cost": 5060.0,
+    "cherry_unplaced_prio": 0
+  },
+  {
+    "instance": "instance_093",
+    "K": 1000.0,
+    "n_packages": 259,
+    "rl_placement_cost": 12392.0,
+    "rl_placement_unplaced_prio": 0,
+    "multi_instance_grpo_cost": 12262.0,
+    "multi_instance_grpo_unplaced_prio": 0,
+    "cherry_cost": 10678.0,
+    "cherry_unplaced_prio": 0
+  },
+  {
+    "instance": "instance_075",
+    "K": 1000.0,
+    "n_packages": 322,
+    "rl_placement_cost": 14505.0,
+    "rl_placement_unplaced_prio": 0,
+    "multi_instance_grpo_cost": 13098.0,
+    "multi_instance_grpo_unplaced_prio": 0,
+    "cherry_cost": 13166.0,
+    "cherry_unplaced_prio": 0
+  },
+  {
+    "instance": "instance_098",
+    "K": 3000.0,
+    "n_packages": 86,
+    "rl_placement_cost": 5099.0,
+    "rl_placement_unplaced_prio": 0,
+    "multi_instance_grpo_cost": 6157.0,
+    "multi_instance_grpo_unplaced_prio": 0,
+    "cherry_cost": 4946.0,
+    "cherry_unplaced_prio": 0
+  },
+  {
+    "instance": "instance_030",
+    "K": 3000.0,
+    "n_packages": 162,
+    "rl_placement_cost": 8818.0,
+    "rl_placement_unplaced_prio": 0,
+    "multi_instance_grpo_cost": 8352.0,
+    "multi_instance_grpo_unplaced_prio": 0,
+    "cherry_cost": 8011.0,
+    "cherry_unplaced_prio": 0
+  },
+  {
+    "instance": "instance_048",
+    "K": 3000.0,
+    "n_packages": 223,
+    "rl_placement_cost": 9210.0,
+    "rl_placement_unplaced_prio": 0,
+    "multi_instance_grpo_cost": 9611.0,
+    "multi_instance_grpo_unplaced_prio": 0,
+    "cherry_cost": 8604.0,
+    "cherry_unplaced_prio": 0
+  },
+  {
+    "instance": "instance_072",
+    "K": 3000.0,
+    "n_packages": 359,
+    "rl_placement_cost": 21214.0,
+    "rl_placement_unplaced_prio": 0,
+    "multi_instance_grpo_cost": 21216.0,
+    "multi_instance_grpo_unplaced_prio": 0,
+    "cherry_cost": 18671.0,
+    "cherry_unplaced_prio": 0
+  },
+  {
+    "instance": "instance_085",
+    "K": 5000.0,
+    "n_packages": 99,
+    "rl_placement_cost": 7792.0,
+    "rl_placement_unplaced_prio": 0,
+    "multi_instance_grpo_cost": 8158.0,
+    "multi_instance_grpo_unplaced_prio": 0,
+    "cherry_cost": 7284.0,
+    "cherry_unplaced_prio": 0
+  },
+  {
+    "instance": "instance_006",
+    "K": 5000.0,
+    "n_packages": 167,
+    "rl_placement_cost": 10871.0,
+    "rl_placement_unplaced_prio": 0,
+    "multi_instance_grpo_cost": 10465.0,
+    "multi_instance_grpo_unplaced_prio": 0,
+    "cherry_cost": 10420.0,
+    "cherry_unplaced_prio": 0
+  },
+  {
+    "instance": "instance_008",
+    "K": 5000.0,
+    "n_packages": 220,
+    "rl_placement_cost": 17135.0,
+    "rl_placement_unplaced_prio": 0,
+    "multi_instance_grpo_cost": 16859.0,
+    "multi_instance_grpo_unplaced_prio": 0,
+    "cherry_cost": 16731.0,
+    "cherry_unplaced_prio": 0
+  },
+  {
+    "instance": "instance_019",
+    "K": 5000.0,
+    "n_packages": 360,
+    "rl_placement_cost": 26088.0,
+    "rl_placement_unplaced_prio": 0,
+    "multi_instance_grpo_cost": 26141.0,
+    "multi_instance_grpo_unplaced_prio": 0,
+    "cherry_cost": 23379.0,
+    "cherry_unplaced_prio": 0
+  }
+]
