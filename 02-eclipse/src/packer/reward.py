@@ -1,7 +1,7 @@
 import torch
 import torch.nn.functional as F
 
-from .config import MAX_N_ULDS, MAX_N_PKGS, N_ULD_CLASSES
+from ..model_core.config import MAX_N_ULDS, MAX_N_PKGS, N_ULD_CLASSES
 
 
 def compute_packing_cost(placements, packages_df, k_value):

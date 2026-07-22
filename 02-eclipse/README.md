@@ -1,5 +1,7 @@
 # Eclipse — Hybrid AI + Heuristic Cargo Packer
 
+> **Want to run this on your own instance CSV?** See [`../05-run-instructions/`](../05-run-instructions/) for setup and usage — the short version is `python3 run_eclipse.py --input /path/to/your_instance.csv`.
+
 A hybrid system for packing air cargo (Priority and Economy packages) into
 ULDs (Unit Load Devices), combining trained neural network components with
 heuristic local search. This folder headlines **Eclipse**, the trained RL
