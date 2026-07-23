@@ -15,6 +15,7 @@ from __future__ import annotations
 import json
 import os
 import sys
+import tempfile
 import threading
 import time
 import traceback
@@ -28,17 +29,42 @@ from fastapi.staticfiles import StaticFiles
 # thread count follows the host's *reported* CPU count, which can be far more
 # than the CPU share actually granted -- causing thread contention on top of
 # the throttling. Only acts if TORCH_NUM_THREADS is explicitly set (e.g. in
-# Render's dashboard), so local dev behavior is completely unchanged.
+# Render's dashboard), so local dev behavior (and the desktop app, which wants
+# the user's full real CPU) is completely unchanged.
 if os.environ.get('TORCH_NUM_THREADS'):
     import torch
     torch.set_num_threads(int(os.environ['TORCH_NUM_THREADS']))
 
-HERE = os.path.dirname(os.path.abspath(__file__))
-REPO_ROOT = os.path.join(HERE, '..', '..')  # git/ -- parent of 06-website, sibling of 01-cherry etc.
-BUNDLED_MODELS_DIR = os.path.join(HERE, '..', 'models')  # self-contained copies, used when deployed standalone
-FRONTEND_DIR = os.path.join(HERE, '..', 'frontend')
-DEMO_DATA_DIR = os.path.join(HERE, 'demo_data')
-UPLOAD_DIR = os.path.join(HERE, 'uploads')
+FROZEN = getattr(sys, 'frozen', False)  # True inside a PyInstaller-built desktop app
+
+if FROZEN:
+    # Where frontend/, demo_data/, models/ (bundled as data, see desktop/build.sh)
+    # actually land depends on PyInstaller's build mode: --onefile extracts them
+    # to a temp dir at sys._MEIPASS; --onedir (what we use) puts them under an
+    # _internal/ folder next to the executable as of PyInstaller 6+, or directly
+    # beside it on older versions -- check all three so this isn't tied to one
+    # specific PyInstaller version/mode. No sibling 01-cherry/etc. ever exists in
+    # this layout, so MODEL_FOLDERS always resolves to the bundle either way.
+    if hasattr(sys, '_MEIPASS'):
+        _BASE = sys._MEIPASS
+    else:
+        _internal = os.path.join(os.path.dirname(sys.executable), '_internal')
+        _BASE = _internal if os.path.isdir(_internal) else os.path.dirname(sys.executable)
+    REPO_ROOT = _BASE
+    BUNDLED_MODELS_DIR = os.path.join(_BASE, 'models')
+    FRONTEND_DIR = os.path.join(_BASE, 'frontend')
+    DEMO_DATA_DIR = os.path.join(_BASE, 'demo_data')
+    # writes go to the OS temp dir, not next to the app bundle, since the
+    # install location (Program Files, /Applications, ...) may not be writable
+    UPLOAD_DIR = os.path.join(tempfile.gettempdir(), 'argo_uploads')
+else:
+    HERE = os.path.dirname(os.path.abspath(__file__))
+    REPO_ROOT = os.path.join(HERE, '..', '..')  # git/ -- parent of 06-website, sibling of 01-cherry etc.
+    BUNDLED_MODELS_DIR = os.path.join(HERE, '..', 'models')  # self-contained copies, used when deployed standalone
+    FRONTEND_DIR = os.path.join(HERE, '..', 'frontend')
+    DEMO_DATA_DIR = os.path.join(HERE, 'demo_data')
+    UPLOAD_DIR = os.path.join(HERE, 'uploads')
+
 os.makedirs(UPLOAD_DIR, exist_ok=True)
 
 
