@@ -36,12 +36,17 @@
       <button class="hotspot text-chip nav-chip" id="hs-product" style="left:38%; top:89%; width:24%; height:8%;">
         <span class="chip-white">Use</span>&nbsp;<span class="chip-tan">our product</span>
       </button>
+
+      <button class="hotspot text-chip nav-chip" id="hs-docs" data-goto="page-docs" style="left:78%; top:89%; width:19%; height:8%;">
+        <span class="chip-white">Documentation</span>
+      </button>
     </div>
   </section>
 
   <!-- 2. About Our Models -->
   <section class="page" id="page-about" style="background-image:url('assets/best_models.png')">
     <button class="back-btn" data-goto="page-landing">&larr; Back</button>
+    <button class="doc-link" data-goto="page-docs">Documentation</button>
     <button class="hotspot hotspot-round" id="hs-halley" style="left:3%; top:8%; width:29%; height:42%;" title="Halley"></button>
     <button class="hotspot hotspot-round" id="hs-cherry" style="left:39%; top:16%; width:22%; height:36%;" title="Cherry"></button>
     <button class="hotspot hotspot-round" id="hs-eclipse" style="left:69%; top:10%; width:24%; height:32%;" title="Eclipse"></button>
@@ -51,6 +56,7 @@
   <!-- 3. Model detail -->
   <section class="page" id="page-detail" style="background-image:url('assets/cargo_compartment.png')">
     <button class="back-btn" data-goto="page-about">&larr; Back</button>
+    <button class="doc-link" data-goto="page-docs">Documentation</button>
     <div class="detail-panel">
       <h2 id="detail-title">Model</h2>
       <div class="subtitle" id="detail-subtitle">subtitle</div>
@@ -74,6 +80,7 @@
             <option value="halley">Halley</option>
           </select>
         </div>
+        <button class="doc-link doc-link-inline" data-goto="page-docs">Documentation</button>
       </div>
     </div>
     <div class="viz-side-panel" id="demo-side-panel"></div>
@@ -83,6 +90,7 @@
   <!-- 5. Use Our Product -- download the desktop app -->
   <section class="page" id="page-download" style="background-image:url('assets/argo_2nd.png')">
     <button class="back-btn" data-goto="page-landing">&larr; Back</button>
+    <button class="doc-link" data-goto="page-docs">Documentation</button>
     <div class="download-panel">
       <h2>Get ARGO for your computer</h2>
       <p class="download-sub">Download once, then just open it -- no install, no Python, no server. It runs entirely on your own computer, using your own hardware's full speed.</p>
@@ -104,6 +112,36 @@
 
       <div class="download-note">First launch may show a security warning since the app isn't code-signed &mdash; that's expected, just approve it once.</div>
       <div class="download-alt">Prefer not to download anything? <a href="https://github.com/Ram-ui31/AI_based_Cargo_Packing/tree/main/05-run-instructions" target="_blank" rel="noopener">Run the models directly from source instead</a>.</div>
+    </div>
+  </section>
+
+  <!-- 6. Documentation & Results -->
+  <section class="page" id="page-docs" style="background-image:url('assets/in_cabin.png')">
+    <button class="back-btn" data-goto="page-landing">&larr; Back</button>
+    <div class="docs-panel">
+      <h2>Documentation &amp; Results</h2>
+      <p class="docs-sub">The full write-up of the approach, architecture, and evaluation methodology behind ARGO, plus the headline numbers from the competition report.</p>
+
+      <div class="docs-links">
+        <a class="docs-btn docs-btn-primary" href="docs/argo-competition-report.pdf" target="_blank" rel="noopener">Read the full report (PDF)</a>
+        <a class="docs-btn" href="https://github.com/Ram-ui31/AI_based_Cargo_Packing" target="_blank" rel="noopener">View source on GitHub</a>
+      </div>
+
+      <div class="docs-table-title">Results at a glance</div>
+      <div class="docs-table-wrap">
+        <table class="docs-table">
+          <tr><th>Method</th><th>Real instance</th><th>Grand-average (20 inst.)</th></tr>
+          <tr><td>FFD (literature)</td><td>43,139</td><td>17,865</td></tr>
+          <tr><td>LAFF (literature)</td><td>43,639</td><td>17,699</td></tr>
+          <tr><td>BFD (literature)</td><td>43,100</td><td>18,844</td></tr>
+          <tr><td>PackMan/DQN (external RL)</td><td>38,898</td><td>&mdash;</td></tr>
+          <tr><td>Online-3D-BPP-DRL (external RL)</td><td>35,676</td><td>15,535</td></tr>
+          <tr><td>Eclipse (ours)</td><td>&mdash;</td><td>10,631</td></tr>
+          <tr><td>Halley (ours)</td><td>&mdash;</td><td>10,540</td></tr>
+          <tr class="docs-table-best"><td>Cherry (ours, best)</td><td>28,409</td><td>9,499</td></tr>
+        </table>
+      </div>
+      <div class="docs-table-note">Lower is better. Grand-average = mean cost across 20 held-out synthetic instances spanning five delay-cost multipliers. Full methodology, citations, and negative results are in the report above.</div>
     </div>
   </section>
 
