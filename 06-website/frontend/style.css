@@ -219,21 +219,7 @@ html, body {
   margin: 0;
 }
 
-/* ---------- Use Our Product page ---------- */
-.upload-panel {
-  position: absolute;
-  top: 8%;
-  left: 50%;
-  transform: translateX(-50%);
-  display: flex;
-  gap: 18px;
-  align-items: center;
-  background: var(--panel-bg);
-  border: 1px solid rgba(203, 180, 144, 0.25);
-  border-radius: 12px;
-  padding: 18px 24px;
-}
-
+/* ---------- Use Our Product page: desktop app download ---------- */
 .field-group {
   display: flex;
   flex-direction: column;
@@ -247,7 +233,7 @@ html, body {
   color: var(--tan);
 }
 
-select, input[type="file"] {
+select {
   background: #111;
   color: var(--ink);
   border: 1px solid rgba(203, 180, 144, 0.4);
@@ -256,139 +242,98 @@ select, input[type="file"] {
   font-size: 14px;
 }
 
-.pack-btn {
-  background: linear-gradient(180deg, var(--gold-bright), var(--gold));
-  border: none;
-  color: #1a1300;
-  font-weight: 600;
-  font-size: 15px;
-  padding: 12px 26px;
-  border-radius: 24px;
-  cursor: pointer;
-  align-self: flex-end;
-  letter-spacing: 0.02em;
-}
-
-.pack-btn:disabled {
-  opacity: 0.45;
-  cursor: not-allowed;
-}
-
-.pack-btn:not(:disabled):hover {
-  box-shadow: 0 0 18px rgba(232, 201, 106, 0.5);
-}
-
-.csv-format-box {
+.download-panel {
   position: absolute;
-  right: 3%;
-  bottom: 4%;
-  max-width: 400px;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  width: min(640px, 88%);
   background: var(--panel-bg);
   border: 1px solid rgba(203, 180, 144, 0.25);
-  border-radius: 10px;
-  padding: 16px 20px;
+  border-radius: 14px;
+  padding: 32px 36px;
+  text-align: center;
   backdrop-filter: blur(3px);
   -webkit-backdrop-filter: blur(3px);
 }
 
-.csv-format-title {
-  font-size: 12.5px;
-  text-transform: uppercase;
-  letter-spacing: 0.07em;
+.download-panel h2 {
+  margin: 0 0 10px;
+  font-size: 26px;
   color: var(--gold-bright);
-  margin-bottom: 10px;
+  letter-spacing: 0.02em;
 }
 
-.csv-format-section {
-  margin-bottom: 10px;
-}
-
-.csv-format-label {
-  font-size: 12px;
-  color: var(--tan);
-  margin-bottom: 4px;
-}
-
-.csv-table {
-  border-collapse: collapse;
-  font-family: "SF Mono", Menlo, Consolas, monospace;
-  font-size: 11px;
-}
-
-.csv-table th, .csv-table td {
-  border: 1px solid rgba(203, 180, 144, 0.25);
-  padding: 3px 7px;
-  text-align: center;
-  white-space: nowrap;
-}
-
-.csv-table th {
-  color: var(--gold-bright);
-  font-weight: 400;
-  background: rgba(232, 201, 106, 0.08);
-}
-
-.csv-table td {
+.download-sub {
   color: var(--ink);
+  font-size: 14.5px;
+  line-height: 1.5;
+  max-width: 480px;
+  margin: 0 auto 26px;
 }
 
-.csv-format-note {
-  margin-top: 10px;
-  font-size: 11.5px;
+.download-cards {
+  display: flex;
+  gap: 14px;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.download-card {
+  flex: 1 1 150px;
+  max-width: 180px;
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(203, 180, 144, 0.3);
+  border-radius: 10px;
+  padding: 20px 14px;
+  text-decoration: none;
+  cursor: pointer;
+  transition: border-color 0.15s, background 0.15s;
+}
+
+.download-card:hover {
+  background: rgba(232, 201, 106, 0.08);
+  border-color: var(--gold);
+}
+
+.download-card.recommended {
+  border-color: var(--gold-bright);
+  background: rgba(232, 201, 106, 0.12);
+  box-shadow: 0 0 18px rgba(232, 201, 106, 0.2);
+}
+
+.download-os {
+  color: var(--gold-bright);
+  font-size: 17px;
+  font-weight: 600;
+  margin-bottom: 6px;
+}
+
+.download-hint {
+  color: var(--tan);
+  font-size: 12px;
+  line-height: 1.4;
+}
+
+.download-note {
+  margin-top: 22px;
+  font-size: 12.5px;
   color: var(--tan);
   line-height: 1.4;
 }
 
-.upload-error {
-  position: absolute;
-  top: 20%;
-  left: 50%;
-  transform: translateX(-50%);
-  color: #e88;
-  font-size: 14px;
-  background: rgba(40, 0, 0, 0.5);
-  padding: 8px 16px;
-  border-radius: 8px;
-  display: none;
-}
-
-/* ---------- Loading page ---------- */
-.loading-panel {
-  position: absolute;
-  left: 50%;
-  bottom: 14%;
-  transform: translateX(-50%);
-  width: 46%;
-  text-align: center;
-}
-
-.loading-panel .status-msg {
+.download-alt {
+  margin-top: 10px;
+  font-size: 12.5px;
   color: var(--tan);
-  font-size: 15px;
-  margin-bottom: 12px;
-  min-height: 20px;
 }
 
-.progress-track {
-  width: 100%;
-  height: 10px;
-  border-radius: 6px;
-  background: rgba(255, 255, 255, 0.08);
-  border: 1px solid rgba(203, 180, 144, 0.3);
-  overflow: hidden;
-}
-
-.progress-fill {
-  height: 100%;
-  width: 0%;
-  background: linear-gradient(90deg, var(--gold), var(--gold-bright));
-  transition: width 0.4s ease;
-}
-
-.progress-pct {
-  margin-top: 8px;
+.download-alt a, .download-card:hover .download-os {
   color: var(--gold-bright);
-  font-size: 14px;
+}
+
+.download-alt a {
+  text-decoration: underline;
 }
 
 /* ---------- Result / demo 3D viz page ---------- */

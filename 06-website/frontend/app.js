@@ -1,6 +1,7 @@
 /* ARGO frontend -- single-page app: navigation between sections, the
-   "Get a demo" precomputed viewer, and the "Use our product" real
-   upload -> live backend execution -> progress polling -> result viewer flow. */
+   "Get a demo" precomputed viewer, and "Use our product" which points
+   visitors at the downloadable desktop app (runs the real models locally,
+   on their own hardware -- no live backend needed for this). */
 
 (function () {
   const pages = document.querySelectorAll('.page');
@@ -17,7 +18,23 @@
     showPage('page-demo-viz');
     loadDemo(document.getElementById('demo-model-select').value);
   });
-  document.getElementById('hs-product').addEventListener('click', () => showPage('page-upload'));
+  document.getElementById('hs-product').addEventListener('click', () => showPage('page-download'));
+
+  // ---------------------------------------------------------------------
+  // Use Our Product -- highlight the download card matching the visitor's OS
+  // ---------------------------------------------------------------------
+  (function highlightMatchingOS() {
+    const ua = navigator.userAgent || '';
+    const platform = navigator.platform || '';
+    let match = null;
+    if (/Mac/i.test(platform) || /Macintosh/i.test(ua)) match = 'dl-mac';
+    else if (/Win/i.test(platform) || /Windows/i.test(ua)) match = 'dl-windows';
+    else if (/Linux/i.test(platform) || /Linux/i.test(ua)) match = 'dl-linux';
+    if (match) {
+      const card = document.getElementById(match);
+      if (card) card.classList.add('recommended');
+    }
+  })();
 
   // ---------------------------------------------------------------------
   // About Our Models -> model detail
@@ -235,86 +252,4 @@
     URL.revokeObjectURL(url);
   }
 
-  // ---------------------------------------------------------------------
-  // Use Our Product -- upload -> live pack -> poll -> result viewer
-  // ---------------------------------------------------------------------
-  const fileInput = document.getElementById('upload-file');
-  const packBtn = document.getElementById('pack-btn');
-  const uploadError = document.getElementById('upload-error');
-
-  fileInput.addEventListener('change', () => {
-    packBtn.disabled = !fileInput.files.length;
-  });
-
-  packBtn.addEventListener('click', async () => {
-    uploadError.style.display = 'none';
-    if (!fileInput.files.length) return;
-    const model = document.getElementById('upload-model-select').value;
-    const form = new FormData();
-    form.append('model', model);
-    form.append('search_rounds', '10');
-    form.append('file', fileInput.files[0]);
-
-    packBtn.disabled = true;
-    try {
-      const res = await fetch('/api/pack', { method: 'POST', body: form });
-      if (!res.ok) throw new Error(await res.text());
-      const { job_id } = await res.json();
-      showPage('page-loading');
-      pollJob(job_id, model);
-    } catch (err) {
-      uploadError.textContent = `Could not start packing: ${err.message}`;
-      uploadError.style.display = 'block';
-      packBtn.disabled = false;
-    }
-  });
-
-  function pollJob(jobId, model) {
-    const fill = document.getElementById('loading-fill');
-    const pct = document.getElementById('loading-pct');
-    const msg = document.getElementById('loading-message');
-
-    const timer = setInterval(async () => {
-      let res;
-      try {
-        res = await fetch(`/api/status/${jobId}`);
-      } catch (e) {
-        return; // transient network hiccup, keep polling
-      }
-      if (!res.ok) {
-        clearInterval(timer);
-        msg.textContent = 'Error checking job status.';
-        return;
-      }
-      const job = await res.json();
-      fill.style.width = `${job.progress}%`;
-      pct.textContent = `${job.progress}%`;
-      msg.textContent = job.message || '';
-
-      if (job.status === 'done') {
-        clearInterval(timer);
-        showResult(job.result, model);
-      } else if (job.status === 'error') {
-        clearInterval(timer);
-        msg.textContent = job.message || 'Something went wrong.';
-      }
-    }, 1200);
-  }
-
-  let resultViewer = null;
-
-  function showResult(result, model) {
-    showPage('page-result-viz');
-    if (!resultViewer) {
-      resultViewer = ArgoViewer.mount(document.getElementById('result-canvas-wrap'));
-      resultViewer.onPackageSelect((info) => showPackageInfoBox('result-canvas-wrap', info));
-    }
-    resultViewer.renderData(result);
-    const panel = document.getElementById('result-side-panel');
-    renderSidePanel(panel, result, model, resultViewer);
-
-    // reset the upload form so the user can pack another shipment cleanly
-    fileInput.value = '';
-    packBtn.disabled = true;
-  }
 })();

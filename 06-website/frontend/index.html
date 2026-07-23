@@ -80,75 +80,31 @@
     <div class="hint-text">Drag to rotate &middot; scroll to zoom</div>
   </section>
 
-  <!-- 5. Use Our Product -->
-  <section class="page" id="page-upload" style="background-image:url('assets/argo_2nd.png')">
+  <!-- 5. Use Our Product -- download the desktop app -->
+  <section class="page" id="page-download" style="background-image:url('assets/argo_2nd.png')">
     <button class="back-btn" data-goto="page-landing">&larr; Back</button>
-    <div class="upload-panel">
-      <div class="field-group">
-        <label>Instance CSV</label>
-        <input type="file" id="upload-file" accept=".csv">
+    <div class="download-panel">
+      <h2>Get ARGO for your computer</h2>
+      <p class="download-sub">Download once, then just open it -- no install, no Python, no server. It runs entirely on your own computer, using your own hardware's full speed.</p>
+
+      <div class="download-cards">
+        <a class="download-card" id="dl-mac" href="https://github.com/Ram-ui31/AI_based_Cargo_Packing/releases/download/desktop-latest/ARGO-macos.zip">
+          <div class="download-os">macOS</div>
+          <div class="download-hint">Unzip, then right-click the app &rarr; Open</div>
+        </a>
+        <a class="download-card" id="dl-windows" href="https://github.com/Ram-ui31/AI_based_Cargo_Packing/releases/download/desktop-latest/ARGO-windows.zip">
+          <div class="download-os">Windows</div>
+          <div class="download-hint">Unzip, then run ARGO.exe</div>
+        </a>
+        <a class="download-card" id="dl-linux" href="https://github.com/Ram-ui31/AI_based_Cargo_Packing/releases/download/desktop-latest/ARGO-linux.zip">
+          <div class="download-os">Linux</div>
+          <div class="download-hint">Unzip, then run ./ARGO</div>
+        </a>
       </div>
-      <div class="field-group">
-        <label>Model</label>
-        <select id="upload-model-select">
-          <option value="cherry">Cherry</option>
-          <option value="eclipse">Eclipse</option>
-          <option value="halley">Halley</option>
-        </select>
-      </div>
-      <button class="pack-btn" id="pack-btn" disabled>Pack this shipment</button>
+
+      <div class="download-note">First launch may show a security warning since the app isn't code-signed &mdash; that's expected, just approve it once.</div>
+      <div class="download-alt">Prefer not to download anything? <a href="https://github.com/Ram-ui31/AI_based_Cargo_Packing/tree/main/05-run-instructions" target="_blank" rel="noopener">Run the models directly from source instead</a>.</div>
     </div>
-    <div class="upload-error" id="upload-error"></div>
-    <div class="csv-format-box">
-      <div class="csv-format-title">Expected CSV format</div>
-
-      <div class="csv-format-section">
-        <div class="csv-format-label">1. A single number (the K value)</div>
-        <table class="csv-table"><tr><td>5000</td></tr></table>
-      </div>
-
-      <div class="csv-format-section">
-        <div class="csv-format-label">2. Blank line, then one row per ULD</div>
-        <table class="csv-table">
-          <tr><th>ID</th><th>Length</th><th>Width</th><th>Height</th><th>Weight limit</th></tr>
-          <tr><td>U1</td><td>224</td><td>318</td><td>162</td><td>2500</td></tr>
-        </table>
-      </div>
-
-      <div class="csv-format-section">
-        <div class="csv-format-label">3. Blank line, then one row per package</div>
-        <table class="csv-table">
-          <tr><th>ID</th><th>Length</th><th>Width</th><th>Height</th><th>Weight</th><th>Type</th><th>Delay cost</th></tr>
-          <tr><td>P-1</td><td>99</td><td>53</td><td>55</td><td>61</td><td>Economy</td><td>176</td></tr>
-          <tr><td>P-2</td><td>56</td><td>99</td><td>81</td><td>53</td><td>Priority</td><td>-</td></tr>
-        </table>
-      </div>
-
-      <div class="csv-format-note">Type is either "Priority" or "Economy" &mdash; Priority rows always put "-" in Delay cost (they can't be dropped, so there's no cost to look up).</div>
-    </div>
-  </section>
-
-  <!-- 6. Loading -->
-  <section class="page" id="page-loading" style="background-image:url('assets/argo_back.png')">
-    <div class="loading-panel">
-      <div class="status-msg" id="loading-message">Queued...</div>
-      <div class="progress-track"><div class="progress-fill" id="loading-fill"></div></div>
-      <div class="progress-pct" id="loading-pct">0%</div>
-    </div>
-  </section>
-
-  <!-- 7. Result 3D viz (live job) -->
-  <section class="page viz-page" id="page-result-viz" style="background-image:url('assets/in_cabin.png')">
-    <div class="home-link" data-goto="page-landing">&larr; Home</div>
-    <div class="viz-canvas-wrap" id="result-canvas-wrap"></div>
-    <div class="viz-topbar">
-      <div class="brand">ARGO &middot; Your shipment</div>
-      <div class="viz-controls">
-        <button class="pack-btn" data-goto="page-upload">Pack another shipment</button>
-      </div>
-    </div>
-    <div class="viz-side-panel" id="result-side-panel"></div>
-    <div class="hint-text">Drag to rotate &middot; scroll to zoom</div>
   </section>
 
 </div>
