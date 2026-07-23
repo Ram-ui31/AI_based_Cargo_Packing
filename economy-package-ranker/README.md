@@ -1,4 +1,4 @@
-# gnn_economy_selector
+# economy-package-ranker
 
 A neural ranking model for the Economy package selection problem, built after
 an exhaustive set of ~15 classical approaches (value-density exponent tuning,
@@ -169,7 +169,7 @@ different learning target entirely — see above) used to guide the beam
 search's candidate generation.
 
 ```
-gnn_economy_selector/
+economy-package-ranker/
 ├── src/
 │   ├── model.py              -- PackageSetRanker (set-attention scorer, GRPO-trained)
 │   ├── swap_proposer.py      -- SwapProposer (pairwise ranking MLP)
@@ -191,9 +191,9 @@ set, ~100MB) is excluded from version control — regenerate it locally with
 
 The actual local-search scripts (`beam_search_economy.py`,
 `beam_search_guided.py`, `knapsack_search_economy.py`, `milp_ceiling.py`)
-live in `../ga_cargo_packing/scripts/` — this repo's model checkpoints are
+live in `../model-training-pipeline/scripts/` — this repo's model checkpoints are
 consumed from there via `sys.path.insert`, same reuse pattern used
-throughout. Does not modify `~/Desktop/ga_cargo_packing/`.
+throughout. Does not modify `~/Desktop/model-training-pipeline/`.
 
 ## What's left
 

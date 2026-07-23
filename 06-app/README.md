@@ -89,11 +89,11 @@ computed under a demo-friendly time budget. The relative ordering
 │       ├── precompute_demo.py    regenerates the demo results (writes into
 │       │                          ../../frontend/demo_data/, see below)
 │       └── demo_instance.csv     the real 400-package benchmark instance
-├── models/                    self-contained copies used when 01-cherry/
-│   ├── 01-cherry/, 02-eclipse/, 03-halley/    etc. aren't available next to
-│   ├── rl_packer/                             06-app (e.g. the desktop app
-│   └── gnn_economy_selector/                  build) -- see app.py's
-│                                               _resolve_model_folder()
+├── models/                     self-contained copies used when 01-cherry/
+│   ├── 01-cherry/, 02-eclipse/, 03-halley/     etc. aren't available next
+│   ├── rl_packer/                              to 06-app (e.g. the desktop
+│   └── economy-package-ranker/                 app build) -- see app.py's
+│                                                _resolve_model_folder()
 ├── desktop/                   PyInstaller launcher + build script -- see
 │                               desktop/README.md
 └── frontend/                  the entire live site -- fully static, this is

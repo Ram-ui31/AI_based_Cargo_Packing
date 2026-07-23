@@ -12,7 +12,7 @@ folder's run_eclipse.py for that baseline.
 
 Two files outside this folder are touched: the sibling `rl_packer/`
 directory two levels up (shared 3D placement-policy geometry/environment
-code, not weights) and the sibling `gnn_economy_selector/src/` directory
+code, not weights) and the sibling `economy-package-ranker/src/` directory
 (PackageSetRanker's class definition -- the checkpoint alone isn't enough
 to load it). Both must be present alongside this repo exactly as cloned
 from GitHub -- see the repository root README.
@@ -42,7 +42,7 @@ import torch
 
 HERE = os.path.dirname(os.path.abspath(__file__))
 sys.path.insert(0, HERE)
-GNN_ECON_SELECTOR_SRC = os.path.join(HERE, '..', 'gnn_economy_selector', 'src')
+GNN_ECON_SELECTOR_SRC = os.path.join(HERE, '..', 'economy-package-ranker', 'src')
 sys.path.insert(0, GNN_ECON_SELECTOR_SRC)
 
 from src.model_core.config import DEVICE
@@ -102,7 +102,7 @@ def greedy_first_fit(ranked_pids, pkg_lookup_all, uld_lookup, prio_assignment):
     """Economy-only greedy first-fit by value-density order, into whatever
     capacity Priority consolidation left behind. Matches the exact
     methodology validated throughout this project (see e.g.
-    ga_cargo_packing/scripts and the online-3d-bpp-benchmark comparison
+    model-training-pipeline/scripts and the online-3d-bpp-benchmark comparison
     scripts) -- deliberately NOT the same as rl_assign_argmax_safe's own
     internal Economy ordering, which sorts by ascending volume instead."""
     weight_used = {u: 0.0 for u in uld_lookup}
@@ -187,7 +187,7 @@ def rank_economy_packages(economy_df, ulds_df, k_value, device='cpu'):
 
     # This checkpoint (multi-instance GRPO) normalizes fresh per-instance
     # rather than from saved global statistics -- matches
-    # gnn_economy_selector/src/multi_instance_grpo.py's own inference path
+    # economy-package-ranker/src/multi_instance_grpo.py's own inference path
     # exactly, since this model was trained to generalize across
     # differently-scaled instances, not calibrated to one fixed scale.
     avg_uld_volume = (ulds_df['Length'] * ulds_df['Width'] * ulds_df['Height']).mean()
@@ -241,7 +241,7 @@ def run_halley(input_path, device='cpu', search_rounds=15, progress_cb=None):
     # Only the Priority portion of the clusterer's assignment is used --
     # Economy gets its own explicit value-density order + greedy first-fit
     # below, matching this project's validated methodology exactly (see
-    # ga_cargo_packing's assignment stage).
+    # model-training-pipeline's assignment stage).
     prio_assignment = {pid: uid for pid, uid in full0.items()
                         if uid != 'NONE' and pkg_lookup_all[pid]['Type'] == 'Priority'}
 

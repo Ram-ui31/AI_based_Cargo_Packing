@@ -67,7 +67,7 @@ class RLPackerAdapter:
 
     def __init__(self, weights_path=None, rl_packer_src=None, greedy=True, device='cpu'):
         if rl_packer_src is None:
-            # This file lives at ga_cargo_packing/src/rl/ -- three
+            # This file lives at model-training-pipeline/src/rl/ -- three
             # levels below Desktop/, not two like the original
             # cargoism/git/rl_over_il_h1h2/src/ copy this was adapted from --
             # so the walk back up to cargoism/git/rl_packer/src is longer here.

@@ -18,11 +18,11 @@ import numpy as np
 import pandas as pd
 import torch
 
-GA_CARGO_ROOT = os.path.join(os.path.dirname(os.path.abspath(__file__)), '..', '..', 'ga_cargo_packing')
+GA_CARGO_ROOT = os.path.join(os.path.dirname(os.path.abspath(__file__)), '..', '..', 'model-training-pipeline')
 sys.path.insert(0, GA_CARGO_ROOT)
 
-# NOTE: both ga_cargo_packing and this project use "src" as their package
-# name -- importing ga_cargo_packing's src.rl.* first (with GA_CARGO_ROOT on
+# NOTE: both model-training-pipeline and this project use "src" as their package
+# name -- importing model-training-pipeline's src.rl.* first (with GA_CARGO_ROOT on
 # sys.path) before adding THIS project's own src/ directory (unprefixed
 # imports below) avoids the naming collision between the two "src" packages.
 from src.rl.config import DEVICE

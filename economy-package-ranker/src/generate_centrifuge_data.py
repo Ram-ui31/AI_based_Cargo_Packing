@@ -1,14 +1,14 @@
 """
 generate_centrifuge_data.py -- builds labeled training data for the
 CentrifugeEvictProposer: for a sample of synthetic instances (from
-good_data/synthetic_train), pack each with the ga_cargo_packing heuristic
+good_data/synthetic_train), pack each with the model-training-pipeline heuristic
 ensemble, then exhaustively test every valid "evict one placed Economy
 package -> compact its container -> refill from the unplaced pool" move,
 recording the full context (container contents, evict candidate, unplaced
 pool, ULD/global stats) plus the REAL net delay-cost gain as the label.
 
 This mirrors exactly the move validated by hand on the real 400-package
-benchmark (ga_cargo_packing/scripts -- see aeropack README's Open Work
+benchmark (model-training-pipeline/scripts -- see aeropack README's Open Work
 section): a real, generalizable, consistently-positive-but-small move
 family (~12% of exhaustively-tested evictions are profitable, confirmed
 across 10 held-out synthetic instances). The exhaustive geometric check
@@ -39,7 +39,7 @@ import time
 
 import pandas as pd
 
-GA_ROOT = os.path.expanduser('~/Desktop/cargoism/git/ga_cargo_packing')
+GA_ROOT = os.path.expanduser('~/Desktop/cargoism/git/model-training-pipeline')
 sys.path.insert(0, GA_ROOT)
 
 from src.rl.heuristic_packer import HeuristicPacker, _import_geometry

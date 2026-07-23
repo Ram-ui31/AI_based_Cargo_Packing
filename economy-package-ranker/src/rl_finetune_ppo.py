@@ -1,39 +1,30 @@
 """
-rl_finetune_grpo.py -- GRPO-style (Group Relative Policy Optimization)
-fine-tuning of PackageSetRanker against the REAL, FULL production
-CombinedPacker, replacing rl_finetune.py's vanilla REINFORCE (single
-sample per step vs. a slow-moving EMA baseline).
+rl_finetune_ppo.py -- PPO-style fine-tuning of PackageSetRanker: collect a
+group of G real rollouts (same as GRPO), but then reuse that SAME batch
+for several clipped-ratio gradient epochs instead of just one gradient
+step -- more sample-efficient per (expensive) real evaluation, since each
+real packer call gets squeezed for more learning signal.
 
-Why GRPO fits this problem unusually well: GRPO normally shines when
-sampling multiple responses per VARYING prompt and scoring them relative
-to each other. Here there is only ONE "prompt" -- the same 400-package
-instance, every single step -- which is actually the ideal case for it:
-instead of one noisy sample compared against a laggy exponential-average
-baseline (rl_finetune.py's approach), sample a GROUP of G orderings from
-the CURRENT policy per round, real-evaluate all of them, and score each
-one's advantage relative to THAT GROUP'S OWN mean/std -- a fresh, unbiased,
-much lower-variance baseline every round, with no separate value network
-needed (unlike PPO).
+Per round:
+    1. Forward pass -> scores (the "old" policy for this round).
+    2. Sample G orders via Gumbel-max, record each order's log_prob under
+       the OLD (frozen) scores, and real-evaluate each (same as GRPO).
+    3. advantage_i = (reward_i - group_mean) / (group_std + eps) (GRPO-
+       style group-relative baseline -- no separate value network needed
+       here either).
+    4. For `ppo_epochs` inner iterations: recompute scores (now with
+       gradients), recompute each SAMPLED order's log_prob under the
+       CURRENT scores, ratio_i = exp(new_log_prob_i - old_log_prob_i),
+       clipped surrogate loss = -mean(min(ratio*advantage,
+       clip(ratio,1-eps,1+eps)*advantage)) - entropy_coef*entropy.
+       Backprop + Adam step EACH inner epoch, reusing the same G samples
+       (no new real evaluations needed until the next round).
 
-Each round:
-    1. One forward pass -> scores (shared across the whole group).
-    2. Sample G independent orders via Gumbel-max (different noise draws,
-       same underlying scores) -- G real "rollouts" of the current policy.
-    3. Real-evaluate each of the G orders (greedy first-fit + full
-       CombinedPacker) -- the only ground truth used anywhere in this loop.
-    4. reward_i = -cost_i. advantage_i = (reward_i - group_mean) / (group_std + eps)
-       -- the GRPO normalization, using THIS round's own group as the
-       reference point instead of history from possibly-stale past policies.
-    5. loss = -mean_i [advantage_i * log_prob_i] - entropy_coef * entropy.
-       One backward pass per round (averaged over the group), Adam step.
-
-Warm-starts from checkpoints/best_ever.pt (30,787, the pre-RL best) fresh
--- NOT from rl_finetune.py's rl_best_ever.pt, since that checkpoint's
-weights reflect wherever REINFORCE's single-sample noise happened to drift
-them, not necessarily a better starting point than the clean pre-RL best.
+Warm-starts from checkpoints/best_ever.pt (30,787), same as the GRPO
+variant, for a fair comparison.
 
 Usage:
-    python src/rl_finetune_grpo.py --rounds 100 --group-size 6
+    python src/rl_finetune_ppo.py --rounds 100 --group-size 6 --ppo-epochs 4
 """
 from __future__ import annotations
 import argparse
@@ -43,12 +34,11 @@ import sys
 import time
 
 import numpy as np
-import pandas as pd
 import torch
 import torch.nn.functional as F
 
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
-GA_CARGO_ROOT = os.path.join(os.path.dirname(os.path.abspath(__file__)), '..', '..', 'ga_cargo_packing')
+GA_CARGO_ROOT = os.path.join(os.path.dirname(os.path.abspath(__file__)), '..', '..', 'model-training-pipeline')
 sys.path.insert(0, GA_CARGO_ROOT)
 
 from src.rl.config import DEVICE
@@ -70,21 +60,29 @@ DENSITY_PACKER_CKPT = os.path.join(
 )
 CKPT_DIR = os.path.join(os.path.dirname(os.path.abspath(__file__)), '..', 'checkpoints')
 WARM_START_CKPT = os.path.join(CKPT_DIR, 'best_ever.pt')
-GRPO_BEST_CKPT = os.path.join(CKPT_DIR, 'grpo_best_ever.pt')
-GRPO_BEST_META = os.path.join(CKPT_DIR, 'grpo_best_ever_meta.json')
-GRPO_LOG_PATH = os.path.join(os.path.dirname(os.path.abspath(__file__)), '..', 'data', 'grpo_log.jsonl')
+PPO_BEST_CKPT = os.path.join(CKPT_DIR, 'ppo_best_ever.pt')
+PPO_BEST_META = os.path.join(CKPT_DIR, 'ppo_best_ever_meta.json')
+PPO_LOG_PATH = os.path.join(os.path.dirname(os.path.abspath(__file__)), '..', 'data', 'ppo_log.jsonl')
+
+
+def log_prob_for_order(scores, order):
+    """Plackett-Luce log-prob of a GIVEN (already sampled) order under the
+    CURRENT scores -- differentiable w.r.t. scores, order treated as fixed."""
+    ordered_scores = scores[order]
+    reverse_logcumsumexp = torch.flip(
+        torch.logcumsumexp(torch.flip(ordered_scores, dims=[0]), dim=0), dims=[0])
+    return (ordered_scores - reverse_logcumsumexp).sum()
 
 
 def main():
     p = argparse.ArgumentParser()
     p.add_argument('--rounds', type=int, default=100)
     p.add_argument('--group-size', type=int, default=6)
+    p.add_argument('--ppo-epochs', type=int, default=4)
+    p.add_argument('--clip-eps', type=float, default=0.2)
     p.add_argument('--lr', type=float, default=1e-4)
     p.add_argument('--entropy-coef', type=float, default=0.001)
     p.add_argument('--seed', type=int, default=0)
-    p.add_argument('--warm-start-ckpt', type=str, default=WARM_START_CKPT,
-                    help='defaults to the pre-RL best_ever.pt; pass grpo_best_ever.pt (or another '
-                         'run\'s checkpoint) to continue from a previous GRPO run\'s progress instead.')
     args = p.parse_args()
     torch.manual_seed(args.seed)
 
@@ -97,7 +95,7 @@ def main():
     avg_uld_weight = ulds_df['Weight_Limit'].mean()
     feats_np = build_package_features(economy_df, avg_uld_volume, avg_uld_weight)
 
-    ckpt = torch.load(args.warm_start_ckpt, map_location='cpu', weights_only=False)
+    ckpt = torch.load(WARM_START_CKPT, map_location='cpu', weights_only=False)
     feats_np, _, _ = normalize_features(feats_np, ckpt['feat_mean'], ckpt['feat_std'])
     global_feats_np = build_global_features(
         n_ulds=len(ulds_df),
@@ -109,7 +107,7 @@ def main():
 
     model = PackageSetRanker(**ckpt['arch'])
     model.load_state_dict(ckpt['model_state_dict'])
-    print(f'Warm-started GRPO policy from {args.warm_start_ckpt}')
+    print(f'Warm-started PPO policy from {WARM_START_CKPT} (clean pre-RL best: 30,787)')
 
     optimizer = torch.optim.Adam(model.parameters(), lr=args.lr)
 
@@ -133,44 +131,50 @@ def main():
     global_feats_t = torch.tensor(global_feats_np, dtype=torch.float32).squeeze(0)
 
     best_ever_cost = float('inf')
-    if os.path.exists(GRPO_BEST_META):
-        with open(GRPO_BEST_META) as f:
+    if os.path.exists(PPO_BEST_META):
+        with open(PPO_BEST_META) as f:
             best_ever_cost = json.load(f)['cost']
-        print(f'Resuming: GRPO best-ever so far = {best_ever_cost:,.0f}')
+        print(f'Resuming: PPO best-ever so far = {best_ever_cost:,.0f}')
 
     os.makedirs(CKPT_DIR, exist_ok=True)
     G = args.group_size
     for round_idx in range(args.rounds):
         t0 = time.time()
-        model.train()
-        scores = model(pkg_feats_t.unsqueeze(0), global_feats_t.unsqueeze(0)).squeeze(0)  # (n_items,) shared this round
+        model.eval()
+        with torch.no_grad():
+            old_scores = model(pkg_feats_t.unsqueeze(0), global_feats_t.unsqueeze(0)).squeeze(0)
 
-        orders, log_probs, costs = [], [], []
+        orders, old_log_probs, costs = [], [], []
         for g in range(G):
-            order, log_prob = sample_plackett_luce(scores)
+            order, old_log_prob = sample_plackett_luce(old_scores)
             ranked_pids = economy_df.loc[order.detach().numpy(), 'Package_ID'].tolist()
             assignment = greedy_first_fit(ranked_pids, pkg_lookup_all, uld_lookup, prio_assignment)
             placements, total_unfit = packer.pack(assignment, pkgs_df, ulds_df)
             cost, delay_cost, spread_cost, n_prio, unplaced_prio, unplaced_eco = compute_packing_cost(
                 placements, pkgs_df, k_value)
             orders.append(order)
-            log_probs.append(log_prob)
+            old_log_probs.append(old_log_prob)
             costs.append(cost)
-
         eval_dt = time.time() - t0
+
         rewards = torch.tensor([-c for c in costs], dtype=torch.float32)
-        group_mean = rewards.mean()
-        group_std = rewards.std(unbiased=False)
+        group_mean, group_std = rewards.mean(), rewards.std(unbiased=False)
         advantages = (rewards - group_mean) / (group_std + 1e-6)
+        old_log_probs_t = torch.stack(old_log_probs).detach()
 
-        log_probs_t = torch.stack(log_probs)
-        probs = F.softmax(scores, dim=0)
-        entropy = -(probs * torch.log(probs + 1e-12)).sum()
-
-        loss = -(advantages.detach() * log_probs_t).mean() - args.entropy_coef * entropy
-        optimizer.zero_grad()
-        loss.backward()
-        optimizer.step()
+        model.train()
+        for epoch in range(args.ppo_epochs):
+            scores = model(pkg_feats_t.unsqueeze(0), global_feats_t.unsqueeze(0)).squeeze(0)
+            new_log_probs = torch.stack([log_prob_for_order(scores, order) for order in orders])
+            ratio = torch.exp(new_log_probs - old_log_probs_t)
+            surr1 = ratio * advantages
+            surr2 = torch.clamp(ratio, 1 - args.clip_eps, 1 + args.clip_eps) * advantages
+            probs = F.softmax(scores, dim=0)
+            entropy = -(probs * torch.log(probs + 1e-12)).sum()
+            loss = -torch.min(surr1, surr2).mean() - args.entropy_coef * entropy
+            optimizer.zero_grad()
+            loss.backward()
+            optimizer.step()
 
         round_best_cost = min(costs)
         is_best = round_best_cost < best_ever_cost
@@ -181,20 +185,19 @@ def main():
                 'feat_mean': ckpt['feat_mean'], 'feat_std': ckpt['feat_std'],
                 'gmean': ckpt['gmean'], 'gstd': ckpt['gstd'],
                 'avg_uld_volume': avg_uld_volume, 'avg_uld_weight': avg_uld_weight,
-            }, GRPO_BEST_CKPT)
-            with open(GRPO_BEST_META, 'w') as f:
+            }, PPO_BEST_CKPT)
+            with open(PPO_BEST_META, 'w') as f:
                 json.dump({'cost': round_best_cost, 'round': round_idx}, f)
 
-        with open(GRPO_LOG_PATH, 'a') as f:
+        with open(PPO_LOG_PATH, 'a') as f:
             f.write(json.dumps({'round': round_idx, 'costs': costs, 'group_mean_cost': -group_mean.item(),
-                                 'group_std': group_std.item(), 'entropy': entropy.item()}) + '\n')
+                                 'group_std': group_std.item(), 'final_loss': loss.item()}) + '\n')
 
         print(f'[round {round_idx:4d}] costs={[f"{c:,.0f}" for c in costs]}  '
               f'group_mean={-group_mean.item():,.0f}  group_std={group_std.item():,.0f}  '
-              f'entropy={entropy.item():.2f}  ({eval_dt:.1f}s)  '
-              f'{"** NEW BEST: " + f"{round_best_cost:,.0f}" + " **" if is_best else ""}')
+              f'({eval_dt:.1f}s)  {"** NEW BEST: " + f"{round_best_cost:,.0f}" + " **" if is_best else ""}')
 
-    print(f'\nDone. GRPO best-ever real cost: {best_ever_cost:,.0f}  '
+    print(f'\nDone. PPO best-ever real cost: {best_ever_cost:,.0f}  '
           f'(pre-RL best: 30,475, competitor target: 29,203)')
 
 

@@ -19,9 +19,9 @@ dropped (the baseline drops at least one Priority package in 17 of the
 |---|---|
 | See the final, best-performing system | [`01-cherry/`](01-cherry/) |
 | Understand the three model variants that were compared head-to-head | [`01-cherry/`](01-cherry/), [`02-eclipse/`](02-eclipse/), [`03-halley/`](03-halley/) |
-| See the research/development environment that produced them | [`ga_cargo_packing/`](ga_cargo_packing/), [`gnn_economy_selector/`](gnn_economy_selector/) |
+| See the research/development environment that produced them | [`model-training-pipeline/`](model-training-pipeline/), [`economy-package-ranker/`](economy-package-ranker/) |
 | See how the project evaluated against a published academic baseline | `online-3d-bpp-benchmark/` *(sibling folder alongside this repo, not itself part of it)* |
-| See how the project compares against classical literature heuristics | [`04-benchmark/`](04-benchmark/) |
+| See how the project compares against classical heuristics and external RL baselines | [`04-benchmark/`](04-benchmark/) |
 | **Run Cherry/Eclipse/Halley on your own instance CSV** | [`05-run-instructions/`](05-run-instructions/) |
 | See the earlier project iterations that led here | [Project history](#project-history) below |
 
@@ -55,22 +55,24 @@ AI-guided local-search variant that never demonstrated an improvement).
 ## Repository structure
 
 ```
-cargoism/git/                    ← repository root
-├── 01-cherry/              — FINAL: best-performing pipeline (9,499 avg)
-├── 02-eclipse/             — RL placement-policy pipeline (10,631 avg)
-├── 03-halley/              — GRPO economy-ordering pipeline (10,540 avg)
-├── 04-benchmark/           — independent classical-heuristic baselines
-│                              (FFD, LAFF, BFD), benchmarked against all three
-├── 05-run-instructions/    — how to run the three final models on your own
-│                              instance CSV
-├── ga_cargo_packing/       — research environment: assignment, local
-│                              search, packer ensemble, EMS geometry
-├── gnn_economy_selector/   — research environment: economy-ranking
-│                              and move-screening model training
-├── rl_packer/              — shared 3D placement-policy source (geometry,
-│                              environment, actor-critic network)
-├── good-data-generator/    — synthetic ULD/package instance generator
-├── h1_h2_cargo/             — hand-tuned greedy heuristic baseline
+cargoism/git/                        ← repository root
+├── 01-cherry/                  — FINAL: best-performing pipeline (9,499 avg)
+├── 02-eclipse/                 — RL placement-policy pipeline (10,631 avg)
+├── 03-halley/                  — GRPO economy-ordering pipeline (10,540 avg)
+├── 04-benchmark/                — independent classical-heuristic baselines
+│                                  (FFD, LAFF, BFD) and external RL baselines
+│                                  (PackMan/DQN, Online-3D-BPP-DRL), benchmarked
+│                                  against all three
+├── 05-run-instructions/         — how to run the three final models on your
+│                                  own instance CSV
+├── model-training-pipeline/     — research environment: assignment, local
+│                                  search, packer ensemble, EMS geometry
+├── economy-package-ranker/      — research environment: economy-ranking
+│                                  and move-screening model training
+├── rl_packer/                   — shared 3D placement-policy source (geometry,
+│                                  environment, actor-critic network)
+├── good-data-generator/         — synthetic ULD/package instance generator
+├── h1_h2_cargo/                 — hand-tuned greedy heuristic baseline
 └── LICENSE
 ```
 
@@ -93,32 +95,38 @@ separately from source.
    baseline, progressively adding K-awareness, 3D-placement integration,
    and a dedicated RL placement policy (`rl_packer/`). These intermediate
    iterations are no longer kept in this repository; the surviving,
-   currently-relevant training lineage lives in `ga_cargo_packing/versions/`
+   currently-relevant training lineage lives in `model-training-pipeline/versions/`
    (step 4 below).
-4. **Production research environment** (`ga_cargo_packing/`,
-   `gnn_economy_selector/`) — where the final architecture took shape: a
+4. **Production research environment** (`model-training-pipeline/`,
+   `economy-package-ranker/`) — where the final architecture took shape: a
    trained Priority Clusterer, a 5-way best-of-N packer ensemble
    (including the trained RL placement policy), a local search over
    Economy package assignment with real geometric evaluation at every
    step, and — the single largest lever found — a full geometric
    candidate-generation rewrite (Empty Maximal Space decomposition)
    fixing a structural bottleneck shared by every earlier packing
-   strategy. `ga_cargo_packing/versions/` documents the complete training
+   strategy. `model-training-pipeline/versions/` documents the complete training
    lineage of the Priority Clusterer, including abandoned branches, with
    an explanation of why each was superseded.
 5. **Three final, independently packaged deliverables** — Cherry, Eclipse,
    and Halley — each isolating one trained model's real, measured
    contribution against a shared baseline pipeline.
-6. **External validation** — the final pipeline was benchmarked against
-   `Online-3D-BPP-DRL` (AAAI 2021), a standard sequential-placement
-   online bin-packing policy in the same family as Packing Configuration
-   Tree (PCT)-style methods, on the same 20 held-out synthetic instances
-   used above. It averaged **15,535** — well behind Cherry's 9,499 — and,
-   because it has no concept of a hard Priority constraint, dropped at
-   least one Priority package in **17 of the 20 instances** (203
-   Priority packages dropped in total). Every model in this repository
-   dropped **zero** Priority packages, in every instance, at every K.
-   Documented in the sibling `online-3d-bpp-benchmark/` folder.
+6. **External validation** — the final pipeline was benchmarked against two
+   published external RL baselines: `Online-3D-BPP-DRL` (Zhao et al.,
+   AAAI 2021), a standard sequential-placement online bin-packing policy
+   in the same family as Packing Configuration Tree (PCT)-style methods,
+   and `PackMan/DQN` (Verma et al. 2020), trained and evaluated
+   independently by a teammate. Online-3D-BPP-DRL averaged **15,535** on
+   the same 20 held-out synthetic instances used above — well behind
+   Cherry's 9,499 — and, because it has no concept of a hard Priority
+   constraint, dropped at least one Priority package in **17 of the 20
+   instances** (203 Priority packages dropped in total). PackMan/DQN was
+   evaluated on the real 400-package instance only, scoring 38,898.
+   Every model in this repository dropped **zero** Priority packages, in
+   every instance, at every K. Full external-RL and classical-heuristic
+   comparisons (with citations) are in [`04-benchmark/`](04-benchmark/);
+   the Online-3D-BPP-DRL deep-dive is in the sibling
+   `online-3d-bpp-benchmark/` folder.
 
 ## Key technical findings
 
@@ -159,7 +167,7 @@ since later code still depends on them:
 - **`h1_h2_cargo/`** — the original heuristic baseline: ULD partitioning,
   an H1-scored binary-search split of Economy packages, extreme-point
   greedy packing, and an H2-scored retroactive fill pass. Still used as a
-  labelling source and a reference packer (`ga_cargo_packing`'s GA
+  labelling source and a reference packer (`model-training-pipeline`'s GA
   labeller imports it directly).
 - **`rl_packer/`** — the 3D placement-policy component (geometry,
   environment, actor-critic network) developed alongside the above and
@@ -173,12 +181,12 @@ environment, and evaluation utilities tying them together) were tried and
 superseded; they are no longer kept in this repository. The surviving,
 currently-relevant part of that lineage — the Priority Clusterer's full
 training history including abandoned branches — lives in
-`ga_cargo_packing/versions/`.
+`model-training-pipeline/versions/`.
 
 The final architecture — a trained Priority Clusterer, a best-of-N packer
 ensemble built around `rl_packer`'s placement policy, a real-geometry
 local search, and the Cherry/Eclipse/Halley model comparisons — lives in
-`ga_cargo_packing/` and `gnn_economy_selector/`.
+`model-training-pipeline/` and `economy-package-ranker/`.
 
 ## License
 

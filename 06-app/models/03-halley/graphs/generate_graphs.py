@@ -17,7 +17,7 @@ import matplotlib.pyplot as plt
 import matplotlib.ticker as mticker
 
 HERE = os.path.dirname(os.path.abspath(__file__))
-GA_RESULTS = os.path.join(HERE, '..', '..', 'ga_cargo_packing', 'results')
+GA_RESULTS = os.path.join(HERE, '..', '..', 'model-training-pipeline', 'results')
 CHECKPOINTS = os.path.join(HERE, '..', 'checkpoints')
 
 plt.rcParams.update({'figure.facecolor': 'white', 'axes.facecolor': 'white',

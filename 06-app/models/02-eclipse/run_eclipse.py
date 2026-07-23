@@ -87,7 +87,7 @@ def greedy_first_fit(ranked_pids, pkg_lookup_all, uld_lookup, prio_assignment):
     """Economy-only greedy first-fit by value-density order, into whatever
     capacity Priority consolidation left behind. Matches the exact
     methodology validated throughout this project (see e.g.
-    ga_cargo_packing/scripts and the online-3d-bpp-benchmark comparison
+    model-training-pipeline/scripts and the online-3d-bpp-benchmark comparison
     scripts) -- deliberately NOT the same as rl_assign_argmax_safe's own
     internal Economy ordering, which sorts by ascending volume instead."""
     weight_used = {u: 0.0 for u in uld_lookup}
@@ -188,7 +188,7 @@ def run_eclipse(input_path, device='cpu', search_rounds=15, progress_cb=None):
     # Only the Priority portion of the clusterer's assignment is used --
     # Economy gets its own explicit value-density order + greedy first-fit
     # below, matching this project's validated methodology exactly (see
-    # ga_cargo_packing's assignment stage).
+    # model-training-pipeline's assignment stage).
     prio_assignment = {pid: uid for pid, uid in full0.items()
                         if uid != 'NONE' and pkg_lookup_all[pid]['Type'] == 'Priority'}
 

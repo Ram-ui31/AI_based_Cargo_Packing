@@ -1,6 +1,6 @@
 """
 train_swap_proposer.py -- trains SwapProposer on real (move, delta) data
-generated as a byproduct of ga_cargo_packing/scripts/beam_search_economy.py
+generated as a byproduct of model-training-pipeline/scripts/beam_search_economy.py
 (beam_moves_*.jsonl -- every TRIED swap, not just survivors, with its real
 cost delta).
 
@@ -97,7 +97,7 @@ def main():
     p = argparse.ArgumentParser()
     p.add_argument('--moves-glob', type=str,
                     default=os.path.join(os.path.dirname(os.path.abspath(__file__)), '..', '..',
-                                          'ga_cargo_packing', 'results', 'beam_moves_*.jsonl'))
+                                          'model-training-pipeline', 'results', 'beam_moves_*.jsonl'))
     p.add_argument('--n-epochs', type=int, default=300)
     p.add_argument('--lr', type=float, default=1e-3)
     p.add_argument('--margin', type=float, default=0.1)

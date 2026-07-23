@@ -1,9 +1,10 @@
 # Classical heuristic baselines — literature review, benchmarked independently
 
-Three classical heuristics named in a senior team's literature review
-(Team 27, Inter-IIT Tech Meet 13.0) for the 3D Bin Packing Problem,
-implemented independently and benchmarked against our own pipeline and the
-external RL baseline (Online-3D-BPP-DRL).
+Three classical heuristics standard in the 3D bin-packing literature,
+implemented independently and benchmarked against our own pipeline and two
+external RL baselines: *Online-3D-BPP-DRL* (Zhao et al., AAAI 2021) and
+*PackMan/DQN* (Verma et al. 2020), the latter trained and evaluated
+independently by a teammate.
 
 - **FFD** (First-Fit Decreasing) — sort by decreasing *volume*, place in
   the first ULD (in given order) where it geometrically fits. "Traditional
@@ -54,14 +55,20 @@ heuristics vs. external RL vs. our best result.
 | FFD (literature) | 43,139 | 17,865 |
 | LAFF (literature) | 43,639 | 17,699 |
 | BFD (literature) | 43,100 | 18,844 |
-| Online-3D-BPP-DRL (external RL) | 35,676 | 15,535 |
+| PackMan/DQN (Verma et al. 2020, external RL) | 38,898 | *not run on the 20-instance sweep* |
+| Online-3D-BPP-DRL (Zhao et al. 2021, external RL) | 35,676 | 15,535 |
 | **Cherry (ours, best)** | **28,409** | **9,499** |
+
+PackMan/DQN was trained and evaluated independently by a teammate on the
+real 400-package instance only, so it's shown in the real-instance
+comparison (and chart) but omitted from the grand-average chart rather
+than filled in with a misleading placeholder.
 
 All three classical heuristics land in the same tight band (~17,700–18,850
 grand average) — a good illustration that "which classical heuristic" is a
 second-order choice compared to *whether the algorithm reasons about
 spread cost at all*. None of FFD/LAFF/BFD do; they're all worse than even
-the external RL baseline, which itself doesn't optimize for Priority
+both external RL baselines, neither of which optimizes for Priority
 clustering either. On the real instance all three used **4** Priority
 ULDs (vs. our 3), because none of them consider how many ULDs end up
 touched — just "does it fit here right now."
@@ -98,3 +105,13 @@ benchmark/
 Run with `python3 run_benchmarks.py` then `python3 generate_comparison_graphs.py`
 (only needs pandas + matplotlib; reads `~/Downloads/input.csv` and
 `~/Desktop/good_data/synthetic_test/`).
+
+## References
+
+- R. Verma, A. Singhal, H. Khadilkar, A. Basumatary, S. Nayak, H. V. Singh,
+  S. Kumar, and R. Sinha, "A Generalized Reinforcement Learning Algorithm
+  for Online 3D Bin-Packing," *arXiv preprint arXiv:2007.00463*, 2020.
+  (PackMan/DQN baseline above.)
+- H. Zhao, Q. She, C. Zhu, Y. Yang, and K. Xu, "Online 3D Bin Packing with
+  Constrained Deep Reinforcement Learning," in *Proc. AAAI Conference on
+  Artificial Intelligence*, 2021. (Online-3D-BPP-DRL baseline above.)

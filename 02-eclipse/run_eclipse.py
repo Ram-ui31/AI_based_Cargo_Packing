@@ -87,7 +87,7 @@ def greedy_first_fit(ranked_pids, pkg_lookup_all, uld_lookup, prio_assignment):
     """Economy-only greedy first-fit by value-density order, into whatever
     capacity Priority consolidation left behind. Matches the exact
     methodology validated throughout this project (see e.g.
-    ga_cargo_packing/scripts and the online-3d-bpp-benchmark comparison
+    model-training-pipeline/scripts and the online-3d-bpp-benchmark comparison
     scripts) -- deliberately NOT the same as rl_assign_argmax_safe's own
     internal Economy ordering, which sorts by ascending volume instead."""
     weight_used = {u: 0.0 for u in uld_lookup}
@@ -114,7 +114,7 @@ def greedy_first_fit(ranked_pids, pkg_lookup_all, uld_lookup, prio_assignment):
     return assignment
 
 
-def local_search(assignment, pkgs_df, ulds_df, packer, k_value, rounds=15, seed=0):
+def local_search(assignment, pkgs_df, ulds_df, packer, k_value, rounds=15, seed=0, progress_cb=None):
     """Simple hill-climbing local search over the Economy assignment: each
     round tries a handful of real-evaluated swap/relocate moves and keeps
     the assignment if cost improves. A simplified, self-contained version
@@ -153,11 +153,13 @@ def local_search(assignment, pkgs_df, ulds_df, packer, k_value, rounds=15, seed=
             print(f'  round {r}: cost={cost:,.0f}  (improved)')
         else:
             print(f'  round {r}: cost={cost:,.0f}  (no improvement, kept previous best {best_cost:,.0f})')
+        if progress_cb:
+            progress_cb(r / rounds, f'Local search round {r}/{rounds} -- best cost so far: {best_cost:,.0f}')
 
     return best_assignment, best_placements, best_cost
 
 
-def run_eclipse(input_path, device='cpu', search_rounds=15):
+def run_eclipse(input_path, device='cpu', search_rounds=15, progress_cb=None):
     k_value, ulds_df, pkgs_df = parse_input_csv(input_path)
 
     n_prio = int((pkgs_df['Type'].str.strip().str.lower() == 'priority').sum())
@@ -165,6 +167,8 @@ def run_eclipse(input_path, device='cpu', search_rounds=15):
     print(f'Parsed {len(ulds_df)} ULDs, {len(pkgs_df)} packages '
           f'({n_prio} Priority, {n_econ} Economy), K={k_value:,.0f}')
 
+    if progress_cb:
+        progress_cb(0.0, 'Loading Priority Clusterer checkpoint...')
     tr.PRIORITY_CONSOLIDATION_MIN_K = -1
     clusterer = TransformerClusterer().to(device)
     ckpt = torch.load(PRIORITY_CHECKPOINT, map_location=device, weights_only=False)
@@ -172,6 +176,8 @@ def run_eclipse(input_path, device='cpu', search_rounds=15):
     clusterer.eval()
 
     t0 = time.time()
+    if progress_cb:
+        progress_cb(0.05, 'Assigning Priority packages to ULDs...')
     full0 = tr.rl_assign_argmax_safe(clusterer, pkgs_df, ulds_df, device, k_value,
                                       econ_sort_key='value_density_pow1.5')
     pkg_lookup_all = pkgs_df.set_index('Package_ID').to_dict('index')
@@ -182,7 +188,7 @@ def run_eclipse(input_path, device='cpu', search_rounds=15):
     # Only the Priority portion of the clusterer's assignment is used --
     # Economy gets its own explicit value-density order + greedy first-fit
     # below, matching this project's validated methodology exactly (see
-    # ga_cargo_packing's assignment stage).
+    # model-training-pipeline's assignment stage).
     prio_assignment = {pid: uid for pid, uid in full0.items()
                         if uid != 'NONE' and pkg_lookup_all[pid]['Type'] == 'Priority'}
 
@@ -192,10 +198,13 @@ def run_eclipse(input_path, device='cpu', search_rounds=15):
     base_order = econ_sorted['Package_ID'].tolist()
     assignment = greedy_first_fit(base_order, pkg_lookup_all, uld_lookup, prio_assignment)
 
+    if progress_cb:
+        progress_cb(0.1, 'Packing with the best-of-5 ensemble (RL policy + heuristics)...')
     packer = build_packer(device=device)
     if search_rounds > 0:
         print(f'Running local search ({search_rounds} rounds, real-evaluated)...')
-        assignment, placements, _ = local_search(assignment, pkgs_df, ulds_df, packer, k_value, rounds=search_rounds)
+        assignment, placements, _ = local_search(assignment, pkgs_df, ulds_df, packer, k_value, rounds=search_rounds,
+                                                  progress_cb=(lambda frac, msg: progress_cb(0.1 + frac * 0.9, msg)) if progress_cb else None)
     else:
         placements, _ = packer.pack(assignment, pkgs_df, ulds_df)
     elapsed = time.time() - t0

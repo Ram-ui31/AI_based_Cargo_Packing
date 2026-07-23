@@ -63,7 +63,7 @@ DENSITY_PACKER_CKPT = os.path.join(
     'uld_heightmap_rl', 'checkpoints', 'rl_packer', 'placement_policy_density.pt',
 )
 RESULTS_DIR = os.path.join(os.path.dirname(os.path.abspath(__file__)), '..', 'results')
-GNN_ECON_SELECTOR_ROOT = os.path.join(os.path.dirname(os.path.abspath(__file__)), '..', '..', 'gnn_economy_selector')
+GNN_ECON_SELECTOR_ROOT = os.path.join(os.path.dirname(os.path.abspath(__file__)), '..', '..', 'economy-package-ranker')
 
 
 def parse_input_csv(path):

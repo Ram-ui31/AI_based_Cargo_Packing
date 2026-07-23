@@ -98,7 +98,7 @@ def greedy_first_fit(ranked_pids, pkg_lookup_all, uld_lookup, prio_assignment):
     """Economy-only greedy first-fit by value-density order, into whatever
     capacity Priority consolidation left behind. Matches the exact
     methodology validated throughout this project (see e.g.
-    ga_cargo_packing/scripts and the online-3d-bpp-benchmark comparison
+    model-training-pipeline/scripts and the online-3d-bpp-benchmark comparison
     scripts) -- deliberately NOT the same as rl_assign_argmax_safe's own
     internal Economy ordering, which sorts by ascending volume instead."""
     weight_used = {u: 0.0 for u in uld_lookup}
@@ -125,7 +125,7 @@ def greedy_first_fit(ranked_pids, pkg_lookup_all, uld_lookup, prio_assignment):
     return assignment
 
 
-def local_search(assignment, pkgs_df, ulds_df, packer, k_value, rounds=15, seed=0):
+def local_search(assignment, pkgs_df, ulds_df, packer, k_value, rounds=15, seed=0, progress_cb=None):
     """Simple hill-climbing local search over the Economy assignment: each
     round tries a handful of real-evaluated swap/relocate moves and keeps
     the assignment if cost improves. A simplified, self-contained version
@@ -164,11 +164,13 @@ def local_search(assignment, pkgs_df, ulds_df, packer, k_value, rounds=15, seed=
             print(f'  round {r}: cost={cost:,.0f}  (improved)')
         else:
             print(f'  round {r}: cost={cost:,.0f}  (no improvement, kept previous best {best_cost:,.0f})')
+        if progress_cb:
+            progress_cb(r / rounds, f'Local search round {r}/{rounds} -- best cost so far: {best_cost:,.0f}')
 
     return best_assignment, best_placements, best_cost
 
 
-def centrifuge_evict_refine(placements, pkgs_df, ulds_df, k_value, n_cycles=3, strategy='dblf', rl_packer_src=None):
+def centrifuge_evict_refine(placements, pkgs_df, ulds_df, k_value, n_cycles=3, strategy='dblf', rl_packer_src=None, progress_cb=None):
     """Exhaustive evict-compact-refill refinement: for every placed Economy
     package, tentatively evict it, compact its container, and try to refill
     from the unplaced pool (including the evicted package itself); keep the
@@ -235,6 +237,8 @@ def centrifuge_evict_refine(placements, pkgs_df, ulds_df, k_value, n_cycles=3, s
 
         uid, evict_pid, compacted, newly_placed = best_move
         print(f'  cycle {cycle + 1}: evict {evict_pid} from {uid}, compact, refill -- net gain {best_gain:,.0f}')
+        if progress_cb:
+            progress_cb((cycle + 1) / n_cycles, f'Centrifuge cycle {cycle + 1}/{n_cycles} -- evicted {evict_pid} from {uid}, net gain {best_gain:,.0f}')
         by_uld[uid] = [
             {'Package_ID': p.package_id, 'ULD_ID': uid, 'x0': p.x0, 'y0': p.y0, 'z0': p.z0,
              'x1': p.x1, 'y1': p.y1, 'z1': p.z1, 'reason': 'placed'}
@@ -254,7 +258,7 @@ def centrifuge_evict_refine(placements, pkgs_df, ulds_df, k_value, n_cycles=3, s
     return new_placements
 
 
-def run_cherry(input_path, device='cpu', search_rounds=15):
+def run_cherry(input_path, device='cpu', search_rounds=15, progress_cb=None):
     k_value, ulds_df, pkgs_df = parse_input_csv(input_path)
 
     n_prio = int((pkgs_df['Type'].str.strip().str.lower() == 'priority').sum())
@@ -262,6 +266,8 @@ def run_cherry(input_path, device='cpu', search_rounds=15):
     print(f'Parsed {len(ulds_df)} ULDs, {len(pkgs_df)} packages '
           f'({n_prio} Priority, {n_econ} Economy), K={k_value:,.0f}')
 
+    if progress_cb:
+        progress_cb(0.0, 'Loading Priority Clusterer checkpoint...')
     tr.PRIORITY_CONSOLIDATION_MIN_K = -1
     clusterer = TransformerClusterer().to(device)
     ckpt = torch.load(PRIORITY_CHECKPOINT, map_location=device, weights_only=False)
@@ -269,6 +275,8 @@ def run_cherry(input_path, device='cpu', search_rounds=15):
     clusterer.eval()
 
     t0 = time.time()
+    if progress_cb:
+        progress_cb(0.03, 'Assigning Priority packages to ULDs...')
     full0 = tr.rl_assign_argmax_safe(clusterer, pkgs_df, ulds_df, device, k_value,
                                       econ_sort_key='value_density_pow1.5')
     pkg_lookup_all = pkgs_df.set_index('Package_ID').to_dict('index')
@@ -279,7 +287,7 @@ def run_cherry(input_path, device='cpu', search_rounds=15):
     # Only the Priority portion of the clusterer's assignment is used --
     # Economy gets its own explicit value-density order + greedy first-fit
     # below, matching this project's validated methodology exactly (see
-    # ga_cargo_packing's assignment stage).
+    # model-training-pipeline's assignment stage).
     prio_assignment = {pid: uid for pid, uid in full0.items()
                         if uid != 'NONE' and pkg_lookup_all[pid]['Type'] == 'Priority'}
 
@@ -289,15 +297,21 @@ def run_cherry(input_path, device='cpu', search_rounds=15):
     base_order = econ_sorted['Package_ID'].tolist()
     assignment = greedy_first_fit(base_order, pkg_lookup_all, uld_lookup, prio_assignment)
 
+    if progress_cb:
+        progress_cb(0.06, 'Packing with the best-of-5 ensemble (RL policy + heuristics)...')
     packer = build_packer(device=device)
     if search_rounds > 0:
         print(f'Running local search ({search_rounds} rounds, real-evaluated)...')
-        assignment, placements, _ = local_search(assignment, pkgs_df, ulds_df, packer, k_value, rounds=search_rounds)
+        assignment, placements, _ = local_search(assignment, pkgs_df, ulds_df, packer, k_value, rounds=search_rounds,
+                                                  progress_cb=(lambda frac, msg: progress_cb(0.06 + frac * 0.54, msg)) if progress_cb else None)
     else:
         placements, _ = packer.pack(assignment, pkgs_df, ulds_df)
 
     print('Running centrifuge-evict refinement (exhaustive)...')
-    placements = centrifuge_evict_refine(placements, pkgs_df, ulds_df, k_value)
+    if progress_cb:
+        progress_cb(0.6, 'Running centrifuge-evict refinement...')
+    placements = centrifuge_evict_refine(placements, pkgs_df, ulds_df, k_value,
+                                          progress_cb=(lambda frac, msg: progress_cb(0.6 + frac * 0.4, msg)) if progress_cb else None)
     elapsed = time.time() - t0
 
     cost, delay_cost, spread_cost, n_prio_ulds, unplaced_prio, unplaced_econ = \

@@ -9,7 +9,7 @@ For each strategy run, records per-Economy-package: its features and
 whether it was ACTUALLY PLACED (real geometry, not nominal), tagged with
 that strategy's overall real cost (a quality signal for how good that
 strategy's OVERALL choice was). This reuses econ_sort_key variants already
-implemented and validated in ga_cargo_packing/src/rl/train_rl.py (pow1.0-
+implemented and validated in model-training-pipeline/src/rl/train_rl.py (pow1.0-
 2.0, wpow, joint_pow, ascending_volume) as a first, moderate-diversity
 labeled dataset -- NOT proxy-generated, every row reflects a real
 CombinedPacker outcome.
@@ -26,7 +26,7 @@ import time
 import pandas as pd
 import torch
 
-GA_CARGO_ROOT = os.path.join(os.path.dirname(os.path.abspath(__file__)), '..', '..', 'ga_cargo_packing')
+GA_CARGO_ROOT = os.path.join(os.path.dirname(os.path.abspath(__file__)), '..', '..', 'model-training-pipeline')
 sys.path.insert(0, GA_CARGO_ROOT)
 
 from src.rl.config import DEVICE

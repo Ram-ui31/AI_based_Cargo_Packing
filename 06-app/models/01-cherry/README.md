@@ -375,7 +375,7 @@ for the full methodology and results.
        for real, would have found the one applicable win at roughly
        1/15th the number of expensive geometric checks versus exhaustively
        checking all 151 candidates.
-     - Files: `gnn_economy_selector/src/generate_centrifuge_data.py`,
+     - Files: `economy-package-ranker/src/generate_centrifuge_data.py`,
        `centrifuge_proposer.py`, `train_centrifuge_proposer.py`;
        `checkpoints/centrifuge_proposer.pt`, `checkpoints/centrifuge_proposer_history.json`;
        `results/centrifuge_real_instance_eval.json`.

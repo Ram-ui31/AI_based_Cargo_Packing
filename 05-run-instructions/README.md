@@ -104,7 +104,7 @@ All three share the same first stage, using only that model's own bundled checkp
 Each script is self-contained except for two small, shared, non-weight dependencies also in this repo:
 
 - `rl_packer/src/` — the shared 3D placement-policy geometry and environment code (used by all three).
-- `gnn_economy_selector/src/` — only needed by Halley, for the `PackageSetRanker` class definition (the checkpoint alone isn't enough to load it without the class).
+- `economy-package-ranker/src/` — only needed by Halley, for the `PackageSetRanker` class definition (the checkpoint alone isn't enough to load it without the class).
 
 Neither of these carries model weights of its own — all trained weights live in each model's own `checkpoints/` folder — but the class/geometry code they define is imported by the run scripts, so it needs to be present at the expected relative path, which is automatic if you clone the full repository rather than downloading a single subfolder.
 

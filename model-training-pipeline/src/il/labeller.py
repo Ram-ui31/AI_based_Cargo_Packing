@@ -4,7 +4,7 @@
 # A Labeller produces {Package_ID: ULD_ID | 'NONE'} assignments used as
 # training labels for the IL model. This package's only Labeller wraps
 # src.ga.GALabeller (the Genetic Algorithm split, see
-# ga_cargo_packing/src/ga/ga_labeller.py) instead of a greedy heuristic.
+# model-training-pipeline/src/ga/ga_labeller.py) instead of a greedy heuristic.
 # ─────────────────────────────────────────────────────────────────────────────
 import os
 import sys

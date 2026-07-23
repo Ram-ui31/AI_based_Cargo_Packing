@@ -18,7 +18,7 @@ set-attention design, applied to two sets instead of one.
 Per-package feature vector (7 dims, cheap, no real geometry involved):
     length, width, height, volume, weight, delay_cost, value_density
 (value_density = delay_cost / volume**1.5, matching the sort key used
-throughout ga_cargo_packing's greedy refill).
+throughout model-training-pipeline's greedy refill).
 
 Output: one real-valued predicted net_gain per (container, evict_pkg,
 unplaced_pool) example -- positive means the model expects eviction to

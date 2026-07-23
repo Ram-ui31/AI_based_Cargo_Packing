@@ -1,11 +1,10 @@
 """
-Independent implementations of three classical heuristics named in the
-senior team's literature review (Team 27, Inter-IIT Tech Meet 13.0) for the
-ULD cargo-packing problem. No code is reused from cargoism/git's EMS/RL
-packer -- placement geometry here is a simple, classic corner-point method
-(bottom-left-back scan order, all 6 orientations tried per candidate
-point), independent of the EMS-based geometry used everywhere else in this
-project.
+Independent implementations of three classical heuristics standard in the
+3D bin-packing literature, applied to the ULD cargo-packing problem. No
+code is reused from cargoism/git's EMS/RL packer -- placement geometry
+here is a simple, classic corner-point method (bottom-left-back scan
+order, all 6 orientations tried per candidate point), independent of the
+EMS-based geometry used everywhere else in this project.
 
 Heuristics:
   - FFD  (First-Fit Decreasing)       -- sort by decreasing VOLUME, place

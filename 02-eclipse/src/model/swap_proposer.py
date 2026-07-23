@@ -2,7 +2,7 @@
 swap_proposer.py -- SwapProposer: a small model that predicts the REAL
 cost delta of swapping two specific Economy packages' positions in the
 beam search's ordering, trained on (move, real_delta) pairs the beam
-search itself generates as a byproduct (see ga_cargo_packing/scripts/
+search itself generates as a byproduct (see model-training-pipeline/scripts/
 beam_search_economy.py's beam_moves_*.jsonl logging).
 
 Why this is a different learning target than PackageSetRanker (the earlier

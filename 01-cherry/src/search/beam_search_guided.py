@@ -8,12 +8,12 @@ tiny MLP forward pass), and real-evaluate only the top-scoring
 
 This is the "make the search itself smarter" follow-up to
 beam_search_economy.py, once beam_moves_*.jsonl has enough data to train
-gnn_economy_selector/src/train_swap_proposer.py's SwapProposer on.
+economy-package-ranker/src/train_swap_proposer.py's SwapProposer on.
 
 Usage:
     python scripts/beam_search_guided.py --rounds 40 --beam-width 3 \
         --children-per-parent 6 --pool-multiplier 8 \
-        --proposer-ckpt ../gnn_economy_selector/checkpoints/swap_proposer.pt \
+        --proposer-ckpt ../economy-package-ranker/checkpoints/swap_proposer.pt \
         --run-name guided --resume-from-run default
 """
 from __future__ import annotations
@@ -29,7 +29,7 @@ import pandas as pd
 import torch
 
 sys.path.insert(0, os.path.join(os.path.dirname(os.path.abspath(__file__)), '..'))
-GNN_ECON_SELECTOR_ROOT = os.path.join(os.path.dirname(os.path.abspath(__file__)), '..', '..', 'gnn_economy_selector')
+GNN_ECON_SELECTOR_ROOT = os.path.join(os.path.dirname(os.path.abspath(__file__)), '..', '..', 'economy-package-ranker')
 sys.path.insert(0, os.path.join(GNN_ECON_SELECTOR_ROOT, 'src'))
 
 from src.rl.config import DEVICE

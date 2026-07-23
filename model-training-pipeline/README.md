@@ -4,7 +4,7 @@
 > limitation" below) has since been driven from 33,857 down to **29,564**,
 > via a completely different technique family (real-packer-evaluated local
 > search, not model training) — see
-> [`gnn_economy_selector/README.md`](../gnn_economy_selector/README.md) for
+> [`economy-package-ranker/README.md`](../economy-package-ranker/README.md) for
 > the full story. Short version: RL/GRPO hit a structural ceiling around
 > 30,608-30,672 because
 > it's a smooth (gradient-based) optimizer fighting a jaggy, discrete cost
@@ -32,7 +32,7 @@ saw K as an input at all. See `NOTES.md` and `results/GA_pipeline_report.pdf`
 ## Repository layout
 
 ```
-ga_cargo_packing/
+model-training-pipeline/
 ├── src/
 │   ├── ga/            — Genetic Algorithm solver, pipeline, labeller
 │   ├── il/             — IL Transformer: model, training loop, data pipeline (K-blind by design)
@@ -51,7 +51,7 @@ ga_cargo_packing/
 │   ├── beam_search_economy.py   — [session 4] local beam search over Economy
 │   │                               package ORDER, real packer as evaluator
 │   ├── beam_search_guided.py    — [session 4] same, but candidate swaps are
-│   │                               pre-screened by gnn_economy_selector's
+│   │                               pre-screened by economy-package-ranker's
 │   │                               SwapProposer (pairwise ranking model)
 │   ├── knapsack_search_economy.py — [session 4] local beam search directly
 │   │                               over the package -> ULD ASSIGNMENT
@@ -133,7 +133,7 @@ eval/verify_pipeline.py   Asserts: every Priority packed, no overlaps,
 ## Usage
 
 ```bash
-cd ga_cargo_packing
+cd model-training-pipeline
 
 # 1. Precompute GA labels (parallel across CPU cores -- this is the slow step)
 python scripts/precompute_ga_cache.py --data-root ~/Desktop/good_data --out cache/ga_cache.pkl
