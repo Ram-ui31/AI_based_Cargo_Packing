@@ -24,6 +24,15 @@ from fastapi import FastAPI, UploadFile, File, Form, HTTPException
 from fastapi.responses import FileResponse, JSONResponse
 from fastapi.staticfiles import StaticFiles
 
+# On constrained/throttled hosts (e.g. a free-tier container), torch's default
+# thread count follows the host's *reported* CPU count, which can be far more
+# than the CPU share actually granted -- causing thread contention on top of
+# the throttling. Only acts if TORCH_NUM_THREADS is explicitly set (e.g. in
+# Render's dashboard), so local dev behavior is completely unchanged.
+if os.environ.get('TORCH_NUM_THREADS'):
+    import torch
+    torch.set_num_threads(int(os.environ['TORCH_NUM_THREADS']))
+
 HERE = os.path.dirname(os.path.abspath(__file__))
 REPO_ROOT = os.path.join(HERE, '..', '..')  # git/ -- parent of 06-website, sibling of 01-cherry etc.
 BUNDLED_MODELS_DIR = os.path.join(HERE, '..', 'models')  # self-contained copies, used when deployed standalone
