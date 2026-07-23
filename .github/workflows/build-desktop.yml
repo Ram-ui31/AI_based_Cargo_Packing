@@ -47,6 +47,7 @@ jobs:
           if [ "${{ matrix.os }}" == "windows-latest" ]; then SEP=";"; fi
           pyinstaller launcher.py \
             --name ARGO \
+            --windowed \
             --paths ../backend \
             --add-data "../frontend${SEP}frontend" \
             --add-data "../backend/demo_data${SEP}demo_data" \
@@ -59,10 +60,16 @@ jobs:
             --hidden-import tqdm.auto \
             --noconfirm
 
+      # --windowed only changes macOS's output shape (produces a proper
+      # ARGO.app bundle, needed so Gatekeeper treats it as one unit instead
+      # of individually flagging every bundled library file); Windows/Linux
+      # keep the same dist/ARGO/ARGO(.exe) onedir layout as before.
       - name: Smoke test -- confirm the built app actually starts and serves the demo API
         run: |
           if [ "${{ matrix.os }}" == "windows-latest" ]; then
             ./dist/ARGO/ARGO.exe &
+          elif [ "${{ matrix.os }}" == "macos-latest" ]; then
+            ./dist/ARGO.app/Contents/MacOS/ARGO &
           else
             ./dist/ARGO/ARGO &
           fi
@@ -84,6 +91,8 @@ jobs:
           cd dist
           if [ "${{ matrix.os }}" == "windows-latest" ]; then
             powershell -Command "Compress-Archive -Path ARGO -DestinationPath ${{ matrix.artifact_name }}.zip"
+          elif [ "${{ matrix.os }}" == "macos-latest" ]; then
+            zip -r ${{ matrix.artifact_name }}.zip ARGO.app
           else
             zip -r ${{ matrix.artifact_name }}.zip ARGO
           fi

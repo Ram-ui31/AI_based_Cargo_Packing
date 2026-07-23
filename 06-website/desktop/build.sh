@@ -19,6 +19,7 @@ fi
 
 pyinstaller launcher.py \
   --name ARGO \
+  --windowed \
   --paths ../backend \
   --add-data "../frontend${SEP}frontend" \
   --add-data "../backend/demo_data${SEP}demo_data" \

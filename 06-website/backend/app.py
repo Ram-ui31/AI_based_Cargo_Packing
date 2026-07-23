@@ -39,17 +39,23 @@ FROZEN = getattr(sys, 'frozen', False)  # True inside a PyInstaller-built deskto
 
 if FROZEN:
     # Where frontend/, demo_data/, models/ (bundled as data, see desktop/build.sh)
-    # actually land depends on PyInstaller's build mode: --onefile extracts them
-    # to a temp dir at sys._MEIPASS; --onedir (what we use) puts them under an
-    # _internal/ folder next to the executable as of PyInstaller 6+, or directly
-    # beside it on older versions -- check all three so this isn't tied to one
-    # specific PyInstaller version/mode. No sibling 01-cherry/etc. ever exists in
-    # this layout, so MODEL_FOLDERS always resolves to the bundle either way.
+    # actually land depends on PyInstaller's build mode:
+    #   --onefile              -> extracted to a temp dir at sys._MEIPASS
+    #   --windowed on macOS    -> an AppName.app bundle, data under Contents/Resources/
+    #   --onedir (PyInstaller 6+, non-macOS) -> an _internal/ folder next to the executable
+    #   --onedir (older versions)            -> directly beside the executable
+    # Check all four so this isn't tied to one specific PyInstaller version/mode.
+    # No sibling 01-cherry/etc. ever exists in this layout, so MODEL_FOLDERS
+    # always resolves to the bundle either way.
+    _exe_dir = os.path.dirname(sys.executable)
+    _resources = os.path.join(os.path.dirname(_exe_dir), 'Resources')
     if hasattr(sys, '_MEIPASS'):
         _BASE = sys._MEIPASS
+    elif os.path.basename(_exe_dir) == 'MacOS' and os.path.isdir(_resources):
+        _BASE = _resources  # inside a .app bundle: Contents/MacOS/<exe>, data in Contents/Resources/
     else:
-        _internal = os.path.join(os.path.dirname(sys.executable), '_internal')
-        _BASE = _internal if os.path.isdir(_internal) else os.path.dirname(sys.executable)
+        _internal = os.path.join(_exe_dir, '_internal')
+        _BASE = _internal if os.path.isdir(_internal) else _exe_dir
     REPO_ROOT = _BASE
     BUNDLED_MODELS_DIR = os.path.join(_BASE, 'models')
     FRONTEND_DIR = os.path.join(_BASE, 'frontend')
