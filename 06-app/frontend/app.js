@@ -105,15 +105,24 @@
   let demoViewer = null;
   let demoData = null;
 
+  // Plain static JSON files (demo_data/), no backend required -- works
+  // identically whether served by backend/app.py, the desktop app's bundled
+  // server, or a fully static host (GitHub Pages, Cloudflare Pages, etc).
   async function loadDemo(model) {
     const panel = document.getElementById('demo-side-panel');
     panel.innerHTML = '<h3>Loading…</h3>';
-    const res = await fetch(`/api/demo/${model}`);
-    if (!res.ok) {
-      panel.innerHTML = `<h3>Error</h3><p>${await res.text()}</p>`;
+    try {
+      const [metrics, placements, ulds, packages] = await Promise.all([
+        fetch(`demo_data/${model}/final_metrics.json`).then((r) => { if (!r.ok) throw new Error(`${r.status} ${r.statusText}`); return r.json(); }),
+        fetch(`demo_data/${model}/final_placements.json`).then((r) => { if (!r.ok) throw new Error(`${r.status} ${r.statusText}`); return r.json(); }),
+        fetch('demo_data/ulds.json').then((r) => { if (!r.ok) throw new Error(`${r.status} ${r.statusText}`); return r.json(); }),
+        fetch('demo_data/packages.json').then((r) => { if (!r.ok) throw new Error(`${r.status} ${r.statusText}`); return r.json(); }),
+      ]);
+      demoData = { metrics, placements, ulds, packages };
+    } catch (err) {
+      panel.innerHTML = `<h3>Error</h3><p>${err.message}</p>`;
       return;
     }
-    demoData = await res.json();
     if (!demoViewer) {
       demoViewer = ArgoViewer.mount(document.getElementById('demo-canvas-wrap'));
       demoViewer.onPackageSelect((info) => showPackageInfoBox('demo-canvas-wrap', info));

@@ -1,8 +1,9 @@
 """
 ARGO web app backend -- FastAPI server that:
-  - serves the frontend (static HTML/CSS/JS + images)
-  - serves precomputed demo results (real 400-package benchmark instance,
-    one result per model, precomputed by demo_data/precompute_demo.py)
+  - serves the frontend (static HTML/CSS/JS + images + the demo_data/ used by
+    "Get a demo", which the frontend fetches directly as plain static JSON --
+    no route needed for that; this backend's only real job beyond static
+    serving is the live-pack path below, used by the desktop app build)
   - accepts a user-uploaded CSV instance file + model choice, actually runs
     that model's real run_cherry.py / run_eclipse.py / run_halley.py logic
     (imported directly, not shelled out to), tracking progress in-memory
@@ -12,17 +13,14 @@ ARGO web app backend -- FastAPI server that:
 Run with: python3 app.py   (then open http://localhost:8000)
 """
 from __future__ import annotations
-import json
 import os
 import sys
 import tempfile
 import threading
-import time
 import traceback
 import uuid
 
 from fastapi import FastAPI, UploadFile, File, Form, HTTPException
-from fastapi.responses import FileResponse, JSONResponse
 from fastapi.staticfiles import StaticFiles
 
 # On constrained/throttled hosts (e.g. a free-tier container), torch's default
@@ -59,16 +57,14 @@ if FROZEN:
     REPO_ROOT = _BASE
     BUNDLED_MODELS_DIR = os.path.join(_BASE, 'models')
     FRONTEND_DIR = os.path.join(_BASE, 'frontend')
-    DEMO_DATA_DIR = os.path.join(_BASE, 'demo_data')
     # writes go to the OS temp dir, not next to the app bundle, since the
     # install location (Program Files, /Applications, ...) may not be writable
     UPLOAD_DIR = os.path.join(tempfile.gettempdir(), 'argo_uploads')
 else:
     HERE = os.path.dirname(os.path.abspath(__file__))
-    REPO_ROOT = os.path.join(HERE, '..', '..')  # git/ -- parent of 06-website, sibling of 01-cherry etc.
+    REPO_ROOT = os.path.join(HERE, '..', '..')  # git/ -- parent of 06-app, sibling of 01-cherry etc.
     BUNDLED_MODELS_DIR = os.path.join(HERE, '..', 'models')  # self-contained copies, used when deployed standalone
     FRONTEND_DIR = os.path.join(HERE, '..', 'frontend')
-    DEMO_DATA_DIR = os.path.join(HERE, 'demo_data')
     UPLOAD_DIR = os.path.join(HERE, 'uploads')
 
 os.makedirs(UPLOAD_DIR, exist_ok=True)
@@ -76,7 +72,7 @@ os.makedirs(UPLOAD_DIR, exist_ok=True)
 
 def _resolve_model_folder(sibling_name):
     """Prefers the live sibling folder (01-cherry/02-eclipse/03-halley next to
-    06-website) used during local development, and falls back to the
+    06-app) used during local development, and falls back to the
     self-contained models/ bundle -- used when this app is deployed on its
     own (e.g. a Hugging Face Space), where the sibling repos don't exist."""
     sibling = os.path.join(REPO_ROOT, sibling_name)
@@ -166,27 +162,6 @@ def _run_job(job_id, model, input_path, search_rounds):
 
 
 app = FastAPI(title='ARGO')
-
-
-@app.get('/api/demo/{model}')
-def get_demo(model: str):
-    if model not in MODEL_FOLDERS:
-        raise HTTPException(404, 'unknown model')
-    metrics_path = os.path.join(DEMO_DATA_DIR, model, 'final_metrics.json')
-    placements_path = os.path.join(DEMO_DATA_DIR, model, 'final_placements.json')
-    uld_path = os.path.join(DEMO_DATA_DIR, 'ulds.json')
-    packages_path = os.path.join(DEMO_DATA_DIR, 'packages.json')
-    if not os.path.exists(metrics_path):
-        raise HTTPException(503, 'demo results not precomputed yet -- run backend/demo_data/precompute_demo.py')
-    with open(metrics_path) as f:
-        metrics = json.load(f)
-    with open(placements_path) as f:
-        placements = json.load(f)
-    with open(uld_path) as f:
-        ulds = json.load(f)
-    with open(packages_path) as f:
-        packages = json.load(f)
-    return {'metrics': metrics, 'placements': placements, 'ulds': ulds, 'packages': packages}
 
 
 @app.post('/api/pack')

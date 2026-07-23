@@ -7,10 +7,11 @@ Run from anywhere:
     python3 backend/demo_data/precompute_demo.py
 
 Writes {cherry,eclipse,halley}/final_metrics.json and final_placements.json
-next to this script. ulds.json and packages.json (shared across all 3
-models, since it's the same instance) are derived from demo_instance.csv
-and only need to be regenerated if the instance itself changes -- this
-script leaves them alone.
+into ../../frontend/demo_data/ -- that's where the frontend fetches them
+from directly as plain static files (no backend route involved). ulds.json
+and packages.json there (shared across all 3 models, since it's the same
+instance) are derived from demo_instance.csv and only need to be
+regenerated if the instance itself changes -- this script leaves them alone.
 """
 from __future__ import annotations
 import importlib.util
@@ -19,8 +20,9 @@ import os
 import sys
 
 HERE = os.path.dirname(os.path.abspath(__file__))
-REPO_ROOT = os.path.join(HERE, '..', '..', '..')  # git/ -- parent of 06-website, sibling of 01-cherry etc.
+REPO_ROOT = os.path.join(HERE, '..', '..', '..')  # git/ -- parent of 06-app, sibling of 01-cherry etc.
 INSTANCE_CSV = os.path.join(HERE, 'demo_instance.csv')
+OUT_DIR = os.path.join(HERE, '..', '..', 'frontend', 'demo_data')
 
 MODEL_FOLDERS = {
     'cherry': os.path.join(REPO_ROOT, '01-cherry'),
@@ -59,7 +61,7 @@ def main():
 
         metrics, placements = run_fn(INSTANCE_CSV, device='cpu', search_rounds=10, progress_cb=progress_cb)
 
-        out_dir = os.path.join(HERE, model)
+        out_dir = os.path.join(OUT_DIR, model)
         os.makedirs(out_dir, exist_ok=True)
         with open(os.path.join(out_dir, 'final_metrics.json'), 'w') as f:
             json.dump(metrics, f, indent=2)

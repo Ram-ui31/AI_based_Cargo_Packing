@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 # Builds the ARGO desktop app for the current OS using PyInstaller.
-# Run from anywhere; output lands in 06-website/desktop/dist/ARGO/.
+# Run from anywhere; output lands in 06-app/desktop/dist/ARGO/.
 #
 # NOTE: PyInstaller is NOT cross-platform -- this must be run ON each target
 # OS (macOS build on macOS, Windows build on Windows, etc).
@@ -22,7 +22,6 @@ pyinstaller launcher.py \
   --windowed \
   --paths ../backend \
   --add-data "../frontend${SEP}frontend" \
-  --add-data "../backend/demo_data${SEP}demo_data" \
   --add-data "../models${SEP}models" \
   --hidden-import uvicorn.logging \
   --hidden-import uvicorn.loops.asyncio \

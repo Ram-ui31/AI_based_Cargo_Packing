@@ -7,7 +7,7 @@ user's default browser. No server, no install, no terminal commands -- the
 user just double-clicks the built app.
 
 Run directly with `python3 desktop/launcher.py` to test unfrozen (uses the
-regular 06-website/ layout); once frozen by PyInstaller (see build.sh, which
+regular 06-app/ layout); once frozen by PyInstaller (see build.sh, which
 passes --paths so PyInstaller's analyzer can find and bundle app.py's actual
 code), backend/app.py detects sys.frozen and reads frontend/, demo_data/,
 models/ from next to the built executable instead.
