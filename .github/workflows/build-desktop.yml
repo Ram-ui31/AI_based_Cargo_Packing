@@ -6,6 +6,9 @@ name: Build ARGO desktop app
 on:
   workflow_dispatch:
 
+permissions:
+  contents: write   # needed to publish the Release in the second job
+
 jobs:
   build:
     strategy:
@@ -76,8 +79,46 @@ jobs:
           kill $APP_PID 2>/dev/null || true
           exit 1
 
+      - name: Zip into a single downloadable file
+        run: |
+          cd dist
+          if [ "${{ matrix.os }}" == "windows-latest" ]; then
+            powershell -Command "Compress-Archive -Path ARGO -DestinationPath ${{ matrix.artifact_name }}.zip"
+          else
+            zip -r ${{ matrix.artifact_name }}.zip ARGO
+          fi
+
       - uses: actions/upload-artifact@v4
         with:
           name: ${{ matrix.artifact_name }}
-          path: 06-website/desktop/dist/ARGO/
+          path: 06-website/desktop/dist/${{ matrix.artifact_name }}.zip
           retention-days: 30
+
+  # Publishes one clean, public Release page with all 3 zips attached --
+  # this (not the Actions run page above) is the link to actually hand to
+  # end users. No GitHub login needed to download from here, unlike
+  # Actions artifacts.
+  release:
+    needs: build
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/download-artifact@v4
+        with:
+          path: downloaded
+          merge-multiple: true
+
+      - name: Publish/update the "latest desktop build" Release
+        uses: softprops/action-gh-release@v2
+        with:
+          tag_name: desktop-latest
+          name: ARGO Desktop (latest build)
+          body: |
+            Download the file matching your computer, unzip it, and run the `ARGO` app inside (double-click on macOS/Windows).
+
+            - **macOS** -> `ARGO-macos.zip`
+            - **Windows** -> `ARGO-windows.zip`
+            - **Linux** -> `ARGO-linux.zip`
+
+            No install, no Python, no terminal needed -- it starts a local server and opens your browser automatically.
+          files: downloaded/*.zip
+          prerelease: true
