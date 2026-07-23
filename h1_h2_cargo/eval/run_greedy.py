@@ -11,11 +11,14 @@ from __future__ import annotations
 import argparse
 import csv
 import os
+import sys
 import time
 import traceback
 from concurrent.futures import ProcessPoolExecutor, as_completed
 from pathlib import Path
 from typing import Dict, List, Optional
+
+sys.path.insert(0, os.path.join(os.path.dirname(os.path.abspath(__file__)), '..', 'src'))
 
 from dataset_io import (
     ProblemInstance,
