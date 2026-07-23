@@ -24,7 +24,7 @@ jobs:
     runs-on: ${{ matrix.os }}
     defaults:
       run:
-        working-directory: 06-website/desktop
+        working-directory: 06-app/desktop
         shell: bash
 
     steps:
@@ -50,7 +50,6 @@ jobs:
             --windowed \
             --paths ../backend \
             --add-data "../frontend${SEP}frontend" \
-            --add-data "../backend/demo_data${SEP}demo_data" \
             --add-data "../models${SEP}models" \
             --hidden-import uvicorn.logging \
             --hidden-import uvicorn.loops.asyncio \
@@ -64,7 +63,7 @@ jobs:
       # ARGO.app bundle, needed so Gatekeeper treats it as one unit instead
       # of individually flagging every bundled library file); Windows/Linux
       # keep the same dist/ARGO/ARGO(.exe) onedir layout as before.
-      - name: Smoke test -- confirm the built app actually starts and serves the demo API
+      - name: Smoke test -- confirm the built app actually starts and serves the frontend + demo data
         run: |
           if [ "${{ matrix.os }}" == "windows-latest" ]; then
             ./dist/ARGO/ARGO.exe &
@@ -75,8 +74,8 @@ jobs:
           fi
           APP_PID=$!
           for i in $(seq 1 30); do
-            if curl -s -o /dev/null -w "%{http_code}" http://127.0.0.1:8000/api/demo/cherry | grep -q 200; then
-              echo "Server is up and demo endpoint responded correctly."
+            if curl -s -o /dev/null -w "%{http_code}" http://127.0.0.1:8000/demo_data/cherry/final_metrics.json | grep -q 200; then
+              echo "Server is up and demo data served correctly."
               kill $APP_PID
               exit 0
             fi
@@ -100,7 +99,7 @@ jobs:
       - uses: actions/upload-artifact@v4
         with:
           name: ${{ matrix.artifact_name }}
-          path: 06-website/desktop/dist/${{ matrix.artifact_name }}.zip
+          path: 06-app/desktop/dist/${{ matrix.artifact_name }}.zip
           retention-days: 30
 
   # Publishes one clean, public Release page with all 3 zips attached --
