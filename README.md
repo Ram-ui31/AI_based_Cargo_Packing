@@ -120,8 +120,9 @@ separately from source.
    the same 20 held-out synthetic instances used above — well behind
    Cherry's 9,499 — and, because it has no concept of a hard Priority
    constraint, dropped at least one Priority package in **17 of the 20
-   instances** (203 Priority packages dropped in total). PackMan/DQN was
-   evaluated on the real 400-package instance only, scoring 38,898.
+   instances** (203 Priority packages dropped in total). PackMan/DQN
+   scored 38,898 on the real instance and averaged **15,860** on the same
+   20-instance sweep, essentially tied with Online-3D-BPP-DRL.
    Every model in this repository dropped **zero** Priority packages, in
    every instance, at every K. Full external-RL and classical-heuristic
    comparisons (with citations) are in [`04-benchmark/`](04-benchmark/);

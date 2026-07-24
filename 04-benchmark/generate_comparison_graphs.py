@@ -10,9 +10,7 @@ Two charts, matching this project's established visual style (matplotlib,
 white background, bold value labels, recessive gridlines):
   1. Real 400-package instance cost (all 6 methods).
   2. Grand-average cost across the same 20 held-out synthetic instances
-     (5 methods -- PackMan/DQN was only run on the real instance, not the
-     20-instance sweep, so it's excluded here rather than shown with a
-     misleading placeholder).
+     (all 6 methods).
 """
 import json
 import os
@@ -45,14 +43,16 @@ real_costs = [
     28409,   # Cherry, final result after centrifuge-evict refinement
 ]
 
-# Grand-average chart: 5 methods -- PackMan/DQN has no 20-instance sweep result.
+# Grand-average chart: all 6 methods.
 GRAND_LABELS = ['FFD\n(literature)', 'LAFF\n(literature)', 'BFD\n(literature)',
-                'Online-3D-BPP-DRL\n(external RL)', 'Cherry\n(ours, best)']
-GRAND_COLORS = ['#c9a86a', '#b98b52', '#a66f3b', '#8C8C8C', '#4c8bf5']
+                'PackMan/DQN\n(external RL)', 'Online-3D-BPP-DRL\n(external RL)',
+                'Cherry\n(ours, best)']
+GRAND_COLORS = ['#c9a86a', '#b98b52', '#a66f3b', '#6f7d91', '#8C8C8C', '#4c8bf5']
 grand_avgs = [
     summary['ffd']['sweep_20_instance']['grand_avg'],
     summary['laff']['sweep_20_instance']['grand_avg'],
     summary['bfd']['sweep_20_instance']['grand_avg'],
+    15860,     # PackMan/DQN (Verma et al. 2020), 20-instance sweep, run independently by a teammate
     15535.15,  # Online-3D-BPP-DRL, ~/Desktop/online-3d-bpp-benchmark/online_bpp_20instance_results.json
     9498.8,    # Cherry, cargoism/git/01-cherry/results/three_model_k_sweep.json
 ]
@@ -82,7 +82,7 @@ bar_chart(REAL_LABELS, REAL_COLORS, real_costs,
           'Total packing cost', '01_real_instance_comparison.png')
 
 bar_chart(GRAND_LABELS, GRAND_COLORS, grand_avgs,
-          'Grand-average cost across 20 held-out synthetic instances\n(same instances, same K sweep, for all 5 methods)',
+          'Grand-average cost across 20 held-out synthetic instances\n(same instances, same K sweep, for all 6 methods)',
           'Average total packing cost\n(mean of the 5 per-K averages)', '02_grand_average_comparison.png')
 
 # Individual per-model versions (grand-average only), swapping Cherry's slot

@@ -55,14 +55,13 @@ heuristics vs. external RL vs. our best result.
 | FFD (literature) | 43,139 | 17,865 |
 | LAFF (literature) | 43,639 | 17,699 |
 | BFD (literature) | 43,100 | 18,844 |
-| PackMan/DQN (Verma et al. 2020, external RL) | 38,898 | *not run on the 20-instance sweep* |
+| PackMan/DQN (Verma et al. 2020, external RL) | 38,898 | 15,860 |
 | Online-3D-BPP-DRL (Zhao et al. 2021, external RL) | 35,676 | 15,535 |
 | **Cherry (ours, best)** | **28,409** | **9,499** |
 
-PackMan/DQN was trained and evaluated independently by a teammate on the
-real 400-package instance only, so it's shown in the real-instance
-comparison (and chart) but omitted from the grand-average chart rather
-than filled in with a misleading placeholder.
+PackMan/DQN was trained and evaluated independently by a teammate, on
+both the real 400-package instance and the same 20-instance grand-average
+sweep used throughout this project.
 
 All three classical heuristics land in the same tight band (~17,700–18,850
 grand average) — a good illustration that "which classical heuristic" is a
