@@ -159,7 +159,7 @@ differently-shaped supervised model.
 
 ## Architecture
 
-![Detailed flowchart](flowcharts/detailed_flowchart.png)
+![Detailed flowchart](flowcharts/cherry_detailed.png)
 
 ```
 01-cherry/

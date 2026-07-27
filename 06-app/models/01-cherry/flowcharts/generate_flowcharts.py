@@ -63,7 +63,7 @@ def overview_flowchart():
         ('Priority packing\n(exhaustive, guaranteed placement)', COLOR_HEURISTIC),
         ('Economy package search\n(local search over ordering / assignment)', COLOR_HEURISTIC),
         ('Hybrid 3D packer\n(AI placement model + heuristics,\nbest-of-N per container)', COLOR_HYBRID),
-        ('Cherry: AI-guided evict-centrifuge\nrefinement (CentrifugeEvictProposer\nranks candidates, top-K real-verified)', COLOR_AI),
+        ('Cherry: AI-guided evict-centrifuge\nrefinement (EvictRefillRanker\nranks candidates, top-K real-verified)', COLOR_AI),
         ('Final packing solution', COLOR_OUTPUT),
     ]
     h = 1.4
@@ -143,7 +143,7 @@ def detailed_flowchart():
     # Stage 5: Cherry -- AI-guided evict-centrifuge refinement (applied after
     # local search plateaus, on the search's best solution)
     box(ax, (4.5, 3.0), 7, 1.3,
-        'Cherry: CentrifugeEvictProposer-guided refinement\n'
+        'Cherry: EvictRefillRanker-guided refinement\n'
         'evict -> compact -> refill, model ranks all candidates,\n'
         'only top-K real-verified (compact+refill), apply if profitable',
         COLOR_AI, fontsize=8.5)
@@ -156,7 +156,7 @@ def detailed_flowchart():
     box(ax, (5.5, 0.6), 5, 1.3, 'Final packing solution', COLOR_OUTPUT, fontsize=10)
 
     fig.tight_layout()
-    fig.savefig(os.path.join(HERE, 'detailed_flowchart.png'), dpi=150)
+    fig.savefig(os.path.join(HERE, 'cherry_detailed.png'), dpi=150)
     plt.close(fig)
 
 
