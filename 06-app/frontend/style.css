@@ -272,6 +272,26 @@ select {
   margin: 0 auto 26px;
 }
 
+.live-callout {
+  background: rgba(232, 201, 106, 0.08);
+  border: 1px solid rgba(232, 201, 106, 0.35);
+  border-radius: 10px;
+  padding: 16px 18px;
+  margin-bottom: 22px;
+  text-align: left;
+}
+
+.live-callout-text {
+  color: var(--ink);
+  font-size: 13px;
+  line-height: 1.45;
+  margin-bottom: 10px;
+}
+
+.live-callout-text strong {
+  color: var(--gold-bright);
+}
+
 .download-cards {
   display: flex;
   gap: 14px;
@@ -390,6 +410,112 @@ select {
   color: var(--gold-bright);
   font-size: 16px;
   letter-spacing: 0.04em;
+}
+
+.mode-tabs {
+  display: flex;
+  gap: 4px;
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(203, 180, 144, 0.25);
+  border-radius: 20px;
+  padding: 3px;
+}
+
+.mode-tab {
+  border: none;
+  background: transparent;
+  color: var(--tan);
+  padding: 7px 14px;
+  border-radius: 16px;
+  font-size: 12.5px;
+  cursor: pointer;
+  letter-spacing: 0.02em;
+}
+
+.mode-tab.active {
+  background: linear-gradient(180deg, var(--gold-bright), var(--gold));
+  color: #1a1300;
+  font-weight: 600;
+}
+
+.upload-panel {
+  position: absolute;
+  left: 32px;
+  top: 90px;
+  width: 320px;
+  background: var(--panel-bg);
+  border: 1px solid rgba(203, 180, 144, 0.25);
+  border-radius: 12px;
+  padding: 20px;
+  z-index: 3;
+}
+
+.upload-panel h3 {
+  margin: 0 0 8px;
+  color: var(--gold-bright);
+  font-size: 16px;
+}
+
+.upload-sub {
+  color: var(--ink);
+  font-size: 12.5px;
+  line-height: 1.45;
+  margin: 0 0 14px;
+}
+
+.upload-panel .field-group {
+  margin-bottom: 12px;
+}
+
+.upload-panel input[type="file"] {
+  display: block;
+  width: 100%;
+  color: var(--tan);
+  font-size: 12px;
+  margin-bottom: 14px;
+}
+
+.upload-panel .docs-btn-primary {
+  width: 100%;
+  text-align: center;
+}
+
+.upload-panel .docs-btn-primary:disabled {
+  opacity: 0.4;
+  cursor: not-allowed;
+  box-shadow: none;
+}
+
+.upload-progress {
+  margin-top: 14px;
+}
+
+.upload-progress-bar-track {
+  height: 6px;
+  background: rgba(255, 255, 255, 0.08);
+  border-radius: 3px;
+  overflow: hidden;
+}
+
+.upload-progress-bar-fill {
+  height: 100%;
+  width: 0%;
+  background: linear-gradient(90deg, var(--gold), var(--gold-bright));
+  transition: width 0.3s ease;
+}
+
+.upload-progress-msg {
+  margin-top: 6px;
+  font-size: 12px;
+  color: var(--tan);
+}
+
+.upload-note {
+  margin-top: 14px;
+  font-size: 11px;
+  color: var(--tan);
+  line-height: 1.4;
+  opacity: 0.85;
 }
 
 .metric-row {

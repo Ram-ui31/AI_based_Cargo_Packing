@@ -1,7 +1,16 @@
 /* ARGO frontend -- single-page app: navigation between sections, the
-   "Get a demo" precomputed viewer, and "Use our product" which points
-   visitors at the downloadable desktop app (runs the real models locally,
-   on their own hardware -- no live backend needed for this). */
+   "Get a demo" precomputed viewer, "Run your own CSV" (a live backend call,
+   for judges/visitors who don't want to download the desktop app), and
+   "Use our product" which points visitors at the downloadable desktop app. */
+
+// Base URL for the live-pack API (/api/pack, /api/status). Empty string
+// means same-origin, which is correct when this frontend is served BY that
+// same backend (the desktop app's bundled server, or the backend deployed
+// on its own e.g. a Hugging Face Space). When this frontend is instead
+// served statically from a different origin (e.g. GitHub Pages), point this
+// at the deployed backend's absolute URL so the cross-origin fetch calls
+// below resolve correctly (the backend enables CORS for this).
+const ARGO_API_BASE = window.ARGO_API_BASE || '';
 
 (function () {
   const pages = document.querySelectorAll('.page');
@@ -16,9 +25,13 @@
   document.getElementById('hs-about').addEventListener('click', () => showPage('page-about'));
   document.getElementById('hs-demo').addEventListener('click', () => {
     showPage('page-demo-viz');
-    loadDemo(document.getElementById('demo-model-select').value);
+    setMode('sample');
   });
   document.getElementById('hs-product').addEventListener('click', () => showPage('page-download'));
+  document.getElementById('btn-try-live').addEventListener('click', () => {
+    showPage('page-demo-viz');
+    setMode('upload');
+  });
 
   // ---------------------------------------------------------------------
   // Use Our Product -- highlight the download card matching the visitor's OS
@@ -133,6 +146,115 @@
 
   document.getElementById('demo-model-select').addEventListener('change', (e) => {
     loadDemo(e.target.value);
+  });
+
+  // ---------------------------------------------------------------------
+  // Run your own CSV -- live call to the deployed backend's /api/pack,
+  // polling /api/status until done, then reusing the same viewer + side
+  // panel as the precomputed demo (identical result shape).
+  // ---------------------------------------------------------------------
+  const MAX_UPLOAD_BYTES = 2 * 1024 * 1024; // 2 MB
+  let uploadFile = null;
+  let uploadPollTimer = null;
+
+  function setMode(mode) {
+    document.getElementById('mode-tab-sample').classList.toggle('active', mode === 'sample');
+    document.getElementById('mode-tab-upload').classList.toggle('active', mode === 'upload');
+    document.getElementById('demo-model-group').style.display = mode === 'sample' ? '' : 'none';
+    document.getElementById('upload-panel').style.display = mode === 'upload' ? '' : 'none';
+    document.getElementById('demo-brand').textContent = mode === 'sample'
+      ? 'ARGO · Demo (400-package benchmark instance)'
+      : 'ARGO · Run your own CSV';
+    if (mode === 'sample') {
+      if (uploadPollTimer) { clearInterval(uploadPollTimer); uploadPollTimer = null; }
+      loadDemo(document.getElementById('demo-model-select').value);
+    } else {
+      const panel = document.getElementById('demo-side-panel');
+      panel.innerHTML = '';
+      if (demoViewer) demoViewer.dispose();
+      demoViewer = null;
+    }
+  }
+  document.getElementById('mode-tab-sample').addEventListener('click', () => setMode('sample'));
+  document.getElementById('mode-tab-upload').addEventListener('click', () => setMode('upload'));
+
+  const fileInput = document.getElementById('upload-file-input');
+  const runBtn = document.getElementById('upload-run-btn');
+  fileInput.addEventListener('change', () => {
+    const f = fileInput.files[0];
+    if (f && f.size > MAX_UPLOAD_BYTES) {
+      alert(`File too large (${(f.size / 1024 / 1024).toFixed(1)} MB) -- max is 2 MB.`);
+      fileInput.value = '';
+      uploadFile = null;
+      runBtn.disabled = true;
+      return;
+    }
+    uploadFile = f || null;
+    runBtn.disabled = !uploadFile;
+  });
+
+  function setUploadProgress(pct, message) {
+    const box = document.getElementById('upload-progress');
+    box.style.display = '';
+    document.getElementById('upload-progress-fill').style.width = `${pct}%`;
+    document.getElementById('upload-progress-msg').textContent = message || '';
+  }
+
+  runBtn.addEventListener('click', async () => {
+    if (!uploadFile) return;
+    runBtn.disabled = true;
+    fileInput.disabled = true;
+    setUploadProgress(2, 'Uploading...');
+    const model = document.getElementById('upload-model-select').value;
+    const form = new FormData();
+    form.append('model', model);
+    form.append('file', uploadFile);
+    let jobId;
+    try {
+      const res = await fetch(`${ARGO_API_BASE}/api/pack`, { method: 'POST', body: form });
+      if (!res.ok) throw new Error(`${res.status} ${res.statusText}`);
+      ({ job_id: jobId } = await res.json());
+    } catch (err) {
+      setUploadProgress(0, `Error: ${err.message}`);
+      runBtn.disabled = false;
+      fileInput.disabled = false;
+      return;
+    }
+
+    uploadPollTimer = setInterval(async () => {
+      let job;
+      try {
+        const res = await fetch(`${ARGO_API_BASE}/api/status/${jobId}`);
+        if (!res.ok) throw new Error(`${res.status} ${res.statusText}`);
+        job = await res.json();
+      } catch (err) {
+        clearInterval(uploadPollTimer);
+        uploadPollTimer = null;
+        setUploadProgress(0, `Error: ${err.message}`);
+        runBtn.disabled = false;
+        fileInput.disabled = false;
+        return;
+      }
+      setUploadProgress(job.progress || 0, job.message || '');
+      if (job.status === 'done') {
+        clearInterval(uploadPollTimer);
+        uploadPollTimer = null;
+        runBtn.disabled = false;
+        fileInput.disabled = false;
+        const panel = document.getElementById('demo-side-panel');
+        if (!demoViewer) {
+          demoViewer = ArgoViewer.mount(document.getElementById('demo-canvas-wrap'));
+          demoViewer.onPackageSelect((info) => showPackageInfoBox('demo-canvas-wrap', info));
+        }
+        demoViewer.renderData(job.result);
+        renderSidePanel(panel, job.result, model, demoViewer);
+      } else if (job.status === 'error') {
+        clearInterval(uploadPollTimer);
+        uploadPollTimer = null;
+        runBtn.disabled = false;
+        fileInput.disabled = false;
+      }
+    }, 1500);
   });
 
   // ---------------------------------------------------------------------

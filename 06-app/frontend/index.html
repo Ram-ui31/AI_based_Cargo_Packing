@@ -5,6 +5,17 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>ARGO</title>
 <link rel="stylesheet" href="style.css">
+<script>
+  // Live-pack backend for "Run your own CSV". Only override when this page
+  // is genuinely served from GitHub Pages (a different origin than the
+  // backend) -- when served BY the backend itself (desktop app's bundled
+  // server, or visiting the Cloud Run URL directly), same-origin relative
+  // paths already work and must NOT be redirected out to the cloud (the
+  // desktop app should always hit its own local backend, not the internet).
+  if (location.hostname.endsWith('github.io')) {
+    window.ARGO_API_BASE = 'https://argo-backend-1048724207847.us-central1.run.app';
+  }
+</script>
 </head>
 <body>
 <svg width="0" height="0" style="position:absolute" aria-hidden="true">
@@ -65,14 +76,18 @@
     </div>
   </section>
 
-  <!-- 4. Get a Demo (precomputed 3D viz) -->
+  <!-- 4. Get a Demo (precomputed 3D viz, or run your own CSV live) -->
   <section class="page viz-page" id="page-demo-viz">
     <div class="home-link" data-goto="page-landing">&larr; Home</div>
     <div class="viz-canvas-wrap" id="demo-canvas-wrap"></div>
     <div class="viz-topbar">
-      <div class="brand">ARGO &middot; Demo (400-package benchmark instance)</div>
+      <div class="brand" id="demo-brand">ARGO &middot; Demo (400-package benchmark instance)</div>
       <div class="viz-controls">
-        <div class="field-group">
+        <div class="mode-tabs">
+          <button class="mode-tab active" id="mode-tab-sample" data-mode="sample">Sample instance</button>
+          <button class="mode-tab" id="mode-tab-upload" data-mode="upload">Run your own CSV</button>
+        </div>
+        <div class="field-group" id="demo-model-group">
           <label>Model</label>
           <select id="demo-model-select">
             <option value="cherry">Cherry</option>
@@ -83,6 +98,27 @@
         <button class="doc-link doc-link-inline" data-goto="page-docs">Documentation</button>
       </div>
     </div>
+
+    <div class="upload-panel" id="upload-panel" style="display:none;">
+      <h3>Run ARGO on your own instance</h3>
+      <p class="upload-sub">Upload a CSV in the same format as the competition instance (ULDs and packages) and this page will run the real model live, no download required.</p>
+      <div class="field-group">
+        <label>Model</label>
+        <select id="upload-model-select">
+          <option value="cherry">Cherry</option>
+          <option value="eclipse">Eclipse</option>
+          <option value="halley">Halley</option>
+        </select>
+      </div>
+      <input type="file" id="upload-file-input" accept=".csv">
+      <button class="docs-btn docs-btn-primary" id="upload-run-btn" disabled>Run</button>
+      <div class="upload-progress" id="upload-progress" style="display:none;">
+        <div class="upload-progress-bar-track"><div class="upload-progress-bar-fill" id="upload-progress-fill"></div></div>
+        <div class="upload-progress-msg" id="upload-progress-msg"></div>
+      </div>
+      <div class="upload-note">Files up to 2&nbsp;MB. A full run (best-of-5 ensemble + local search + refinement) can take 10-15 minutes for an instance around 400 packages -- this page polls real progress the whole way, it isn't frozen. Smaller instances finish faster.</div>
+    </div>
+
     <div class="viz-side-panel" id="demo-side-panel"></div>
     <div class="hint-text">Drag to rotate &middot; scroll to zoom</div>
   </section>
@@ -94,6 +130,11 @@
     <div class="download-panel">
       <h2>Get ARGO for your computer</h2>
       <p class="download-sub">Download once, then just open it -- no install, no Python, no server. It runs entirely on your own computer, using your own hardware's full speed.</p>
+
+      <div class="live-callout">
+        <div class="live-callout-text"><strong>Judging on someone else's machine, or want to skip the security prompt entirely?</strong> Run any model on your own CSV directly in the browser -- no download, nothing to approve.</div>
+        <button class="docs-btn docs-btn-primary" id="btn-try-live">Try it live in your browser</button>
+      </div>
 
       <div class="download-cards">
         <a class="download-card" id="dl-mac" href="https://github.com/Ram-ui31/AI_based_Cargo_Packing/releases/download/desktop-latest/ARGO-macos.zip">

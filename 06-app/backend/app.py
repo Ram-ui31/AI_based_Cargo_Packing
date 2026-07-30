@@ -21,7 +21,13 @@ import traceback
 import uuid
 
 from fastapi import FastAPI, UploadFile, File, Form, HTTPException
+from fastapi.middleware.cors import CORSMiddleware
 from fastapi.staticfiles import StaticFiles
+
+# Uploads are capped well above any realistic instance CSV (the real
+# 400-package competition instance is under 50KB) -- this exists purely to
+# stop a public, unauthenticated endpoint from being handed something huge.
+MAX_UPLOAD_BYTES = 2 * 1024 * 1024  # 2 MB
 
 # On constrained/throttled hosts (e.g. a free-tier container), torch's default
 # thread count follows the host's *reported* CPU count, which can be far more
@@ -163,15 +169,30 @@ def _run_job(job_id, model, input_path, search_rounds):
 
 app = FastAPI(title='ARGO')
 
+# This endpoint is meant to be called from the statically-hosted frontend
+# (e.g. GitHub Pages), a different origin than wherever this backend itself
+# ends up deployed -- allow any origin, since the endpoint takes no
+# credentials and does nothing but run a public demo model on an uploaded
+# CSV (no auth, no user data stored beyond the job's own temp file).
+app.add_middleware(
+    CORSMiddleware,
+    allow_origins=['*'],
+    allow_methods=['*'],
+    allow_headers=['*'],
+)
+
 
 @app.post('/api/pack')
 async def pack(model: str = Form(...), search_rounds: int = Form(10), file: UploadFile = File(...)):
     if model not in MODEL_FOLDERS:
         raise HTTPException(404, 'unknown model')
+    contents = await file.read()
+    if len(contents) > MAX_UPLOAD_BYTES:
+        raise HTTPException(413, f'file too large (max {MAX_UPLOAD_BYTES // 1024 // 1024} MB)')
     job_id = str(uuid.uuid4())
     input_path = os.path.join(UPLOAD_DIR, f'{job_id}.csv')
     with open(input_path, 'wb') as f:
-        f.write(await file.read())
+        f.write(contents)
 
     with JOBS_LOCK:
         JOBS[job_id] = {'status': 'queued', 'progress': 0, 'message': 'Queued...', 'result': None}
