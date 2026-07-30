@@ -598,6 +598,16 @@ select {
   color: var(--tan);
 }
 
+.demo-budget-note {
+  margin-top: 8px;
+  padding-top: 8px;
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
+  font-size: 11px;
+  line-height: 1.4;
+  color: var(--tan);
+  opacity: 0.85;
+}
+
 .legend {
   display: flex;
   gap: 16px;

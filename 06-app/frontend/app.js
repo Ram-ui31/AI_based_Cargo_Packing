@@ -304,6 +304,11 @@ const ARGO_API_BASE = window.ARGO_API_BASE || '';
       panel.appendChild(row);
     });
 
+    const budgetNote = document.createElement('div');
+    budgetNote.className = 'demo-budget-note';
+    budgetNote.textContent = 'Lighter demo search budget than the research-grade numbers in the report -- see Documentation for those.';
+    panel.appendChild(budgetNote);
+
     const legend = document.createElement('div');
     legend.className = 'legend';
     legend.innerHTML = `
