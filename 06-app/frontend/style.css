@@ -248,6 +248,8 @@ select {
   top: 50%;
   transform: translate(-50%, -50%);
   width: min(640px, 88%);
+  max-height: 90vh;
+  overflow-y: auto;
   background: var(--panel-bg);
   border: 1px solid rgba(203, 180, 144, 0.25);
   border-radius: 14px;
@@ -443,6 +445,8 @@ select {
   left: 32px;
   top: 90px;
   width: 320px;
+  max-height: calc(100vh - 120px);
+  overflow-y: auto;
   background: var(--panel-bg);
   border: 1px solid rgba(203, 180, 144, 0.25);
   border-radius: 12px;
