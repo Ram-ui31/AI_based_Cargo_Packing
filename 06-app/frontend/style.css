@@ -360,10 +360,12 @@ select {
 
 /* ---------- Result / demo 3D viz page ---------- */
 /* Photo backdrop for the "nothing rendered yet" shell (upload form,
-   loading, errors) -- darkened enough to keep text/controls legible. */
+   loading, errors) -- the upload/format panels already carry their own
+   solid backing, so this only needs a light touch to keep the top bar
+   text readable, not a heavy scrim over the whole photo. */
 .viz-page {
   background:
-    linear-gradient(rgba(2, 2, 1, 0.82), rgba(2, 2, 1, 0.82)),
+    linear-gradient(rgba(2, 2, 1, 0.25), rgba(2, 2, 1, 0.25)),
     url('assets/argo_back.png');
   background-size: cover;
   background-position: center;
