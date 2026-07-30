@@ -17,12 +17,13 @@ dropped (the baseline drops at least one Priority package in 17 of the
 
 | I want to... | Go to |
 |---|---|
+| **Try it right now, no download** — run any model on your own instance CSV live in the browser | **[ram-ui31.github.io/AI_based_Cargo_Packing](https://ram-ui31.github.io/AI_based_Cargo_Packing/)** → Get a demo → Run your own CSV |
 | See the final, best-performing system | [`01-cherry/`](01-cherry/) |
 | Understand the three model variants that were compared head-to-head | [`01-cherry/`](01-cherry/), [`02-eclipse/`](02-eclipse/), [`03-halley/`](03-halley/) |
 | See the research/development environment that produced them | [`model-training-pipeline/`](model-training-pipeline/), [`economy-package-ranker/`](economy-package-ranker/) |
 | See how the project evaluated against a published academic baseline | `online-3d-bpp-benchmark/` *(sibling folder alongside this repo, not itself part of it)* |
 | See how the project compares against classical heuristics and external RL baselines | [`04-benchmark/`](04-benchmark/) |
-| **Run Cherry/Eclipse/Halley on your own instance CSV** | [`05-run-instructions/`](05-run-instructions/) |
+| Run Cherry/Eclipse/Halley on your own instance CSV from source, or download the desktop app | [`05-run-instructions/`](05-run-instructions/) |
 | See the earlier project iterations that led here | [Project history](#project-history) below |
 
 ## The three final models
