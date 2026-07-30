@@ -1,10 +1,10 @@
 # Classical heuristic baselines — literature review, benchmarked independently
 
 Three classical heuristics standard in the 3D bin-packing literature,
-implemented independently and benchmarked against our own pipeline and two
-external RL baselines: *Online-3D-BPP-DRL* (Zhao et al., AAAI 2021) and
-*PackMan/DQN* (Verma et al. 2020), the latter trained and evaluated
-independently by a teammate.
+implemented independently and benchmarked against our own pipeline and
+three external RL baselines: *Online-3D-BPP-DRL* (Zhao et al., AAAI 2021),
+*PackMan/DQN* (Verma et al., 2020), and *PCT* (Zhao, Yu & Xu, ICLR 2022) --
+the latter two trained and evaluated independently by a teammate.
 
 - **FFD** (First-Fit Decreasing) — sort by decreasing *volume*, place in
   the first ULD (in given order) where it geometrically fits. "Traditional
@@ -56,21 +56,32 @@ heuristics vs. external RL vs. our best result.
 | LAFF (literature) | 43,639 | 17,699 |
 | BFD (literature) | 43,100 | 18,844 |
 | PackMan/DQN (Verma et al. 2020, external RL) | 38,898 | 15,860 |
+| PCT (Zhao, Yu & Xu, ICLR 2022, external RL) | 37,249 | 12,662 |
 | Online-3D-BPP-DRL (Zhao et al. 2021, external RL) | 35,676 | 15,535 |
 | **Cherry (ours, best)** | **28,409** | **9,499** |
 
-PackMan/DQN was trained and evaluated independently by a teammate, on
-both the real 400-package instance and the same 20-instance grand-average
-sweep used throughout this project.
+PackMan/DQN and PCT were each trained and evaluated independently by a
+teammate, on both the real 400-package instance and the same 20-instance
+grand-average sweep used throughout this project. All reported placements
+for both went through the same independent validity check used everywhere
+else in this project (zero pairwise 3D overlap, per-ULD weight/volume
+capacity respected, full Priority-package placement verified separately
+from the code that produced the placement).
 
 All three classical heuristics land in the same tight band (~17,700–18,850
 grand average) — a good illustration that "which classical heuristic" is a
 second-order choice compared to *whether the algorithm reasons about
 spread cost at all*. None of FFD/LAFF/BFD do; they're all worse than even
-both external RL baselines, neither of which optimizes for Priority
-clustering either. On the real instance all three used **4** Priority
-ULDs (vs. our 3), because none of them consider how many ULDs end up
-touched — just "does it fit here right now."
+all three external RL baselines, none of which optimizes for Priority
+clustering either. Of the three external RL baselines, PCT generalizes
+best (12,662 grand-average, clearly ahead of PackMan/DQN's 15,860 and
+Online-3D-BPP-DRL's 15,535) despite landing in the middle of the pack on
+the single real instance (37,249) -- another instance of the generalization
+caveat this project keeps running into: a single real-instance comparison
+alone is not a reliable predictor of grand-average ranking. On the real
+instance all three classical heuristics used **4** Priority ULDs (vs. our
+3), because none of them consider how many ULDs end up touched — just
+"does it fit here right now."
 
 Interestingly, LAFF (sort by face area) edges out FFD and BFD on the
 20-instance grand average despite BFD winning narrowly on the single real
@@ -114,3 +125,6 @@ Run with `python3 run_benchmarks.py` then `python3 generate_comparison_graphs.py
 - H. Zhao, Q. She, C. Zhu, Y. Yang, and K. Xu, "Online 3D Bin Packing with
   Constrained Deep Reinforcement Learning," in *Proc. AAAI Conference on
   Artificial Intelligence*, 2021. (Online-3D-BPP-DRL baseline above.)
+- H. Zhao, Y. Yu, and K. Xu, "Learning Efficient Online 3D Bin Packing on
+  Packing Configuration Trees," in *Proc. International Conference on
+  Learning Representations (ICLR)*, 2022. (PCT baseline above.)
