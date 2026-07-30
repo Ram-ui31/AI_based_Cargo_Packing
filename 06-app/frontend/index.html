@@ -102,6 +102,20 @@
     <div class="upload-panel" id="upload-panel" style="display:none;">
       <h3>Run ARGO on your own instance</h3>
       <p class="upload-sub">Upload a CSV in the same format as the competition instance (ULDs and packages) and this page will run the real model live, no download required.</p>
+      <details class="format-details">
+        <summary>Expected CSV format</summary>
+        <p class="format-explain">Plain CSV, no header row:</p>
+        <ul class="format-list">
+          <li><strong>Line 1:</strong> the K value (spread-cost multiplier) alone, e.g. <code>5000</code></li>
+          <li><strong>ULD rows:</strong> <code>ULD_ID,Length,Width,Height,Weight_Limit</code> -- ID must start with "U"</li>
+          <li><strong>Package rows:</strong> <code>Package_ID,Length,Width,Height,Weight,Type,Delay_Cost</code> -- Type is "Priority" or "Economy"; Delay_Cost is a number for Economy or "-" for Priority</li>
+        </ul>
+        <pre class="format-example">5000
+U1,224,318,244,3175
+U2,224,318,244,3175
+P-1,55,72,42,18,Priority,-
+P-2,40,40,40,9,Economy,142</pre>
+      </details>
       <div class="field-group">
         <label>Model</label>
         <select id="upload-model-select">

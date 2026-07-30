@@ -12,14 +12,16 @@ const ArgoViewer = (function () {
 
   function mount(container) {
     const scene = new THREE.Scene();
-    scene.background = new THREE.Color(0x050403);
+    // Transparent on purpose -- lets the page's own CSS background-image
+    // (argo_back.png) show through behind the packing visualization,
+    // instead of painting over it with an opaque color every frame.
 
     const camera = new THREE.PerspectiveCamera(
       45, container.clientWidth / container.clientHeight, 1, 5000
     );
     camera.position.set(300, 260, 500);
 
-    const renderer = new THREE.WebGLRenderer({ antialias: true, alpha: false });
+    const renderer = new THREE.WebGLRenderer({ antialias: true, alpha: true });
     renderer.setSize(container.clientWidth, container.clientHeight);
     renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
     container.innerHTML = '';
