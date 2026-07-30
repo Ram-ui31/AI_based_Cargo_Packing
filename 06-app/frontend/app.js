@@ -118,11 +118,21 @@ const ARGO_API_BASE = window.ARGO_API_BASE || '';
   let demoViewer = null;
   let demoData = null;
 
+  // The photo background (argo_back.png) is meant for the "nothing rendered
+  // yet" shell -- upload form, loading, errors. Once an actual packing
+  // result is on screen, switch to a plain dark background (like the
+  // desktop app) so the boxes/labels aren't competing with a busy photo.
+  function setHasResult(hasResult) {
+    document.getElementById('page-demo-viz').classList.toggle('has-result', hasResult);
+    document.getElementById('demo-side-panel').style.display = hasResult ? '' : 'none';
+  }
+
   // Plain static JSON files (demo_data/), no backend required -- works
   // identically whether served by backend/app.py, the desktop app's bundled
   // server, or a fully static host (GitHub Pages, Cloudflare Pages, etc).
   async function loadDemo(model) {
     const panel = document.getElementById('demo-side-panel');
+    setHasResult(false);
     panel.innerHTML = '<h3>Loading…</h3>';
     try {
       const [metrics, placements, ulds, packages] = await Promise.all([
@@ -133,6 +143,7 @@ const ARGO_API_BASE = window.ARGO_API_BASE || '';
       ]);
       demoData = { metrics, placements, ulds, packages };
     } catch (err) {
+      setHasResult(true); // show the panel so the error is actually visible
       panel.innerHTML = `<h3>Error</h3><p>${err.message}</p>`;
       return;
     }
@@ -142,6 +153,7 @@ const ARGO_API_BASE = window.ARGO_API_BASE || '';
     }
     demoViewer.renderData(demoData);
     renderSidePanel(panel, demoData, model, demoViewer);
+    setHasResult(true);
   }
 
   document.getElementById('demo-model-select').addEventListener('change', (e) => {
@@ -169,10 +181,14 @@ const ARGO_API_BASE = window.ARGO_API_BASE || '';
       if (uploadPollTimer) { clearInterval(uploadPollTimer); uploadPollTimer = null; }
       loadDemo(document.getElementById('demo-model-select').value);
     } else {
-      const panel = document.getElementById('demo-side-panel');
-      panel.innerHTML = '';
+      setHasResult(false); // no result yet in upload mode until a run finishes
+      document.getElementById('demo-side-panel').innerHTML = '';
       if (demoViewer) demoViewer.dispose();
       demoViewer = null;
+      // dispose() frees GL resources but doesn't remove the canvas itself --
+      // without this the last-rendered frame stays frozen on screen behind
+      // the upload form.
+      document.getElementById('demo-canvas-wrap').innerHTML = '';
     }
   }
   document.getElementById('mode-tab-sample').addEventListener('click', () => setMode('sample'));
@@ -248,6 +264,7 @@ const ARGO_API_BASE = window.ARGO_API_BASE || '';
         }
         demoViewer.renderData(job.result);
         renderSidePanel(panel, job.result, model, demoViewer);
+        setHasResult(true);
       } else if (job.status === 'error') {
         clearInterval(uploadPollTimer);
         uploadPollTimer = null;

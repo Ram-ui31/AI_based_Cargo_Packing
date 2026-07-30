@@ -359,13 +359,22 @@ select {
 }
 
 /* ---------- Result / demo 3D viz page ---------- */
+/* Photo backdrop for the "nothing rendered yet" shell (upload form,
+   loading, errors) -- darkened enough to keep text/controls legible. */
 .viz-page {
   background:
-    linear-gradient(rgba(4, 3, 2, 0.6), rgba(4, 3, 2, 0.6)),
+    linear-gradient(rgba(2, 2, 1, 0.82), rgba(2, 2, 1, 0.82)),
     url('assets/argo_back.png');
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
+}
+
+/* Once an actual packing result is on screen, drop the photo entirely --
+   plain dark background, like the desktop app, so boxes/labels don't
+   compete with a busy image. */
+.viz-page.has-result {
+  background: #050403;
 }
 
 .viz-canvas-wrap {
