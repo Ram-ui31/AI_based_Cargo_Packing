@@ -1,5 +1,7 @@
 # ARGO -- the showdown
 
+**Live site:** [ram-ui31.github.io/AI_based_Cargo_Packing](https://ram-ui31.github.io/AI_based_Cargo_Packing/)
+
 Browse what each of the 3 ARGO models (Cherry, Eclipse, Halley) is, watch a
 precomputed 3D packing of the real 400-package benchmark instance, or get
 the app to pack your own instance for real.
@@ -22,6 +24,8 @@ Three ways to actually use ARGO:
 3. **From source** — clone the repo and run the models directly via the
    commands in [`../05-run-instructions/README.md`](../05-run-instructions/README.md),
    for anyone who'd rather not use a browser or download an app at all.
+
+![How to run the models -- three paths, same result.csv output](images/run_argo.png)
 
 Path 1's live-pack option and path 2 both run the exact same model code;
 path 1 is slower (a shared cloud CPU vs. your own hardware — a ~400-package
@@ -61,6 +65,8 @@ backend is never redirected out to the internet — see the comment next to
 it in `frontend/index.html`).
 
 ## The live-pack backend (Cloud Run)
+
+![How the website turns an uploaded CSV into a downloadable result](images/process_argo.png)
 
 `Dockerfile` + `backend/app.py`'s `/api/pack` + `/api/status/{job_id}`
 endpoints are what the site's "Run your own CSV" mode actually calls. This
