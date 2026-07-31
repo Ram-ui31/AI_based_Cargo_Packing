@@ -344,7 +344,7 @@ const ARGO_API_BASE = window.ARGO_API_BASE || '';
 
     const dlBtn = document.createElement('button');
     dlBtn.className = 'download-btn';
-    dlBtn.textContent = 'Download .json';
+    dlBtn.textContent = 'Download .csv';
     dlBtn.addEventListener('click', () => downloadJson(data, modelLabel));
     panel.appendChild(dlBtn);
   }
@@ -395,12 +395,26 @@ const ARGO_API_BASE = window.ARGO_API_BASE || '';
     box.querySelector('.pkg-info-close').addEventListener('click', () => box.remove());
   }
 
+  // Evaluator-format output: first line is
+  // Total-Cost,Total-Packed-Packages,Number-of-Priority-ULDs; every
+  // subsequent line is one package, Package-ID,ULD-ID,x0,y0,z0,x1,y1,z1,
+  // with unplaced packages as ULD-ID=NONE and all six coordinates -1.
+  // Mirrors write_result_csv() in each model's own run_<model>.py, so the
+  // live demo and the standalone CLI produce identically-formatted output
+  // (JS numbers don't carry Python's int/float distinction, so unlike the
+  // Python version no extra whole-number formatting is needed here).
   function downloadJson(data, modelLabel) {
-    const blob = new Blob([JSON.stringify(data, null, 2)], { type: 'application/json' });
+    const m = data.metrics;
+    const totalPlaced = (m.n_priority_total - m.n_priority_unplaced) + (m.n_economy_total - m.n_economy_unplaced);
+    const lines = [`${m.total_cost},${totalPlaced},${m.n_priority_ulds}`];
+    data.placements.forEach((p) => {
+      lines.push(`${p.Package_ID},${p.ULD_ID},${p.x0},${p.y0},${p.z0},${p.x1},${p.y1},${p.z1}`);
+    });
+    const blob = new Blob([lines.join('\n') + '\n'], { type: 'text/csv' });
     const url = URL.createObjectURL(blob);
     const a = document.createElement('a');
     a.href = url;
-    a.download = `argo_${modelLabel || 'result'}_packing.json`;
+    a.download = `argo_${modelLabel || 'result'}_result.csv`;
     a.click();
     URL.revokeObjectURL(url);
   }

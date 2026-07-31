@@ -72,17 +72,28 @@ Priority placed: 103/103
 Economy placed: 140/297
 Wall time: 48.2s
 
-Saved results_judge/final_metrics.json and final_placements.json
+Saved results_judge/result.csv
 ```
 
-`final_metrics.json` has the cost breakdown; `final_placements.json` has every package's ULD assignment and, if placed, its exact 3D position (`x0,y0,z0,x1,y1,z1`) and orientation.
+`result.csv` is plain, directly parsable text, no JSON: the first line is
+`Total-Cost,Total-Packed-Packages,Number-of-Priority-ULDs`; every line after
+that is one package, `Package-ID,ULD-ID,x0,y0,z0,x1,y1,z1`. A package that
+wasn't loaded into any ULD gets `ULD-ID = NONE` and all six coordinates `-1`.
+Every package in the instance gets exactly one line, whether placed or not.
+
+```
+29340,140,3
+P-80,U1,0,0,0,55,72,42
+...
+P-317,NONE,-1,-1,-1,-1,-1,-1
+```
 
 ### Useful flags
 
 | Flag | Default | Meaning |
 |---|---|---|
 | `--input` | *(required)* | Path to your instance CSV. |
-| `--output-dir` | `results_judge/` inside the model's own folder | Where the two output JSON files are saved. |
+| `--output-dir` | `results_judge/` inside the model's own folder | Where `result.csv` is saved. |
 | `--device` | `cpu` | `cpu`, `cuda`, or `mps` (Apple Silicon) if available — the RL placement policy and rankers are small enough that CPU is fine for a single instance. |
 | `--search-rounds` | `15` (Cherry/Eclipse/Halley all support this) | Local-search rounds after the initial assignment. Each round is a real, full re-pack of the instance — more rounds costs more time but generally finds a better result. Set to `0` to skip local search entirely and just use the one-shot assignment. |
 

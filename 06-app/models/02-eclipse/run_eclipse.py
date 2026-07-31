@@ -232,11 +232,36 @@ def run_eclipse(input_path, device='cpu', search_rounds=15, progress_cb=None):
     }, placements
 
 
+def _fmt(v):
+    """Whole-number floats print without a trailing .0, matching what an
+    automated evaluator parsing plain CSV would expect; genuine decimals
+    (which don't occur in practice here) are preserved as-is."""
+    if isinstance(v, float) and v.is_integer():
+        return str(int(v))
+    return str(v)
+
+
+def write_result_csv(path, metrics, placements):
+    """Evaluator-format output: first line is
+    Total-Cost,Total-Packed-Packages,Number-of-Priority-ULDs; every
+    subsequent line is one package, Package-ID,ULD-ID,x0,y0,z0,x1,y1,z1,
+    with unplaced packages written as ULD-ID=NONE and all six coordinates
+    -1 (placements already carries every package in exactly this shape,
+    so this is a straight re-serialization, not a re-derivation)."""
+    total_placed = (metrics['n_priority_total'] - metrics['n_priority_unplaced']) + \
+                   (metrics['n_economy_total'] - metrics['n_economy_unplaced'])
+    with open(path, 'w') as f:
+        f.write(f"{_fmt(metrics['total_cost'])},{total_placed},{metrics['n_priority_ulds']}\n")
+        for p in placements:
+            f.write(f"{p['Package_ID']},{p['ULD_ID']},{_fmt(p['x0'])},{_fmt(p['y0'])},{_fmt(p['z0'])},"
+                    f"{_fmt(p['x1'])},{_fmt(p['y1'])},{_fmt(p['z1'])}\n")
+
+
 if __name__ == '__main__':
     p = argparse.ArgumentParser(description='Run the Eclipse pipeline on a new CSV instance.')
     p.add_argument('--input', type=str, required=True, help='path to your instance CSV file')
     p.add_argument('--output-dir', type=str, default=os.path.join(HERE, 'results_judge'),
-                    help='where to save final_metrics.json / final_placements.json (default: results_judge/)')
+                    help='where to save result.csv (default: results_judge/)')
     p.add_argument('--device', type=str, default='cpu', choices=['cpu', 'cuda', 'mps'])
     p.add_argument('--search-rounds', type=int, default=15,
                     help='local search rounds after the initial assignment (0 to skip; each round is a real, '
@@ -246,8 +271,6 @@ if __name__ == '__main__':
     metrics, placements = run_eclipse(args.input, device=args.device, search_rounds=args.search_rounds)
 
     os.makedirs(args.output_dir, exist_ok=True)
-    with open(os.path.join(args.output_dir, 'final_metrics.json'), 'w') as f:
-        json.dump(metrics, f, indent=2)
-    with open(os.path.join(args.output_dir, 'final_placements.json'), 'w') as f:
-        json.dump(placements, f, indent=2, default=str)
-    print(f'\nSaved {args.output_dir}/final_metrics.json and final_placements.json')
+    out_path = os.path.join(args.output_dir, 'result.csv')
+    write_result_csv(out_path, metrics, placements)
+    print(f'\nSaved {out_path}')
